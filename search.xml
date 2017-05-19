@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[page2]]></title>
-    <url>%2F2017%2F05%2F19%2Fit%2FOO%2F</url>
-    <content type="text"><![CDATA[###术语OO 面向对象程式设计（Object Oriented） OOP 面向对象编程（Object-Oriented Programming） OOD 面向对象设计（Object-Oriented Design） OOA 面向对象分析方法（Object-Oriented Analysis） OOT 软件开发领域面向对象的测试（Object-Oriented Test）]]></content>
+    <title><![CDATA[面向对象编程6大原则之1：单一职责原则]]></title>
+    <url>%2F2017%2F05%2F19%2Fit%2F1.OOP_SRP%2F</url>
+    <content type="text"><![CDATA[引子：面向对象六大原则S.O.L.I.D.L是面向对象设计和编程(OOD&amp;OOP)中几个重要编码原则(Programming Priciple)的首字母缩写。这六个原则，可以使我们在应用的后续升级、维护中更加方便、轻松应对。让我们的软件更加灵活。为了改变上面软件设计中的腐化味，敏捷开发采取了以下面向对象的设计原则来加以避免，这些原则是：单一职责原则、开闭原则、接口隔离原则、里氏替换原则、依赖倒置原则、迪米特原则。 今天先说下单一职责原则 正题：中文含义：单一职责原则英文缩写：SRP英文全称：The Single Responsibility Principle 它是优化代码的第一步。就一个类而言，应该仅有一个引起它变化的原因。描述的意思是每个类都只负责单一的功能，切不可太多，并且一个类应当尽量的把一个功能做到极致。单一职责原则并不是一个孤立的面向对象设计原则，它是早期面向对象设计五个基本原则（SOLID）之一。这些原则被一起应用时可以使一个软件系统更易被维护和扩展。这些原则被典型的应用在测试驱动开发上，并且是敏捷开发以及自适应软件开发等指导思想的重要组成部分。 简单的说就是：一个类中应该是一组相关性很高的函数、数据的封装。两个不一样的功能不应该放在一个类中。这个原则没有具体的划分界限，需要根据个人经验，具体业务逻辑而定。这也是优化代码的第一步。试想一下，如果所有的功能写在一个类里，那么这个类会越来越大，越来越复杂，越不易修改维护。那么根据功能，各自独立拆分出来，岂不是逻辑会清晰些。]]></content>
       <categories>
-        <category>IT - 面向对象和设计模式 - 面向对象编程六大原则</category>
+        <category>IT - 面向对象和设计模式 - 面向对象编程6大原则之1：单一职责原则</category>
       </categories>
   </entry>
   <entry>
