@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[page2]]></title>
+    <url>%2F2017%2F05%2F19%2Fit%2FOO%2F</url>
+    <content type="text"><![CDATA[###术语OO 面向对象程式设计（Object Oriented） OOP 面向对象编程（Object-Oriented Programming） OOD 面向对象设计（Object-Oriented Design） OOA 面向对象分析方法（Object-Oriented Analysis） OOT 软件开发领域面向对象的测试（Object-Oriented Test）]]></content>
+      <categories>
+        <category>IT - 面向对象和设计模式 - 面向对象编程六大原则</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello everyone!]]></title>
+    <url>%2F2017%2F05%2F18%2Fme%2Fpage1%2F</url>
+    <content type="text"><![CDATA[你好这是我的第一篇文章:)]]></content>
+      <categories>
+        <category>个人感悟</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F05%2F18%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
