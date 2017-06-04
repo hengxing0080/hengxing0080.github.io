@@ -90,19 +90,19 @@
 
 
 
-<meta name="description" content="简介中文吗：抽象工厂模式英文名：Abstract Factory所属类型：创建型模式 定义：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。 解释：工厂模式是对具体产品进行扩展，有的项目可能需要更多的扩展性，要对这个“工厂”也进行扩展，那就成了“抽象工厂模式”。 设计原则遵循单一职责、依赖倒置、开闭原则 生活举例追MM少不了请吃饭了，麦当劳的鸡翅和肯德基的鸡翅都是MM爱吃的东西">
+<meta name="description" content="简介中文吗：抽象工厂模式英文名：Abstract Factory所属类型：创建型模式 UML图例1 UML图例2">
 <meta name="keywords" content="面向对象和设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式GOF之3 —— 抽象工厂模式（创建型模式）">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/06/04/it/DesignPattern/3.Abstract/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
-<meta property="og:description" content="简介中文吗：抽象工厂模式英文名：Abstract Factory所属类型：创建型模式 定义：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。 解释：工厂模式是对具体产品进行扩展，有的项目可能需要更多的扩展性，要对这个“工厂”也进行扩展，那就成了“抽象工厂模式”。 设计原则遵循单一职责、依赖倒置、开闭原则 生活举例追MM少不了请吃饭了，麦当劳的鸡翅和肯德基的鸡翅都是MM爱吃的东西">
+<meta property="og:description" content="简介中文吗：抽象工厂模式英文名：Abstract Factory所属类型：创建型模式 UML图例1 UML图例2">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_abstract1.jpg">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_abstract2.jpg">
-<meta property="og:updated_time" content="2017-06-04T11:45:23.186Z">
+<meta property="og:updated_time" content="2017-06-04T12:00:14.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式GOF之3 —— 抽象工厂模式（创建型模式）">
-<meta name="twitter:description" content="简介中文吗：抽象工厂模式英文名：Abstract Factory所属类型：创建型模式 定义：提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。 解释：工厂模式是对具体产品进行扩展，有的项目可能需要更多的扩展性，要对这个“工厂”也进行扩展，那就成了“抽象工厂模式”。 设计原则遵循单一职责、依赖倒置、开闭原则 生活举例追MM少不了请吃饭了，麦当劳的鸡翅和肯德基的鸡翅都是MM爱吃的东西">
+<meta name="twitter:description" content="简介中文吗：抽象工厂模式英文名：Abstract Factory所属类型：创建型模式 UML图例1 UML图例2">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_pattern_abstract1.jpg">
 
 
@@ -398,6 +398,8 @@
 
       
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：抽象工厂模式<br>英文名：Abstract Factory<br>所属类型：创建型模式</p>
+<h1 id="UML图例1"><a href="#UML图例1" class="headerlink" title="UML图例1"></a>UML图例1</h1><p><img src="/images/it_pattern_abstract1.jpg" alt="UML图"></p>
+<h1 id="UML图例2"><a href="#UML图例2" class="headerlink" title="UML图例2"></a>UML图例2</h1><p><img src="/images/it_pattern_abstract2.jpg" alt="UML图"><br><a id="more"></a></p>
 <h1 id="定义："><a href="#定义：" class="headerlink" title="定义："></a>定义：</h1><p>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p>
 <h1 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h1><p>工厂模式是对具体产品进行扩展，有的项目可能需要更多的扩展性，要对这个“工厂”也进行扩展，那就成了“抽象工厂模式”。</p>
 <h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>遵循单一职责、依赖倒置、开闭原则</p>
@@ -406,8 +408,6 @@
 <p>缺点：<br>一是类文件的徒增（爆炸性增加），如果工厂类过多，势必导致类文件非常多，因此，在实际开发中一定要权衡慎用。<br>二是不太容易扩展新的产品类，因为每当我们增加一个产品类就需要修改抽象工厂，那么所有的具体工厂类均会被要做相应的修改。 </p>
 <h1 id="使用场景："><a href="#使用场景：" class="headerlink" title="使用场景："></a>使用场景：</h1><p>一个对象族有相同的约束时可以使用抽象工厂模式。</p>
 <p>举个例子，Android,IOS,Window Phone下都有短信软件和拨号软件，两者都属于Software软件的范畴，但是，它们所在的操作系统平台不一样，即便是同一家公司出品的软件，其代码的实现逻辑也是不同的，这时候可以考虑使用抽象工厂方法模式来产生android,ios,Window Phone下的短信软件和拨号软件。</p>
-<h1 id="UML图例1"><a href="#UML图例1" class="headerlink" title="UML图例1"></a>UML图例1</h1><p><img src="/images/it_pattern_abstract1.jpg" alt="UML图"></p>
-<h1 id="UML图例2"><a href="#UML图例2" class="headerlink" title="UML图例2"></a>UML图例2</h1><p><img src="/images/it_pattern_abstract2.jpg" alt="UML图"></p>
 <h1 id="Android涉及到的抽象工厂设计模式"><a href="#Android涉及到的抽象工厂设计模式" class="headerlink" title="Android涉及到的抽象工厂设计模式"></a>Android涉及到的抽象工厂设计模式</h1><p>抽象工厂方法模式在Android开发中使用得并不多，大家看到源码中的应用其实也是极少的，主要是在开发过程中很多会出现多个产品种类的情况，大部分情况我们使用工厂模式即可解决。</p>
 <p>1.DAO与Service的使用</p>
 <p>2.Activity的onCreate，Service的onBind，如果从Framework的角度来看Activity和Service都可以看做是一个具体的工厂，这样看相当于一个丑熊工厂方法模式的雏形也没错。</p>
@@ -454,8 +454,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/02/it/DesignPattern/2.Factory/" rel="next" title="设计模式GOF之2 —— 工厂模式（创建型模式）（简单工厂模式+工厂方法模式）">
-                <i class="fa fa-chevron-left"></i> 设计模式GOF之2 —— 工厂模式（创建型模式）（简单工厂模式+工厂方法模式）
+              <a href="/2017/06/02/it/DesignPattern/2.Factory/" rel="next" title="设计模式GOF之2 —— 工厂模式（创建型模式）">
+                <i class="fa fa-chevron-left"></i> 设计模式GOF之2 —— 工厂模式（创建型模式）
               </a>
             
           </div>
@@ -643,7 +643,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义："><span class="nav-number">2.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释："><span class="nav-number">3.</span> <span class="nav-text">解释：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">4.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生活举例"><span class="nav-number">5.</span> <span class="nav-text">生活举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点："><span class="nav-number">6.</span> <span class="nav-text">优缺点：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景："><span class="nav-number">7.</span> <span class="nav-text">使用场景：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML图例1"><span class="nav-number">8.</span> <span class="nav-text">UML图例1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML图例2"><span class="nav-number">9.</span> <span class="nav-text">UML图例2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android涉及到的抽象工厂设计模式"><span class="nav-number">10.</span> <span class="nav-text">Android涉及到的抽象工厂设计模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML图例1"><span class="nav-number">2.</span> <span class="nav-text">UML图例1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML图例2"><span class="nav-number">3.</span> <span class="nav-text">UML图例2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义："><span class="nav-number">4.</span> <span class="nav-text">定义：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释："><span class="nav-number">5.</span> <span class="nav-text">解释：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">6.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生活举例"><span class="nav-number">7.</span> <span class="nav-text">生活举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点："><span class="nav-number">8.</span> <span class="nav-text">优缺点：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景："><span class="nav-number">9.</span> <span class="nav-text">使用场景：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android涉及到的抽象工厂设计模式"><span class="nav-number">10.</span> <span class="nav-text">Android涉及到的抽象工厂设计模式</span></a></li></ol></div>
             
 
           </div>
