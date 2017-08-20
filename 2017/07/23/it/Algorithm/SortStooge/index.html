@@ -94,13 +94,13 @@
 
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构与算法 —— 排序系列：Stooge排序（最漂亮）">
+<meta property="og:title" content="数据结构与算法 —— 排序系列：臭皮匠排序（最漂亮）">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/07/23/it/Algorithm/SortStooge/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_algorithm_sortstooge1.gif">
-<meta property="og:updated_time" content="2017-07-23T15:41:48.992Z">
+<meta property="og:updated_time" content="2017-07-30T06:17:35.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构与算法 —— 排序系列：Stooge排序（最漂亮）">
+<meta name="twitter:title" content="数据结构与算法 —— 排序系列：臭皮匠排序（最漂亮）">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_algorithm_sortstooge1.gif">
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>数据结构与算法 —— 排序系列：Stooge排序（最漂亮） | 恒星的轨迹空间</title>
+  <title>数据结构与算法 —— 排序系列：臭皮匠排序（最漂亮） | 恒星的轨迹空间</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构与算法 —— 排序系列：Stooge排序（最漂亮）</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构与算法 —— 排序系列：臭皮匠排序（最漂亮）</h1>
         
 
         <div class="post-meta">
@@ -414,7 +414,7 @@
 
       
         <p><img src="/images/it_algorithm_sortstooge1.gif" alt="UML图"><br><a id="more"></a></p>
-<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><p>又名臭皮匠排序<br>该算法得名于三个臭皮匠，每个臭皮匠都打其他两个。<br>在《算法导论》第二版第7章（快速排序）的思考题中被提到，是由Howard、Fine等教授提出的所谓“漂亮的”排序算法。<br>代码很漂亮但是很耗时<br>该排序是一种低效的递归排序算法，不仅慢于一般的有效排序算法（如：插入排序，合并排序，堆排序和快速排序），甚至慢于冒泡排序。<br>所以相比于经典的排序算法，STOOGE算法具有非常差的性能。</p>
+<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><p>Stooge排序又名臭皮匠排序<br>该算法得名于三个臭皮匠，每个臭皮匠都打其他两个。<br>在《算法导论》第二版第7章（快速排序）的思考题中被提到，是由Howard、Fine等教授提出的所谓“漂亮的”排序算法。<br>代码很漂亮但是很耗时<br>该排序是一种低效的递归排序算法，不仅慢于一般的有效排序算法（如：插入排序，合并排序，堆排序和快速排序），甚至慢于冒泡排序。<br>所以相比于经典的排序算法，STOOGE算法具有非常差的性能。</p>
 <h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>如果最后一个值小于第一个值，则交换它们<br>如果当前子集元素数量大于等于3：<br>　1.使用Stooge排序前2/3的元素<br>　2.使用Stooge排序后2/3的元素<br>　3.再次使用Stooge排序前2/3的元素</p>
 <h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h2><p>O(n^log(3/2)3)<br>O（n^2.7）<br>可见此算法效率相当的低下，比选择、插入、冒泡排序更差！</p>
 <hr>
@@ -487,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/23/it/Algorithm/SortBogo/" rel="next" title="数据结构与算法 —— 排序系列：Bogo排序（最慢）">
-                <i class="fa fa-chevron-left"></i> 数据结构与算法 —— 排序系列：Bogo排序（最慢）
+              <a href="/2017/07/23/it/Algorithm/SortBogo/" rel="next" title="数据结构与算法 —— 排序系列：猴子排序（最慢）">
+                <i class="fa fa-chevron-left"></i> 数据结构与算法 —— 排序系列：猴子排序（最慢）
               </a>
             
           </div>
@@ -496,6 +496,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/26/it/Algorithm/SortHeap/" rel="prev" title="数据结构与算法 —— 排序系列：堆排序">
+                数据结构与算法 —— 排序系列：堆排序 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -605,7 +609,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -616,7 +620,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

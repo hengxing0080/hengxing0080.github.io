@@ -93,13 +93,13 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构与算法 —— 排序系列：Shaker排序">
+<meta property="og:title" content="数据结构与算法 —— 排序系列：鸡尾酒排序">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/07/22/it/Algorithm/SortShaker/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_algorithm_sortshaker1.gif">
-<meta property="og:updated_time" content="2017-07-22T07:33:01.396Z">
+<meta property="og:updated_time" content="2017-07-30T06:16:47.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构与算法 —— 排序系列：Shaker排序">
+<meta name="twitter:title" content="数据结构与算法 —— 排序系列：鸡尾酒排序">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_algorithm_sortshaker1.gif">
 
 
@@ -134,7 +134,7 @@
 
 
 
-  <title>数据结构与算法 —— 排序系列：Shaker排序 | 恒星的轨迹空间</title>
+  <title>数据结构与算法 —— 排序系列：鸡尾酒排序 | 恒星的轨迹空间</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -338,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构与算法 —— 排序系列：Shaker排序</h1>
+          <h1 class="post-title" itemprop="name headline">数据结构与算法 —— 排序系列：鸡尾酒排序</h1>
         
 
         <div class="post-meta">
@@ -414,9 +414,9 @@
       
         <p><img src="/images/it_algorithm_sortshaker1.gif" alt="UML图"></p>
 <a id="more"></a>
-<h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><p>这个算法有好多名称，以下就是收集的名称，这里用Shaker排序来作为本篇文章的正统名称。<br>Shaker排序 (Shaker Sort)<br>双向冒泡排序 (Bidirectional Bubble Sort)<br>鸡尾酒排序 (Cocktail Sort)<br>波浪排序 (Ripple Sort)<br>摇曳排序 (Shuffle Sort)<br>飞梭排序 (Shuttle Sort)<br>欢乐时光排序 (Happy Hour Sort)</p>
-<p>其实它是改良的冒泡排序的轻微变形。<br>不同的地方在于，Shaker排序是从低到高然后从高到低来回排序，而冒泡排序则仅从低到高去比较序列里的每个元素。<br>他可比冒泡排序的效率稍微好一点，原因是冒泡排序只从一个方向进行比对(由低到高)，每次循环只移动一个项目。</p>
-<p>以序列(2,3,4,5,1)为例，Shaker排序只需要访问一次序列就可以完成排序，但如果使用冒泡排序则需要四次。<br>但是在乱数序列状态下，Shaker排序与冒泡排序的效率都很差劲，<br>优点只有原理简单这一点。</p>
+<h2 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h2><p>这个算法有好多名称，以下就是收集的名称，这里用鸡尾酒排序来作为本篇文章的正统名称。<br>Shaker排序 (Shaker Sort)<br>鸡尾酒排序 (Cocktail Sort)<br>双向冒泡排序 (Bidirectional Bubble Sort)<br>波浪排序 (Ripple Sort)<br>摇曳排序 (Shuffle Sort)<br>飞梭排序 (Shuttle Sort)<br>欢乐时光排序 (Happy Hour Sort)</p>
+<p>其实它是改良的冒泡排序的轻微变形。<br>不同的地方在于，鸡尾酒排序是从低到高然后从高到低来回排序，而冒泡排序则仅从低到高去比较序列里的每个元素。<br>他可比冒泡排序的效率稍微好一点，原因是冒泡排序只从一个方向进行比对(由低到高)，每次循环只移动一个项目。</p>
+<p>以序列(2,3,4,5,1)为例，鸡尾酒排序只需要访问一次序列就可以完成排序，但如果使用冒泡排序则需要四次。<br>但是在乱数序列状态下，鸡尾酒排序与冒泡排序的效率都很差劲，<br>优点只有原理简单这一点。</p>
 <h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>1、 气泡排序的双向进行，先让气泡排序由左向右进行，再来让气泡排序由右往左进行，如此完成一次排序的动作<br>2、 使用left与right两个旗标来记录左右两端已排序的元素位置。</p>
 <p>排序过程：<br>先对数组从左到右进行冒泡排序（升序），则最大的元素去到最右端<br>再对数组从右到左进行冒泡排序（降序），则最小的元素去到最左端<br>以此类推，依次改变冒泡的方向，并不断缩小未排序元素的范围，直到最后一个元素结束</p>
 <h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>O（n^2）</p>
@@ -603,7 +603,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-count">51</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -614,7 +614,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
