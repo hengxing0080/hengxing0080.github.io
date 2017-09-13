@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hengxing0080.github.io/2017/08/12/it/DesignPattern/7.Proxy/</loc>
+    
+    <lastmod>2017-08-30T10:41:01.141Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/10/it/DesignPattern/6.Decorator/</loc>
+    
+    <lastmod>2017-08-30T10:27:33.925Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/15/it/DesignPattern/5.Prototype/</loc>
+    
+    <lastmod>2017-08-30T10:25:18.289Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hengxing0080.github.io/2017/08/01/it/DataStructure/LinearList/</loc>
     
     <lastmod>2017-08-26T06:10:47.364Z</lastmod>
@@ -198,14 +219,14 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
@@ -320,13 +341,6 @@
     <loc>https://hengxing0080.github.io/2017/05/31/it/Statistics/RankingsProgrammingLanguage/</loc>
     
     <lastmod>2017-06-22T03:04:06.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/15/it/DesignPattern/5.Prototype/</loc>
-    
-    <lastmod>2017-06-22T02:47:56.000Z</lastmod>
     
   </url>
   

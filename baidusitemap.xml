@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/08/12/it/DesignPattern/7.Proxy/</loc>
+    <lastmod>2017-08-30T10:41:01.141Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之7 —— 代理模式（结构型模式）</title>
+        <pubTime>2017-08-12T03:22:47.000Z</pubTime>
+        
+        <tag>面向对象和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/10/it/DesignPattern/6.Decorator/</loc>
+    <lastmod>2017-08-30T10:27:33.925Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之6 —— 装饰模式（结构型模式）</title>
+        <pubTime>2017-08-10T00:11:22.000Z</pubTime>
+        
+        <tag>面向对象和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/15/it/DesignPattern/5.Prototype/</loc>
+    <lastmod>2017-08-30T10:25:18.289Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之5 —— 原型模式（创建型模式）</title>
+        <pubTime>2017-06-15T05:21:32.000Z</pubTime>
+        
+        <tag>面向对象和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/08/01/it/DataStructure/LinearList/</loc>
     <lastmod>2017-08-26T06:10:47.364Z</lastmod>
     <data>
@@ -558,12 +618,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>励志数学公式（数据告诉你不要迷茫）</title>
-        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -578,12 +638,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        <title>励志数学公式（数据告诉你不要迷茫）</title>
+        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -907,26 +967,6 @@
            
              
               <breadCrumb title="IT - 统计调查" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E8%B0%83%E6%9F%A5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/15/it/DesignPattern/5.Prototype/</loc>
-    <lastmod>2017-06-22T02:47:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之5 —— 原型模式（创建型模式）</title>
-        <pubTime>2017-06-15T05:21:32.000Z</pubTime>
-        
-        <tag>面向对象和设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>
