@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hengxing0080.github.io/2017/08/23/it/DesignPattern/12.Flyweight/</loc>
+    
+    <lastmod>2017-09-18T16:34:13.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/22/it/DesignPattern/11.Bridge/</loc>
+    
+    <lastmod>2017-09-14T08:51:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/21/it/DesignPattern/10.Composite/</loc>
+    
+    <lastmod>2017-09-14T08:24:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/20/it/DesignPattern/9.State/</loc>
+    
+    <lastmod>2017-09-14T04:32:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/19/it/DesignPattern/8.adapter/</loc>
+    
+    <lastmod>2017-09-13T16:37:00.788Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/DesignPattern/MVC/</loc>
+    
+    <lastmod>2017-09-13T10:38:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/15/it/DesignPattern/IOC/</loc>
+    
+    <lastmod>2017-09-13T10:03:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hengxing0080.github.io/2017/08/12/it/DesignPattern/7.Proxy/</loc>
     
     <lastmod>2017-08-30T10:41:01.141Z</lastmod>
@@ -219,13 +268,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
-    
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
@@ -240,14 +282,21 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
