@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>恒星的轨迹空间</title>
-  <subtitle>时空在流逝...</subtitle>
+  <subtitle>时间在流逝...</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hengxing0080.github.io/"/>
