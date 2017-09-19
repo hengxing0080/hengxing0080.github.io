@@ -95,14 +95,14 @@
 <meta name="description" content="有些刚毕业刚入职的程序猿同学因为上学时数学学的不好且有些算法好久不用而遗忘，因为模运算在编程算法设计中属于高频使用，而且负数，0,1，小数模于大数等等的模运算当时自己也弄的很迷茫，所以工作多年后用自己白话的方式做了下整理以为遗忘时参考！">
 <meta name="keywords" content="数据结构与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构与算法 —— 各种：取模运算">
+<meta property="og:title" content="运算符系列：算术运算符-取模%">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/07/16/it/Algorithm/ModuloOperation/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
 <meta property="og:description" content="有些刚毕业刚入职的程序猿同学因为上学时数学学的不好且有些算法好久不用而遗忘，因为模运算在编程算法设计中属于高频使用，而且负数，0,1，小数模于大数等等的模运算当时自己也弄的很迷茫，所以工作多年后用自己白话的方式做了下整理以为遗忘时参考！">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_algorithm_modulo1.jpg">
-<meta property="og:updated_time" content="2017-07-22T04:27:23.119Z">
+<meta property="og:updated_time" content="2017-09-19T03:43:58.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构与算法 —— 各种：取模运算">
+<meta name="twitter:title" content="运算符系列：算术运算符-取模%">
 <meta name="twitter:description" content="有些刚毕业刚入职的程序猿同学因为上学时数学学的不好且有些算法好久不用而遗忘，因为模运算在编程算法设计中属于高频使用，而且负数，0,1，小数模于大数等等的模运算当时自己也弄的很迷茫，所以工作多年后用自己白话的方式做了下整理以为遗忘时参考！">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_algorithm_modulo1.jpg">
 
@@ -138,7 +138,7 @@
 
 
 
-  <title>数据结构与算法 —— 各种：取模运算 | 恒星的轨迹空间</title>
+  <title>运算符系列：算术运算符-取模% | 恒星的轨迹空间</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -342,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据结构与算法 —— 各种：取模运算</h1>
+          <h1 class="post-title" itemprop="name headline">运算符系列：算术运算符-取模%</h1>
         
 
         <div class="post-meta">
@@ -436,6 +436,7 @@
 <p>判断某个自然数是否是素数最常用的方法就是试除法：用比该自然数的平方根小的正整数去除这个自然数，若该自然数能被整除，则说明其非素数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrimeNumber</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line"></div><div class="line">        Scanner scan = <span class="keyword">new</span> Scanner(System.in); <span class="comment">// 扫描器，接收控制台输入信息</span></div><div class="line">        System.out.print(<span class="string">"请输入一个整数："</span>);</div><div class="line"></div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            <span class="keyword">int</span> num = scan.nextInt();          <span class="comment">// 取出控制台输入的信息</span></div><div class="line">            <span class="keyword">if</span> (isPrime(num)) &#123;     </div><div class="line">                System.out.println(num + <span class="string">"是素数！"</span>);   </div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                System.out.println(num + <span class="string">"不是素数！"</span>); </div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            System.out.println(<span class="string">"请输入整数"</span>); </div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 用于判断一个数是否为素数，若为素数，返回true,否则返回false</div><div class="line">     *</div><div class="line">     * <span class="doctag">@param</span> a 输入的值</div><div class="line">     * <span class="doctag">@return</span> true、false</div><div class="line">     */</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</div><div class="line"></div><div class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (a &lt; <span class="number">2</span>) &#123; <span class="comment">// 素数不能小于2</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= Math.sqrt(a); i++) &#123;  <span class="comment">// 巧用开平方函数提高效率</span></div><div class="line">                <span class="keyword">if</span> (a % i == <span class="number">0</span>) &#123;  <span class="comment">// 若能被整除，则说明不是素数，返回false</span></div><div class="line">                    flag = <span class="keyword">false</span>;</div><div class="line">                    <span class="keyword">break</span>;  </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">return</span> flag;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h1 id="取模运算符在Java和C的不同之处"><a href="#取模运算符在Java和C的不同之处" class="headerlink" title="取模运算符在Java和C的不同之处"></a>取模运算符在Java和C的不同之处</h1><p>Java中：如果两个操作数均是整数，结果也是整数； 如果两个操作数中有一个是浮点数，结果也是浮点数，保留小数部分。这一点和C语言不同。<br>C语言中：%运算符的两个操作数只能是整数，不允许是浮点数。</p>
+<h1 id="取模运算和求余运算的区别"><a href="#取模运算和求余运算的区别" class="headerlink" title="取模运算和求余运算的区别"></a>取模运算和求余运算的区别</h1><p><a href="http://blog.csdn.net/huasion/article/details/6855900" target="_blank" rel="external">取模运算和求余运算的区别</a></p>
 
       
     </div>
@@ -621,7 +622,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">60</span>
+                <span class="site-state-item-count">61</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -737,7 +738,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据排列组合得出运算规律"><span class="nav-number">2.</span> <span class="nav-text">根据排列组合得出运算规律</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单运算示例"><span class="nav-number">3.</span> <span class="nav-text">简单运算示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码"><span class="nav-number">4.</span> <span class="nav-text">示例代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判别奇偶数"><span class="nav-number">4.1.</span> <span class="nav-text">判别奇偶数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断素数"><span class="nav-number">4.2.</span> <span class="nav-text">判断素数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取模运算符在Java和C的不同之处"><span class="nav-number">5.</span> <span class="nav-text">取模运算符在Java和C的不同之处</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#根据排列组合得出运算规律"><span class="nav-number">2.</span> <span class="nav-text">根据排列组合得出运算规律</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单运算示例"><span class="nav-number">3.</span> <span class="nav-text">简单运算示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码"><span class="nav-number">4.</span> <span class="nav-text">示例代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判别奇偶数"><span class="nav-number">4.1.</span> <span class="nav-text">判别奇偶数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断素数"><span class="nav-number">4.2.</span> <span class="nav-text">判断素数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取模运算符在Java和C的不同之处"><span class="nav-number">5.</span> <span class="nav-text">取模运算符在Java和C的不同之处</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取模运算和求余运算的区别"><span class="nav-number">6.</span> <span class="nav-text">取模运算和求余运算的区别</span></a></li></ol></div>
             
 
           </div>

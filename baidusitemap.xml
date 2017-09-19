@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/08/25/it/Algorithm/BitwiseOperation/</loc>
+    <lastmod>2017-09-19T10:13:49.306Z</lastmod>
+    <data>
+        <display>
+        <title>运算符系列：位运算符</title>
+        <pubTime>2017-08-25T03:54:12.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 各种" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E5%90%84%E7%A7%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/16/it/Algorithm/ModuloOperation/</loc>
+    <lastmod>2017-09-19T03:43:58.398Z</lastmod>
+    <data>
+        <display>
+        <title>运算符系列：算术运算符-取模%</title>
+        <pubTime>2017-07-16T12:26:32.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 各种" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E5%90%84%E7%A7%8D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/08/23/it/DesignPattern/12.Flyweight/</loc>
     <lastmod>2017-09-18T16:34:13.810Z</lastmod>
     <data>
@@ -482,26 +522,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/16/it/Algorithm/ModuloOperation/</loc>
-    <lastmod>2017-07-22T04:27:23.119Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 各种：取模运算</title>
-        <pubTime>2017-07-16T12:26:32.000Z</pubTime>
-        
-        <tag>数据结构与算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 各种" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E5%90%84%E7%A7%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/07/21/it/Algorithm/SortInsert/</loc>
     <lastmod>2017-07-21T10:30:26.000Z</lastmod>
     <data>
@@ -778,12 +798,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>北大励志十句话</title>
-        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -798,12 +818,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        <title>北大励志十句话</title>
+        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
         
         <tag>励志</tag>
          
