@@ -546,6 +546,41 @@ private Button bt_cancel;
   </entry>
   
   <entry>
+    <title>IQ题 —— 面试系列（持续更新）</title>
+    <link href="https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/"/>
+    <id>https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/</id>
+    <published>2017-08-01T15:58:10.000Z</published>
+    <updated>2017-09-19T11:57:21.988Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_iq_interview.jpg" alt="UML图"><br><a id="more"></a></p>
+<hr>
+<h1 id="8个试剂，其中一个有毒，最少多少只小白鼠能检测出有毒试剂"><a href="#8个试剂，其中一个有毒，最少多少只小白鼠能检测出有毒试剂" class="headerlink" title="8个试剂，其中一个有毒，最少多少只小白鼠能检测出有毒试剂"></a>8个试剂，其中一个有毒，最少多少只小白鼠能检测出有毒试剂</h1><hr>
+<h2 id="方法1：位"><a href="#方法1：位" class="headerlink" title="方法1：位"></a>方法1：位</h2><p>运用了位的思想<br>8瓶酒，可以由对应的8个状态来对应。<br>2^3=8<br>所以三只小白鼠足够了，即三个小白鼠喝出八中状态。<br>可以把二进制对应的八位写出来，从低到高，每种情况对应一种试剂有毒，然后根据为1的死了，为0的活着，来判断哪个小白鼠喝了哪瓶试剂。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># [3、2、1]</div><div class="line">0 0 1 = 1  # 2、3没死，1死了，说明第1支试剂有毒</div><div class="line">0 1 0 = 2  # 1、3没死，2死了，说明第2支试剂有毒</div><div class="line">0 1 1 = 3  # 3没死，1、2死了，说明第3支试剂有毒</div><div class="line">1 0 0 = 4  # 1、2没死，3死了，说明第4支试剂有毒</div><div class="line">1 0 1 = 5  # 2没死，1、3死了，说明第5值试剂有毒</div><div class="line">1 1 0 = 6  # 1没死，2、3死了，说明第6值试剂有毒</div><div class="line">1 1 1 = 7  # 三只都死了，说明第7值试剂有毒</div><div class="line">0 0 0 = 0  # 三只都没死，说明第8值试剂有毒</div></pre></td></tr></table></figure>
+<p>这样就方便写出每只小白鼠应该喝哪几瓶了。<br>下面一步一步分析，哪环有小白鼠挂了就类似数组记录一下，依次类推，就能推导出答案了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"># 2、3没死，1死了，说明第1支试剂有毒。即第一只老鼠喝了1，二三没喝1</div><div class="line">1:[1]</div><div class="line">2:[]</div><div class="line">3:[]</div><div class="line"></div><div class="line"># 1、3没死，2死了，说明第2支试剂有毒。同上</div><div class="line">1:[1]</div><div class="line">2:[2]</div><div class="line">3:[]</div><div class="line"></div><div class="line"># 3没死，1、2死了，说明第3支试剂有毒。即一二喝了第3支试剂，三没有</div><div class="line">1:[1,3]</div><div class="line">2:[2,3]</div><div class="line">3:[]</div><div class="line"></div><div class="line"># 1、2没死，3死了，说明第4支试剂有毒。同上面情况1，2</div><div class="line">1:[1,3]</div><div class="line">2:[2,3]</div><div class="line">3:[4]</div><div class="line"></div><div class="line"># 2没死，1、3死了，说明第5值试剂有毒。说明1,3和了第5试剂，1没有</div><div class="line">1:[1,3,5]</div><div class="line">2:[2,3]</div><div class="line">3:[4,5]</div><div class="line"></div><div class="line"># 1没死，2、3死了，说明第6值试剂有毒</div><div class="line">1:[1,3,5]</div><div class="line">2:[2,3,6]</div><div class="line">3:[4,5,6]</div><div class="line"></div><div class="line"># 三只都死了，说明第7值试剂有毒</div><div class="line">1:[1,3,5,7]</div><div class="line">2:[2,3,6,7]</div><div class="line">3:[4,5,6,7]</div><div class="line"></div><div class="line"># 三只都没死，说明第8值试剂有毒</div><div class="line">1:[1,3,5,7]</div><div class="line">2:[2,3,6,7]</div><div class="line">3:[4,5,6,7]</div></pre></td></tr></table></figure>
+<p>简而言之，看竖列，数列为1的，就是需要喝的。<br>比如第一只小白鼠的数列为10101010，就是需要1，3，5，7<br>第二只小白鼠的数列为0110 0110 ，就是需要2，3，6，7<br>第三只小白鼠的数列为00011110，就是需要4，5，6，7<br><img src="/images/it_iq_interview1.jpg" alt="UML图"></p>
+<p>所以最终答案就是：<br>用3只小白鼠，能组合成8种状态。<br>第一只喂食【1、3、5、7】四只试剂<br>第二只喂食【2、3、6、7】四只试剂<br>第三只喂食【4、5、6、7】四只试剂</p>
+<h2 id="方法2：二分"><a href="#方法2：二分" class="headerlink" title="方法2：二分"></a>方法2：二分</h2><p>每次把试剂分成两堆，然后用两只小白鼠测试，如果一只死掉了，那么就能确定哪一堆有毒。<br>然后继续分。因此，小白鼠的数量就是试剂能被二分的次数。<br>8只试剂能被二分3次，所以就需要3只小白鼠。</p>
+<p>步骤：<br>第一次二分：8 → 4 (此时用到的小白鼠数量：1)<br>第二次二分：4 → 2 (此时用到的小白鼠数量：2)<br>第三次二分：2 → 1 (此时用到的小白鼠数量：3) </p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>参考文章<br>　<a href="http://blog.csdn.net/u010429424/article/details/77856133" target="_blank" rel="external">面试题：8个试剂，其中一个有毒，最少多少只小白鼠能检测出有毒试剂</a><br>　<a href="http://blog.csdn.net/qq_33277870/article/details/78006116" target="_blank" rel="external">位的巧妙应用</a></p>
+<p>类似题目<br>　<a href="http://blog.csdn.net/sinat_28028941/article/details/53815587" target="_blank" rel="external">1000瓶试剂，其中一瓶有毒，最少需要多少只小白鼠能找出有毒的试剂</a><br>　原理差不多，知道解题思路便通杀其他类似的题</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_iq_interview.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IT - IQ题 - 面试题" scheme="https://hengxing0080.github.io/categories/IT-IQ%E9%A2%98-%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    
+      <category term="IQ题" scheme="https://hengxing0080.github.io/tags/IQ%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据结构与算法 —— 线性表</title>
     <link href="https://hengxing0080.github.io/2017/08/01/it/DataStructure/LinearList/"/>
     <id>https://hengxing0080.github.io/2017/08/01/it/DataStructure/LinearList/</id>
@@ -951,39 +986,6 @@ private Button bt_cancel;
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortheap1.gif&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法 —— 排序系列：臭皮匠排序（最漂亮）</title>
-    <link href="https://hengxing0080.github.io/2017/07/23/it/Algorithm/SortStooge/"/>
-    <id>https://hengxing0080.github.io/2017/07/23/it/Algorithm/SortStooge/</id>
-    <published>2017-07-23T12:47:32.000Z</published>
-    <updated>2017-07-30T06:17:35.572Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_algorithm_sortstooge1.gif" alt="UML图"><br><a id="more"></a></p>
-<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><p>Stooge排序又名臭皮匠排序<br>该算法得名于三个臭皮匠，每个臭皮匠都打其他两个。<br>在《算法导论》第二版第7章（快速排序）的思考题中被提到，是由Howard、Fine等教授提出的所谓“漂亮的”排序算法。<br>代码很漂亮但是很耗时<br>该排序是一种低效的递归排序算法，不仅慢于一般的有效排序算法（如：插入排序，合并排序，堆排序和快速排序），甚至慢于冒泡排序。<br>所以相比于经典的排序算法，STOOGE算法具有非常差的性能。</p>
-<h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>如果最后一个值小于第一个值，则交换它们<br>如果当前子集元素数量大于等于3：<br>　1.使用Stooge排序前2/3的元素<br>　2.使用Stooge排序后2/3的元素<br>　3.再次使用Stooge排序前2/3的元素</p>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><h2 id="时间复杂度："><a href="#时间复杂度：" class="headerlink" title="时间复杂度："></a>时间复杂度：</h2><p>O(n^log(3/2)3)<br>O（n^2.7）<br>可见此算法效率相当的低下，比选择、插入、冒泡排序更差！</p>
-<hr>
-<h1 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h1><hr>
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">StooGe_sort</span><span class="params">(<span class="keyword">int</span> *<span class="built_in">array</span>,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span>  </span></div><div class="line">&#123;  </div><div class="line">    <span class="keyword">if</span> (<span class="built_in">array</span>[left]&gt;<span class="built_in">array</span>[right])  </div><div class="line">    &#123;  </div><div class="line">        ExchangeAB(<span class="built_in">array</span>[left],<span class="built_in">array</span>[right]);  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">if</span> (left+<span class="number">1</span> &gt;= right)         <span class="comment">// 数组不多于2个元素 返回  </span></div><div class="line">    &#123;  </div><div class="line">        <span class="keyword">return</span> ;  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">int</span> k=(right-left+<span class="number">1</span>)/<span class="number">3</span>;  </div><div class="line">    StooGe_sort(<span class="built_in">array</span>,left,right-k);  </div><div class="line">    StooGe_sort(<span class="built_in">array</span>,left+k,right);  </div><div class="line">    StooGe_sort(<span class="built_in">array</span>,left,right-k);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">stooge_sort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> l,<span class="keyword">int</span> r)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (a[l]&gt;a[r]) swap(a[l],a[r]);</div><div class="line">    <span class="keyword">if</span> (l+<span class="number">1</span>&gt;=r) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">int</span> k=(r-l+<span class="number">1</span>)/<span class="number">3</span>;</div><div class="line">    stooge_sort(a,l,r-k);</div><div class="line">    stooge_sort(a,l+k,r);</div><div class="line">    stooge_sort(a,l,r-k);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<h1 id="参考推荐"><a href="#参考推荐" class="headerlink" title="参考推荐"></a>参考推荐</h1><hr>
-<p><a href="http://blog.sina.com.cn/s/blog_51cea4040100fcl6.html" target="_blank" rel="external">【OI杂记】神奇的地球之Stooge排序 </a><br><a href="http://blog.csdn.net/zhaogang1993/article/details/43601831" target="_blank" rel="external">排序算法(四)：Stooge排序</a><br><a href="http://www.cnblogs.com/cpoint/p/3367362.html" target="_blank" rel="external">Stooge 排序 </a><br><a href="http://www.bubuko.com/infodetail-201471.html" target="_blank" rel="external">排序算法之stooge排序</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortstooge1.gif&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
     
     </summary>
     
