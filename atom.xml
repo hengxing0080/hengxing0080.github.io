@@ -550,7 +550,7 @@ private Button bt_cancel;
     <link href="https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/"/>
     <id>https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/</id>
     <published>2017-08-01T15:58:10.000Z</published>
-    <updated>2017-09-19T11:57:21.988Z</updated>
+    <updated>2017-09-19T12:05:59.406Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_iq_interview.jpg" alt="UML图"><br><a id="more"></a></p>
 <hr>
@@ -564,7 +564,7 @@ private Button bt_cancel;
 <h2 id="方法2：二分"><a href="#方法2：二分" class="headerlink" title="方法2：二分"></a>方法2：二分</h2><p>每次把试剂分成两堆，然后用两只小白鼠测试，如果一只死掉了，那么就能确定哪一堆有毒。<br>然后继续分。因此，小白鼠的数量就是试剂能被二分的次数。<br>8只试剂能被二分3次，所以就需要3只小白鼠。</p>
 <p>步骤：<br>第一次二分：8 → 4 (此时用到的小白鼠数量：1)<br>第二次二分：4 → 2 (此时用到的小白鼠数量：2)<br>第三次二分：2 → 1 (此时用到的小白鼠数量：3) </p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>参考文章<br>　<a href="http://blog.csdn.net/u010429424/article/details/77856133" target="_blank" rel="external">面试题：8个试剂，其中一个有毒，最少多少只小白鼠能检测出有毒试剂</a><br>　<a href="http://blog.csdn.net/qq_33277870/article/details/78006116" target="_blank" rel="external">位的巧妙应用</a></p>
-<p>类似题目<br>　<a href="http://blog.csdn.net/sinat_28028941/article/details/53815587" target="_blank" rel="external">1000瓶试剂，其中一瓶有毒，最少需要多少只小白鼠能找出有毒的试剂</a><br>　原理差不多，知道解题思路便通杀其他类似的题</p>
+<p>类似题目<br>　<a href="http://blog.csdn.net/sinat_28028941/article/details/53815587" target="_blank" rel="external">1000瓶试剂，其中一瓶有毒，最少需要多少只小白鼠能找出有毒的试剂</a><br>　PS:原理差不多，知道解题思路便通杀其他类似的题</p>
 ]]></content>
     
     <summary type="html">
