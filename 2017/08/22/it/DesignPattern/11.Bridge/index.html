@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="简介中文吗：桥接模式英文名：Bridge Pattern又名：桥梁模式所属类型：结构型模式 UML结构图">
+<meta name="description" content="简介中文吗：桥接模式英文名：Bridge Pattern又名：桥梁模式 / 柄体(Handle and Body)模式 / 接口(Interface)模式所属类型：结构型模式 UML结构图">
 <meta name="keywords" content="面向对象和设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式GOF之11 —— 桥接模式（结构型模式）">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/08/22/it/DesignPattern/11.Bridge/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
-<meta property="og:description" content="简介中文吗：桥接模式英文名：Bridge Pattern又名：桥梁模式所属类型：结构型模式 UML结构图">
+<meta property="og:description" content="简介中文吗：桥接模式英文名：Bridge Pattern又名：桥梁模式 / 柄体(Handle and Body)模式 / 接口(Interface)模式所属类型：结构型模式 UML结构图">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_bridge1.jpg">
-<meta property="og:updated_time" content="2017-09-23T06:34:02.890Z">
+<meta property="og:updated_time" content="2017-09-23T07:29:57.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式GOF之11 —— 桥接模式（结构型模式）">
-<meta name="twitter:description" content="简介中文吗：桥接模式英文名：Bridge Pattern又名：桥梁模式所属类型：结构型模式 UML结构图">
+<meta name="twitter:description" content="简介中文吗：桥接模式英文名：Bridge Pattern又名：桥梁模式 / 柄体(Handle and Body)模式 / 接口(Interface)模式所属类型：结构型模式 UML结构图">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_pattern_bridge1.jpg">
 
 
@@ -416,7 +416,7 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：桥接模式<br>英文名：Bridge Pattern<br>又名：桥梁模式<br>所属类型：结构型模式</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：桥接模式<br>英文名：Bridge Pattern<br>又名：桥梁模式 / 柄体(Handle and Body)模式 / 接口(Interface)模式<br>所属类型：结构型模式</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_bridge1.jpg" alt="UML图"><br><a id="more"></a><br>角色介绍：</p>
 <ul>
 <li><p>Abstraction：抽象部分<br>该类保持一个对实现对象的引用，抽象部分中的方法需要调用实现部分的对象来实现，该类一般都抽象类。</p>
@@ -433,7 +433,8 @@
 <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>将抽象部分与它的实现部分分离，使它们都可以独立地变化。<br>什么叫抽象与它的实现分离，这并不是说，让抽象类与其派生类分离，因为没有任何意义。实现指的是抽象类和它的派生类用来实现自己的对象。</p>
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>连接两地的交通枢纽</p>
 <p>实现系统可能有多角度分类，每一种分类都有可能变化，那么就把这种多角度分离出来让它们独立变化，减少它们之间的耦合。</p>
-<p>将抽象化(Abstraction)与实现化(Implementation)脱耦，使得二者可以独立的变化，也就是说将他们之间的强关联变成弱关联，也就是指在一个软件系统的抽象化和实现化之间使用组合/聚合关系而不是继承关系，从而使两者可以独立的变化‘’</p>
+<p>将抽象化(Abstraction)与实现化(Implementation)脱耦，使得二者可以独立的变化，也就是说将他们之间的强关联变成弱关联，也就是指在一个软件系统的抽象化和实现化之间使用组合/聚合关系而不是继承关系，从而使两者可以独立的变化.</p>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><p>1.分离接口及其实现部分，这里实现了Abstraction和Implementor的分离，有助于降低对实现部分的依赖性，从而产生更好的结构化系统。<br>2.提高了可扩充性，可以独立的对Abstraction和Implementor层次结构进行扩充.</p>
 <hr>
 <h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><hr>
 <p>针对上述的UML结构图的代码示例</p>
@@ -448,14 +449,19 @@
 <p>5.开关与具体的电器<br>开关的类型有多种，而电器也是各式各样，这两者是独立变化的且又有耦合</p>
 <p>6.显示屏<br>显示屏的尺寸与生厂商之间也是一种二维关系，具体的尺寸与具体的厂商独立变化</p>
 <p>7.蜡笔与毛笔（大话设计模式（吴强）——第六章 蜡笔与毛笔）<br>蜡笔的颜色和蜡笔本身是分不开的，所以就造成必须使用36支色彩与大小各异的蜡笔来绘制图画。<br>而毛笔与颜料能够很好的脱耦，个子独立变化，便简化了操作。</p>
+<p>8.Java的JRE<br>JRE本身就是一个桥，先写好在linex上执行的JRE，在写好可以在windows下执行的JRE，这样无论什么样的Java程序，只要配合相应的JRE就能在Linux或者Windows上运行。两个JRE兵没有限定你写什么样的程雪，但要求你必须用Java来写。</p>
 <h1 id="Android源码中的桥接模式实现"><a href="#Android源码中的桥接模式实现" class="headerlink" title="Android源码中的桥接模式实现"></a>Android源码中的桥接模式实现</h1><p>1.Window与WindowManager</p>
 <p>2.WindowManagerService</p>
 <p>3.Adapter与AdapterView</p>
 <p>4.View的视图曾觌与执行真正的硬件绘制相关功能实现类（DisplayList, HadrdwareLayer和Canvas负责）之间的关系是可以看做是一种桥接模式</p>
 <p>5.对于Android来说，应用层与Native层之间的交互就是一个最好的例子<br>需要操纵Android设备硬件时就需要使用一个连接应用层与Native的桥梁，这个桥梁通常是一个具体的类，比如提供操作相机的Camera，播放音视频的MediaPlayer，提供图形绘制接口的OpenCV等，这些API类为我们操作底层硬件提供了可能。</p>
+<h1 id="与其它模式的区别"><a href="#与其它模式的区别" class="headerlink" title="与其它模式的区别"></a>与其它模式的区别</h1><p>桥接模式与适配器模式有什么不用？<br>公共点：桥接和适配器都是让两个东西配合工作<br>不同点：出发点不同。<br>适配器模式：改变已有的两个接口，让他们相容。<br>桥接模式：分离抽象化和实现，使两者的接口可以不同，目的是分离。<br>所以说，如果拿到两个已有模块，想让他们同时工作，那么你使用适配器。<br>如果还什么都没有，但是想分开实现，那么桥接生一个选择。<br>桥接是先有桥，才有两端的东西。<br>适配是现有两边，才有适配器。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>桥接模式可以应用到许多开发中，但是它应用得却不多，一个很重要的原因是对于抽象与实现的分离的把握，是不是需要分离，如何分离？<br>所以对设计者来说要有一个恰到好处的分寸。</p>
 <h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><p>优点：<br>分离抽象与实现，灵活的扩展以及对客户来说透明的实现</p>
 <p>缺点：<br>不容易设计，对开发者来说要有一定的经验要求。理解很容易，设计却不容易。</p>
+<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>遵循 单一职责、迪米特、开放-封闭原则、合成/聚合复用原则</p>
+<h1 id="使用概率："><a href="#使用概率：" class="headerlink" title="使用概率："></a>使用概率：</h1><p>20%</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>中高</p>
 
       
     </div>
@@ -757,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML结构图"><span class="nav-number">2.</span> <span class="nav-text">UML结构图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">3.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">4.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码示例"><span class="nav-number">5.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">6.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用案例"><span class="nav-number">7.</span> <span class="nav-text">使用案例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android源码中的桥接模式实现"><span class="nav-number">8.</span> <span class="nav-text">Android源码中的桥接模式实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">10.</span> <span class="nav-text">优缺点</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML结构图"><span class="nav-number">2.</span> <span class="nav-text">UML结构图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">3.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">4.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#特点"><span class="nav-number">5.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码示例"><span class="nav-number">6.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">7.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用案例"><span class="nav-number">8.</span> <span class="nav-text">使用案例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android源码中的桥接模式实现"><span class="nav-number">9.</span> <span class="nav-text">Android源码中的桥接模式实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#与其它模式的区别"><span class="nav-number">10.</span> <span class="nav-text">与其它模式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">12.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">13.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用概率："><span class="nav-number">14.</span> <span class="nav-text">使用概率：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂度"><span class="nav-number">15.</span> <span class="nav-text">复杂度</span></a></li></ol></div>
             
 
           </div>
