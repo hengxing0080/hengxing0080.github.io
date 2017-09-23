@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hengxing0080.github.io/2017/08/22/it/DesignPattern/11.Bridge/</loc>
+    
+    <lastmod>2017-09-23T06:34:02.890Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/23/it/DesignPattern/12.Flyweight/</loc>
+    
+    <lastmod>2017-09-22T16:46:53.610Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/01/manager/1.Rule/</loc>
     
     <lastmod>2017-09-22T12:40:24.888Z</lastmod>
@@ -40,20 +54,6 @@
     <loc>https://hengxing0080.github.io/2017/07/16/it/Algorithm/ModuloOperation/</loc>
     
     <lastmod>2017-09-19T03:43:58.398Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/23/it/DesignPattern/12.Flyweight/</loc>
-    
-    <lastmod>2017-09-18T16:34:13.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/22/it/DesignPattern/11.Bridge/</loc>
-    
-    <lastmod>2017-09-14T08:51:02.000Z</lastmod>
     
   </url>
   
@@ -296,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
