@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hengxing0080.github.io/"/>
-  <updated>2017-09-23T07:43:36.045Z</updated>
+  <updated>2017-09-24T11:29:51.182Z</updated>
   <id>https://hengxing0080.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>时间管理/行动管理/企业管理的实用法则</title>
-    <link href="https://hengxing0080.github.io/2017/09/01/manager/1.Rule/"/>
-    <id>https://hengxing0080.github.io/2017/09/01/manager/1.Rule/</id>
-    <published>2017-09-01T08:51:55.000Z</published>
-    <updated>2017-09-23T07:43:36.045Z</updated>
+    <link href="https://hengxing0080.github.io/2017/09/21/manager/1.Rule/"/>
+    <id>https://hengxing0080.github.io/2017/09/21/manager/1.Rule/</id>
+    <published>2017-09-21T08:51:55.000Z</published>
+    <updated>2017-09-24T11:29:51.182Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_manager_rule1.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>工作期间收集的，因篇幅太长，如对某个关键词感兴趣请自行搜索详细资料！</p>
@@ -230,9 +230,100 @@
   </entry>
   
   <entry>
+    <title>网络 —— 协议：UDP</title>
+    <link href="https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/"/>
+    <id>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/</id>
+    <published>2017-09-01T15:10:05.000Z</published>
+    <updated>2017-09-24T12:23:11.225Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_network_udp.jpg" alt="UML图"></p>
+<a id="more"></a>
+<p>中文名　用户数据报协议<br>外文名　User Datagram Protocol<br>特点　不可靠快速传输<br>简称　UDP<br>用途　应用程序之间的简单通信</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>一个简单的面向数据报的运输层协议。<br>UDP不提供可靠性，它只是把应用程序传给IP层的数据报发送出去，但是并不能保证它们能到达目的地。<br>由于UDP在传输数据报前不用在客户和服务器之间建立一个连接，且没有超时重发等机制，故而传输速度很快<br>UDP 和 TCP 很相似，但是更简单，同时可靠性低于 TCP。</p>
+<h1 id="UDP连接和TCP的不同之处"><a href="#UDP连接和TCP的不同之处" class="headerlink" title="UDP连接和TCP的不同之处"></a>UDP连接和TCP的不同之处</h1><p>Tcp：<br>滑动窗口协议. 拥塞控制.<br>面向连接<br>类似InputStream和OutputStream，是个流，流里的数据不会断开，前后顺序也不会混乱<br>画面优先（数据不丢包）</p>
+<p>Udp：<br>不关心数据是否达到,是否阻塞<br>面向无连接<br>流畅优先（速度快）</p>
+<h1 id="Java中的UDP"><a href="#Java中的UDP" class="headerlink" title="Java中的UDP"></a>Java中的UDP</h1><p>对象：DatagramSocket与DatagramPacket</p>
+<p>步骤：<br>建立发送端，接收端。<br>建立数据包。<br>调用Socket的发送接收方法。<br>关闭Socket。</p>
+<p>运行顺序：<br>发送端与接收端是两个独立的运行程序。<br>因为是面向无连接，所以先运行哪个都行</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_network_udp.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="IT - 网络 - 协议" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+      <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络 —— 协议：TCP</title>
+    <link href="https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/"/>
+    <id>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/</id>
+    <published>2017-09-01T13:11:55.000Z</published>
+    <updated>2017-09-24T12:22:39.257Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_network_tcp0.png" alt="UML图"></p>
+<a id="more"></a>
+<p>中文名　传输控制协议<br>英文名　Transmission Control Protocol<br>简称　TCP</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>TCP 用于应用程序之间通信的一种协议规范,用于从应用程序到网络的数据传输控制。<br>TCP 负责在数据传送之前将它们分割为 IP 包，然后在它们到达的时候将它们重组。</p>
+<p>提供的是面向连接、可靠的字节流服务。<br>当客户和服务器彼此交换数据前，必须先在双方之间建立一个TCP连接，之后才能传输数据。<br>TCP提供超时重发，丢弃重复数据，检验数据，流量控制等功能，保证数据能从一端传到另一端</p>
+<p>当应用程序希望通过 TCP 与另一个应用程序通信时，它会发送一个通信请求。这个请求必须被送到一个确切的地址。在双方“握手”之后，TCP 将在两个应用程序之间建立一个全双工 (full-duplex) 的通信。<br>这个全双工的通信将占用两个计算机之间的通信线路，直到它被一方或双方关闭为止。</p>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><p>TCP传输数据量大，UDP也能大量数据传输，不过UDP是以小包方式发出.</p>
+<hr>
+<h1 id="TCP的3次握手（连接建立）"><a href="#TCP的3次握手（连接建立）" class="headerlink" title="TCP的3次握手（连接建立）"></a>TCP的3次握手（连接建立）</h1><hr>
+<h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p>三次握手是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。<br>TCP是因特网中的传输层协议，使用三次握手协议建立连接。当主动方发出SYN连接请求后，等待对方回答SYN+ACK ，并最终对对方的 SYN 执行 ACK 确认。<br>这种建立连接的方法可以防止产生错误的连接，TCP使用的流量控制协议是可变大小的滑动窗口协议。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>类似打电话效果<br>第一次握手：客户端发送数据包给服务端，等待服务器确认好建立连接（SYN)<br>第二次握手：服务器收到数据包，同时自己给发送个数据包给客户端（SYN+ACK）<br>第三次握手：客户端收到服务器的数据包，向服务器发送确认数据（ACK）<br>此包发送完毕，客户端和服务器进行连接状态，完成三次握手</p>
+<h2 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h2><p><img src="/images/it_network_tcp1.png" alt="UML图"></p>
+<hr>
+<h1 id="TCP的4次挥手（连接终止）"><a href="#TCP的4次挥手（连接终止）" class="headerlink" title="TCP的4次挥手（连接终止）"></a>TCP的4次挥手（连接终止）</h1><hr>
+<h2 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h2><p>建立一个连接需要三次握手，而终止一个连接要经过四次握手，这是由TCP的半关闭（half-close）造成的。<br>所谓四次挥手,是指断开一个TCP连接时，客户端和服务端发送4个包。<br>断开连接，双方都是可以主动断开的。客户端和服务端都有可能是主动断开者.<br>断开连接和和建立连接的区别：建立连接主动方永远是客户端，碰不到服务器来连接客户端</p>
+<h2 id="挥手流程"><a href="#挥手流程" class="headerlink" title="挥手流程"></a>挥手流程</h2><ol>
+<li><code>主动方</code> 发送请求给 <code>被动方</code>，请求断开连接.（FIN）</li>
+<li><code>被动方</code> 接收断开请求，对 <code>主动方</code> 发送响应:收到断开请求。（ACK）</li>
+<li><code>被动方</code> 送数据包给 <code>主动方</code> 你可以关闭了，并关闭与 <code>主动方</code> 的连接。（FIN）</li>
+<li><code>主动方</code> 收到断开信号后，对 <code>被动方</code> 发送数据包:我断了哦。（ACK）</li>
+</ol>
+<h2 id="图示-1"><a href="#图示-1" class="headerlink" title="图示"></a>图示</h2><p><img src="/images/it_network_tcp2.png" alt="UML图"></p>
+<h1 id="TCP传输连接中的控制位（SYN、ACK、FIN等等）分别是什么意思？"><a href="#TCP传输连接中的控制位（SYN、ACK、FIN等等）分别是什么意思？" class="headerlink" title="TCP传输连接中的控制位（SYN、ACK、FIN等等）分别是什么意思？"></a>TCP传输连接中的控制位（SYN、ACK、FIN等等）分别是什么意思？</h1><p><img src="/images/it_network_tcp3.jpg" alt="UML图"></p>
+<ul>
+<li><p>SYN：同步标志<br>同步序列编号(Synchronize Sequence Numbers)栏有效。该标志仅在三次握手建立TCP连接时有效。它提示TCP连接的服务端检查序列编号，该序列编号为TCP连接初始端(一般是客户端)的初始序列编号。在这里，可以把TCP序列编号看作是一个范围从0到4，294，967，295的32位计数器。通过TCP连接交换的数据中每一个字节都经过序列编号。在TCP报头中的序列编号栏包括了TCP分段中第一个字节的序列编号。</p>
+</li>
+<li><p>ACK：确认标志<br>确认编号(Acknowledgement Number)栏有效。大多数情况下该标志位是置位的。TCP报头内的确认编号栏内包含的确认编号(w+1，Figure-1)为下一个预期的序列编号，同时提示远端系统已经成功接收所有数据。</p>
+</li>
+<li><p>RST：复位标志<br>复位标志有效。用于复位相应的TCP连接。</p>
+</li>
+<li><p>URG：紧急标志<br>   紧急(The urgent pointer) 标志有效。紧急标志置位，</p>
+</li>
+<li><p>PSH：推标志<br>   该标志置位时，接收端不将该数据进行队列处理，而是尽可能快将数据转由应用处理。在处理 telnet 或 rlogin 等交互模式的连接时，该标志总是置位的。</p>
+</li>
+<li><p>FIN：结束标志<br>   带有该标志置位的数据包用来结束一个TCP回话，但对应端口仍处于开放状态，准备接收后续数据</p>
+</li>
+</ul>
+<h1 id="Java中的TCP"><a href="#Java中的TCP" class="headerlink" title="Java中的TCP"></a>Java中的TCP</h1><p>TCP分客户端和服务端<br>客户端对应的对象是Socket<br>服务端对应的对象是ServerSocket</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_network_tcp0.png&quot; alt=&quot;UML图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="IT - 网络 - 协议" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+      <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>运算符系列：位运算符</title>
-    <link href="https://hengxing0080.github.io/2017/08/25/it/Algorithm/BitwiseOperation/"/>
-    <id>https://hengxing0080.github.io/2017/08/25/it/Algorithm/BitwiseOperation/</id>
+    <link href="https://hengxing0080.github.io/2017/08/25/it/DataStructure&amp;Algorithm/BitwiseOperation/"/>
+    <id>https://hengxing0080.github.io/2017/08/25/it/DataStructure&amp;Algorithm/BitwiseOperation/</id>
     <published>2017-08-25T03:54:12.000Z</published>
     <updated>2017-09-19T10:13:49.306Z</updated>
     
@@ -286,10 +377,10 @@
   
   <entry>
     <title>设计模式GOF之12 —— 享元模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/23/it/DesignPattern/12.Flyweight/"/>
-    <id>https://hengxing0080.github.io/2017/08/23/it/DesignPattern/12.Flyweight/</id>
+    <link href="https://hengxing0080.github.io/2017/08/23/it/OOP&amp;DesignPattern/2.12.Flyweight/"/>
+    <id>https://hengxing0080.github.io/2017/08/23/it/OOP&amp;DesignPattern/2.12.Flyweight/</id>
     <published>2017-08-23T13:10:30.000Z</published>
-    <updated>2017-09-23T07:29:56.006Z</updated>
+    <updated>2017-09-23T07:55:42.216Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：享元模式<br>英文名：Flyweight<br>又名：共享模式<br>所属类型：结构型模式</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_flyweight1.jpg" alt="UML图"><br><a id="more"></a></p>
@@ -329,6 +420,7 @@
 <h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><p>优点：<br>大幅度降低内存中对象的数量</p>
 <p>缺点：<br>1.使系统更加复杂。为了使对象可以共享，需要将一些状态外部化，这使程序的逻辑复杂化。<br>2.享元模式将享元对象的状态外部化，而读取外部状态使得运行时间稍微变长。<br>3.使用享元模式需要维护一个记录了系统已有的所有享元的列表，而这本身需要耗费资源。</p>
 <p>所以应当在有足够多的对象实例可供共享时才值得使用享元模式。</p>
+<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>遵循 单一职责</p>
 <h1 id="使用概率"><a href="#使用概率" class="headerlink" title="使用概率"></a>使用概率</h1><p>90%</p>
 <h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>中</p>
 <h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p><a href="http://www.cnblogs.com/V1haoge/p/6542449.html" target="_blank" rel="external">Java设计模式之《享元模式》及应用场景</a></p>
@@ -350,10 +442,10 @@
   
   <entry>
     <title>设计模式GOF之11 —— 桥接模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/22/it/DesignPattern/11.Bridge/"/>
-    <id>https://hengxing0080.github.io/2017/08/22/it/DesignPattern/11.Bridge/</id>
+    <link href="https://hengxing0080.github.io/2017/08/22/it/OOP&amp;DesignPattern/2.11.Bridge/"/>
+    <id>https://hengxing0080.github.io/2017/08/22/it/OOP&amp;DesignPattern/2.11.Bridge/</id>
     <published>2017-08-22T12:05:31.000Z</published>
-    <updated>2017-09-23T07:29:57.838Z</updated>
+    <updated>2017-09-23T08:18:56.475Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：桥接模式<br>英文名：Bridge Pattern<br>又名：桥梁模式 / 柄体(Handle and Body)模式 / 接口(Interface)模式<br>所属类型：结构型模式</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_bridge1.jpg" alt="UML图"><br><a id="more"></a><br>角色介绍：</p>
@@ -398,7 +490,7 @@
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>桥接模式可以应用到许多开发中，但是它应用得却不多，一个很重要的原因是对于抽象与实现的分离的把握，是不是需要分离，如何分离？<br>所以对设计者来说要有一个恰到好处的分寸。</p>
 <h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><p>优点：<br>分离抽象与实现，灵活的扩展以及对客户来说透明的实现</p>
 <p>缺点：<br>不容易设计，对开发者来说要有一定的经验要求。理解很容易，设计却不容易。</p>
-<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>遵循 单一职责、迪米特、开放-封闭原则、合成/聚合复用原则</p>
+<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>遵循 单一职责、迪米特、开放-封闭原则、合成/聚合复用原则（桥接模式的代表原则）</p>
 <h1 id="使用概率："><a href="#使用概率：" class="headerlink" title="使用概率："></a>使用概率：</h1><p>20%</p>
 <h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>中高</p>
 ]]></content>
@@ -419,8 +511,8 @@
   
   <entry>
     <title>设计模式GOF之10 —— 组合模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/21/it/DesignPattern/10.Composite/"/>
-    <id>https://hengxing0080.github.io/2017/08/21/it/DesignPattern/10.Composite/</id>
+    <link href="https://hengxing0080.github.io/2017/08/21/it/OOP&amp;DesignPattern/2.10.Composite/"/>
+    <id>https://hengxing0080.github.io/2017/08/21/it/OOP&amp;DesignPattern/2.10.Composite/</id>
     <published>2017-08-21T13:21:51.000Z</published>
     <updated>2017-09-14T08:24:54.000Z</updated>
     
@@ -459,8 +551,8 @@
   
   <entry>
     <title>设计模式GOF之9 —— 外观模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/20/it/DesignPattern/9.State/"/>
-    <id>https://hengxing0080.github.io/2017/08/20/it/DesignPattern/9.State/</id>
+    <link href="https://hengxing0080.github.io/2017/08/20/it/OOP&amp;DesignPattern/2.9.State/"/>
+    <id>https://hengxing0080.github.io/2017/08/20/it/OOP&amp;DesignPattern/2.9.State/</id>
     <published>2017-08-20T12:00:02.000Z</published>
     <updated>2017-09-14T04:32:12.000Z</updated>
     
@@ -499,8 +591,8 @@
   
   <entry>
     <title>设计模式GOF之8 —— 适配器模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/19/it/DesignPattern/8.adapter/"/>
-    <id>https://hengxing0080.github.io/2017/08/19/it/DesignPattern/8.adapter/</id>
+    <link href="https://hengxing0080.github.io/2017/08/19/it/OOP&amp;DesignPattern/2.8.adapter/"/>
+    <id>https://hengxing0080.github.io/2017/08/19/it/OOP&amp;DesignPattern/2.8.adapter/</id>
     <published>2017-08-19T14:12:59.000Z</published>
     <updated>2017-09-13T16:37:00.788Z</updated>
     
@@ -552,8 +644,8 @@
   
   <entry>
     <title>框架模式 —— MVC &amp; MVP &amp; MVVM &amp; MVPVM</title>
-    <link href="https://hengxing0080.github.io/2017/08/17/it/DesignPattern/MVC/"/>
-    <id>https://hengxing0080.github.io/2017/08/17/it/DesignPattern/MVC/</id>
+    <link href="https://hengxing0080.github.io/2017/08/17/it/OOP&amp;DesignPattern/3.1.MVC/"/>
+    <id>https://hengxing0080.github.io/2017/08/17/it/OOP&amp;DesignPattern/3.1.MVC/</id>
     <published>2017-08-17T13:11:01.000Z</published>
     <updated>2017-09-13T10:38:40.000Z</updated>
     
@@ -623,8 +715,8 @@
   
   <entry>
     <title>设计模式 —— IOC（控制反转）</title>
-    <link href="https://hengxing0080.github.io/2017/08/15/it/DesignPattern/IOC/"/>
-    <id>https://hengxing0080.github.io/2017/08/15/it/DesignPattern/IOC/</id>
+    <link href="https://hengxing0080.github.io/2017/08/15/it/OOP&amp;DesignPattern/4.1.IOC/"/>
+    <id>https://hengxing0080.github.io/2017/08/15/it/OOP&amp;DesignPattern/4.1.IOC/</id>
     <published>2017-08-15T07:21:32.000Z</published>
     <updated>2017-09-13T10:03:36.000Z</updated>
     
@@ -660,8 +752,8 @@
   
   <entry>
     <title>设计模式GOF之7 —— 代理模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/12/it/DesignPattern/7.Proxy/"/>
-    <id>https://hengxing0080.github.io/2017/08/12/it/DesignPattern/7.Proxy/</id>
+    <link href="https://hengxing0080.github.io/2017/08/12/it/OOP&amp;DesignPattern/2.7.Proxy/"/>
+    <id>https://hengxing0080.github.io/2017/08/12/it/OOP&amp;DesignPattern/2.7.Proxy/</id>
     <published>2017-08-12T03:22:47.000Z</published>
     <updated>2017-08-30T10:41:01.141Z</updated>
     
@@ -711,8 +803,8 @@
   
   <entry>
     <title>设计模式GOF之6 —— 装饰模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/10/it/DesignPattern/6.Decorator/"/>
-    <id>https://hengxing0080.github.io/2017/08/10/it/DesignPattern/6.Decorator/</id>
+    <link href="https://hengxing0080.github.io/2017/08/10/it/OOP&amp;DesignPattern/2.6.Decorator/"/>
+    <id>https://hengxing0080.github.io/2017/08/10/it/OOP&amp;DesignPattern/2.6.Decorator/</id>
     <published>2017-08-10T00:11:22.000Z</published>
     <updated>2017-08-30T10:27:33.925Z</updated>
     
@@ -805,8 +897,8 @@
   
   <entry>
     <title>数据结构与算法 —— 线性表</title>
-    <link href="https://hengxing0080.github.io/2017/08/01/it/DataStructure/LinearList/"/>
-    <id>https://hengxing0080.github.io/2017/08/01/it/DataStructure/LinearList/</id>
+    <link href="https://hengxing0080.github.io/2017/08/01/it/DataStructure&amp;Algorithm/LinearList/"/>
+    <id>https://hengxing0080.github.io/2017/08/01/it/DataStructure&amp;Algorithm/LinearList/</id>
     <published>2017-08-01T01:50:23.000Z</published>
     <updated>2017-08-26T06:10:47.364Z</updated>
     
@@ -895,8 +987,8 @@
   
   <entry>
     <title>数据结构与算法 —— 排序系列：计数排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/31/it/Algorithm/SortCounting/"/>
-    <id>https://hengxing0080.github.io/2017/07/31/it/Algorithm/SortCounting/</id>
+    <link href="https://hengxing0080.github.io/2017/07/31/it/DataStructure&amp;Algorithm/SortCounting/"/>
+    <id>https://hengxing0080.github.io/2017/07/31/it/DataStructure&amp;Algorithm/SortCounting/</id>
     <published>2017-07-31T14:02:57.000Z</published>
     <updated>2017-08-13T08:30:46.189Z</updated>
     
@@ -923,8 +1015,8 @@
   
   <entry>
     <title>数据结构与算法 —— 排序系列：桶排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/30/it/Algorithm/SortBucket/"/>
-    <id>https://hengxing0080.github.io/2017/07/30/it/Algorithm/SortBucket/</id>
+    <link href="https://hengxing0080.github.io/2017/07/30/it/DataStructure&amp;Algorithm/SortBucket/"/>
+    <id>https://hengxing0080.github.io/2017/07/30/it/DataStructure&amp;Algorithm/SortBucket/</id>
     <published>2017-07-30T11:01:33.000Z</published>
     <updated>2017-08-13T08:09:44.186Z</updated>
     
@@ -956,8 +1048,8 @@
   
   <entry>
     <title>数据结构与算法 —— 排序系列：基数排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/29/it/Algorithm/SortRadix/"/>
-    <id>https://hengxing0080.github.io/2017/07/29/it/Algorithm/SortRadix/</id>
+    <link href="https://hengxing0080.github.io/2017/07/29/it/DataStructure&amp;Algorithm/SortRadix/"/>
+    <id>https://hengxing0080.github.io/2017/07/29/it/DataStructure&amp;Algorithm/SortRadix/</id>
     <published>2017-07-29T03:52:09.000Z</published>
     <updated>2017-08-13T06:50:02.308Z</updated>
     
@@ -987,8 +1079,8 @@
   
   <entry>
     <title>数据结构与算法 —— 排序算法总结</title>
-    <link href="https://hengxing0080.github.io/2017/07/28/it/Algorithm/SortAlgorithm/"/>
-    <id>https://hengxing0080.github.io/2017/07/28/it/Algorithm/SortAlgorithm/</id>
+    <link href="https://hengxing0080.github.io/2017/07/28/it/DataStructure&amp;Algorithm/SortAlgorithm/"/>
+    <id>https://hengxing0080.github.io/2017/07/28/it/DataStructure&amp;Algorithm/SortAlgorithm/</id>
     <published>2017-07-28T15:01:02.000Z</published>
     <updated>2017-08-13T05:49:49.132Z</updated>
     
@@ -1039,8 +1131,8 @@
   
   <entry>
     <title>数据结构与算法 —— 排序系列：快速排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/28/it/Algorithm/SortQuick/"/>
-    <id>https://hengxing0080.github.io/2017/07/28/it/Algorithm/SortQuick/</id>
+    <link href="https://hengxing0080.github.io/2017/07/28/it/DataStructure&amp;Algorithm/SortQuick/"/>
+    <id>https://hengxing0080.github.io/2017/07/28/it/DataStructure&amp;Algorithm/SortQuick/</id>
     <published>2017-07-28T13:35:12.000Z</published>
     <updated>2017-07-29T15:32:33.168Z</updated>
     
@@ -1077,101 +1169,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortquick1.gif&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络 —— 协议：HTTP</title>
-    <link href="https://hengxing0080.github.io/2017/07/28/it/NetworkProtocol/HTTP/"/>
-    <id>https://hengxing0080.github.io/2017/07/28/it/NetworkProtocol/HTTP/</id>
-    <published>2017-07-28T09:11:55.000Z</published>
-    <updated>2017-07-28T10:18:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_network_http.jpg" alt="UML图"></p>
-<a id="more"></a>
-<p>中文名 　超文本传输协议<br>外文名 　HTTP（HyperText Transfer Protocol）</p>
-<hr>
-<h1 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h1><hr>
-<p>定义了浏览器(万维网客户进程)怎样向万维网服务器请求万维网文档，以及服务器怎样把文档传送给浏览器.<br>从层次的角度看,HTTP是面向(transaction-oriented)应用层协议，它是万维网上能够可靠地交换文件，(包括文本,声音,图像等各种多媒体文件)的重要基础。         </p>
-<p>通过HTTP或者HTTPS协议请求的资源由统一资源标示符（Uniform Resource Identifiers）来标识。<br>我们在浏览器的地址栏里输入的网站地址叫做URL (Uniform Resource Locator，统一资源定位符)。<br>就像每家每户都有一个门牌地址一样，每个网页也都有一个Internet地址。<br>当你在浏览器的地址框中输入一个URL或是单击一个超级链接时，URL就确定了要浏览的地址。<br>浏览器通过超文本传输协议(HTTP)，将Web服务器上站点的网页代码提取出来，并翻译成漂亮的网页。</p>
-<p>简单的理解就是：<br>基于TCP，只不过封装了一些东西。<br>Http协议用于加载以 http:// 开头的普通远程网站的HTML网页。不加密。</p>
-<hr>
-<h1 id="HTTP工作原理"><a href="#HTTP工作原理" class="headerlink" title="HTTP工作原理"></a>HTTP工作原理</h1><hr>
-<p>HTTP协议工作于客户端-服务端架构为上。浏览器作为HTTP客户端通过URL向HTTP服务端即WEB服务器发送所有请求。<br>Web服务器有：Apache服务器，IIS服务器（Internet Information Services）等。<br>Web服务器根据接收到的请求后，向客户端发送响应信息。<br>HTTP默认端口号为80，但是你也可以改为8080或者其他端口。</p>
-<p>HTTP三点注意事项：<br>1.HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。<br>2.HTTP是无状态：无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。<br>3.HTTP是媒体独立的：这意味着，只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。</p>
-<p>HTTP协议，你只需要稍微了解一些就足够了，它的工作原理特别的简单，就是客户端向服务器发出一条HTTP请求，服务器收到请求之后会返回一些数据给客户端，然后客户端再对这些数据进行解析和处理就可以了。<br>是不是非常简单？<br>一个浏览器的基本工作原理也就是如此了。<br>比如Android里使用到的WebView控件，其实也就是我们向百度的服务器发起了一条HTTP请求，接着服务器分析出我们想要访问的是百度的首页，于是会把该网页的HTML代码进行返回，然后WebView再调用手机浏览器的内核对返回的HTML代码进行解析，最终将页面展示出来。</p>
-<p>http协议是用在应用层的协议，他是基于tcp协议的，http协议建立链接也必须要有三次握手才能发送信息。<br>http链接分为短链接，长链接，短链接是每次请求都要三次握手才能发送自己的信息。即每一个request对应一个response。长链接是在一定的期限内保持链接。保持TCP连接不断开。客户端与服务器通信，必须要有客户端发起然后服务器返回结果。客户端是主动的，服务器是被动的。</p>
-<hr>
-<h1 id="HTTP版本历史"><a href="#HTTP版本历史" class="headerlink" title="HTTP版本历史"></a>HTTP版本历史</h1><hr>
-<blockquote>
-<p>超文本传输协议已经演化出了很多版本，它们中的大部分都是向下兼容的.</p>
-</blockquote>
-<ul>
-<li><p>HTTP/0.9　<br>已过时。<br>只接受 GET 一种请求方法，没有在通讯中指定版本号，且不支持请求头。<br>由于该版本不支持 POST 方法，所以客户端无法向服务器传递太多信息。</p>
-</li>
-<li><p>HTTP/1.0　<br>这是第一个在通讯中指定版本号的HTTP协议版本，至今仍被广泛采用，特别是在代理服务器中。</p>
-</li>
-<li><p>HTTP/1.1<br>当前版本。持久连接被默认采用，并能很好地配合代理服务器工作。<br>还支持以管道方式同时发送多个请求，以便降低线路负载，提高传输速度。<br>版本1.0和1.1 的区别:<br>　1 缓存处理<br>　2 带宽优化及网络连接的使用<br>　　在HTTP1.0协议中，客户端与web服务器建立连接后，只能获得一个web资源。<br>　　HTTP1.1协议，允许客户端与web服务器建立连接后，在一个连接上获取多个web资源。<br>　3 错误通知的管理<br>　4 消息在网络中的发送<br>　5 互联网地址的维护<br>　6 安全性及完整性</p>
-</li>
-</ul>
-<p>想要提交数据到数据器，必须和它要接口（url, method请求方式, param参数，header消息头）</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_network_http.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="IT - 网络 - 协议" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
-    
-    
-      <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法 —— 排序系列：归并排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/27/it/Algorithm/SortMerging/"/>
-    <id>https://hengxing0080.github.io/2017/07/27/it/Algorithm/SortMerging/</id>
-    <published>2017-07-27T12:47:32.000Z</published>
-    <updated>2017-07-29T15:20:29.982Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_algorithm_sortmerging1.gif" alt="UML图"><br><a id="more"></a><br><img src="/images/it_algorithm_sortmerging2.jpg" alt="UML图"></p>
-<hr>
-<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><hr>
-<p>归并排序（Merging Sort）是建立在归并操作上的一种有效的排序算法<br>发明者为约翰·冯·诺伊曼<br>该算法是采用分治法（Divide and Conquer）实现快速排序<br>将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。</p>
-<p>归并的就是合并，并入的意思，而在数据结构中的定义是将两个或两个以上的有序表组合成一个新的有序表。<br>就是利用归并的思想实现的排序方法。</p>
-<hr>
-<h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><hr>
-<p>回想上一个讲的堆排序充分利用了完全二叉树的深度是[log2n]+1的特性，所以效率比较高。<br>不过堆结构的设计本身是比较复杂的，那么有没有更直接简单的办法利用完全二叉树来排序呢？ 有，归并排序。</p>
-<p>看图所示，将无序的数组序列{16,7,13,10,9,15,3,2,5,8,12,1,11,4,6,14}，通过两两合并排序后在合并，最终获得了一个有序的数组。<br>注意它的形状，它像极了一颗导致的完全二叉树，通常涉及到完全二叉树结构的排序算法，效率一般都不低的<br><img src="/images/it_algorithm_sortmerging3.png" alt="UML图"></p>
-<hr>
-<h1 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h1><hr>
-<h2 id="递归法"><a href="#递归法" class="headerlink" title="递归法"></a>递归法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 将有序的SR[i..m]和SR[m+1..n]归并为有序的TR[i..n] */</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span> SR[],<span class="keyword">int</span> TR[],<span class="keyword">int</span> i,<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span></span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">int</span> j,k,l;</div><div class="line">     <span class="keyword">for</span>(j=m+<span class="number">1</span>,k=i;i&lt;=m &amp;&amp; j&lt;=n;k++)	<span class="comment">/* 将SR中记录由小到大地并入TR */</span></div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span> (SR[i]&lt;SR[j])</div><div class="line">             TR[k]=SR[i++];</div><div class="line">         <span class="keyword">else</span></div><div class="line">             TR[k]=SR[j++];</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">if</span>(i&lt;=m)</div><div class="line">     &#123;</div><div class="line">         <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;=m-i;l++)</div><div class="line">             TR[k+l]=SR[i+l];		<span class="comment">/* 将剩余的SR[i..m]复制到TR */</span></div><div class="line">     &#125;</div><div class="line">     <span class="keyword">if</span>(j&lt;=n)</div><div class="line">     &#123;</div><div class="line">         <span class="keyword">for</span>(l=<span class="number">0</span>;l&lt;=n-j;l++)</div><div class="line">             TR[k+l]=SR[j+l];		<span class="comment">/* 将剩余的SR[j..n]复制到TR */</span></div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="comment">/* 将SR[s..t]归并排序为TR1[s..t] */</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">MSort</span><span class="params">(<span class="keyword">int</span> SR[],<span class="keyword">int</span> TR1[],<span class="keyword">int</span> s, <span class="keyword">int</span> t)</span></span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">int</span> m;</div><div class="line">     <span class="keyword">int</span> TR2[MAXSIZE+<span class="number">1</span>];</div><div class="line">     <span class="keyword">if</span>(s==t)</div><div class="line">         TR1[s]=SR[s];</div><div class="line">     <span class="keyword">else</span></div><div class="line">     &#123;</div><div class="line">         m=(s+t)/<span class="number">2</span>;			<span class="comment">/* 将SR[s..t]平分为SR[s..m]和SR[m+1..t] */</span></div><div class="line">         MSort(SR,TR2,s,m);		<span class="comment">/* 递归地将SR[s..m]归并为有序的TR2[s..m] */</span></div><div class="line">         MSort(SR,TR2,m+<span class="number">1</span>,t);	<span class="comment">/* 递归地将SR[m+1..t]归并为有序的TR2[m+1..t] */</span></div><div class="line">         Merge(TR2,TR1,s,m,t);	<span class="comment">/* 将TR2[s..m]和TR2[m+1..t]归并到TR1[s..t] */</span></div><div class="line">     &#125;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="comment">/* 对顺序表L作归并排序 */</span></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">MergeSort</span><span class="params">(SqList *L)</span></span></div><div class="line"> &#123; </div><div class="line">     MSort(L-&gt;r,L-&gt;r,<span class="number">1</span>,L-&gt;length);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<h2 id="非递归法"><a href="#非递归法" class="headerlink" title="非递归法"></a>非递归法</h2><p>因为递归的方式尽管在代码中比较清晰，容易理解，但这会造成时间和空间上的性能损耗。<br>我们排序追求的就是笑了，有没有可能将递归转化成迭代呢？ 结论当然是有的，经过改动之后，性能上进一步提高了。看看下面代码！</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 将SR[]中相邻长度为s的子序列两两归并到TR[] */</span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">MergePass</span><span class="params">(<span class="keyword">int</span> SR[],<span class="keyword">int</span> TR[],<span class="keyword">int</span> s,<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> i=<span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> j;</div><div class="line">	<span class="keyword">while</span>(i &lt;= n<span class="number">-2</span>*s+<span class="number">1</span>)</div><div class="line">	&#123;<span class="comment">/* 两两归并 */</span></div><div class="line">		Merge(SR,TR,i,i+s<span class="number">-1</span>,i+<span class="number">2</span>*s<span class="number">-1</span>);</div><div class="line">		i=i+<span class="number">2</span>*s;        </div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(i&lt;n-s+<span class="number">1</span>) <span class="comment">/* 归并最后两个序列 */</span></div><div class="line">		Merge(SR,TR,i,i+s<span class="number">-1</span>,n);</div><div class="line">	<span class="keyword">else</span> <span class="comment">/* 若最后只剩下单个子序列 */</span></div><div class="line">		<span class="keyword">for</span>(j =i;j &lt;= n;j++)</div><div class="line">			TR[j] = SR[j];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>迭代的做法更加直接了当，从最小的序列开始归并直至完成。不需要像归并的递归算法一样，需要先拆分递归，在归并退出递归。<br>迭代的做法避免了递归时深度为log2n的栈空间，空间只是用到申请归并临时用的TR数组，因此空间复杂度为O（n），并且避免递归也在时间性能上有一定的提升，应该说，使用归并排序时，尽量考虑用非递归方法。</p>
-<hr>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><hr>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>最好，最坏，平均的时间性能为O(nlogn)</p>
-<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p>O（n+logn）<br>由于归并排序在归并过程中需要与原始记录序列同样数量的存储空间存放归并结果以及递归时深度为log2n的栈空间，所以空间复杂度为O（n+logn）</p>
-<h2 id="是否稳定"><a href="#是否稳定" class="headerlink" title="是否稳定"></a>是否稳定</h2><p>稳定<br>通过示例代码中的Merge函数中有if(SR[i] &lt; SR[j])语句，这就说明它需要两两比较，不存在跳跃，所以是一种稳定的稳定的算法</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>归并排序是一种比较占用内存，但却效率高且稳定的算法。</p>
-<p>推荐使用迭代方式实现归并排序</p>
-<p>该算法速度仅次于快速排序</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortmerging1.gif&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
     
     </summary>
     
