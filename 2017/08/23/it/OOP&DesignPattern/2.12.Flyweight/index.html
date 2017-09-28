@@ -92,19 +92,19 @@
 
 
 
-<meta name="description" content="简介中文吗：享元模式英文名：Flyweight又名：共享模式所属类型：结构型模式 UML结构图">
+<meta name="description" content="简介中文吗：享元模式英文名：Flyweight Pattern又名：共享模式所属类型：结构型模式设计原则：遵循 单一职责使用概率：90%复杂度：中 UML结构图">
 <meta name="keywords" content="面向对象和设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式GOF之12 —— 享元模式（结构型模式）">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/08/23/it/OOP&DesignPattern/2.12.Flyweight/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
-<meta property="og:description" content="简介中文吗：享元模式英文名：Flyweight又名：共享模式所属类型：结构型模式 UML结构图">
+<meta property="og:description" content="简介中文吗：享元模式英文名：Flyweight Pattern又名：共享模式所属类型：结构型模式设计原则：遵循 单一职责使用概率：90%复杂度：中 UML结构图">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_flyweight1.jpg">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_flyweight2.jpg">
-<meta property="og:updated_time" content="2017-09-23T07:55:42.216Z">
+<meta property="og:updated_time" content="2017-09-27T15:52:40.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式GOF之12 —— 享元模式（结构型模式）">
-<meta name="twitter:description" content="简介中文吗：享元模式英文名：Flyweight又名：共享模式所属类型：结构型模式 UML结构图">
+<meta name="twitter:description" content="简介中文吗：享元模式英文名：Flyweight Pattern又名：共享模式所属类型：结构型模式设计原则：遵循 单一职责使用概率：90%复杂度：中 UML结构图">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_pattern_flyweight1.jpg">
 
 
@@ -417,7 +417,7 @@
       
 
       
-        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：享元模式<br>英文名：Flyweight<br>又名：共享模式<br>所属类型：结构型模式</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：享元模式<br>英文名：Flyweight Pattern<br>又名：共享模式<br>所属类型：结构型模式<br>设计原则：遵循 单一职责<br>使用概率：90%<br>复杂度：中</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_flyweight1.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>角色介绍：<br>(1) Flyweight(抽象享元角色)：为具体享元角色规定了必须实现的方法，而外蕴状态就是以参数的形式通过此方法传入。在Java中可以由抽象类、接口来担当。</p>
 <p>(2) ConcreteFlyweight(具体享元角色)：实现抽象角色规定的方法。如果存在内蕴状态，就负责为内蕴状态提供存储空间。</p>
@@ -455,9 +455,6 @@
 <h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><p>优点：<br>大幅度降低内存中对象的数量</p>
 <p>缺点：<br>1.使系统更加复杂。为了使对象可以共享，需要将一些状态外部化，这使程序的逻辑复杂化。<br>2.享元模式将享元对象的状态外部化，而读取外部状态使得运行时间稍微变长。<br>3.使用享元模式需要维护一个记录了系统已有的所有享元的列表，而这本身需要耗费资源。</p>
 <p>所以应当在有足够多的对象实例可供共享时才值得使用享元模式。</p>
-<h1 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h1><p>遵循 单一职责</p>
-<h1 id="使用概率"><a href="#使用概率" class="headerlink" title="使用概率"></a>使用概率</h1><p>90%</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>中</p>
 <h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p><a href="http://www.cnblogs.com/V1haoge/p/6542449.html" target="_blank" rel="external">Java设计模式之《享元模式》及应用场景</a></p>
 
       
@@ -655,7 +652,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -760,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML结构图"><span class="nav-number">2.</span> <span class="nav-text">UML结构图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">3.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">4.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两个状态（内部状态和外部状态）"><span class="nav-number">5.</span> <span class="nav-text">两个状态（内部状态和外部状态）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码示例"><span class="nav-number">6.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">7.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用情景案例"><span class="nav-number">8.</span> <span class="nav-text">使用情景案例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#享元模式与单例模式的区别"><span class="nav-number">9.</span> <span class="nav-text">享元模式与单例模式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android源码中的享元模式实现"><span class="nav-number">10.</span> <span class="nav-text">Android源码中的享元模式实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">12.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设计原则"><span class="nav-number">13.</span> <span class="nav-text">设计原则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用概率"><span class="nav-number">14.</span> <span class="nav-text">使用概率</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复杂度"><span class="nav-number">15.</span> <span class="nav-text">复杂度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关文章"><span class="nav-number">16.</span> <span class="nav-text">相关文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML结构图"><span class="nav-number">2.</span> <span class="nav-text">UML结构图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">3.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">4.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#两个状态（内部状态和外部状态）"><span class="nav-number">5.</span> <span class="nav-text">两个状态（内部状态和外部状态）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码示例"><span class="nav-number">6.</span> <span class="nav-text">代码示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">7.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用情景案例"><span class="nav-number">8.</span> <span class="nav-text">使用情景案例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#享元模式与单例模式的区别"><span class="nav-number">9.</span> <span class="nav-text">享元模式与单例模式的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android源码中的享元模式实现"><span class="nav-number">10.</span> <span class="nav-text">Android源码中的享元模式实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">11.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">12.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关文章"><span class="nav-number">13.</span> <span class="nav-text">相关文章</span></a></li></ol></div>
             
 
           </div>
