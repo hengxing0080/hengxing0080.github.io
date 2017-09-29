@@ -230,11 +230,73 @@
   </entry>
   
   <entry>
-    <title>网络 —— Socket</title>
-    <link href="https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/Socket/"/>
-    <id>https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/Socket/</id>
-    <published>2017-09-02T02:10:51.000Z</published>
-    <updated>2017-09-28T12:56:19.737Z</updated>
+    <title>Session &amp; Cookie &amp; Token的区别</title>
+    <link href="https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/"/>
+    <id>https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/</id>
+    <published>2017-09-04T10:20:01.000Z</published>
+    <updated>2017-09-29T08:34:01.849Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_network_session1.jpg" alt="UML图"><br><a id="more"></a></p>
+<hr>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><hr>
+<p>中文名：时域 | 会话<br>外文名：Session<br>应用学科：软件 网络通信<br>属性：用户与交互系统通信的时间间隔</p>
+<h2 id="Session简介"><a href="#Session简介" class="headerlink" title="Session简介"></a>Session简介</h2><p>简单理解就是存在服务端的缓存</p>
+<p>session的中文翻译是“会话”，当用户打开某个web应用时，便与web服务器产生一次session。<br>服务器使用session把用户的信息临时保存在了服务器上，用户离开网站后session会被销毁。<br>这种用户信息存储方式相对cookie来说更安全<br>比如说你用某个账号登陆某新浪，那么新浪的服务器端就会生成一个session来记录你的登陆状态，一般10分钟或者20分钟就失效了，<br>而cookie是网页指令让浏览器生成本地的记录你的登陆状态的文件。一般对安全性要求不高的话就可以直接在客户端生成cookie来记录登陆状态，否则就需要超时处理用session</p>
+<p>session在WEB技术中占有非常重要的份量。<br>由于网页是一种无状态的连接程序，因此你无法得知用户的浏览状态。<br>因此我们必须通过session记录用户的有关信息，以供用户再次以此身份对web服务器提供要求时作确认，<br>例如，我们在某些网站中常常要求用户登录，但我们怎么知道用户已经登录了呢，<br>如果没有session的话，登录信息是无法保留的，那岂不要让用户在每一页网页中都要提供用户名和密码。 </p>
+<h2 id="Session和Cookie的生命周期"><a href="#Session和Cookie的生命周期" class="headerlink" title="Session和Cookie的生命周期"></a>Session和Cookie的生命周期</h2><p>session和cookies都是来存储信息的但是他们的寿命不一样：比如你登录一个网站你有自己的帐号。昵称啊什么的这些就保存在session里当网页不关闭，session就存在。但是当你关闭之后session就清空了。<br>而cookies则可以在电脑的缓存文件里添加记录，这样即使当你的程序关闭了，但是记录却被永久保存了下来。存活期较session长。</p>
+<h2 id="Session缺陷"><a href="#Session缺陷" class="headerlink" title="Session缺陷"></a>Session缺陷</h2><p>如果web服务器做了负载均衡，那么下一个操作请求到了另一台服务器的时候session会丢失。</p>
+<h2 id="Session和Cookie的区别比较"><a href="#Session和Cookie的区别比较" class="headerlink" title="Session和Cookie的区别比较"></a>Session和Cookie的区别比较</h2><p><img src="/images/it_network_session2.jpg" alt="UML图"></p>
+<p>用处：<br>两者都可以用来跟踪和保存客户端的状态信息</p>
+<p>保存地点：<br>Session是在服务器端创建,在服务端保存(所以Session的安全性高于Cookie)<br>Cookie是在服务器端创建,在客户端保存，</p>
+<p>保存类型：<br>Session是依赖于Cookie的, Sessionid还是存放在Cookie中并保存在客户端的浏览器中<br>Cookie中只能存放String类型,而session中可以存放Object类型。</p>
+<p>安全性：<br>cookie存在客户端的磁盘上对用户透明<br>session存在服务器端而且sessionID是加密的相对来说seesion较安全。<br>用户的会话通过cookie中存储的session id 来和服务器端的session进行关联从而保持正常的会话。</p>
+<h2 id="Session都是可以存在哪？"><a href="#Session都是可以存在哪？" class="headerlink" title="Session都是可以存在哪？"></a>Session都是可以存在哪？</h2><p>数据库、缓存、文件</p>
+<h2 id="如果把Cookie-禁掉Session还能用吗？"><a href="#如果把Cookie-禁掉Session还能用吗？" class="headerlink" title="如果把Cookie 禁掉Session还能用吗？"></a>如果把Cookie 禁掉Session还能用吗？</h2><p>1.通过url传值，把session id附加到url上（缺点：整个站点中不能有纯静态页面，因为当是纯静态页面session id 将无法继续向后传了）</p>
+<p>2.通过隐藏表单，把session id 放到表单的隐藏文本框中同表单一块提交过去（缺点：不适用<a>标签这种直接跳转的非表单的情况）</a></p>
+<p>3.直接配置php.ini文件,将php.ini文件里的session.use_trans_sid= 0设为1,</p>
+<p>4.用文件、数据库等形式保存Session ID，在跨页过程中手动调用</p>
+<hr>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><hr>
+<p>中文名：储存在用户本地终端上的数据<br>外文名：Cookie<br>复数形式：Cookies</p>
+<h2 id="Cookie简介"><a href="#Cookie简介" class="headerlink" title="Cookie简介"></a>Cookie简介</h2><p>网站为了辨别用户身份，而储存在本地设备上的数据，包括用户名和密码</p>
+<p>Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户身份、进行Session 跟踪而储存在用户本地终端上的数据（通常经过加密）。</p>
+<p>Cookie是保存在本地终端的数据。<br>Ccokie由服务器生成，发送给浏览器，浏览器把cookie以kv形式保存到某个目录下的文本文件内，下一次请求同一网站时会把该cookie发送给服务器。</p>
+<h2 id="Cookie的组成"><a href="#Cookie的组成" class="headerlink" title="Cookie的组成"></a>Cookie的组成</h2><p>名称(key)、值(value)、有效域(domain)、路径(域的路径，一般设置为全局:”\”)、失效时间、安全标志(指定后，cookie只有在使用SSL连接时才发送到服务器(https))。</p>
+<h2 id="Cookie分两种"><a href="#Cookie分两种" class="headerlink" title="Cookie分两种"></a>Cookie分两种</h2><p>一种叫会话cookie是没有设置过期时间，当关闭浏览器后cookie将消失；<br>另一种是设置了过期时间叫持久cookie，这种cookie存储在磁盘中关闭浏览器后cookie不会消失。</p>
+<h2 id="各浏览器Cookie大小、个数限制"><a href="#各浏览器Cookie大小、个数限制" class="headerlink" title="各浏览器Cookie大小、个数限制"></a>各浏览器Cookie大小、个数限制</h2><p>由于cookie是存在客户端上的，所以浏览器加入了一些限制确保cookie不会被恶意使用，同时不会占据太多磁盘空间，所以每个域的cookie数量是有限的。<br>详情查看文章：↓<br><a href="http://www.cnblogs.com/henryhappier/archive/2011/03/03/1969564.html" target="_blank" rel="external">各浏览器Cookie大小、个数限制</a></p>
+<hr>
+<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><hr>
+<p>中文名 令牌，标记<br>外文名 Token </p>
+<h2 id="Token简介"><a href="#Token简介" class="headerlink" title="Token简介"></a>Token简介</h2><p>代表执行某些操作的权利的对象,是用户身份的验证方式。</p>
+<h2 id="Token组成"><a href="#Token组成" class="headerlink" title="Token组成"></a>Token组成</h2><p>最简单的token组成:<br>　uid(用户唯一的身份标识)<br>　time(当前时间的时间戳)<br>　sign(签名，由token的前几位+盐以哈希算法压缩成一定长的十六进制字符串，可以防止恶意第三方拼接token请求服务器)。<br>　还可以把不变的参数也放进token，避免多次查库</p>
+<h2 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h2><h3 id="访问令牌（Access-token）"><a href="#访问令牌（Access-token）" class="headerlink" title="访问令牌（Access token）"></a>访问令牌（Access token）</h3><p>表示访问控制操作主体的系统对象</p>
+<p>access_token一般作为请求操作时的访问令牌，比如你让用户用QQ登陆后要去拿用户的QQ头像，这时候向腾讯API发送请求时就需要带上access_token。</p>
+<p>如果只是单纯的登陆的话，登陆后不做任何请求，理论上是可以不存access_token的，但是还是推荐你按照Oath2.0的标准来做。<br>想象一种情况，我授权了一个应用，它拿到了我的access_token，然后我忘记我授权过了，于是我以后每次发布的内容都被它拿去存起来，或者它利用我的账号偷偷的发消息，我一点都不知道。 这种情况还是很可怕的。</p>
+<h3 id="密保令牌（Security-token）"><a href="#密保令牌（Security-token）" class="headerlink" title="密保令牌（Security token）"></a>密保令牌（Security token）</h3><p>或者硬件令牌，例如U盾，或者叫做认证令牌或者加密令牌，一种计算机身份校验的物理设备</p>
+<h3 id="会话令牌（Session-token）"><a href="#会话令牌（Session-token）" class="headerlink" title="会话令牌（Session token）"></a>会话令牌（Session token）</h3><p>交互会话中唯一身份标识符</p>
+<h3 id="令牌化技术-Tokenization"><a href="#令牌化技术-Tokenization" class="headerlink" title="令牌化技术 (Tokenization)"></a>令牌化技术 (Tokenization)</h3><p>取代敏感信息条目的处理过程</p>
+<h3 id="邀请码"><a href="#邀请码" class="headerlink" title="邀请码"></a>邀请码</h3><p>在邀请系统中使用</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_network_session1.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IT - 网络 - 其他" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Socket理解</title>
+    <link href="https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/"/>
+    <id>https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/</id>
+    <published>2017-09-03T07:19:20.000Z</published>
+    <updated>2017-09-29T08:33:47.057Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_socket1.png" alt="UML图"></p>
 <a id="more"></a>
@@ -264,11 +326,87 @@
   </entry>
   
   <entry>
-    <title>网络 —— 协议：UDP</title>
+    <title>URI &amp; URL &amp; URN 的区别</title>
+    <link href="https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/"/>
+    <id>https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/</id>
+    <published>2017-09-02T02:10:51.000Z</published>
+    <updated>2017-09-29T08:20:54.889Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_network_uri1.jpg" alt="UML图"></p>
+<a id="more"></a>
+<ul>
+<li><p>URI ：Uniform Resource Identifier，统一资源标识符<br>统一资源标识符（URI）提供了一个简单、可扩展的资源标识方式。<br>URI规范中的语义和语法来源于万维网全球信息主动引入的概念，万维网从1990年起使用这种标识符数据，并被描述为“万维网中的统一资源描述符”。</p>
+</li>
+<li><p>URL：Uniform Resource Locator，统一资源定位符<br>URL是URI的一种，不仅标识了Web 资源，还指定了操作或者获取方式，同时指出了主要访问机制和网络位置。</p>
+</li>
+<li><p>URN：Uniform Resource Name，统一资源名称<br>URN是URI的一种，用特定命名空间的名字标识资源。使用URN可以在不知道其网络位置及访问方式的情况下讨论资源。</p>
+</li>
+</ul>
+<p>注意要记住，其中，URL,URN是URI的子集。<br><img src="/images/it_network_uri2.jpg" alt="UML图"></p>
+<hr>
+<h1 id="URI"><a href="#URI" class="headerlink" title="URI"></a>URI</h1><hr>
+<p>中文名：统一资源标识符<br>外文名：Uniform Resource Identifier<br>简称：URI<br>应用：万维网</p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>比URL范围更广泛, 接收自定义的路径<br>标识、定位任何资源的字符串<br>该种标识允许用户对任何（包括本地和互联网）的资源通过特定的协议进行交互操作。<br>URI由包括确定语法和相关协议的方案所定义。<br>Web上可用的每种资源 -HTML文档、图像、视频片段、程序等 - 由一个通用URI进行定位。</p>
+<p>URI  是一个用于标识某一互联网资源名称的字符串。<br>该种标识允许用户对任何（包括本地和互联网）的资源通过特定的协议进行交互操作。</p>
+<h2 id="URI组成"><a href="#URI组成" class="headerlink" title="URI组成"></a>URI组成</h2><p>URI一般由三部分组成：<br>一、主机名<br>二、标志符<br>三、相对URI</p>
+<h2 id="URI示例"><a href="#URI示例" class="headerlink" title="URI示例"></a>URI示例</h2><p>电话<br>tel://110</p>
+<p>远程图片<br><a href="http://或者https://" target="_blank" rel="external">http://或者https://</a> </p>
+<p>本地文件<br>file:// </p>
+<p>Content provider  ( 内容提供者 )<br>content://    </p>
+<p>asset目录下资源<br>assets:// </p>
+<p>res目录下资源<br>res:// </p>
+<hr>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><hr>
+<p>中文名：统一资源定位符 | 统一资源定位器<br>外文名：Uniform Resource Locator<br>缩写：URL<br>发明者：蒂姆·伯纳斯·李</p>
+<h2 id="URL简介"><a href="#URL简介" class="headerlink" title="URL简介"></a>URL简介</h2><p>简单理解：网络路径地址，用于描述一个网络上的资源, 用于定位万维网上的文档（或其他数据）。如网址http, ftp,  rtsp等等</p>
+<p>概念理解：URL是统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。<br>互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+<h2 id="URL组成"><a href="#URL组成" class="headerlink" title="URL组成"></a>URL组成</h2><p>网址比如：<a href="http://www.w3school.com.cn/html/index.asp，" target="_blank" rel="external">http://www.w3school.com.cn/html/index.asp，</a><br>遵守这样的语法规则：scheme://host.domain:port/path/filename</p>
+<p>解释：<br>scheme - 定义因特网服务的类型。最常见的类型是 http<br>host - 定义域主机（http 的默认主机是 www）<br>domain - 定义因特网域名，比如 w3school.com.cn<br>:port - 定义主机上的端口号（http 的默认端口号是 80）<br>path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。<br>filename - 定义文档/资源的名称</p>
+<p>基本URL包含：<br>模式（或称协议）、服务器名称（或IP地址）、路径和文件名，如“协议://授权/路径?查询”。</p>
+<p>完整的、带有授权部分的普通统一资源标志符语法看上去如下：<br>协议://用户名:密码@子域名.域名.顶级域名:端口号/目录/文件名.文件后缀?参数=值#标志</p>
+<h2 id="URL例子"><a href="#URL例子" class="headerlink" title="URL例子"></a>URL例子</h2><p><a href="http://www.mywebsite.com/sj/test/test.aspx?name=sviergn&amp;x=true#stuff" target="_blank" rel="external">http://www.mywebsite.com/sj/test/test.aspx?name=sviergn&amp;x=true#stuff</a><br>　Schema:                 http<br>　host:                   www.mywebsite.com<br>　path:                   /sj/test/test.aspx<br>　Query String:           name=sviergn&amp;x=true<br>　Anchor:                 stuff</p>
+<p><a href="http://www.crazyit.org:80/ethos.php" target="_blank" rel="external">http://www.crazyit.org:80/ethos.php</a><br>　这种可分为如下3个部分<br>　<a href="http://：URL的写部分，只要通过HTTP协议来访问网络，这部分是固定的。" target="_blank" rel="external">http://：URL的写部分，只要通过HTTP协议来访问网络，这部分是固定的。</a><br>　www.crazyit.org：域名部分。只要访问制定的网站，这个部分总是固定的。<br>　ethos.php：网站资源部分。当访问者需要访问不同资源时，这部分是动态改变的。</p>
+<p>URL是URI的一个子集，告诉我们访问网络位置的方式。在我们的例子中，URL应该如下所示：</p>
+<h2 id="Url最长可以有多长"><a href="#Url最长可以有多长" class="headerlink" title="Url最长可以有多长"></a>Url最长可以有多长</h2><p>在http协议中，其实并没有对url长度作出限制，往往url的最大长度和用户浏览器和Web服务器有关，不一样的浏览器，能接受的最大长度往往是不一样的，当然，不一样的Web服务器能够处理的最大长度的URL的能力也是不一样的。</p>
+<p>Microsoft Internet Explorer (Browser)<br>IE浏览器对URL的最大限制为2083个字符</p>
+<p>Firefox (Browser)<br>对于Firefox浏览器URL的长度限制为65,536个字符，但当我测试时，最大只能处理8182个字符，这是因为url的长度除了浏览器限制外，还会受Web服务器的限制，而我本机使用的是ubuntu apache服务器，最大处理能力为8192个字符(相差10个字符，不知道是什么原因)，一旦超过这个长度，服务器就返回错误信息。</p>
+<p>Safari (Browser)<br>URL最大长度限制为 80,000个字符。</p>
+<p>Opera (Browser)<br>URL最大长度限制为190,000个字符。</p>
+<p>Google (chrome)<br>url长度一旦超过8182个字符时，出现服务器错误</p>
+<p>Apache (Server)<br>能接受最大url长度为8,192个字符，但我的测试数据是8,182。</p>
+<p>Microsoft Internet Information Server(IIS)<br>能接受最大url的长度为16,384个字符。</p>
+<p>通过上面的数据可知，为了让所有的用户都能正常浏览，我们的URL最好不要超过IE的最大长度限制(2083个字符），当然，如果URL不直接提供给用户，而是提供给程序调用，侧这时的长度就只受Web服务器影响了。</p>
+<p>注：可能有些朋友会想当然的认为，如果最大长度限制为2083字符，是不是参数差不多可以传递1000个左右的汉字。这样认为其实是不对的，对于中文的传递，最终会为urlencode后的编码形式进行传递，如果浏览器的编码为UTF8的话，一个汉字最终编码后的字符长度为9个字符。</p>
+<p>详情文章：<br><a href="http://www.cnblogs.com/henryhappier/archive/2010/10/09/1846554.html" target="_blank" rel="external">URL最大长度问题</a></p>
+<hr>
+<h1 id="URN"><a href="#URN" class="headerlink" title="URN"></a>URN</h1><hr>
+<p>中文名：统一资源名称<br>外文名：URN<br>全称：Uniform Resource Name<br>作用：标识持久性 Internet 资源</p>
+<h2 id="URN简介"><a href="#URN简介" class="headerlink" title="URN简介"></a>URN简介</h2><p>唯一标识一个实体的标识符，但是不能给出实体的位置。<br>系统可以先在本地寻找一个实体，在它试着在Web上找到该实体之前。<br>它也允许Web位置改变，然而这个实体却还是能够被找到。</p>
+<p>标识持久性 Internet 资源。<br>URN 可以提供一种机制，用于查找和检索定义特定命名空间的架构文件。<br>尽管普通的 URL 可以提供类似的功能，但是在这方面，URN 更加强大并且更容易管理，因为 URN 可以引用多个 URL。</p>
+<p>与 URL 不同，URN 与地址无关。<br>URN 和 URL 都属于 URI。<br>URN在web中主要应用是下拉菜单的制作。使用URN时下拉菜单的易扩展性将会得到很大的提高。<br>P2P下载中使用的磁力链接是URN的一种实现，它可以持久化的标识一个BT资源，资源分布式的存储在P2P网络中，无需中心服务器用户即可找到并下载它。</p>
+<h2 id="URN示例"><a href="#URN示例" class="headerlink" title="URN示例"></a>URN示例</h2><p>URN是URI的子集，包括名字（给定的命名空间内），但是不包括访问方式，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bitpoetry.io/posts/hello.html#intro</div></pre></td></tr></table></figure></p>
+<p>URL也是URI的一个子集，告诉我们访问网络位置的方式。上述URN的URN形式写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://bitpoetry.io/posts/hello.html</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_network_uri1.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="IT - 网络 - 其他" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UDP协议</title>
     <link href="https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/"/>
     <id>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/</id>
     <published>2017-09-01T15:10:05.000Z</published>
-    <updated>2017-09-24T12:23:11.225Z</updated>
+    <updated>2017-09-29T08:21:43.696Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_udp.jpg" alt="UML图"></p>
 <a id="more"></a>
@@ -295,11 +433,11 @@
   </entry>
   
   <entry>
-    <title>网络 —— 协议：TCP</title>
+    <title>TCP协议</title>
     <link href="https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/"/>
     <id>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/</id>
     <published>2017-09-01T13:11:55.000Z</published>
-    <updated>2017-09-24T12:22:39.257Z</updated>
+    <updated>2017-09-29T08:21:38.421Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_tcp0.png" alt="UML图"></p>
 <a id="more"></a>
@@ -339,6 +477,7 @@
 </li>
 </ul>
 <h1 id="Java中的TCP"><a href="#Java中的TCP" class="headerlink" title="Java中的TCP"></a>Java中的TCP</h1><p>TCP分客户端和服务端<br>客户端对应的对象是Socket<br>服务端对应的对象是ServerSocket</p>
+<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p><a href="http://www.ruanyifeng.com/blog/2017/06/tcp-protocol.html" target="_blank" rel="external">TCP 协议简介</a></p>
 ]]></content>
     
     <summary type="html">
@@ -1121,89 +1260,6 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortbucket.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法 —— 排序系列：基数排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/29/it/DataStructure&amp;Algorithm/SortRadix/"/>
-    <id>https://hengxing0080.github.io/2017/07/29/it/DataStructure&amp;Algorithm/SortRadix/</id>
-    <published>2017-07-29T03:52:09.000Z</published>
-    <updated>2017-08-13T06:50:02.308Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_algorithm_sortradix.jpg" alt="UML图"><br><a id="more"></a></p>
-<h1 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h1><p>中文名 基数排序<br>外文名 Radix sort<br>类别   分配式排序<br>别称   “桶子法”<br>方法   最高位优先法和最低位优先<br>发明者 赫尔曼·何乐礼 </p>
-<h1 id="算法理解"><a href="#算法理解" class="headerlink" title="算法理解"></a>算法理解</h1><p>基数排序（radix sort）属于“分配式排序”（distribution sort），又称“桶子法”（bucket sort）或bin sort，<br>顾名思义，它是透过键值的部份资讯，将要排序的元素分配至某些“桶”中，藉以达到排序的作用，</p>
-<p>是一种非比较型整数排序算法，其原理是将整数按位数切割成不同的数字，然后按每个位数分别比较。由于整数也可以表达字符串（比如名字或日期）和特定格式的浮点数，所以基数排序也不是只能使用于整数。</p>
-<h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>基数排序的发明可以追溯到1887年赫尔曼·何乐礼在打孔卡片制表机(Tabulation Machine)上的贡献。<br>它是这样实现的：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。<br>然后，从最低位开始，依次进行一次排序。<br>这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。<br>基数排序的方式可以采用LSD（Least significant digital）或MSD（Most significant digital），LSD的排序方式由键值的最右边开始，而MSD则相反，由键值的最左边开始。</p>
-<h1 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h1><p>第一步<br>　以LSD为例，假设原来有一串数值如下所示：<br>　73, 22, 93, 43, 55, 14, 28, 65, 39, 81<br>　首先根据个位数的数值，在走访数值时将它们分配至编号0到9的桶子中：<br>　0<br>　1 81<br>　2 22<br>　3 73 93 43<br>　4 14<br>　5 55 65<br>　6<br>　7<br>　8 28<br>　9 39<br>第二步<br>　接下来将这些桶子中的数值重新串接起来，成为以下的数列：<br>　81, 22, 73, 93, 43, 14, 55, 65, 28, 39<br>　接着再进行一次分配，这次是根据十位数来分配：<br>　0<br>　1 14<br>　2 22 28<br>　3 39<br>　4 43<br>　5 55<br>　6 65<br>　7 73<br>　8 81<br>　9 93<br>第三步<br>　接下来将这些桶子中的数值重新串接起来，成为以下的数列：<br>　14, 22, 28, 39, 43, 55, 65, 73, 81, 93<br>　这时候整个数列已经排序完毕；如果排序的对象有三位数以上，则持续进行以上的动作直至最高位数为止。</p>
-<p>LSD的基数排序适用于位数小的数列，如果位数多的话，使用MSD的效率会比较好。MSD的方式与LSD相反，是由高位数为基底开始进行分配，但在分配之后并不马上合并回一个数组中，而是在每个“桶子”中建立“子桶”，将每个桶子中的数值按照下一数位的值分配到“子桶”中。在进行完最低位数的分配后再合并回单一的数组中。</p>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>基数排序法是属于稳定性的排序，其时间复杂度为O (nlog(r)m)，其中r为所采取的基数，而m为堆数，在某些时候，基数排序法的效率高于其它的稳定性排序法。</p>
-<p>数据结构       数组<br>最坏时间复杂度  O ( k N )<br>空间复杂度      O ( k + N )</p>
-<h1 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RadixSort</span></span></div><div class="line">&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] number, <span class="keyword">int</span> d)</span> <span class="comment">//d表示最大的数有多少位</span></span></div><div class="line">    &#123;</div><div class="line">        intk = <span class="number">0</span>;</div><div class="line">        intn = <span class="number">1</span>;</div><div class="line">        intm = <span class="number">1</span>; <span class="comment">//控制键值排序依据在哪一位</span></div><div class="line">        <span class="keyword">int</span>[][]temp = newint[<span class="number">10</span>][number.length]; <span class="comment">//数组的第一维表示可能的余数0-9</span></div><div class="line">        <span class="keyword">int</span>[]order = newint[<span class="number">10</span>]; <span class="comment">//数组orderp[i]用来表示该位是i的数的个数</span></div><div class="line">        <span class="keyword">while</span>(m &lt;= d)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(inti = <span class="number">0</span>; i &lt; number.length; i++)</div><div class="line">            &#123;</div><div class="line">                intlsd = ((number[i] / n) % <span class="number">10</span>);</div><div class="line">                temp[lsd][order[lsd]] = number[i];</div><div class="line">                order[lsd]++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(inti = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">if</span>(order[i] != <span class="number">0</span>)</div><div class="line">                    <span class="keyword">for</span>(intj = <span class="number">0</span>; j &lt; order[i]; j++)</div><div class="line">                    &#123;</div><div class="line">                        number[k] = temp[i][j];</div><div class="line">                        k++;</div><div class="line">                    &#125;</div><div class="line">                order[i] = <span class="number">0</span>;</div><div class="line">            &#125;</div><div class="line">            n *= <span class="number">10</span>;</div><div class="line">            k = <span class="number">0</span>;</div><div class="line">            m++;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span>[]data = &#123;<span class="number">73</span>, <span class="number">22</span>, <span class="number">93</span>, <span class="number">43</span>, <span class="number">55</span>, <span class="number">14</span>, <span class="number">28</span>, <span class="number">65</span>, <span class="number">39</span>, <span class="number">81</span>, <span class="number">33</span>, <span class="number">100</span>&#125;;</div><div class="line">        RadixSort.sort(data, <span class="number">3</span>);</div><div class="line">        <span class="keyword">for</span>(inti = <span class="number">0</span>; i &lt; data.length; i++)</div><div class="line">        &#123;</div><div class="line">            System.out.print(data[i] + <span class="string">""</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortradix.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法 —— 排序算法总结</title>
-    <link href="https://hengxing0080.github.io/2017/07/28/it/DataStructure&amp;Algorithm/SortAlgorithm/"/>
-    <id>https://hengxing0080.github.io/2017/07/28/it/DataStructure&amp;Algorithm/SortAlgorithm/</id>
-    <published>2017-07-28T15:01:02.000Z</published>
-    <updated>2017-08-13T05:49:49.132Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_algorithm_sort0.png" alt="UML图"><br><a id="more"></a></p>
-<hr>
-<h1 id="排序定义和理解"><a href="#排序定义和理解" class="headerlink" title="排序定义和理解"></a>排序定义和理解</h1><hr>
-<p>常用的场景工作中，一旦建立了一个重要的数据库后，就可能根据某些需求对数据进行不同的排序，比如对姓名按字母排序，对学习按年级排序等等。<br>由于排序非常重要而且可能非常耗时，所以它已经成为一个计算机科学中广泛研究的课题，而且人们的确已经研究出一些非常成熟的方法。<br>如冒泡排序和选择排序。</p>
-<p>排序是一种操作，将无序的序列调整为有序的序列。</p>
-<p>注意我们在排序问题中，通常将数据元素称为记录。显然我们输入的是一个记录集合，输出的也是一个记录集合，所以说，可以将排序看成是线性表的一种操作。</p>
-<p>如何排序：<br>计算机程序却不能像人这样通览所有数据。<br>它只能根据计算机的‘比较’操作原理，在同一时间内对两个队员进行比较。<br>算法的这种原理将是一个反复出现的问题。<br>在人类看来很简单的事情，计算机的算法却不能看到全景，因此只能一步一步地解决具体问题和遵循一些简单的规则。</p>
-<p>按照算法的复杂度分为两大类：<br>冒泡排序，简单选择排序和直接插入排序属于简单算法。<br>希尔排序，堆排序，归并排序，快速排序属于改进算法。</p>
-<p>内排序和外排序：<br>根据在排序过程中待排序的记录是否全部被放置在内存中，排序分为：内排序和外排序。</p>
-<p>内排序：<br>内排序是在排序整个过程中，待排序的所有记录全部被放置在内存中。<br>内排序分为：插入排序，交换排序，选择排序和归并排序。<br>内排序算法的性能主要是受3个方面影响：<br>1.时间性能<br>2.辅助空间<br>3.算法的复杂性</p>
-<p>外排序：<br>外排序是由于排序的记录个数太多，不能同时放置在内存，整个排序过程需要在内外存之间多次交换数据才能进行。</p>
-<hr>
-<h1 id="7种算法总结"><a href="#7种算法总结" class="headerlink" title="7种算法总结"></a>7种算法总结</h1><hr>
-<p>根据将排序记录是否全部被放置到内存中，将排序分为内排序和外排序两种，外排序需要在内外存之间多次交换数据才能进行。<br>我们讲内排序分为：插入排序，交换排序，选择排序，归并排序4类<br>算法类文章介绍的其中7种排序法，就分别是各种分类的代表算法。<br><img src="/images/it_algorithm_sort1.png" alt="UML图"></p>
-<p>7种算法的各种指标进行对比<br><img src="/images/it_algorithm_sort2.png" alt="UML图"></p>
-<p>从算法的简单性来看，我们将7种算法分为两类：<br>1.简单算法：冒泡，简单选择，直接插入<br>2.改进算法：希尔，堆，归并，快速</p>
-<p>从平均情况来看<br>显然最后3种改进算法要胜过希尔排序，并远远胜过前3种简单算法。</p>
-<p>从最好情况看<br>反而冒泡和直接插入排序要更胜一筹，也就是说，如果你的待排序序列总是基本有序，反而不应该考虑后4种复杂的改进算法。<br>　　<br>从最坏情况看<br>堆排序与归并排序又强过快速排序以及其他简单排序。<br>　　<br>从这三组时间复杂度的数据对比中，我们可以得出这样一个认识。<br>堆排序和归并排序就像两个参加奥数考试的优等生，心理素质强，发挥稳定。<br>而快速排序像是很情绪化的天才，心情好时表现极佳，碰到较糟糕环境会变得差强人意。<br>但是他们如果都来比赛计算个位数的加减法，它们反而算不过成绩极普通的冒泡和直接插入。</p>
-<p>从空间复杂度来说<br>归并排序强调要马跑得快，就得给马吃个饱。快速排序也有相应的空间要求，反而堆排序等却都是少量索取，大量付出，对空间要求是O(1)。如果执行算法的软件所处的环境非常在乎内存使用量的多少时，选择归并排序和快速排序就不是一个较好的决策了。</p>
-<p>从稳定性来看<br>归并排序独占鳌头，我们前面也说过，对于非常在乎排序稳定性的应用中，归并排序是个好算法。</p>
-<p>从待排序记录的个数上来说<br>待排序的个数n越小，采用简单排序方法越合适。反之，n越大，采用改进排序方法越合适。这也就是我们为什么对快速排序优化时，增加了一个阀值，低于阀值时换作直接插入排序的原因。</p>
-<p>从7种算法的各种指标（上图）的数据中，似乎简单选择排序在3种简单排序中性能最差<br>其实也不完全是，比如，如果记录的关键字本身信息量比较大（例如，关键字都是数十位的数字），此时表明其占用存储空间很大，这样移动记录所花费的时间也就越多，我们给出3种简单排序算法的移动次数比较，如图所示。<br><img src="/images/it_algorithm_sort3.png" alt="UML图"><br>你会发现，此时简单选择排序就变得非常有优势，原因也就在于，它是通过大量比较后选择明确记录进行移动，有的放矢。因此对于数据量不是很大而记录的关键字信息量较大的排序要求，简单排序算法是占优的。另外，记录的关键字信息量大小对那四个改进算法影响不大。</p>
-<p>总之，从综合各项指标来说，经过优化的快速排序是性能最好的排序算法，但是不同的场合我们也应该考虑使用不同的算法来应对它。</p>
-<hr>
-<h1 id="推荐排序方式"><a href="#推荐排序方式" class="headerlink" title="推荐排序方式"></a>推荐排序方式</h1><hr>
-<p>开发时如果用数据量就用快速排序(递归排序)，数据量小用简单插入排序。</p>
-<p>最重要还是要根据上面总结的场景来使用正确的排序方式。</p>
-<hr>
-<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><hr>
-<p><a href="http://blog.csdn.net/wangwei890702/article/details/8197597" target="_blank" rel="external">7种常用排序算法总结</a><br><a href="http://blog.csdn.net/sgn132/article/details/47279511" target="_blank" rel="external">GIF演示排序算法</a><br><a href="http://www.cnblogs.com/ytb-wpq/p/6479240.html" target="_blank" rel="external">常用算法js版(冒泡/选择/插入/希尔/归并/快速/堆/计数/桶/基数)</a><br><a href="http://blog.csdn.net/litong09282039/article/details/46332127" target="_blank" rel="external">超级详细解读基本排序算法（不看后悔，带排序演示动画）</a><br><a href="http://blog.csdn.net/chivalrousman/article/details/51585639" target="_blank" rel="external">详解五大排序算法</a><br><a href="http://blog.csdn.net/cjf_iceking/article/details/7953637" target="_blank" rel="external">九种常用排序的性能分析总结</a><br><a href="http://blog.jobbole.com/11745/" target="_blank" rel="external">视觉直观感受7种常用的排序算法</a><br><a href="http://blog.sina.com.cn/s/blog_8898a00d0102whmd.html" target="_blank" rel="external">中国MOOC大学-程序设计基础-6.问题解决和算法基础3</a><br><a href="http://www.bilibili.com/video/av685670/" target="_blank" rel="external">6分钟演示15种排序算法</a><br><a href="http://jsdo.it/norahiko/oxIy/fullscreen" target="_blank" rel="external">可视化排序</a><br><a href="http://www.cnbeta.com/articles/tech/202221.htm" target="_blank" rel="external">[视频]程序员的艺术：排序算法舞蹈</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sort0.png&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
     
     </summary>
     
