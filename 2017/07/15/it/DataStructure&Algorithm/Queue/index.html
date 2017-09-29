@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据结构与算法," />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -92,7 +92,7 @@
 
 
 
-<meta name="keywords" content="数据结构与算法">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构与算法 —— 线性表：队列">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/07/15/it/DataStructure&Algorithm/Queue/index.html">
@@ -106,7 +106,8 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue7.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue8.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue9.png">
-<meta property="og:updated_time" content="2017-07-18T12:02:42.000Z">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stackandqueue1.png">
+<meta property="og:updated_time" content="2017-09-29T16:23:56.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法 —— 线性表：队列">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_datastructure_queue1.jpg">
@@ -470,6 +471,10 @@
 <li>1.从时间上<br>它们的基本操作都是常数时间O（1）<br>不过循环队列是事先申请好空间，使用期间不释放<br>而对于链队列，每次申请和释放节点也会存在一些时间开销<br>如果入队出队频繁，则两者还是有细微差异。</li>
 <li>2.从空间上<br>循环队列必须有一个固定的长度，所以就有了存储元素个数和空间浪费的问题。<br>而连队列不存在这个问题，尽管它需要一个指针域，会产生一些空间上的开销，但也可以接受。<br>所以在空间上，连队列更加灵活。<br>总的来说，在可以确定队列长度的情况下，建议用循环队列，如果无法预估队列长度时，用链队列。</li>
 </ul>
+<h1 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h1><p><img src="/images/it_datastructure_stackandqueue1.png" alt="UML图"></p>
+<p>1.它们都是特殊的线性表，只不过对插入和删除操作做了限制：<br>栈：限定仅在表尾进行插入和删除操作的线性表。<br>队列：只允许在一端进行插入操作，而在另一端进行删除操作的线性表。</p>
+<p>2.栈和队列的顺序存储结构：<br>它们都可以用线性表的顺序存储结构实现，但都存在着顺序存储的一些弊端，因此它们各自有一些技巧解决这个问题。<br>对于栈来说，如果两个相同数据类型的栈，则可以用数组的两端作栈底的方法让两个栈共享数据，最大化利用数组的空间。<br>对于队列来说，为了避免数组插入和删除时需要移动数据，引入循环队列，使得本来插入和删除是O(n)的时间复杂度变成了O(1)。</p>
+<p>3.栈和队列的链式存储结构：<br>栈和队列的链式存储结构的实现原理和线性表的实现原理基本上相同。</p>
 
       
     </div>
@@ -520,7 +525,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构与算法/" rel="tag"># 数据结构与算法</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -543,7 +548,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/16/it/DataStructure&Algorithm/ModuloOperation/" rel="prev" title="运算符系列：算术运算符-取模%">
+              <a href="/2017/07/16/it/Java/ModuloOperation/" rel="prev" title="运算符系列：算术运算符-取模%">
                 运算符系列：算术运算符-取模% <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -655,7 +660,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-count">66</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -666,7 +671,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -677,7 +682,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -771,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述"><span class="nav-number">2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情景比喻"><span class="nav-number">3.</span> <span class="nav-text">情景比喻</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">4.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的抽象数据类型"><span class="nav-number">5.</span> <span class="nav-text">队列的抽象数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的两种存储方式"><span class="nav-number">6.</span> <span class="nav-text">队列的两种存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序队列"><span class="nav-number">6.1.</span> <span class="nav-text">顺序队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">6.1.1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">6.1.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队列顺序存储的不足"><span class="nav-number">6.1.3.</span> <span class="nav-text">队列顺序存储的不足</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环队列"><span class="nav-number">6.1.4.</span> <span class="nav-text">循环队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">6.1.4.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断公式"><span class="nav-number">6.1.4.2.</span> <span class="nav-text">判断公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例代码："><span class="nav-number">6.1.4.3.</span> <span class="nav-text">示例代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#弊端："><span class="nav-number">6.1.4.4.</span> <span class="nav-text">弊端：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链式队列"><span class="nav-number">6.2.</span> <span class="nav-text">链式队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">6.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点：-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">6.2.3.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入队操作"><span class="nav-number">6.2.4.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出队操作"><span class="nav-number">6.2.5.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式队列和循环队列的比较"><span class="nav-number">6.2.6.</span> <span class="nav-text">链式队列和循环队列的比较</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述"><span class="nav-number">2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#情景比喻"><span class="nav-number">3.</span> <span class="nav-text">情景比喻</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">4.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的抽象数据类型"><span class="nav-number">5.</span> <span class="nav-text">队列的抽象数据类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的两种存储方式"><span class="nav-number">6.</span> <span class="nav-text">队列的两种存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序队列"><span class="nav-number">6.1.</span> <span class="nav-text">顺序队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">6.1.1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点："><span class="nav-number">6.1.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#队列顺序存储的不足"><span class="nav-number">6.1.3.</span> <span class="nav-text">队列顺序存储的不足</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环队列"><span class="nav-number">6.1.4.</span> <span class="nav-text">循环队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#作用"><span class="nav-number">6.1.4.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断公式"><span class="nav-number">6.1.4.2.</span> <span class="nav-text">判断公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例代码："><span class="nav-number">6.1.4.3.</span> <span class="nav-text">示例代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#弊端："><span class="nav-number">6.1.4.4.</span> <span class="nav-text">弊端：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链式队列"><span class="nav-number">6.2.</span> <span class="nav-text">链式队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">6.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点：-1"><span class="nav-number">6.2.2.</span> <span class="nav-text">特点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结构"><span class="nav-number">6.2.3.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入队操作"><span class="nav-number">6.2.4.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出队操作"><span class="nav-number">6.2.5.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式队列和循环队列的比较"><span class="nav-number">6.2.6.</span> <span class="nav-text">链式队列和循环队列的比较</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈和队列的总结"><span class="nav-number">7.</span> <span class="nav-text">栈和队列的总结</span></a></li></ol></div>
             
 
           </div>

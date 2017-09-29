@@ -234,7 +234,7 @@
     <link href="https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/"/>
     <id>https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/</id>
     <published>2017-09-04T10:20:01.000Z</published>
-    <updated>2017-09-29T08:34:01.849Z</updated>
+    <updated>2017-09-29T16:29:48.823Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_session1.jpg" alt="UML图"><br><a id="more"></a></p>
 <hr>
@@ -284,7 +284,7 @@
     
     </summary>
     
-      <category term="IT - 网络 - 其他" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%85%B6%E4%BB%96/"/>
+      <category term="IT - 网络 - 相关" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E7%9B%B8%E5%85%B3/"/>
     
     
       <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
@@ -296,7 +296,7 @@
     <link href="https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/"/>
     <id>https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/</id>
     <published>2017-09-03T07:19:20.000Z</published>
-    <updated>2017-09-29T08:33:47.057Z</updated>
+    <updated>2017-09-29T16:29:46.653Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_socket1.png" alt="UML图"></p>
 <a id="more"></a>
@@ -318,7 +318,7 @@
     
     </summary>
     
-      <category term="IT - 网络 - 其他" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%85%B6%E4%BB%96/"/>
+      <category term="IT - 网络 - 相关" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E7%9B%B8%E5%85%B3/"/>
     
     
       <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
@@ -330,7 +330,7 @@
     <link href="https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/"/>
     <id>https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/</id>
     <published>2017-09-02T02:10:51.000Z</published>
-    <updated>2017-09-29T08:20:54.889Z</updated>
+    <updated>2017-09-29T16:29:33.429Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_uri1.jpg" alt="UML图"></p>
 <a id="more"></a>
@@ -394,7 +394,7 @@
     
     </summary>
     
-      <category term="IT - 网络 - 其他" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%85%B6%E4%BB%96/"/>
+      <category term="IT - 网络 - 相关" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E7%9B%B8%E5%85%B3/"/>
     
     
       <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
@@ -495,10 +495,10 @@
   
   <entry>
     <title>运算符系列：位运算符</title>
-    <link href="https://hengxing0080.github.io/2017/08/25/it/DataStructure&amp;Algorithm/BitwiseOperation/"/>
-    <id>https://hengxing0080.github.io/2017/08/25/it/DataStructure&amp;Algorithm/BitwiseOperation/</id>
+    <link href="https://hengxing0080.github.io/2017/08/25/it/Java/BitwiseOperation/"/>
+    <id>https://hengxing0080.github.io/2017/08/25/it/Java/BitwiseOperation/</id>
     <published>2017-08-25T03:54:12.000Z</published>
-    <updated>2017-09-19T10:13:49.306Z</updated>
+    <updated>2017-09-29T16:26:53.024Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_algorithm_bitwise.jpg" alt="UML图"></p>
 <a id="more"></a>
@@ -541,10 +541,10 @@
     
     </summary>
     
-      <category term="IT - 数据结构与算法 - 算法 - 各种" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E5%90%84%E7%A7%8D/"/>
+      <category term="IT - Java - 基础" scheme="https://hengxing0080.github.io/categories/IT-Java-%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="Java" scheme="https://hengxing0080.github.io/tags/Java/"/>
     
   </entry>
   
@@ -553,7 +553,7 @@
     <link href="https://hengxing0080.github.io/2017/08/23/it/OOP&amp;DesignPattern/2.12.Flyweight/"/>
     <id>https://hengxing0080.github.io/2017/08/23/it/OOP&amp;DesignPattern/2.12.Flyweight/</id>
     <published>2017-08-23T13:10:30.000Z</published>
-    <updated>2017-09-27T15:52:40.838Z</updated>
+    <updated>2017-09-29T16:19:11.051Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：享元模式<br>英文名：Flyweight Pattern<br>又名：共享模式<br>所属类型：结构型模式<br>设计原则：遵循 单一职责<br>使用概率：90%<br>复杂度：中</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_flyweight1.jpg" alt="UML图"><br><a id="more"></a></p>
@@ -606,7 +606,7 @@
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -615,7 +615,7 @@
     <link href="https://hengxing0080.github.io/2017/08/22/it/OOP&amp;DesignPattern/2.11.Bridge/"/>
     <id>https://hengxing0080.github.io/2017/08/22/it/OOP&amp;DesignPattern/2.11.Bridge/</id>
     <published>2017-08-22T12:05:31.000Z</published>
-    <updated>2017-09-26T06:04:44.143Z</updated>
+    <updated>2017-09-29T16:19:06.695Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：桥接模式<br>英文名：Bridge Pattern<br>又名：桥梁模式 / 柄体(Handle and Body)模式 / 接口(Interface)模式<br>所属类型：结构型模式<br>设计原则：遵循 单一职责、迪米特、开放-封闭原则、合成/聚合复用原则（桥接模式的代表原则）<br>使用概率：20%<br>复杂度：中高</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_bridge1.jpg" alt="UML图"><br><a id="more"></a><br>角色介绍：</p>
@@ -672,7 +672,7 @@
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -681,7 +681,7 @@
     <link href="https://hengxing0080.github.io/2017/08/21/it/OOP&amp;DesignPattern/2.10.Composite/"/>
     <id>https://hengxing0080.github.io/2017/08/21/it/OOP&amp;DesignPattern/2.10.Composite/</id>
     <published>2017-08-21T13:21:51.000Z</published>
-    <updated>2017-09-27T16:43:40.687Z</updated>
+    <updated>2017-09-29T16:19:03.489Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：组合模式(Composite Pattern)<br>又名：合成模式 | 部分-整体模式(Part-whole Patterm)<br>所属类型：结构型模式<br>设计原则：遵循依赖倒置原则、开闭原则，违背接口隔离原则<br>使用概率：30%<br>复杂度：中</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_composite1.png" alt="UML图"><br><a id="more"></a></p>
@@ -718,7 +718,7 @@
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -727,7 +727,7 @@
     <link href="https://hengxing0080.github.io/2017/08/20/it/OOP&amp;DesignPattern/2.9.State/"/>
     <id>https://hengxing0080.github.io/2017/08/20/it/OOP&amp;DesignPattern/2.9.State/</id>
     <published>2017-08-20T12:00:02.000Z</published>
-    <updated>2017-09-27T16:43:32.063Z</updated>
+    <updated>2017-09-29T16:18:59.223Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文吗：外观模式<br>英文名：Facade Pattern<br>又名：门面模式<br>所属类型：结构型模式<br>设计原则：遵循依赖倒转原则和迪米特原则<br>使用概率：60%<br>复杂度：中</p>
 <h1 id="UML结构图"><a href="#UML结构图" class="headerlink" title="UML结构图"></a>UML结构图</h1><p><img src="/images/it_pattern_facade2.png" alt="UML图"><br><a id="more"></a><br>外观模式接口比较简单，就是通过一个统一的接口对外提供服务，使得外层程序只通过一个类就可以实现系统内部的多种功能，而这些实现功能的内部子系统之间可能也有交互，或者说完成一个功能需要几个子系统之间进行协作，如果没有封装，那么用户就需要操作几个子系统的交互逻辑，容易出现错误。而通过外观类对外屏蔽这些复杂的交互，降低用户的使用成本。</p>
@@ -759,7 +759,7 @@
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -768,7 +768,7 @@
     <link href="https://hengxing0080.github.io/2017/08/19/it/OOP&amp;DesignPattern/2.8.adapter/"/>
     <id>https://hengxing0080.github.io/2017/08/19/it/OOP&amp;DesignPattern/2.8.adapter/</id>
     <published>2017-08-19T14:12:59.000Z</published>
-    <updated>2017-09-28T10:41:28.662Z</updated>
+    <updated>2017-09-29T16:18:54.610Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文名：适配器模式<br>外文名：Adapter  Pattern<br>又名：变压器模式<br>设计原则：遵循开闭原则、体现功能复用<br>使用概率：40%<br>复杂度：中<br>基本信息：共有两类适配器模式<br>客户：需要调用我们的代码的对象<br>宗旨：保留现有类所提供的服务</p>
 <h1 id="UML图例"><a href="#UML图例" class="headerlink" title="UML图例"></a>UML图例</h1><p><img src="/images/it_pattern_adapter1.jpg" alt="UML图"><br><a id="more"></a></p>
@@ -815,7 +815,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -824,7 +824,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
     <link href="https://hengxing0080.github.io/2017/08/17/it/OOP&amp;DesignPattern/3.1.MVC/"/>
     <id>https://hengxing0080.github.io/2017/08/17/it/OOP&amp;DesignPattern/3.1.MVC/</id>
     <published>2017-08-17T13:11:01.000Z</published>
-    <updated>2017-09-26T06:19:18.036Z</updated>
+    <updated>2017-09-29T16:19:18.509Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_pattern_mvc1.png" alt="图"><br><a id="more"></a></p>
 <h1 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h1><ul>
@@ -889,7 +889,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -898,7 +898,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
     <link href="https://hengxing0080.github.io/2017/08/15/it/OOP&amp;DesignPattern/4.1.IOC/"/>
     <id>https://hengxing0080.github.io/2017/08/15/it/OOP&amp;DesignPattern/4.1.IOC/</id>
     <published>2017-08-15T07:21:32.000Z</published>
-    <updated>2017-09-13T10:03:36.000Z</updated>
+    <updated>2017-09-29T16:19:21.663Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_pattern_ioc1.jpg" alt="图"><br><a id="more"></a></p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文名：控制反转<br>英文：IoC（Inversion of Control）<br>目的：描述框架的重要特征<br>起源时间：1988年</p>
@@ -926,7 +926,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -935,7 +935,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
     <link href="https://hengxing0080.github.io/2017/08/12/it/OOP&amp;DesignPattern/2.7.Proxy/"/>
     <id>https://hengxing0080.github.io/2017/08/12/it/OOP&amp;DesignPattern/2.7.Proxy/</id>
     <published>2017-08-12T03:22:47.000Z</published>
-    <updated>2017-09-28T10:55:10.465Z</updated>
+    <updated>2017-09-29T16:18:49.895Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文名：代理模式<br>外文名：Proxy Pattern<br>又名：委托模式 | 第三方模式<br>设计原则：体现功能复用<br>使用概率：99.99999%<br>复杂度：中高</p>
 <h1 id="UML图例"><a href="#UML图例" class="headerlink" title="UML图例"></a>UML图例</h1><p><img src="/images/it_pattern_proxy1.jpg" alt="UML图"><br><a id="more"></a></p>
@@ -983,7 +983,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -992,7 +992,7 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
     <link href="https://hengxing0080.github.io/2017/08/10/it/OOP&amp;DesignPattern/2.6.Decorator/"/>
     <id>https://hengxing0080.github.io/2017/08/10/it/OOP&amp;DesignPattern/2.6.Decorator/</id>
     <published>2017-08-10T00:11:22.000Z</published>
-    <updated>2017-09-29T14:29:49.665Z</updated>
+    <updated>2017-09-29T16:18:44.424Z</updated>
     
     <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文名：装饰模式<br>外文名：Decorator Pattern<br>又名：装饰者模式 | 包装模式<br>设计原则：遵循单一职责原则、开闭原则、迪米特原则，破坏里氏替换原则，体现功能复用<br>使用概率：99.99999%<br>复杂度：中</p>
 <h1 id="UML图例"><a href="#UML图例" class="headerlink" title="UML图例"></a>UML图例</h1><p><img src="/images/it_pattern_decorator1.jpg" alt="UML图"><br><a id="more"></a></p>
@@ -1047,7 +1047,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
       <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="面向对象和设计模式" scheme="https://hengxing0080.github.io/tags/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -1056,7 +1056,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
     <link href="https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/"/>
     <id>https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/</id>
     <published>2017-08-01T15:58:10.000Z</published>
-    <updated>2017-09-28T09:02:23.459Z</updated>
+    <updated>2017-09-29T15:58:11.971Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_iq_interview.jpg" alt="UML图"><br><a id="more"></a></p>
 <hr>
@@ -1109,6 +1109,9 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
 <h1 id="猴子吃香蕉问题"><a href="#猴子吃香蕉问题" class="headerlink" title="猴子吃香蕉问题"></a>猴子吃香蕉问题</h1><p>一个小猴子边上有100 根香蕉，它要走过50 米才能到家，每次它最多搬50 根香蕉，每走1 米就要吃掉一根，请问它最多能把多少根香蕉搬到家里。 </p>
 <p>答案1:<br>最多能拿回16根回到家里。<br>过程：<br>猴子先搬50根,走17米,此时消耗并剩下（50-17=33）<br>在回来搬50根走到17米处,（此时刚刚第一次拿的剩下33-17=16）<br>回来后再搬剩下的49根走完33米,最后得到16根!（此时数量：第二次拿的50走到17米剩下33 + 第一次剩的16 = 49，然后49走完剩下的33米等于49-33=16）</p>
 <p>解答2：<br>设 小猴从0 走到50, 到A 点时候他可以直接抱香蕉回家了, 可是到A 点时候他至少消耗了3A 的香蕉( 到A, 回0, 到A), 一个限制就是小猴只能抱50 只香蕉, 那么在A 点小猴最多49 只香蕉.100-3A=49, 所以A=17.   这样折腾完到家的时候香蕉剩100-3A-(50-A)=50-2A=16.</p>
+<h1 id="村子里有100对夫妻"><a href="#村子里有100对夫妻" class="headerlink" title="村子里有100对夫妻"></a>村子里有100对夫妻</h1><p>村子里有100对夫妻，其中每个丈夫都瞒着自己的妻子偷情。<br>村里的每个妻子都能立即发现除自己丈夫之外的其他男人是否偷情，唯独不知道她自己的丈夫到底有没有偷情。村里的规矩不容忍通奸。<br>任何一个妻子，一旦能证明自己的男人偷情，就必须当天把他杀死。<br>村里的女人全都严格照此规矩办事。<br>一天，女头领出来宣布，村里至少有一个丈夫偷情。请问接下来会发生什么事？</p>
+<p>答案1：<br>这是一个典型的递归问题。<br>一旦所有的妻子都知道至少有一个男人出轨，我们就可以按递归方式来看待这个流程。<br>先让我们假设只有一个丈夫偷情。则他的妻子见不到任何偷情的男人，因此知道这个人就是自己丈夫，她当天就会杀了他。<br>假如有两个丈夫偷情，则他俩的妻子只知道不是自己丈夫的那一个男人偷情。因此她会等上一天看那个人有没有被杀死。假如第一天没人被杀死，她就能确定她自己的丈夫也偷了情。<br>依此类推，假如有100个丈夫偷情，则他们能安全活上99 天，直到100天时，所有妻子把他们全都杀死。<br>应聘职位：产品经理</p>
+<p>答案2：<br>这是一道逻辑分析题，最终结局是全村所有的丈夫全死了。假设只有一个丈夫偷情，那么偷情丈夫的妻子，就不知道有男人偷情，而女头领宣布的却是至少有一个人偷情，所以这个妻子就知道是她丈夫偷情，宣布后的第一天早上就把她丈夫杀了。假设A和B的丈夫A1和B1偷情，那么村里其他女人X（除了A和B）都知道A1和B1偷情而A知道B1偷情，B知道A1偷情，宣布后的第一天，由于A1知道B1偷情，所以觉得B应该杀掉B1，而第一天B却没有杀B1，说明B知道一个非B1的男人偷情，而A只知道B1一个男人偷情，说明这个非B1男人就是自己的丈夫，否则她应该知道两个男人偷情，所以第二天A杀死了A1，同理分析B，她也会在宣布后的第二天杀死B1，而其他女人知道偷情的男人都被杀死，就不会再是自己的丈夫了。以此类推，当一百个男人都偷情时，所有男人会在宣布后的第100天被各自的女人杀死，而前99天则相安无事。</p>
 ]]></content>
     
     <summary type="html">
@@ -1129,7 +1132,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
     <link href="https://hengxing0080.github.io/2017/08/01/it/DataStructure&amp;Algorithm/LinearList/"/>
     <id>https://hengxing0080.github.io/2017/08/01/it/DataStructure&amp;Algorithm/LinearList/</id>
     <published>2017-08-01T01:50:23.000Z</published>
-    <updated>2017-08-26T06:10:47.364Z</updated>
+    <updated>2017-09-29T16:20:29.003Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_datastructure_linearlist1.jpg" alt="UML图"></p>
 <a id="more"></a>
@@ -1210,7 +1213,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
       <category term="IT - 数据结构与算法 - 数据结构 - 线性表" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
     
     
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="数据结构" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -1219,7 +1222,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
     <link href="https://hengxing0080.github.io/2017/07/31/it/DataStructure&amp;Algorithm/SortCounting/"/>
     <id>https://hengxing0080.github.io/2017/07/31/it/DataStructure&amp;Algorithm/SortCounting/</id>
     <published>2017-07-31T14:02:57.000Z</published>
-    <updated>2017-08-13T08:30:46.189Z</updated>
+    <updated>2017-09-29T16:21:06.840Z</updated>
     
     <content type="html"><![CDATA[<h1 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h1><p>中文名 计数排序<br>外文名 Counting sort<br>提出人  Harold H. Seward<br>提出时间 1954<br>定义 非基于比较的排序算法<br>类别 分配式排序<br><a id="more"></a></p>
 <h1 id="算法理解"><a href="#算法理解" class="headerlink" title="算法理解"></a>算法理解</h1><p>是一种稳定的线性时间排序算法。</p>
@@ -1238,7 +1241,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
       <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
     
     
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://hengxing0080.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -1247,7 +1250,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
     <link href="https://hengxing0080.github.io/2017/07/30/it/DataStructure&amp;Algorithm/SortBucket/"/>
     <id>https://hengxing0080.github.io/2017/07/30/it/DataStructure&amp;Algorithm/SortBucket/</id>
     <published>2017-07-30T11:01:33.000Z</published>
-    <updated>2017-08-13T08:09:44.186Z</updated>
+    <updated>2017-09-29T16:21:02.991Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_algorithm_sortbucket.jpg" alt="UML图"><br><a id="more"></a></p>
 <h1 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h1><p>中文名 桶排序<br>又名     箱排序<br>英文名 Bucket sort<br>类别   分配式排序 </p>
@@ -1271,7 +1274,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
       <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
     
     
-      <category term="数据结构与算法" scheme="https://hengxing0080.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://hengxing0080.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
