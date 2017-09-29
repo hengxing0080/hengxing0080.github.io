@@ -92,17 +92,17 @@
 
 
 
-<meta name="description" content="简介： 中文含义：接口隔离原则英文缩写：ISP英文全称：Interface Segregation Principle">
+<meta name="description" content="中文含义：接口隔离原则 | 接口最小化原则英文缩写：ISP英文全称：Interface Segregation Principle宗旨：系统有更高的灵活性">
 <meta name="keywords" content="面向对象和设计模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象编程6大原则之5：接口隔离原则">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/04/01/it/OOP&DesignPattern/1.5.ISP/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
-<meta property="og:description" content="简介： 中文含义：接口隔离原则英文缩写：ISP英文全称：Interface Segregation Principle">
-<meta property="og:updated_time" content="2017-07-15T09:55:04.000Z">
+<meta property="og:description" content="中文含义：接口隔离原则 | 接口最小化原则英文缩写：ISP英文全称：Interface Segregation Principle宗旨：系统有更高的灵活性">
+<meta property="og:updated_time" content="2017-09-29T14:55:22.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象编程6大原则之5：接口隔离原则">
-<meta name="twitter:description" content="简介： 中文含义：接口隔离原则英文缩写：ISP英文全称：Interface Segregation Principle">
+<meta name="twitter:description" content="中文含义：接口隔离原则 | 接口最小化原则英文缩写：ISP英文全称：Interface Segregation Principle宗旨：系统有更高的灵活性">
 
 
 
@@ -414,18 +414,16 @@
       
 
       
-        <hr>
-<h1 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h1><hr>
-<p>中文含义：接口隔离原则<br>英文缩写：ISP<br>英文全称：Interface Segregation Principle</p>
-<a id="more"></a>
-<p>各种解释和定义：<br>　系统有更高的灵活性</p>
-<p>　不应该强迫客户依赖于它们不用的方法。接口属于客户，不属于它所在的类层次结构。</p>
-<p>　也称接口最小化原则，强调的是一个接口拥有的行为应该尽可能的小。<br>　每一个接口应该是一种角色，不多不少，不干不该干的事，该干的事都要干。</p>
-<p>　客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</p>
-<p>　类间的依赖关系应该建立在最小的接口上，将庞大、臃肿的接口拆分成更小的、更具体的接口。目的是系统的解耦，从而更容易重构、更改和重新部署。</p>
-<p>　“不应该强迫客户依赖于它们不用的方法。接口属于客户，不属于它所在的类层次结构。”这个说得很明白了，再通俗点说，不要强迫客户使用它们不用的方法，如果强迫用户使用它们不使用的方法，那么这些客户就会面临由于这些不使用的方法的改变所带来的改变。</p>
+        <p>中文含义：接口隔离原则 | 接口最小化原则<br>英文缩写：ISP<br>英文全称：Interface Segregation Principle<br>宗旨：系统有更高的灵活性<br><a id="more"></a></p>
 <hr>
-<h1 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h1><hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><hr>
+<p>也称接口最小化原则，强调的是一个接口拥有的行为应该尽可能的小。<br>每一个接口应该是一种角色，不多不少，不干不该干的事，该干的事都要干。</p>
+<p>不应该强迫客户依赖于它们不用的方法。接口属于客户，不属于它所在的类层次结构。</p>
+<p>客户端不应该依赖它不需要的接口；一个类对另一个类的依赖应该建立在最小的接口上。</p>
+<p>类间的依赖关系应该建立在最小的接口上，将庞大、臃肿的接口拆分成更小的、更具体的接口。<br>目的是系统的解耦，从而更容易重构、更改和重新部署。</p>
+<p>“不应该强迫客户依赖于它们不用的方法。接口属于客户，不属于它所在的类层次结构。”这个说得很明白了，再通俗点说，不要强迫客户使用它们不用的方法，如果强迫用户使用它们不使用的方法，那么这些客户就会面临由于这些不使用的方法的改变所带来的改变。</p>
+<hr>
+<h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><hr>
 <blockquote>
 <p>来源：书籍——Android源码设计模式解析与实战——第1章——1.5</p>
 </blockquote>
@@ -447,9 +445,10 @@
     }  
 }
 </code></pre>
-<p>代码立马简洁了很多！ 而且这个closeQuietyly方法可以运动到各类可关闭的对象中，保证了代码的重用性。<br>closeQuietyly方法的基本原理就是依赖于Closeable抽象而不是具体实现，并且建立在最小化依赖原装的基础上，它只需要知道这个对象时可关闭，其他的一概不关心，这就是接口隔离原则。</p>
+<p>代码立马简洁了很多！ 而且这个closeQuietyly方法可以运动到各类可关闭的对象中，保证了代码的重用性。<br>closeQuietyly方法的基本原理就是依赖于Closeable抽象而不是具体实现，并且建立在最小化依赖原则的基础上，它只需要知道这个对象时可关闭，其他的一概不关心，这就是接口隔离原则。</p>
+<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p><a href="http://blog.csdn.net/zhengzhb/article/details/7296921" target="_blank" rel="external">设计模式六大原则（4）：接口隔离原则</a> </p>
 <hr>
-<h1 id="PS："><a href="#PS：" class="headerlink" title="PS："></a>PS：</h1><hr>
+<h1 id="PS"><a href="#PS" class="headerlink" title="PS"></a>PS</h1><hr>
 <p>Bob大叔（Robert C martin）在21世纪早期将单一职责、开闭原则、里氏替换、接口隔离以及依赖倒置5个原则定位为SOLID原则，作为面向对象编程的5个基本原则。<br>当这些原则被一起应用时，它们使得一个软件系统更清晰、简单，最大程序地拥抱变化。<br>SOLID被典型地应用在测试驱动开发商，并且是敏捷开发以及自适应软件开发基本原则的重要组成部分。<br>经过这前5个原则的学习，发现这几大原则最终就可以化为几个关键词：抽象、单一职责、最小化。</p>
 
       
@@ -752,7 +751,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介："><span class="nav-number">1.</span> <span class="nav-text">简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码："><span class="nav-number">2.</span> <span class="nav-text">示例代码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PS："><span class="nav-number">3.</span> <span class="nav-text">PS：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码"><span class="nav-number">2.</span> <span class="nav-text">示例代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关文章"><span class="nav-number">3.</span> <span class="nav-text">相关文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PS"><span class="nav-number">4.</span> <span class="nav-text">PS</span></a></li></ol></div>
             
 
           </div>
