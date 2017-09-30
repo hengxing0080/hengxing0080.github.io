@@ -4,7 +4,187 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/</loc>
+    <loc>https://hengxing0080.github.io/2017/04/20/it/2.OOP&DesignPattern/1.7.CARP/</loc>
+    <lastmod>2017-09-30T13:05:44.461Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程其他原则：合成/聚合复用原则</title>
+        <pubTime>2017-04-20T03:27:15.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/26/it/2.OOP&DesignPattern/1.4.DIP/</loc>
+    <lastmod>2017-09-30T13:01:52.757Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之4：依赖倒置原则</title>
+        <pubTime>2017-03-26T02:30:38.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/04/01/it/2.OOP&DesignPattern/1.5.ISP/</loc>
+    <lastmod>2017-09-30T13:01:46.354Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之5：接口隔离原则</title>
+        <pubTime>2017-04-01T13:32:12.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/04/02/it/2.OOP&DesignPattern/1.6.LOD/</loc>
+    <lastmod>2017-09-30T13:01:02.957Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之6：迪米特法则</title>
+        <pubTime>2017-04-02T03:27:15.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/05/it/2.NetworkProtocol/HTTPS/</loc>
+    <lastmod>2017-09-30T12:50:31.586Z</lastmod>
+    <data>
+        <display>
+        <title>HTTPS协议</title>
+        <pubTime>2017-09-05T10:22:11.000Z</pubTime>
+        
+        <tag>网络协议</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 网络 - 协议" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/03/it/2.NetworkProtocol/Socket/</loc>
+    <lastmod>2017-09-30T12:25:36.792Z</lastmod>
+    <data>
+        <display>
+        <title>Socket机制</title>
+        <pubTime>2017-09-03T07:19:20.000Z</pubTime>
+        
+        <tag>网络协议</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 网络 - 相关" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E7%9B%B8%E5%85%B3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&Algorithm/LinearList/</loc>
+    <lastmod>2017-09-30T12:23:06.826Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 线性表</title>
+        <pubTime>2017-08-01T01:50:23.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/15/it/2.OOP&DesignPattern/2.5.Prototype/</loc>
+    <lastmod>2017-09-30T08:42:16.150Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之5 —— 原型模式（创建型模式）</title>
+        <pubTime>2017-06-15T05:21:32.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/18/discovery/Underwater1%20/</loc>
+    <lastmod>2017-09-29T16:40:20.136Z</lastmod>
+    <data>
+        <display>
+        <title>Hello everyone!</title>
+        <pubTime>2017-02-18T05:55:11.000Z</pubTime>
+        
+        <tag>探索发现</tag>
+         
+         
+           
+             
+              <breadCrumb title="探索发现 - 潜水" url="https://hengxing0080.github.io/categories/%E6%8E%A2%E7%B4%A2%E5%8F%91%E7%8E%B0-%E6%BD%9C%E6%B0%B4/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.interview/</loc>
     <lastmod>2017-09-29T16:34:52.713Z</lastmod>
     <data>
         <display>
@@ -24,7 +204,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/</loc>
+    <loc>https://hengxing0080.github.io/2017/09/04/it/2.NetworkProtocol/Session/</loc>
     <lastmod>2017-09-29T16:29:48.823Z</lastmod>
     <data>
         <display>
@@ -44,27 +224,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/</loc>
-    <lastmod>2017-09-29T16:29:46.653Z</lastmod>
-    <data>
-        <display>
-        <title>Socket理解</title>
-        <pubTime>2017-09-03T07:19:20.000Z</pubTime>
-        
-        <tag>网络协议</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 网络 - 相关" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E7%9B%B8%E5%85%B3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/</loc>
+    <loc>https://hengxing0080.github.io/2017/09/02/it/2.NetworkProtocol/URI/</loc>
     <lastmod>2017-09-29T16:29:33.429Z</lastmod>
     <data>
         <display>
@@ -84,7 +244,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/19/it/DataStructure&Algorithm/Recursion/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/19/it/2.DataStructure&Algorithm/Recursion/</loc>
     <lastmod>2017-09-29T16:28:59.745Z</lastmod>
     <data>
         <display>
@@ -104,7 +264,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/25/it/Java/BitwiseOperation/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/25/it/1.Java/BitwiseOperation/</loc>
     <lastmod>2017-09-29T16:26:53.024Z</lastmod>
     <data>
         <display>
@@ -124,7 +284,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/16/it/Java/ModuloOperation/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/16/it/1.Java/ModuloOperation/</loc>
     <lastmod>2017-09-29T16:26:51.369Z</lastmod>
     <data>
         <display>
@@ -144,7 +304,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/15/it/DataStructure&Algorithm/Queue/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/15/it/2.DataStructure&Algorithm/Queue/</loc>
     <lastmod>2017-09-29T16:23:56.698Z</lastmod>
     <data>
         <display>
@@ -164,7 +324,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/20/it/DataStructure&Algorithm/String/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/String/</loc>
     <lastmod>2017-09-29T16:21:53.317Z</lastmod>
     <data>
         <display>
@@ -184,7 +344,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/18/it/DataStructure&Algorithm/Stack/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/18/it/2.DataStructure&Algorithm/Stack/</loc>
     <lastmod>2017-09-29T16:21:46.399Z</lastmod>
     <data>
         <display>
@@ -204,7 +364,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/23/it/DataStructure&Algorithm/SortStooge/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/23/it/2.DataStructure&Algorithm/SortStooge/</loc>
     <lastmod>2017-09-29T16:21:43.882Z</lastmod>
     <data>
         <display>
@@ -224,7 +384,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/22/it/DataStructure&Algorithm/SortShell/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/22/it/2.DataStructure&Algorithm/SortShell/</loc>
     <lastmod>2017-09-29T16:21:40.508Z</lastmod>
     <data>
         <display>
@@ -244,7 +404,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/22/it/DataStructure&Algorithm/SortShaker/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/22/it/2.DataStructure&Algorithm/SortShaker/</loc>
     <lastmod>2017-09-29T16:21:37.325Z</lastmod>
     <data>
         <display>
@@ -264,7 +424,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/09/it/DataStructure&Algorithm/SortSelection/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/09/it/2.DataStructure&Algorithm/SortSelection/</loc>
     <lastmod>2017-09-29T16:21:26.026Z</lastmod>
     <data>
         <display>
@@ -284,7 +444,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/29/it/DataStructure&Algorithm/SortRadix/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/29/it/2.DataStructure&Algorithm/SortRadix/</loc>
     <lastmod>2017-09-29T16:21:23.311Z</lastmod>
     <data>
         <display>
@@ -304,7 +464,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/28/it/DataStructure&Algorithm/SortQuick/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/28/it/2.DataStructure&Algorithm/SortQuick/</loc>
     <lastmod>2017-09-29T16:21:20.278Z</lastmod>
     <data>
         <display>
@@ -324,7 +484,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/27/it/DataStructure&Algorithm/SortMerging/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/27/it/2.DataStructure&Algorithm/SortMerging/</loc>
     <lastmod>2017-09-29T16:21:17.501Z</lastmod>
     <data>
         <display>
@@ -344,7 +504,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/21/it/DataStructure&Algorithm/SortInsert/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/21/it/2.DataStructure&Algorithm/SortInsert/</loc>
     <lastmod>2017-09-29T16:21:14.008Z</lastmod>
     <data>
         <display>
@@ -364,7 +524,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/26/it/DataStructure&Algorithm/SortHeap/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/26/it/2.DataStructure&Algorithm/SortHeap/</loc>
     <lastmod>2017-09-29T16:21:10.647Z</lastmod>
     <data>
         <display>
@@ -384,7 +544,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/31/it/DataStructure&Algorithm/SortCounting/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/31/it/2.DataStructure&Algorithm/SortCounting/</loc>
     <lastmod>2017-09-29T16:21:06.840Z</lastmod>
     <data>
         <display>
@@ -404,7 +564,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/30/it/DataStructure&Algorithm/SortBucket/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/30/it/2.DataStructure&Algorithm/SortBucket/</loc>
     <lastmod>2017-09-29T16:21:02.991Z</lastmod>
     <data>
         <display>
@@ -424,7 +584,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/08/it/DataStructure&Algorithm/SortBubble/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/08/it/2.DataStructure&Algorithm/SortBubble/</loc>
     <lastmod>2017-09-29T16:20:59.704Z</lastmod>
     <data>
         <display>
@@ -444,7 +604,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/23/it/DataStructure&Algorithm/SortBogo/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/23/it/2.DataStructure&Algorithm/SortBogo/</loc>
     <lastmod>2017-09-29T16:20:56.415Z</lastmod>
     <data>
         <display>
@@ -464,7 +624,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/28/it/DataStructure&Algorithm/SortAlgorithm/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/28/it/2.DataStructure&Algorithm/SortAlgorithm/</loc>
     <lastmod>2017-09-29T16:20:52.987Z</lastmod>
     <data>
         <display>
@@ -484,27 +644,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/DataStructure&Algorithm/LinearList/</loc>
-    <lastmod>2017-09-29T16:20:29.003Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 线性表</title>
-        <pubTime>2017-08-01T01:50:23.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/15/it/OOP&DesignPattern/4.1.IOC/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/15/it/2.OOP&DesignPattern/4.1.IOC/</loc>
     <lastmod>2017-09-29T16:19:21.663Z</lastmod>
     <data>
         <display>
@@ -524,7 +664,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/17/it/OOP&DesignPattern/3.1.MVC/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
     <lastmod>2017-09-29T16:19:18.509Z</lastmod>
     <data>
         <display>
@@ -544,7 +684,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/23/it/OOP&DesignPattern/2.12.Flyweight/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/23/it/2.OOP&DesignPattern/2.12.Flyweight/</loc>
     <lastmod>2017-09-29T16:19:11.051Z</lastmod>
     <data>
         <display>
@@ -564,7 +704,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/22/it/OOP&DesignPattern/2.11.Bridge/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/22/it/2.OOP&DesignPattern/2.11.Bridge/</loc>
     <lastmod>2017-09-29T16:19:06.695Z</lastmod>
     <data>
         <display>
@@ -584,7 +724,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/21/it/OOP&DesignPattern/2.10.Composite/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/21/it/2.OOP&DesignPattern/2.10.Composite/</loc>
     <lastmod>2017-09-29T16:19:03.489Z</lastmod>
     <data>
         <display>
@@ -604,7 +744,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/20/it/OOP&DesignPattern/2.9.State/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/20/it/2.OOP&DesignPattern/2.9.State/</loc>
     <lastmod>2017-09-29T16:18:59.223Z</lastmod>
     <data>
         <display>
@@ -624,7 +764,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/19/it/OOP&DesignPattern/2.8.adapter/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/19/it/2.OOP&DesignPattern/2.8.adapter/</loc>
     <lastmod>2017-09-29T16:18:54.610Z</lastmod>
     <data>
         <display>
@@ -644,7 +784,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/12/it/OOP&DesignPattern/2.7.Proxy/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/12/it/2.OOP&DesignPattern/2.7.Proxy/</loc>
     <lastmod>2017-09-29T16:18:49.895Z</lastmod>
     <data>
         <display>
@@ -664,7 +804,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/10/it/OOP&DesignPattern/2.6.Decorator/</loc>
+    <loc>https://hengxing0080.github.io/2017/08/10/it/2.OOP&DesignPattern/2.6.Decorator/</loc>
     <lastmod>2017-09-29T16:18:44.424Z</lastmod>
     <data>
         <display>
@@ -684,27 +824,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/15/it/OOP&DesignPattern/2.5.Prototype/</loc>
-    <lastmod>2017-09-29T16:18:39.126Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之5 —— 原型模式（创建型模式）</title>
-        <pubTime>2017-06-15T05:21:32.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/08/it/OOP&DesignPattern/2.4.Builder/</loc>
+    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
     <lastmod>2017-09-29T16:18:34.088Z</lastmod>
     <data>
         <display>
@@ -724,7 +844,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/04/it/OOP&DesignPattern/2.3.Abstract/</loc>
+    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
     <lastmod>2017-09-29T16:18:30.589Z</lastmod>
     <data>
         <display>
@@ -744,7 +864,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/02/it/OOP&DesignPattern/2.2.Factory/</loc>
+    <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
     <lastmod>2017-09-29T16:18:26.972Z</lastmod>
     <data>
         <display>
@@ -764,7 +884,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/01/it/OOP&DesignPattern/2.1.Singleton/</loc>
+    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
     <lastmod>2017-09-29T16:18:21.774Z</lastmod>
     <data>
         <display>
@@ -784,7 +904,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/05/01/it/OOP&DesignPattern/2.0.Info/</loc>
+    <loc>https://hengxing0080.github.io/2017/05/01/it/2.OOP&DesignPattern/2.0.Info/</loc>
     <lastmod>2017-09-29T16:18:17.049Z</lastmod>
     <data>
         <display>
@@ -804,87 +924,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/04/20/it/OOP&DesignPattern/1.7.CARP/</loc>
-    <lastmod>2017-09-29T16:18:09.195Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程其他原则：合成/聚合复用原则</title>
-        <pubTime>2017-04-20T03:27:15.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/04/02/it/OOP&DesignPattern/1.6.LOD/</loc>
-    <lastmod>2017-09-29T16:18:06.335Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之6：迪米特法则</title>
-        <pubTime>2017-04-02T03:27:15.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/04/01/it/OOP&DesignPattern/1.5.ISP/</loc>
-    <lastmod>2017-09-29T16:18:03.058Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之5：接口隔离原则</title>
-        <pubTime>2017-04-01T13:32:12.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/26/it/OOP&DesignPattern/1.4.DIP/</loc>
-    <lastmod>2017-09-29T16:17:56.973Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之4：依赖倒置原则</title>
-        <pubTime>2017-03-26T02:30:38.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/25/it/OOP&DesignPattern/1.3.LSP/</loc>
+    <loc>https://hengxing0080.github.io/2017/03/25/it/2.OOP&DesignPattern/1.3.LSP/</loc>
     <lastmod>2017-09-29T16:17:54.109Z</lastmod>
     <data>
         <display>
@@ -904,7 +944,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/03/14/it/OOP&DesignPattern/1.2.OCP/</loc>
+    <loc>https://hengxing0080.github.io/2017/03/14/it/2.OOP&DesignPattern/1.2.OCP/</loc>
     <lastmod>2017-09-29T16:17:51.190Z</lastmod>
     <data>
         <display>
@@ -924,7 +964,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/03/01/it/OOP&DesignPattern/1.0.OOP/</loc>
+    <loc>https://hengxing0080.github.io/2017/03/01/it/2.OOP&DesignPattern/1.0.OOP/</loc>
     <lastmod>2017-09-29T16:17:33.423Z</lastmod>
     <data>
         <display>
@@ -944,7 +984,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/03/05/it/OOP&DesignPattern/1.1.SRP/</loc>
+    <loc>https://hengxing0080.github.io/2017/03/05/it/2.OOP&DesignPattern/1.1.SRP/</loc>
     <lastmod>2017-09-29T16:17:32.194Z</lastmod>
     <data>
         <display>
@@ -964,7 +1004,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/28/it/NetworkProtocol/HTTP/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/28/it/2.NetworkProtocol/HTTP/</loc>
     <lastmod>2017-09-29T08:22:15.114Z</lastmod>
     <data>
         <display>
@@ -984,7 +1024,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/</loc>
+    <loc>https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/UDP/</loc>
     <lastmod>2017-09-29T08:21:43.696Z</lastmod>
     <data>
         <display>
@@ -1004,7 +1044,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/</loc>
+    <loc>https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/TCP/</loc>
     <lastmod>2017-09-29T08:21:38.421Z</lastmod>
     <data>
         <display>
@@ -1024,7 +1064,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/17/it/NetworkProtocol/OSI/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/17/it/2.NetworkProtocol/OSI/</loc>
     <lastmod>2017-09-29T08:21:08.270Z</lastmod>
     <data>
         <display>
@@ -1044,7 +1084,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/22/it/Statistics/RankingsDeveloper/</loc>
+    <loc>https://hengxing0080.github.io/2017/06/22/it/4.Statistics/RankingsDeveloper/</loc>
     <lastmod>2017-09-29T06:23:06.567Z</lastmod>
     <data>
         <display>
@@ -1064,7 +1104,7 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/05/31/it/Statistics/RankingsProgrammingLanguage/</loc>
+    <loc>https://hengxing0080.github.io/2017/05/31/it/4.Statistics/RankingsProgrammingLanguage/</loc>
     <lastmod>2017-09-29T06:22:28.111Z</lastmod>
     <data>
         <display>

@@ -1,0 +1,1288 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="网络协议," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹空间" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="网络协议">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Session &amp; Cookie &amp; Token的区别">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/04/it/2.NetworkProtocol/Session/index.html">
+<meta property="og:site_name" content="恒星的轨迹空间">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_network_session1.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_network_session2.jpg">
+<meta property="og:updated_time" content="2017-09-29T16:29:48.823Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Session &amp; Cookie &amp; Token的区别">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_network_session1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/04/it/2.NetworkProtocol/Session/"/>
+
+
+
+
+
+  <title>Session & Cookie & Token的区别 | 恒星的轨迹空间</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹空间</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/04/it/2.NetworkProtocol/Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Session & Cookie & Token的区别</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T18:20:01+08:00">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-网络-相关/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - 网络 - 相关</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_network_session1.jpg" alt="UML图"><br><a id="more"></a></p>
+<hr>
+<h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><hr>
+<p>中文名：时域 | 会话<br>外文名：Session<br>应用学科：软件 网络通信<br>属性：用户与交互系统通信的时间间隔</p>
+<h2 id="Session简介"><a href="#Session简介" class="headerlink" title="Session简介"></a>Session简介</h2><p>简单理解就是存在服务端的缓存</p>
+<p>session的中文翻译是“会话”，当用户打开某个web应用时，便与web服务器产生一次session。<br>服务器使用session把用户的信息临时保存在了服务器上，用户离开网站后session会被销毁。<br>这种用户信息存储方式相对cookie来说更安全<br>比如说你用某个账号登陆某新浪，那么新浪的服务器端就会生成一个session来记录你的登陆状态，一般10分钟或者20分钟就失效了，<br>而cookie是网页指令让浏览器生成本地的记录你的登陆状态的文件。一般对安全性要求不高的话就可以直接在客户端生成cookie来记录登陆状态，否则就需要超时处理用session</p>
+<p>session在WEB技术中占有非常重要的份量。<br>由于网页是一种无状态的连接程序，因此你无法得知用户的浏览状态。<br>因此我们必须通过session记录用户的有关信息，以供用户再次以此身份对web服务器提供要求时作确认，<br>例如，我们在某些网站中常常要求用户登录，但我们怎么知道用户已经登录了呢，<br>如果没有session的话，登录信息是无法保留的，那岂不要让用户在每一页网页中都要提供用户名和密码。 </p>
+<h2 id="Session和Cookie的生命周期"><a href="#Session和Cookie的生命周期" class="headerlink" title="Session和Cookie的生命周期"></a>Session和Cookie的生命周期</h2><p>session和cookies都是来存储信息的但是他们的寿命不一样：比如你登录一个网站你有自己的帐号。昵称啊什么的这些就保存在session里当网页不关闭，session就存在。但是当你关闭之后session就清空了。<br>而cookies则可以在电脑的缓存文件里添加记录，这样即使当你的程序关闭了，但是记录却被永久保存了下来。存活期较session长。</p>
+<h2 id="Session缺陷"><a href="#Session缺陷" class="headerlink" title="Session缺陷"></a>Session缺陷</h2><p>如果web服务器做了负载均衡，那么下一个操作请求到了另一台服务器的时候session会丢失。</p>
+<h2 id="Session和Cookie的区别比较"><a href="#Session和Cookie的区别比较" class="headerlink" title="Session和Cookie的区别比较"></a>Session和Cookie的区别比较</h2><p><img src="/images/it_network_session2.jpg" alt="UML图"></p>
+<p>用处：<br>两者都可以用来跟踪和保存客户端的状态信息</p>
+<p>保存地点：<br>Session是在服务器端创建,在服务端保存(所以Session的安全性高于Cookie)<br>Cookie是在服务器端创建,在客户端保存，</p>
+<p>保存类型：<br>Session是依赖于Cookie的, Sessionid还是存放在Cookie中并保存在客户端的浏览器中<br>Cookie中只能存放String类型,而session中可以存放Object类型。</p>
+<p>安全性：<br>cookie存在客户端的磁盘上对用户透明<br>session存在服务器端而且sessionID是加密的相对来说seesion较安全。<br>用户的会话通过cookie中存储的session id 来和服务器端的session进行关联从而保持正常的会话。</p>
+<h2 id="Session都是可以存在哪？"><a href="#Session都是可以存在哪？" class="headerlink" title="Session都是可以存在哪？"></a>Session都是可以存在哪？</h2><p>数据库、缓存、文件</p>
+<h2 id="如果把Cookie-禁掉Session还能用吗？"><a href="#如果把Cookie-禁掉Session还能用吗？" class="headerlink" title="如果把Cookie 禁掉Session还能用吗？"></a>如果把Cookie 禁掉Session还能用吗？</h2><p>1.通过url传值，把session id附加到url上（缺点：整个站点中不能有纯静态页面，因为当是纯静态页面session id 将无法继续向后传了）</p>
+<p>2.通过隐藏表单，把session id 放到表单的隐藏文本框中同表单一块提交过去（缺点：不适用<a>标签这种直接跳转的非表单的情况）</a></p>
+<p>3.直接配置php.ini文件,将php.ini文件里的session.use_trans_sid= 0设为1,</p>
+<p>4.用文件、数据库等形式保存Session ID，在跨页过程中手动调用</p>
+<hr>
+<h1 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h1><hr>
+<p>中文名：储存在用户本地终端上的数据<br>外文名：Cookie<br>复数形式：Cookies</p>
+<h2 id="Cookie简介"><a href="#Cookie简介" class="headerlink" title="Cookie简介"></a>Cookie简介</h2><p>网站为了辨别用户身份，而储存在本地设备上的数据，包括用户名和密码</p>
+<p>Cookie，有时也用其复数形式 Cookies，指某些网站为了辨别用户身份、进行Session 跟踪而储存在用户本地终端上的数据（通常经过加密）。</p>
+<p>Cookie是保存在本地终端的数据。<br>Ccokie由服务器生成，发送给浏览器，浏览器把cookie以kv形式保存到某个目录下的文本文件内，下一次请求同一网站时会把该cookie发送给服务器。</p>
+<h2 id="Cookie的组成"><a href="#Cookie的组成" class="headerlink" title="Cookie的组成"></a>Cookie的组成</h2><p>名称(key)、值(value)、有效域(domain)、路径(域的路径，一般设置为全局:”\”)、失效时间、安全标志(指定后，cookie只有在使用SSL连接时才发送到服务器(https))。</p>
+<h2 id="Cookie分两种"><a href="#Cookie分两种" class="headerlink" title="Cookie分两种"></a>Cookie分两种</h2><p>一种叫会话cookie是没有设置过期时间，当关闭浏览器后cookie将消失；<br>另一种是设置了过期时间叫持久cookie，这种cookie存储在磁盘中关闭浏览器后cookie不会消失。</p>
+<h2 id="各浏览器Cookie大小、个数限制"><a href="#各浏览器Cookie大小、个数限制" class="headerlink" title="各浏览器Cookie大小、个数限制"></a>各浏览器Cookie大小、个数限制</h2><p>由于cookie是存在客户端上的，所以浏览器加入了一些限制确保cookie不会被恶意使用，同时不会占据太多磁盘空间，所以每个域的cookie数量是有限的。<br>详情查看文章：↓<br><a href="http://www.cnblogs.com/henryhappier/archive/2011/03/03/1969564.html" target="_blank" rel="external">各浏览器Cookie大小、个数限制</a></p>
+<hr>
+<h1 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h1><hr>
+<p>中文名 令牌，标记<br>外文名 Token </p>
+<h2 id="Token简介"><a href="#Token简介" class="headerlink" title="Token简介"></a>Token简介</h2><p>代表执行某些操作的权利的对象,是用户身份的验证方式。</p>
+<h2 id="Token组成"><a href="#Token组成" class="headerlink" title="Token组成"></a>Token组成</h2><p>最简单的token组成:<br>　uid(用户唯一的身份标识)<br>　time(当前时间的时间戳)<br>　sign(签名，由token的前几位+盐以哈希算法压缩成一定长的十六进制字符串，可以防止恶意第三方拼接token请求服务器)。<br>　还可以把不变的参数也放进token，避免多次查库</p>
+<h2 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h2><h3 id="访问令牌（Access-token）"><a href="#访问令牌（Access-token）" class="headerlink" title="访问令牌（Access token）"></a>访问令牌（Access token）</h3><p>表示访问控制操作主体的系统对象</p>
+<p>access_token一般作为请求操作时的访问令牌，比如你让用户用QQ登陆后要去拿用户的QQ头像，这时候向腾讯API发送请求时就需要带上access_token。</p>
+<p>如果只是单纯的登陆的话，登陆后不做任何请求，理论上是可以不存access_token的，但是还是推荐你按照Oath2.0的标准来做。<br>想象一种情况，我授权了一个应用，它拿到了我的access_token，然后我忘记我授权过了，于是我以后每次发布的内容都被它拿去存起来，或者它利用我的账号偷偷的发消息，我一点都不知道。 这种情况还是很可怕的。</p>
+<h3 id="密保令牌（Security-token）"><a href="#密保令牌（Security-token）" class="headerlink" title="密保令牌（Security token）"></a>密保令牌（Security token）</h3><p>或者硬件令牌，例如U盾，或者叫做认证令牌或者加密令牌，一种计算机身份校验的物理设备</p>
+<h3 id="会话令牌（Session-token）"><a href="#会话令牌（Session-token）" class="headerlink" title="会话令牌（Session token）"></a>会话令牌（Session token）</h3><p>交互会话中唯一身份标识符</p>
+<h3 id="令牌化技术-Tokenization"><a href="#令牌化技术-Tokenization" class="headerlink" title="令牌化技术 (Tokenization)"></a>令牌化技术 (Tokenization)</h3><p>取代敏感信息条目的处理过程</p>
+<h3 id="邀请码"><a href="#邀请码" class="headerlink" title="邀请码"></a>邀请码</h3><p>在邀请系统中使用</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络协议/" rel="tag"># 网络协议</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/03/it/2.NetworkProtocol/Socket/" rel="next" title="Socket机制">
+                <i class="fa fa-chevron-left"></i> Socket机制
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/05/it/2.NetworkProtocol/HTTPS/" rel="prev" title="HTTPS协议">
+                HTTPS协议 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">68</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Session"><span class="nav-number">1.</span> <span class="nav-text">Session</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Session简介"><span class="nav-number">1.1.</span> <span class="nav-text">Session简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session和Cookie的生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">Session和Cookie的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session缺陷"><span class="nav-number">1.3.</span> <span class="nav-text">Session缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session和Cookie的区别比较"><span class="nav-number">1.4.</span> <span class="nav-text">Session和Cookie的区别比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Session都是可以存在哪？"><span class="nav-number">1.5.</span> <span class="nav-text">Session都是可以存在哪？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果把Cookie-禁掉Session还能用吗？"><span class="nav-number">1.6.</span> <span class="nav-text">如果把Cookie 禁掉Session还能用吗？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cookie"><span class="nav-number">2.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie简介"><span class="nav-number">2.1.</span> <span class="nav-text">Cookie简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie的组成"><span class="nav-number">2.2.</span> <span class="nav-text">Cookie的组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie分两种"><span class="nav-number">2.3.</span> <span class="nav-text">Cookie分两种</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#各浏览器Cookie大小、个数限制"><span class="nav-number">2.4.</span> <span class="nav-text">各浏览器Cookie大小、个数限制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Token"><span class="nav-number">3.</span> <span class="nav-text">Token</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Token简介"><span class="nav-number">3.1.</span> <span class="nav-text">Token简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Token组成"><span class="nav-number">3.2.</span> <span class="nav-text">Token组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关术语"><span class="nav-number">3.3.</span> <span class="nav-text">相关术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问令牌（Access-token）"><span class="nav-number">3.3.1.</span> <span class="nav-text">访问令牌（Access token）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#密保令牌（Security-token）"><span class="nav-number">3.3.2.</span> <span class="nav-text">密保令牌（Security token）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#会话令牌（Session-token）"><span class="nav-number">3.3.3.</span> <span class="nav-text">会话令牌（Session token）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#令牌化技术-Tokenization"><span class="nav-number">3.3.4.</span> <span class="nav-text">令牌化技术 (Tokenization)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#邀请码"><span class="nav-number">3.3.5.</span> <span class="nav-text">邀请码</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

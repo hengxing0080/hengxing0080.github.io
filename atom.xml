@@ -230,9 +230,49 @@
   </entry>
   
   <entry>
+    <title>HTTPS协议</title>
+    <link href="https://hengxing0080.github.io/2017/09/05/it/2.NetworkProtocol/HTTPS/"/>
+    <id>https://hengxing0080.github.io/2017/09/05/it/2.NetworkProtocol/HTTPS/</id>
+    <published>2017-09-05T10:22:11.000Z</published>
+    <updated>2017-09-30T12:50:31.586Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_network_https1.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>中文名：安全的HTTP（Secure HTTP） | 安全套接字层超文本传输协议<br>外文名：HTTPS<br>全称：Hyper Text Transfer Protocol over Secure Socket Layer<br>目标：安全<br>应用：安全数据传输<br>创建时间：1994<br>创建公司：网景<br>一句话理解：HTTPS 负责在 web 服务器和 web 浏览器之间的安全通信。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>http是超文本传输协议，信息是明文传输<br>https则是以安全为目标的ssl加密传输协议的HTTP通道，简单讲是HTTP的安全版。用于安全网页。加密所有信息交换。</p>
+<p>即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。<br>它是一个URI scheme（抽象标识符体系），句法类同http:体系。<br>用于安全的HTTP数据传输。<br>https:URL表明它使用了HTTP，但HTTPS存在不同于HTTP的默认端口及一个加密/身份验证层（在HTTP与TCP之间）。<br>这个系统的最初研发由网景公司(Netscape)进行，并内置于其浏览器Netscape Navigator中，提供了身份验证与加密通讯方法。<br>现在它被广泛用于万维网上安全敏感的通讯，例如信用卡交易支付方面和其他的敏感数据.</p>
+<h1 id="由来"><a href="#由来" class="headerlink" title="由来"></a>由来</h1><p>网景在1994年创建了HTTPS，并应用在网景导航者浏览器中。<br>最初，HTTPS是与SSL一起使用的；在SSL逐渐演变到TLS时，最新的HTTPS也由在2000年五月公布的RFC 2818正式确定下来。</p>
+<p>它是由Netscape开发并内置于其浏览器中，用于对数据进行加密和解密操作，并返回网络上传送回的结果。HTTPS实际上应用了Netscape的安全套接层（SSL）作为HTTP应用层的子层。<br>SSL使用40 位关键字作为RC4流加密算法，这对于商业信息的加密是合适的。<br>HTTPS和SSL支持使用X.509数字认证，如果需要的话用户可以确认发送者是谁。</p>
+<h1 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h1><p>1.建立一个信息安全通道，来保证数据传输的安全；<br>2.确认网站的真实性，凡是使用了 https 的网站，都可以通过点击浏览器地址栏的锁头标志来查看网站认证之后的真实信息，也可以通过 CA 机构颁发的安全签章来查询。</p>
+<h1 id="使用HTTPS将带来哪些影响？"><a href="#使用HTTPS将带来哪些影响？" class="headerlink" title="使用HTTPS将带来哪些影响？"></a>使用HTTPS将带来哪些影响？</h1><p>使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器。<br>HTTPS协议是由SSL+HTTP协议构建的可进行加密传输，身份认证的网络协议，要比http协议安全，可防止数据在传输过程中不被窃取，改变，确保数据的完整性。</p>
+<h1 id="HTTPS和HTTP的区别"><a href="#HTTPS和HTTP的区别" class="headerlink" title="HTTPS和HTTP的区别"></a>HTTPS和HTTP的区别</h1><p>超文本传输协议HTTP协议被用于在Web浏览器和网站服务器之间传递信息。<br>HTTP协议以明文方式发送内容，不提供任何方式的数据加密，如果攻击者截取了Web浏览器和网站服务器之间的传输报文，就可以直接读懂其中的信息，因此HTTP协议不适合传输一些敏感信息，比如信用卡号、密码等。<br>为了解决HTTP协议的这一缺陷，需要使用另一种协议：安全套接字层超文本传输协议HTTPS。<br>为了数据传输的安全，HTTPS在HTTP的基础上加入了SSL协议，SSL依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</p>
+<p>HTTPS和HTTP的区别主要为以下四点：<br>一、https协议需要到ca申请证书，一般免费证书很少，需要交费。<br>二、http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。<br>三、http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>四、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+<h1 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h1><ul>
+<li><p>SSL（安全套接字层）<br>SSL（Secure Sockets Layer )是用于对TCP/IP数据流进行加密的协议,同时还包括了身份认证和数据完整性校验等内容<br>TLS与SSL在传输层对网络连接进行加密。</p>
+</li>
+<li><p>TLS（安全传输层协议）<br>传输层安全（Transport Layer Security）</p>
+</li>
+<li><p>CA<br>Certificate Authority<br>产生和确定数字证书的第三方可信机构</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_network_https1.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IT - 网络 - 协议" scheme="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+      <category term="网络协议" scheme="https://hengxing0080.github.io/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Session &amp; Cookie &amp; Token的区别</title>
-    <link href="https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/"/>
-    <id>https://hengxing0080.github.io/2017/09/04/it/NetworkProtocol/Session/</id>
+    <link href="https://hengxing0080.github.io/2017/09/04/it/2.NetworkProtocol/Session/"/>
+    <id>https://hengxing0080.github.io/2017/09/04/it/2.NetworkProtocol/Session/</id>
     <published>2017-09-04T10:20:01.000Z</published>
     <updated>2017-09-29T16:29:48.823Z</updated>
     
@@ -292,11 +332,11 @@
   </entry>
   
   <entry>
-    <title>Socket理解</title>
-    <link href="https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/"/>
-    <id>https://hengxing0080.github.io/2017/09/03/it/NetworkProtocol/Socket/</id>
+    <title>Socket机制</title>
+    <link href="https://hengxing0080.github.io/2017/09/03/it/2.NetworkProtocol/Socket/"/>
+    <id>https://hengxing0080.github.io/2017/09/03/it/2.NetworkProtocol/Socket/</id>
     <published>2017-09-03T07:19:20.000Z</published>
-    <updated>2017-09-29T16:29:46.653Z</updated>
+    <updated>2017-09-30T12:25:36.792Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_network_socket1.png" alt="UML图"></p>
 <a id="more"></a>
@@ -327,8 +367,8 @@
   
   <entry>
     <title>URI &amp; URL &amp; URN 的区别</title>
-    <link href="https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/"/>
-    <id>https://hengxing0080.github.io/2017/09/02/it/NetworkProtocol/URI/</id>
+    <link href="https://hengxing0080.github.io/2017/09/02/it/2.NetworkProtocol/URI/"/>
+    <id>https://hengxing0080.github.io/2017/09/02/it/2.NetworkProtocol/URI/</id>
     <published>2017-09-02T02:10:51.000Z</published>
     <updated>2017-09-29T16:29:33.429Z</updated>
     
@@ -403,8 +443,8 @@
   
   <entry>
     <title>UDP协议</title>
-    <link href="https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/"/>
-    <id>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/UDP/</id>
+    <link href="https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/UDP/"/>
+    <id>https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/UDP/</id>
     <published>2017-09-01T15:10:05.000Z</published>
     <updated>2017-09-29T08:21:43.696Z</updated>
     
@@ -434,8 +474,8 @@
   
   <entry>
     <title>TCP协议</title>
-    <link href="https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/"/>
-    <id>https://hengxing0080.github.io/2017/09/01/it/NetworkProtocol/TCP/</id>
+    <link href="https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/TCP/"/>
+    <id>https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/TCP/</id>
     <published>2017-09-01T13:11:55.000Z</published>
     <updated>2017-09-29T08:21:38.421Z</updated>
     
@@ -495,8 +535,8 @@
   
   <entry>
     <title>运算符系列：位运算符</title>
-    <link href="https://hengxing0080.github.io/2017/08/25/it/Java/BitwiseOperation/"/>
-    <id>https://hengxing0080.github.io/2017/08/25/it/Java/BitwiseOperation/</id>
+    <link href="https://hengxing0080.github.io/2017/08/25/it/1.Java/BitwiseOperation/"/>
+    <id>https://hengxing0080.github.io/2017/08/25/it/1.Java/BitwiseOperation/</id>
     <published>2017-08-25T03:54:12.000Z</published>
     <updated>2017-09-29T16:26:53.024Z</updated>
     
@@ -550,8 +590,8 @@
   
   <entry>
     <title>设计模式GOF之12 —— 享元模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/23/it/OOP&amp;DesignPattern/2.12.Flyweight/"/>
-    <id>https://hengxing0080.github.io/2017/08/23/it/OOP&amp;DesignPattern/2.12.Flyweight/</id>
+    <link href="https://hengxing0080.github.io/2017/08/23/it/2.OOP&amp;DesignPattern/2.12.Flyweight/"/>
+    <id>https://hengxing0080.github.io/2017/08/23/it/2.OOP&amp;DesignPattern/2.12.Flyweight/</id>
     <published>2017-08-23T13:10:30.000Z</published>
     <updated>2017-09-29T16:19:11.051Z</updated>
     
@@ -612,8 +652,8 @@
   
   <entry>
     <title>设计模式GOF之11 —— 桥接模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/22/it/OOP&amp;DesignPattern/2.11.Bridge/"/>
-    <id>https://hengxing0080.github.io/2017/08/22/it/OOP&amp;DesignPattern/2.11.Bridge/</id>
+    <link href="https://hengxing0080.github.io/2017/08/22/it/2.OOP&amp;DesignPattern/2.11.Bridge/"/>
+    <id>https://hengxing0080.github.io/2017/08/22/it/2.OOP&amp;DesignPattern/2.11.Bridge/</id>
     <published>2017-08-22T12:05:31.000Z</published>
     <updated>2017-09-29T16:19:06.695Z</updated>
     
@@ -678,8 +718,8 @@
   
   <entry>
     <title>设计模式GOF之10 —— 组合模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/21/it/OOP&amp;DesignPattern/2.10.Composite/"/>
-    <id>https://hengxing0080.github.io/2017/08/21/it/OOP&amp;DesignPattern/2.10.Composite/</id>
+    <link href="https://hengxing0080.github.io/2017/08/21/it/2.OOP&amp;DesignPattern/2.10.Composite/"/>
+    <id>https://hengxing0080.github.io/2017/08/21/it/2.OOP&amp;DesignPattern/2.10.Composite/</id>
     <published>2017-08-21T13:21:51.000Z</published>
     <updated>2017-09-29T16:19:03.489Z</updated>
     
@@ -724,8 +764,8 @@
   
   <entry>
     <title>设计模式GOF之9 —— 外观模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/20/it/OOP&amp;DesignPattern/2.9.State/"/>
-    <id>https://hengxing0080.github.io/2017/08/20/it/OOP&amp;DesignPattern/2.9.State/</id>
+    <link href="https://hengxing0080.github.io/2017/08/20/it/2.OOP&amp;DesignPattern/2.9.State/"/>
+    <id>https://hengxing0080.github.io/2017/08/20/it/2.OOP&amp;DesignPattern/2.9.State/</id>
     <published>2017-08-20T12:00:02.000Z</published>
     <updated>2017-09-29T16:18:59.223Z</updated>
     
@@ -765,8 +805,8 @@
   
   <entry>
     <title>设计模式GOF之8 —— 适配器模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/19/it/OOP&amp;DesignPattern/2.8.adapter/"/>
-    <id>https://hengxing0080.github.io/2017/08/19/it/OOP&amp;DesignPattern/2.8.adapter/</id>
+    <link href="https://hengxing0080.github.io/2017/08/19/it/2.OOP&amp;DesignPattern/2.8.adapter/"/>
+    <id>https://hengxing0080.github.io/2017/08/19/it/2.OOP&amp;DesignPattern/2.8.adapter/</id>
     <published>2017-08-19T14:12:59.000Z</published>
     <updated>2017-09-29T16:18:54.610Z</updated>
     
@@ -821,8 +861,8 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
   
   <entry>
     <title>框架模式 —— MVC &amp; MVP &amp; MVVM &amp; MVPVM</title>
-    <link href="https://hengxing0080.github.io/2017/08/17/it/OOP&amp;DesignPattern/3.1.MVC/"/>
-    <id>https://hengxing0080.github.io/2017/08/17/it/OOP&amp;DesignPattern/3.1.MVC/</id>
+    <link href="https://hengxing0080.github.io/2017/08/17/it/2.OOP&amp;DesignPattern/3.1.MVC/"/>
+    <id>https://hengxing0080.github.io/2017/08/17/it/2.OOP&amp;DesignPattern/3.1.MVC/</id>
     <published>2017-08-17T13:11:01.000Z</published>
     <updated>2017-09-29T16:19:18.509Z</updated>
     
@@ -895,8 +935,8 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
   
   <entry>
     <title>设计模式 —— IOC（控制反转）</title>
-    <link href="https://hengxing0080.github.io/2017/08/15/it/OOP&amp;DesignPattern/4.1.IOC/"/>
-    <id>https://hengxing0080.github.io/2017/08/15/it/OOP&amp;DesignPattern/4.1.IOC/</id>
+    <link href="https://hengxing0080.github.io/2017/08/15/it/2.OOP&amp;DesignPattern/4.1.IOC/"/>
+    <id>https://hengxing0080.github.io/2017/08/15/it/2.OOP&amp;DesignPattern/4.1.IOC/</id>
     <published>2017-08-15T07:21:32.000Z</published>
     <updated>2017-09-29T16:19:21.663Z</updated>
     
@@ -932,8 +972,8 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
   
   <entry>
     <title>设计模式GOF之7 —— 代理模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/12/it/OOP&amp;DesignPattern/2.7.Proxy/"/>
-    <id>https://hengxing0080.github.io/2017/08/12/it/OOP&amp;DesignPattern/2.7.Proxy/</id>
+    <link href="https://hengxing0080.github.io/2017/08/12/it/2.OOP&amp;DesignPattern/2.7.Proxy/"/>
+    <id>https://hengxing0080.github.io/2017/08/12/it/2.OOP&amp;DesignPattern/2.7.Proxy/</id>
     <published>2017-08-12T03:22:47.000Z</published>
     <updated>2017-09-29T16:18:49.895Z</updated>
     
@@ -989,8 +1029,8 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
   
   <entry>
     <title>设计模式GOF之6 —— 装饰模式（结构型模式）</title>
-    <link href="https://hengxing0080.github.io/2017/08/10/it/OOP&amp;DesignPattern/2.6.Decorator/"/>
-    <id>https://hengxing0080.github.io/2017/08/10/it/OOP&amp;DesignPattern/2.6.Decorator/</id>
+    <link href="https://hengxing0080.github.io/2017/08/10/it/2.OOP&amp;DesignPattern/2.6.Decorator/"/>
+    <id>https://hengxing0080.github.io/2017/08/10/it/2.OOP&amp;DesignPattern/2.6.Decorator/</id>
     <published>2017-08-10T00:11:22.000Z</published>
     <updated>2017-09-29T16:18:44.424Z</updated>
     
@@ -1053,8 +1093,8 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
   
   <entry>
     <title>IQ题 —— 面试系列（持续更新）</title>
-    <link href="https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/"/>
-    <id>https://hengxing0080.github.io/2017/08/01/it/IQ/1.interview/</id>
+    <link href="https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.interview/"/>
+    <id>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.interview/</id>
     <published>2017-08-01T15:58:10.000Z</published>
     <updated>2017-09-29T16:34:52.713Z</updated>
     
@@ -1129,10 +1169,10 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
   
   <entry>
     <title>数据结构与算法 —— 线性表</title>
-    <link href="https://hengxing0080.github.io/2017/08/01/it/DataStructure&amp;Algorithm/LinearList/"/>
-    <id>https://hengxing0080.github.io/2017/08/01/it/DataStructure&amp;Algorithm/LinearList/</id>
+    <link href="https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&amp;Algorithm/LinearList/"/>
+    <id>https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&amp;Algorithm/LinearList/</id>
     <published>2017-08-01T01:50:23.000Z</published>
-    <updated>2017-09-29T16:20:29.003Z</updated>
+    <updated>2017-09-30T12:23:06.826Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_datastructure_linearlist1.jpg" alt="UML图"></p>
 <a id="more"></a>
@@ -1150,9 +1190,9 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
 <h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>存储密度大<br>无须为表示表中元素之间的逻辑关系而增加额外的存储空间<br>可以快速地存取表中任一位置的元素</p>
 <h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>插入，删除等其他运算不方便。（需要移动大量元素，显然很耗费时间）<br>当线性表长度变化较大时，难以确定存储空间的容量。<br>造成存储空间的碎片</p>
 <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><h3 id="结构代码"><a href="#结构代码" class="headerlink" title="结构代码"></a>结构代码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXSIZE 20 <span class="comment">/* 存储空间初始分配量 */</span></span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status;          <span class="comment">/* Status是函数的类型,其值是函数结果状态代码，如OK等 */</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> ElemType;        <span class="comment">/* ElemType类型根据实际情况而定，这里假设为int */</span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></div><div class="line">&#123;</div><div class="line">	ElemType data[MAXSIZE];  <span class="comment">/* 数组，存储数据元素 */</span></div><div class="line">	<span class="keyword">int</span> length;              <span class="comment">/* 线性表当前长度 */</span></div><div class="line">&#125;SqList;</div></pre></td></tr></table></figure>
-<h3 id="获得元素操作"><a href="#获得元素操作" class="headerlink" title="获得元素操作"></a>获得元素操作</h3><p>对于线性表的顺序存储结构来说，如果我们要实现GetElem操作，即将线性表L中的第i个位置元素值返回，其实是非常简单的。<br>就程序而言，只要i的数值在数组下标范围内，就是把数组第i-1下标的值返回即可。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></div><div class="line">Typedef <span class="keyword">int</span> Status;</div><div class="line"><span class="comment">/*Status是函数的类型，其值是函数结果状态代码，如OK等*/</span></div><div class="line"><span class="comment">/*初始条件：顺序线性表L已存在，1≤i≤ListLength(L)  */</span></div><div class="line"><span class="comment">/*操作结果：用e返回L中第i个数据元素的值 */</span></div><div class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L,<span class="keyword">int</span> i, Elemtype *e)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(L.length == <span class="number">0</span> || i&lt; <span class="number">1</span> || i &gt; L.length)</div><div class="line">    <span class="keyword">return</span> ERROR;</div><div class="line">    *e = L.data[i<span class="number">-1</span>];</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>插入算法的思路：<br>●如果插入位置不合理，抛出异常；<br>●如果线性表长度大于等于数组长度，则抛出异常或动态增加容量；<br>●从最后一个元素开始向前遍历到第i个位置，分别将他们都向后移动一个位置;<br>●将要插入元素填入位置i处；<br>●表长加1。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*初始条件：顺序线性表L已存在，1≤i≤ListLength(L), */</span></div><div class="line"><span class="comment">/*操作结果：在L中第i个位置之前插入新的数据元素e,L的长度加1*/</span></div><div class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList *L, <span class="keyword">int</span> i ,ElemType e)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> k;</div><div class="line">    <span class="keyword">if</span>(L -&gt; length == MAXSIZE)   <span class="comment">/*顺序线性表已经满*/</span></div><div class="line">    <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i &lt; <span class="number">1</span> || i &gt;L-&gt; length+<span class="number">1</span>)   <span class="comment">/*当i不在范围内时*/</span></div><div class="line">    reuturn ERROR;</div><div class="line">    <span class="keyword">if</span>(i&lt;= L -&gt;length)  <span class="comment">/*若插入数据位置不在表尾 */</span></div><div class="line">    &#123;</div><div class="line">    <span class="keyword">for</span>(k=L-&gt;length <span class="number">-1</span> ;k&gt;=i<span class="number">-1</span>;k--)  <span class="comment">/*将要插入位置后数据元素向后移动一位*/</span></div><div class="line">    L-&gt;data[k+<span class="number">1</span>]=L-&gt;data[k];</div><div class="line">    &#125;</div><div class="line">    L-&gt;data[i<span class="number">-1</span>]=e;</div><div class="line">    L-&gt;length++;</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>删除算法的思路：<br>●如果删除位置不合理，抛出异常;<br>●取出删除元素;<br>●从删除元素位置开始遍历到最后一个元素位置，分别将它们都向前移动一个位置;<br>●表长减1.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*初始条件：顺序线性表L已存在，1≤i≤ListLength(L) */</span></div><div class="line"><span class="comment">/*操作结果：删除L的第i个数据元素，并用e返回其值，L的长度减1*/</span></div><div class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L, <span class="keyword">int</span> i,ElemType *e)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> k;</div><div class="line">    <span class="keyword">if</span>(L -&gt;length == <span class="number">0</span>)   <span class="comment">/*线性表为空*/</span></div><div class="line">    <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i&gt;L-&gt;length)   <span class="comment">/*删除位置不正确*/</span></div><div class="line">    <span class="keyword">return</span> ERROR;</div><div class="line">    *e = L-&gt;data[i<span class="number">-1</span>];</div><div class="line">    <span class="keyword">if</span>(i&lt;L-&gt;length)   <span class="comment">/*如果删除不是最后位置*/</span></div><div class="line">    &#123;</div><div class="line">    <span class="keyword">for</span>(k=i;k&lt;L-&gt;length;k++)  <span class="comment">/*将删除位置后继元素前移*/</span></div><div class="line">    L-&gt;data[k<span class="number">-1</span>]=L-&gt;data[k]l;</div><div class="line">    &#125;</div><div class="line">    L-&gt;length--；</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="获得元素操作"><a href="#获得元素操作" class="headerlink" title="获得元素操作"></a>获得元素操作</h3><p>对于线性表的顺序存储结构来说，如果我们要实现GetElem操作，即将线性表L中的第i个位置元素值返回，其实是非常简单的。<br>就程序而言，只要i的数值在数组下标范围内，就是把数组第i-1下标的值返回即可。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">define</span> OK 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> ERROR 0</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> TRUE 1</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> FALSE 0</span></div><div class="line">Typedef <span class="keyword">int</span> Status;</div><div class="line"><span class="comment">/*Status是函数的类型，其值是函数结果状态代码，如OK等*/</span></div><div class="line"><span class="comment">/*初始条件：顺序线性表L已存在，1≤i≤ListLength(L)  */</span></div><div class="line"><span class="comment">/*操作结果：用e返回L中第i个数据元素的值 */</span></div><div class="line"><span class="function">Status <span class="title">GetElem</span><span class="params">(SqList L,<span class="keyword">int</span> i, Elemtype *e)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span>(L.length == <span class="number">0</span> || i&lt; <span class="number">1</span> || i &gt; L.length)</div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    *e = L.data[i<span class="number">-1</span>];</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>插入算法的思路：<br>●如果插入位置不合理，抛出异常；<br>●如果线性表长度大于等于数组长度，则抛出异常或动态增加容量；<br>●从最后一个元素开始向前遍历到第i个位置，分别将他们都向后移动一个位置;<br>●将要插入元素填入位置i处；<br>●表长加1。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*初始条件：顺序线性表L已存在，1≤i≤ListLength(L), */</span></div><div class="line"><span class="comment">/*操作结果：在L中第i个位置之前插入新的数据元素e,L的长度加1*/</span></div><div class="line"><span class="function">Status <span class="title">ListInsert</span><span class="params">(SqList *L, <span class="keyword">int</span> i ,ElemType e)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> k;</div><div class="line">    <span class="keyword">if</span>(L -&gt; length == MAXSIZE)   <span class="comment">/*顺序线性表已经满*/</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i &lt; <span class="number">1</span> || i &gt;L-&gt; length+<span class="number">1</span>)   <span class="comment">/*当i不在范围内时*/</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i&lt;= L -&gt;length)&#123;  <span class="comment">/*若插入数据位置不在表尾 */</span></div><div class="line">        <span class="keyword">for</span>(k=L-&gt;length <span class="number">-1</span> ;k&gt;=i<span class="number">-1</span>;k--)  <span class="comment">/*将要插入位置后数据元素向后移动一位*/</span></div><div class="line">            L-&gt;data[k+<span class="number">1</span>]=L-&gt;data[k];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    L-&gt;data[i<span class="number">-1</span>]=e;</div><div class="line">    L-&gt;length++;</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>删除算法的思路：<br>●如果删除位置不合理，抛出异常;<br>●取出删除元素;<br>●从删除元素位置开始遍历到最后一个元素位置，分别将它们都向前移动一个位置;<br>●表长减1.<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*初始条件：顺序线性表L已存在，1≤i≤ListLength(L) */</span></div><div class="line"><span class="comment">/*操作结果：删除L的第i个数据元素，并用e返回其值，L的长度减1*/</span></div><div class="line"><span class="function">Status <span class="title">ListDelete</span><span class="params">(SqList *L, <span class="keyword">int</span> i,ElemType *e)</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> k;</div><div class="line">    <span class="keyword">if</span>(L -&gt;length == <span class="number">0</span>)   <span class="comment">/*线性表为空*/</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span> || i&gt;L-&gt;length)   <span class="comment">/*删除位置不正确*/</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    *e = L-&gt;data[i<span class="number">-1</span>];</div><div class="line">    <span class="keyword">if</span>(i&lt;L-&gt;length) &#123;  <span class="comment">/*如果删除不是最后位置*/</span></div><div class="line">        <span class="keyword">for</span>(k=i;k&lt;L-&gt;length;k++)  <span class="comment">/*将删除位置后继元素前移*/</span></div><div class="line">            L-&gt;data[k<span class="number">-1</span>]=L-&gt;data[k]l;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    L-&gt;length--；</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h3 id="插入和删除的时间复杂度"><a href="#插入和删除的时间复杂度" class="headerlink" title="插入和删除的时间复杂度"></a>插入和删除的时间复杂度</h3><p>最好情况：O（1）<br>最坏情况：O（n）<br>平静情况：O（n）</p>
 <p>在存，读数据时，不管是1哪个位置，时间复杂度都是O（1）<br>而插入或删除时，时间复杂度都是O（n）<br>说明，线性表的顺序存储结构，比较适合元素个数不太变化，而更多是存储数据的应用。</p>
 <hr>
@@ -1162,8 +1202,9 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
 <p>链式存储用若干地址分散的存储单元存储数据元素，逻辑上相邻的数据元素在物理位置上不一定相邻，必须采用附加信息表示数据元素之间的关系，即用指针体现结点之间的逻辑关系。</p>
 <p>单线索，无分支。</p>
 <h2 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h2><p>用一组任意的存储单元存储线性表的数据元素，这组存储单元可以是连续的，也可以是是不连续的。这就意味着，这些数据元素可以存在内存未被占用的任意位置。</p>
-<h2 id="数据域和指针域"><a href="#数据域和指针域" class="headerlink" title="数据域和指针域"></a>数据域和指针域</h2><p>一般是在链表中的结点，数据域存放数据，指针域存放指向下一个结点的指针，以实现链表彻底线型结构。</p>
-<h2 id="线性表类型——1-单链表"><a href="#线性表类型——1-单链表" class="headerlink" title="线性表类型——1.单链表"></a>线性表类型——1.单链表</h2><p>链式存储的线性表又分为几种，常见常用的是单链表，循环链表和双链表链表！<br>先看看单链表！</p>
+<h2 id="数据域和指针（地址）域"><a href="#数据域和指针（地址）域" class="headerlink" title="数据域和指针（地址）域"></a>数据域和指针（地址）域</h2><p>一般是在链表中的结点，数据域存放数据，指针域存放指向下一个结点的指针，以实现链表线型结构。<br><img src="/images/it_datastructure_linearlist9.jpg" alt="UML图"></p>
+<h2 id="线性表类型——1-单链表"><a href="#线性表类型——1-单链表" class="headerlink" title="线性表类型——1.单链表"></a>线性表类型——1.单链表</h2><p>链式存储的线性表又分为几种，常见常用的是单链表，循环链表和双链表等等！<br>先看看单链表！</p>
+<p><img src="/images/it_datastructure_linearlist10.jpg" alt="UML图"></p>
 <h3 id="理解-1"><a href="#理解-1" class="headerlink" title="理解"></a>理解</h3><p>并且它不是闭环的，是一条链状结构，因此才被称为单链表。<br>单链表是最简单的链式存储的线性表，他就像一条链子。<br>它的每个结点都可以分为两部分，一个是数据域（nodeValue），一个是指针域（next）<br>数据域存储结点的数据，指针域向下一个结点的内存存储地址</p>
 <h3 id="头指针和尾-空指针"><a href="#头指针和尾-空指针" class="headerlink" title="头指针和尾/空指针"></a>头指针和尾/空指针</h3><p>对于单链表，我们还需要知道2个概念，头指针和尾/空指针。<br><img src="/images/it_datastructure_linearlist3.png" alt="UML图"></p>
 <p>头指针：<br>是一个指针，它指向单链表第一结点存储的位置。整个单链表的存储必须从头指针开始，常用head表示，<br>链表中第一个结点的存储位置叫做头指针。</p>
@@ -1174,11 +1215,23 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
 <h3 id="单链表结构-与-顺序存储结构-优缺点"><a href="#单链表结构-与-顺序存储结构-优缺点" class="headerlink" title="单链表结构 与 顺序存储结构 优缺点"></a>单链表结构 与 顺序存储结构 优缺点</h3><p><img src="/images/it_datastructure_linearlist2.jpg" alt="UML图"></p>
 <p>通过上面对比，得出一些经验性结论：<br>1.若线性表需要频繁查找，很少进行插入和删除操作时，宜采用顺序存储结构。<br>若需要频繁插入和删除时，宜采用单链表结构。比如说游戏开发中，用于用户注册的个人信息，除了注册时插入数据外，绝大多数情况都是读取，所以应该考虑用顺序存储结构。而游戏中的玩家的武器或者装备列表，随着玩家的游戏过程中，可能会随时增加或删除，此时采用顺序存储就不太合适了，单链表结构就可以大展拳脚。<br>当然，这是简单的类比，现实中的软件开发，要考虑的问题会复杂得多。<br>2.当线性表中的元素个数变化较大或者根本不知道有多大时，最好用单链表结构，这样可以不需要考虑存储空间的大小问题。<br>而如果事先知道线性表的大致长度，如何一年12个月，一周就是星期一至星期日共七天，这样用顺序存储结构效率会高很多。</p>
 <p>总之，线性表的顺序存储结构和单链表结构各有优缺点，不能简单的说哪个好，哪个不好，需要根据实际情况，来综合平衡采用哪个数据结构更能满足和达到需求和性能。</p>
-<h3 id="如何将一个单向链表反转？"><a href="#如何将一个单向链表反转？" class="headerlink" title="如何将一个单向链表反转？"></a>如何将一个单向链表反转？</h3><p>递归</p>
-<h2 id="线性表类型——2-静态链表"><a href="#线性表类型——2-静态链表" class="headerlink" title="线性表类型——2.静态链表"></a>线性表类型——2.静态链表</h2><h3 id="理解-2"><a href="#理解-2" class="headerlink" title="理解"></a>理解</h3><p>C语言是个好东西，它具有的指针能力，使得它可以非常容易地操作内存中的地址和数据，这比其他高级语言更加灵活方便。<br>后来的面向对象语言，如Java，C#等，虽不使用指针，但因为启用了对象引用机制，从某种角度也间接实现了指针的某些作用，但对于一些语言，如Basic，Fortran等早期的编程高级语言，由于没有指针，链表结构结构按照前面的讲法，它就没发实现了，怎么办？<br>有人想出来用数组来代替指针，来描述单链表。<br>首先我们让数据的元素都是由两个数据域组成，data和cur。也就是说，数组的每个下标都对应一个data和一个cur。<br>数据域data，用来存放数据元素，也就是通常我们要处理的数据，<br>而游标cur相当于单链表中的next指针，存放该元素的后继在数组中的下标。<br>我们把这种用数据描述的链表叫做静态链表，这种描述方法还有起名叫游标实现法。</p>
-<h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><p>1.在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了再顺序存储结构中的插入和删除操作需要移动大量元素的缺点<br>缺点：<br>2.没有解决连续存储分配带来的表长难以确定的问题<br>3.失去了顺序存储结构随机存取的特性.</p>
+<h3 id="如何将一个单向链表倒置逆序反转？"><a href="#如何将一个单向链表倒置逆序反转？" class="headerlink" title="如何将一个单向链表倒置逆序反转？"></a>如何将一个单向链表倒置逆序反转？</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 将链式表倒置：方法1(交换)</span></div><div class="line"><span class="function">Status <span class="title">ListReverse1</span><span class="params">(LinkList &amp;L)</span></span>&#123;</div><div class="line">    <span class="comment">/*</span></div><div class="line">    如单链表（Header-结点1-结点2-结点3-结点4-NULL）</div><div class="line">    为了反转这个单链表，我们先让头结点的next域指向结点2，</div><div class="line">    再让结点1的next域指向结点3，</div><div class="line">    最后将结点2的next域指向结点1,</div><div class="line">    就完成了第一次交换，顺序就变成了（Header-结点2-结点1-结点3-结点4-NULL），</div><div class="line">    然后进行相同的交换将结点3移动到结点2的前面（Header-结点3-结点2-结点1-结点4-NULL），</div><div class="line">    然后再讲结点4移动到结点3的前面就完成了反转（Header-结点4-结点3-结点2-结点1-NULL）</div><div class="line">    */</div><div class="line">    LNODE *tmp = <span class="literal">NULL</span>;</div><div class="line">    LNODE *P = <span class="literal">NULL</span>;</div><div class="line">    <span class="keyword">if</span>(L==<span class="literal">NULL</span>)&#123;</div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    &#125;</div><div class="line">    tmp = L-&gt;next;  <span class="comment">//指向第二个</span></div><div class="line">    </div><div class="line">    <span class="keyword">while</span>(tmp-&gt;next!=<span class="literal">NULL</span>) <span class="comment">//当需要换到第一个元素不为空</span></div><div class="line">    &#123;</div><div class="line">        p = tmp-&gt;next;        <span class="comment">//p为tmp的下一个，也就是需要切换到第一个的元素</span></div><div class="line">        temp-&gt;next = p-&gt;next; <span class="comment">//(第一次时，下一个指向新的头指针),以后每次都是下一个指向上一个元素</span></div><div class="line">        p-&gt;next = L-&gt;next;    <span class="comment">//让p指向刚才的第一个元素</span></div><div class="line">        L-next = p;           <span class="comment">//p变成第一个</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 将链式表倒置：方法2(循环遍历，易懂)</span></div><div class="line"><span class="function">Status <span class="title">ListReverse2</span><span class="params">(LinkList &amp;L)</span></span>&#123;</div><div class="line">    <span class="comment">//从链表首元素开始一直往后遍历，将遍历到的元素指向前一个元素</span></div><div class="line">    LinkList p,r,q;</div><div class="line">    p = <span class="literal">NULL</span>;</div><div class="line">    q = L-&gt;next;</div><div class="line">    <span class="keyword">while</span>(q) <span class="comment">// 让下一个元素指向上一个元素</span></div><div class="line">    &#123;</div><div class="line">        r = q-&gt;next;  <span class="comment">//r是q的下一个</span></div><div class="line">        q-&gt;next = p;  <span class="comment">//（第一次时，下一个指向新的头指针），以后每次都是下一个指向上一个元素</span></div><div class="line">        p = q;        <span class="comment">//新的链表向后移</span></div><div class="line">        q = r;        <span class="comment">//旧的链表向前移</span></div><div class="line">    &#125;</div><div class="line">    L-&gt;next = p;</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 将链式表倒置：方法3(重新建立一个单链表newList，每次将list中的第一个结点放到newList后面)</span></div><div class="line"><span class="function">Status <span class="title">ListReverse3</span><span class="params">(LinkList L)</span></span>&#123;</div><div class="line">    LinkList newList;    <span class="comment">// 新链表的头结点</span></div><div class="line">    LinkList tmp;        <span class="comment">// 指向L的第一个结点，也就是要摘除的结点</span></div><div class="line">    <span class="comment">// 参数为空或者内存分配失败则返回NULL</span></div><div class="line">    <span class="keyword">if</span> (L == <span class="literal">NULL</span> || (newList = (LinkList)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Node))) == <span class="literal">NULL</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 初始化newList</span></div><div class="line">    newList-&gt;data = L-&gt;data;</div><div class="line">    newList-&gt;next = <span class="literal">NULL</span>;</div><div class="line">    <span class="comment">//依次将L的第一个结点放到newList的第一个结点位置</span></div><div class="line">    <span class="keyword">while</span> (L-&gt;next != <span class="literal">NULL</span>)&#123;</div><div class="line">        tmp = newList-&gt;next;        <span class="comment">// 保存newList中的后续结点</span></div><div class="line">        newList-&gt;next = L-&gt;next;    <span class="comment">// 将L的第一个结点放到newList中</span></div><div class="line">        L-&gt;next = L-&gt;next-&gt;next;    <span class="comment">// 从L中摘除这个结点</span></div><div class="line">        newList-&gt;next-&gt;next = tmp;  <span class="comment">// 恢复newList中后续结点的指针</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// 原头结点应该释放掉，并返回新头结点的指针</span></div><div class="line">    <span class="built_in">free</span>(L);</div><div class="line">    <span class="keyword">return</span> newList;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 将链式表倒置：方法4(递归)</span></div><div class="line"><span class="comment">// ....待补充</span></div></pre></td></tr></table></figure>
+<a href="!--
+[百度秋招二轮面试——血淋淋的经验分享](https://mp.weixin.qq.com/s/ucK8kViqtFkoGV4SB1Hf4Q)
+[单链表反转/逆序的两种方法](http://www.nowamagic.net/librarys/veda/detail/2241)
+[单链表反转/逆序的第三种方法](http://www.nowamagic.net/librarys/veda/detail/2242)
+--">!--
+[百度秋招二轮面试——血淋淋的经验分享](https://mp.weixin.qq.com/s/ucK8kViqtFkoGV4SB1Hf4Q)
+[单链表反转/逆序的两种方法](http://www.nowamagic.net/librarys/veda/detail/2241)
+[单链表反转/逆序的第三种方法](http://www.nowamagic.net/librarys/veda/detail/2242)
+--</a>
+<h2 id="线性表类型——2-静态链表"><a href="#线性表类型——2-静态链表" class="headerlink" title="线性表类型——2.静态链表"></a>线性表类型——2.静态链表</h2><p><img src="/images/it_datastructure_linearlist11.jpg" alt="UML图"></p>
+<h3 id="理解-2"><a href="#理解-2" class="headerlink" title="理解"></a>理解</h3><p>C语言是个好东西，它具有的指针能力，使得它可以非常容易地操作内存中的地址和数据，这比其他高级语言更加灵活方便。<br>后来的面向对象语言，如Java，C#等，虽不使用指针，但因为启用了对象引用机制，从某种角度也间接实现了指针的某些作用，但对于一些语言，如Basic，Fortran等早期的编程高级语言，由于没有指针，链表结构结构按照前面的讲法，它就没发实现了，怎么办？<br>有人想出来用数组来代替指针，来描述单链表。<br>首先我们让数据的元素都是由两个数据域组成，data和cur。也就是说，数组的每个下标都对应一个data和一个cur。<br>数据域data，用来存放数据元素，也就是通常我们要处理的数据，<br>而游标cur相当于单链表中的next指针，存放该元素的后继在数组中的下标。<br>我们把这种用数据描述的链表叫做静态链表，这种描述方法还有起名叫游标实现法。</p>
+<h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><p>1.在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了再顺序存储结构中的插入和删除操作需要移动大量元素的缺点</p>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><p>2.没有解决连续存储分配带来的表长难以确定的问题<br>3.失去了顺序存储结构随机存取的特性.</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>若不使用指针如何处理链表结构的静态链表方法。<br>静态链表其实是为了给没有指针的高级语言设计的一种实现单链表能力的方法。<br>尽管大家不一定会用得上，但这样的思考方式是非常巧妙的，应该理解其思想，以备不时之需。</p>
-<h2 id="线性表类型——3-循环链表"><a href="#线性表类型——3-循环链表" class="headerlink" title="线性表类型——3.循环链表"></a>线性表类型——3.循环链表</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>将单链表中终端节点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表，简称循环链表（circular linked list）</p>
+<h2 id="线性表类型——3-循环链表"><a href="#线性表类型——3-循环链表" class="headerlink" title="线性表类型——3.循环链表"></a>线性表类型——3.循环链表</h2><p><img src="/images/it_datastructure_linearlist12.jpg" alt="UML图"></p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>将单链表中终端节点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表，简称循环链表（circular linked list）</p>
 <p>对于单链表，由于每个结点只存储了向后的指针，到了尾标志就停止向后链的操作，这样，当中某一结点就无法找到它的前驱结点了，这就意味着无法回头。</p>
 <p>循环链表是线性表的另外一种链式存储结构，他在单链表的基础上，将表尾结点的指针域指向表头结点，整个链表行成环状结构。</p>
 <h3 id="循环链表的空链表"><a href="#循环链表的空链表" class="headerlink" title="循环链表的空链表"></a>循环链表的空链表</h3><p>循环链表也有head属性，head属性是一个指针，它单独指向头结点。<br>判断一个循环链表是不是空链表的条件就是head == head &gt;next<br>也就是head指向结点的下一个结点还是head指针，这就说明循环链表里没有结点。</p>
@@ -1187,7 +1240,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
 <h3 id="循环链表和单链表的主要差异"><a href="#循环链表和单链表的主要差异" class="headerlink" title="循环链表和单链表的主要差异"></a>循环链表和单链表的主要差异</h3><ul>
 <li><p>循环的判断条件<br>就在于循环的判断条件上，原来是判断p-&gt;next是否为空，现在则是p-&gt;next不等于头结点，则循环未结束。</p>
 </li>
-<li><p>时间复杂度<br>在单链表中，有了头结点时，我们可以用O（1）的时间访问第一个结点，但对于要访问到最后一个结点，却需要O(n)时间，因为我们需要将单链表全部扫描一遍。<br>不过有方法用O（1）的时间由链表指针访问到最后一个结点<br>需要改造一下循环链表，不用头指针，而是用指向终端结点的尾指针来表示循环链表，此时查找开始结点和终端阶段都很方便了<br><img src="/images/it_datastructure_linearlist6.png" alt="UML图"><br>从上图中可以看到，终端结点用尾指针rear指示，则查找终端结点是O（1），而开始结点，其实就是rear-&gt;next-&gt;next，其时间复杂度也为O（1）</p>
+<li><p>时间复杂度<br>在单链表中，有了头结点时，我们可以用O（1）的时间访问第一个结点，但对于要访问到最后一个结点，却需要O(n)时间，因为我们需要将单链表全部扫描一遍。<br>不过有方法用O（1）的时间由链表指针访问到最后一个结点<br>需要改造一下循环链表，不用头指针，而是用指向终端结点的尾指针来表示循环链表，此时查找开始结点和终端结点都很方便了<br><img src="/images/it_datastructure_linearlist6.png" alt="UML图"><br>从上图中可以看到，终端结点用尾指针rear指示，则查找终端结点是O（1），而开始结点，其实就是rear-&gt;next-&gt;next，其时间复杂度也为O（1）</p>
 </li>
 </ul>
 <h3 id="如何检测一个链表有环？"><a href="#如何检测一个链表有环？" class="headerlink" title="如何检测一个链表有环？"></a>如何检测一个链表有环？</h3><p><a href="http://blog.csdn.net/qishouzhang/article/details/47007177" target="_blank" rel="external">http://blog.csdn.net/qishouzhang/article/details/47007177</a></p>
@@ -1199,7 +1252,7 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
 <p>既然单链表也可以有循环链表，那么双向链表当然也可以是循环表。</p>
 <p>双向链表的循环带头结点的空链表<br><img src="/images/it_datastructure_linearlist7.png" alt="UML图"></p>
 <p>非空的循环的带头结点的双向链表<br><img src="/images/it_datastructure_linearlist8.png" alt="UML图"></p>
-<p>由于这是双向链表，那么对于链表中的某一个结点p，它的后继的前驱是谁？当然还是它自己。<br>p-&gt;next-&gt;prior = p = p-&gt;prior-&gt;next<br>这就如同上海的下一站是苏州，那么上海的下一站的前一站是哪里？  哈哈</p>
+<p>由于这是双向链表，那么对于链表中的某一个结点p，它的后继的前驱是谁？当然还是它自己。<br>p-&gt;next-&gt;prior  =  p  =  p-&gt;prior-&gt;next<br>这就如同上海的下一站是苏州，那么上海的下一站的前一站是哪里？  哈哈</p>
 <h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>双向链表相对于单链表来说，要更复杂一些，毕竟它多了prior指针，对于插入和删除时，需要格外小心。<br>另外它由于每个结点都需要记录两份指针，所以在空间上是要占用略多一些的。不过，由于它良好的对称性，使得对某个节点的前后节点的操作，带来了方便，可以有效提高算法的时间性能。说白了就是用空间来换时间。</p>
 <h2 id="线性表类型——5-跳跃链表"><a href="#线性表类型——5-跳跃链表" class="headerlink" title="线性表类型——5.跳跃链表"></a>线性表类型——5.跳跃链表</h2><p>待学….</p>
 ]]></content>
@@ -1219,8 +1272,8 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
   
   <entry>
     <title>数据结构与算法 —— 排序系列：计数排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/31/it/DataStructure&amp;Algorithm/SortCounting/"/>
-    <id>https://hengxing0080.github.io/2017/07/31/it/DataStructure&amp;Algorithm/SortCounting/</id>
+    <link href="https://hengxing0080.github.io/2017/07/31/it/2.DataStructure&amp;Algorithm/SortCounting/"/>
+    <id>https://hengxing0080.github.io/2017/07/31/it/2.DataStructure&amp;Algorithm/SortCounting/</id>
     <published>2017-07-31T14:02:57.000Z</published>
     <updated>2017-09-29T16:21:06.840Z</updated>
     
@@ -1235,39 +1288,6 @@ Android源码设计模式解析与实战——403页 第21章 装饰模式
     <summary type="html">
     
       &lt;h1 id=&quot;算法简介&quot;&gt;&lt;a href=&quot;#算法简介&quot; class=&quot;headerlink&quot; title=&quot;算法简介&quot;&gt;&lt;/a&gt;算法简介&lt;/h1&gt;&lt;p&gt;中文名 计数排序&lt;br&gt;外文名 Counting sort&lt;br&gt;提出人  Harold H. Seward&lt;br&gt;提出时间 1954&lt;br&gt;定义 非基于比较的排序算法&lt;br&gt;类别 分配式排序&lt;br&gt;
-    
-    </summary>
-    
-      <category term="IT - 数据结构与算法 - 算法 - 排序" scheme="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-    
-    
-      <category term="算法" scheme="https://hengxing0080.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法 —— 排序系列：桶排序</title>
-    <link href="https://hengxing0080.github.io/2017/07/30/it/DataStructure&amp;Algorithm/SortBucket/"/>
-    <id>https://hengxing0080.github.io/2017/07/30/it/DataStructure&amp;Algorithm/SortBucket/</id>
-    <published>2017-07-30T11:01:33.000Z</published>
-    <updated>2017-09-29T16:21:02.991Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_algorithm_sortbucket.jpg" alt="UML图"><br><a id="more"></a></p>
-<h1 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h1><p>中文名 桶排序<br>又名     箱排序<br>英文名 Bucket sort<br>类别   分配式排序 </p>
-<h1 id="算法理解"><a href="#算法理解" class="headerlink" title="算法理解"></a>算法理解</h1><p>有时也称为盒子排序（Bin Sort），来源于邮局使用的盒子信件分发方法</p>
-<p>桶排序是计数排序的变种，把计数排序中相邻的m个”小桶”放到一个”大桶”中，在分完桶后，对每个桶进行排序（一般用快排），然后合并成最后的结果。</p>
-<p>工作的原理是将数组分到有限数量的桶里。每个桶再个别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序）。<br>桶排序是鸽巢排序的一种归纳结果。当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ(n)）。<br>但桶排序并不是比较排序，他不受到O(n log n)下限的影响。</p>
-<h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>桶排序以下列程序进行：<br>1.设置一个定量的数组当作空桶子。<br>2.寻访序列，并且把项目一个一个放到对应的桶子去。<br>3.对每个不是空的桶子进行排序。<br>4.从不是空的桶子里把项目再放回原来的序列中。</p>
-<p>伪代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function bucket-sort(array, n) is</div><div class="line">    buckets ← new array of n empty lists</div><div class="line">    for i = 0 to (length(array)-1) do</div><div class="line">        insert array[i] into buckets[msbits(array[i], k)]</div><div class="line">    for i = 0 to n - 1 do</div><div class="line">        next-sort(buckets[i])</div><div class="line">    return the concatenation of buckets[0], ..., buckets[n-1]</div></pre></td></tr></table></figure></p>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>数据结构：数组 </p>
-<p>最坏时间复杂度：O ( n 2 )<br>平均时间复杂度：O ( n + k )<br>空间复杂度：O ( n ∗ k ) </p>
-<p>是否稳定：桶排序是稳定的</p>
-<p>优缺点：<br>桶排序非常快,但是同时也非常耗空间,基本上是最耗空间的一种排序算法，如果待排序的数有10亿，总不能准备10亿个桶吧？</p>
-<h1 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * <span class="doctag">@param</span> a 待排序数组元素</div><div class="line">  * <span class="doctag">@param</span> step 步长(桶的宽度/区间),具体长度可根据情况设定</div><div class="line">  * <span class="doctag">@return</span> 桶的位置/索引</div><div class="line">  */</div><div class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">indexFor</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> step)</span></span>&#123;</div><div class="line">     <span class="keyword">return</span> a/step;</div><div class="line"> &#125;</div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bucketSort</span><span class="params">(<span class="keyword">int</span> []arr)</span></span>&#123;</div><div class="line"></div><div class="line">     <span class="keyword">int</span> max=arr[<span class="number">0</span>],min=arr[<span class="number">0</span>];</div><div class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> a:arr) &#123;</div><div class="line">         <span class="keyword">if</span> (max&lt;a)</div><div class="line">             max=a;</div><div class="line">         <span class="keyword">if</span> (min&gt;a)</div><div class="line">             min=a;</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//该值也可根据实际情况选择</span></div><div class="line">     <span class="keyword">int</span> bucketNum=max/<span class="number">10</span>-min/<span class="number">10</span>+<span class="number">1</span>;</div><div class="line">     List buckList=<span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">     <span class="comment">//create bucket</span></div><div class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=bucketNum;i++)&#123;</div><div class="line">         buckList.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;());</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//push into the bucket</span></div><div class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</div><div class="line">         <span class="keyword">int</span> index=indexFor(arr[i],<span class="number">10</span>);</div><div class="line">         ((ArrayList&lt;Integer&gt;)buckList.get(index)).add(arr[i]);</div><div class="line">     &#125;</div><div class="line">     ArrayList&lt;Integer&gt; bucket=<span class="keyword">null</span>;</div><div class="line">     <span class="keyword">int</span> index=<span class="number">0</span>;</div><div class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;bucketNum;i++)&#123;</div><div class="line">         bucket=(ArrayList&lt;Integer&gt;)buckList.get(i);</div><div class="line">         insertSort(bucket);</div><div class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> k : bucket) &#123;</div><div class="line">             arr[index++]=k;</div><div class="line">         &#125;</div><div class="line">     &#125;</div><div class="line"></div><div class="line"> &#125;</div><div class="line"> <span class="comment">//把桶内元素插入排序</span></div><div class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(List&lt;Integer&gt; bucket)</span></span>&#123;</div><div class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;bucket.size();i++)&#123;</div><div class="line">         <span class="keyword">int</span> temp=bucket.get(i);</div><div class="line">         <span class="keyword">int</span> j=i-<span class="number">1</span>;</div><div class="line">         <span class="keyword">for</span> (; j&gt;=<span class="number">0</span> &amp;&amp; bucket.get(j)&gt;temp;j--)&#123;</div><div class="line">             bucket.set(j+<span class="number">1</span>,bucket.get(j));</div><div class="line">         &#125;</div><div class="line">         bucket.set(j+<span class="number">1</span>,temp);</div><div class="line">     &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_algorithm_sortbucket.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
     
     </summary>
     
