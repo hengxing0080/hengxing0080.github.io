@@ -92,19 +92,20 @@
 
 
 
-<meta name="description" content="正文： 中文含义：里氏替换原则英文缩写：LSP英文全称：The Liskov Substitution Principle提出者：Barbara Liskov提出时间：1987年">
+<meta name="description" content="中文含义：里氏替换原则英文缩写：LSP英文全称：The Liskov Substitution Principle提出者：Barbara Liskov提出时间：1987年">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象编程6大原则之3：里氏替换原则">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/03/25/it/2.OOP&DesignPattern/1.3.LSP/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
-<meta property="og:description" content="正文： 中文含义：里氏替换原则英文缩写：LSP英文全称：The Liskov Substitution Principle提出者：Barbara Liskov提出时间：1987年">
+<meta property="og:description" content="中文含义：里氏替换原则英文缩写：LSP英文全称：The Liskov Substitution Principle提出者：Barbara Liskov提出时间：1987年">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_oop_ocp1.jpg">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_oop_ocp.jpg">
-<meta property="og:updated_time" content="2017-09-29T16:17:54.109Z">
+<meta property="og:updated_time" content="2017-10-05T10:04:14.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象编程6大原则之3：里氏替换原则">
-<meta name="twitter:description" content="正文： 中文含义：里氏替换原则英文缩写：LSP英文全称：The Liskov Substitution Principle提出者：Barbara Liskov提出时间：1987年">
-<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_oop_ocp.jpg">
+<meta name="twitter:description" content="中文含义：里氏替换原则英文缩写：LSP英文全称：The Liskov Substitution Principle提出者：Barbara Liskov提出时间：1987年">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_oop_ocp1.jpg">
 
 
 
@@ -416,21 +417,24 @@
       
 
       
-        <hr>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><hr>
-<p>中文含义：里氏替换原则<br>英文缩写：LSP<br>英文全称：The Liskov Substitution Principle<br>提出者：Barbara Liskov<br>提出时间：1987年<br><a id="more"></a><br>各种解释和定义：<br>　构建扩展性更好的系统<br>　子类型必须能够替换掉它们的基类型。</p>
-<p>　这个原则表达的意思是一个子类应该可以替换掉父类并且可以正常工作。</p>
-<p>　所有引用父类的地方，必须能使用子类的对象。简单地说就是将父类替换为他的子类是不会出现问题，反之，未必可以。<br>　那么里氏替换原则就是依赖于面向对象语言的继承与多态。核心原理是抽象。</p>
-<p>　这里列举一下继承的优缺点：<br>　优点：<br>　（1）代码重用，减少创建类的成本，每个子类都拥有父类的方法与属性。<br>　（2）子类与父类基本相似，但与父类又有所区别。<br>　（3）提高代码的可扩展性。<br>　缺点：<br>　（1）继承是侵入性的，只要继承就必须拥有父类所有的属性与方法。<br>　（2）可能造成子类代码冗余、灵活性降低。<br>　开闭原则和里氏替换原则是生死相依的、不离不弃的。他们都强调了抽象这一重要的特性。</p>
-<p>　里氏是作者名（Liskov），Liskov于1987年提出了一个关于继承的原则“继承必须确保超类所拥有的性质在子类中仍然成立。”<br>　也就是说，当一个子类的实例应该能够替换任何其超类的实例时，它们之间才具有is-A关系。<br>　该原则称为Liskov Substitution Principle——里氏替换原则。也可以理解为“老鼠的儿子会打洞”。^_^</p>
+        <p><img src="/images/it_oop_ocp1.jpg" alt="UML图"></p>
+<p>中文含义：里氏替换原则<br>英文缩写：LSP<br>英文全称：The Liskov Substitution Principle<br>提出者：Barbara Liskov<br>提出时间：1987年<br><a id="more"></a></p>
 <hr>
-<h1 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h1><hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><hr>
+<p>构建扩展性更好的系统<br>子类型必须能够替换掉它们的基类型。</p>
+<p>这个原则表达的意思是一个子类应该可以替换掉父类并且可以正常工作。</p>
+<p>所有引用父类的地方，必须能使用子类的对象。简单地说就是将父类替换为他的子类是不会出现问题，反之，未必可以。<br>那么里氏替换原则就是依赖于面向对象语言的继承与多态。核心原理是抽象。</p>
+<p>这里列举一下继承的优缺点：<br>优点：<br>(1)代码重用，减少创建类的成本，每个子类都拥有父类的方法与属性。<br>(2)子类与父类基本相似，但与父类又有所区别。<br>(3)提高代码的可扩展性。<br>缺点：<br>(1)继承是侵入性的，只要继承就必须拥有父类所有的属性与方法。<br>(2)可能造成子类代码冗余、灵活性降低。<br>开闭原则和里氏替换原则是生死相依的、不离不弃的。他们都强调了抽象这一重要的特性。</p>
+<p>里氏是作者名（Liskov），Liskov于1987年提出了一个关于继承的原则“继承必须确保超类所拥有的性质在子类中仍然成立。”<br>也就是说，当一个子类的实例应该能够替换任何其超类的实例时，它们之间才具有is-A关系。<br>该原则称为Liskov Substitution Principle——里氏替换原则。也可以理解为“老鼠的儿子会打洞”。^_^</p>
+<hr>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><hr>
 <blockquote>
 <p>来源：书籍——Android源码设计模式解析与实战——第1章——1.3</p>
 </blockquote>
 <p>UML图如下：<br><img src="/images/it_oop_ocp.jpg" alt="UML图"></p>
 <p>上述图很好地反应了里氏替换原则，即MemoryCache,DiskCache,DoubleCache都有可以替换ImageCache的工作，并且能够保证行为的正确性。<br>ImageCache建立了获取缓存图片、保存缓存图片的接口规范，MemoryCache等根据接口规范实现了相应的功能，用户只需要在使用指定具体的缓存对象就可以动态替换ImageLoader中的缓存策略。<br>这就使ImageLoader的缓存系统具有了无限的可能性，也就是保证了可扩展性。</p>
 <p>想象一种情况，当ImageLoader中的setImageCache（ImageCache cache）中的cache对象不能够被子类所替换，那么用户如何设置不同的缓存对象，以及用户如何自定义自己的缓存实现，通过之前的文章<a href="https://hengxing0080.github.io/2017/05/23/it/2.OOP_OCP/">开放闭合原则</a>中的isUseDishCache方法来一个一个判断吗？ 显然不行，这个原则就为这类问题提供了指导原则，也就是建立抽象，通过抽象建立规范，具体的实现在运行时替换掉抽象，保证系统的扩展性、灵活性。<br>开闭原则和里氏替换原则往往是生死相依、不弃不离的，通过里氏替换来达到对扩展开放，对修改关闭的效果。</p>
+<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p><a href="https://my.oschina.net/Barudisshu/blog/157322" target="_blank" rel="external">里氏替换原则</a></p>
 
       
     </div>
@@ -616,7 +620,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -627,7 +631,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -638,7 +642,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -732,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正文："><span class="nav-number">1.</span> <span class="nav-text">正文：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例："><span class="nav-number">2.</span> <span class="nav-text">示例：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关文章"><span class="nav-number">3.</span> <span class="nav-text">相关文章</span></a></li></ol></div>
             
 
           </div>

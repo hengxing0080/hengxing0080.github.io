@@ -92,18 +92,18 @@
 
 
 
-<meta name="description" content="正文： 中文含义：单一职责原则中文其他释义：单一责任原则，单一功能原则英文缩写：SRP英文全称：The Single Responsibility Principle">
+<meta name="description" content="中文含义：单一职责原则中文其他释义：单一责任原则，单一功能原则英文缩写：SRP英文全称：The Single Responsibility Principle">
 <meta name="keywords" content="面向对象">
 <meta property="og:type" content="article">
 <meta property="og:title" content="面向对象编程6大原则之1：单一职责原则">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/03/05/it/2.OOP&DesignPattern/1.1.SRP/index.html">
 <meta property="og:site_name" content="恒星的轨迹空间">
-<meta property="og:description" content="正文： 中文含义：单一职责原则中文其他释义：单一责任原则，单一功能原则英文缩写：SRP英文全称：The Single Responsibility Principle">
+<meta property="og:description" content="中文含义：单一职责原则中文其他释义：单一责任原则，单一功能原则英文缩写：SRP英文全称：The Single Responsibility Principle">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_oop_srp.jpg">
-<meta property="og:updated_time" content="2017-09-29T16:17:32.194Z">
+<meta property="og:updated_time" content="2017-10-05T10:38:01.309Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象编程6大原则之1：单一职责原则">
-<meta name="twitter:description" content="正文： 中文含义：单一职责原则中文其他释义：单一责任原则，单一功能原则英文缩写：SRP英文全称：The Single Responsibility Principle">
+<meta name="twitter:description" content="中文含义：单一职责原则中文其他释义：单一责任原则，单一功能原则英文缩写：SRP英文全称：The Single Responsibility Principle">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_oop_srp.jpg">
 
 
@@ -416,11 +416,12 @@
       
 
       
-        <hr>
-<h1 id="正文："><a href="#正文：" class="headerlink" title="正文："></a>正文：</h1><hr>
-<p>中文含义：单一职责原则<br>中文其他释义：单一责任原则，单一功能原则<br>英文缩写：SRP<br>英文全称：The Single Responsibility Principle<br><a id="more"></a><br>各种解释：<br>　它是优化代码的第一步。<br>　针对一个类而言，应该仅有一个引起它变化的原因。</p>
-<p>　简单的说就是：一个类中应该是一组相关性很高的函数、数据的封装。两个不一样的功能不应该放在一个类中。<br>　这个原则没有具体的划分界限，需要根据个人经验，具体业务逻辑而定。<br>　试想一下，如果所有的功能写在一个类里，那么这个类会越来越大，越来越复杂，越不易修改维护。那么根据功能，各自独立拆分出来，岂不是逻辑会清晰些。</p>
-<p>　描述的意思是每个类都只负责单一的功能，切不可太多，并且一个类应当尽量的把一个功能做到极致。<br>　单一职责原则并不是一个孤立的面向对象设计原则，它是早期面向对象设计五个基本原则（SOLID）之一。这些原则被一起应用时可以使一个软件系统更易被维护和扩展。</p>
+        <p>中文含义：单一职责原则<br>中文其他释义：单一责任原则，单一功能原则<br>英文缩写：SRP<br>英文全称：The Single Responsibility Principle<br><a id="more"></a></p>
+<hr>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><hr>
+<p>它是优化代码的第一步。<br>针对一个类而言，应该仅有一个引起它变化的原因。</p>
+<p>简单的说就是：一个类中应该是一组相关性很高的函数、数据的封装。两个不一样的功能不应该放在一个类中。<br>这个原则没有具体的划分界限，需要根据个人经验，具体业务逻辑而定。<br>试想一下，如果所有的功能写在一个类里，那么这个类会越来越大，越来越复杂，越不易修改维护。那么根据功能，各自独立拆分出来，岂不是逻辑会清晰些。</p>
+<p>描述的意思是每个类都只负责单一的功能，切不可太多，并且一个类应当尽量的把一个功能做到极致。<br>单一职责原则并不是一个孤立的面向对象设计原则，它是早期面向对象设计五个基本原则（SOLID）之一。这些原则被一起应用时可以使一个软件系统更易被维护和扩展。</p>
 <hr>
 <h1 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h1><hr>
 <blockquote>
@@ -432,7 +433,7 @@
 <h2 id="遵循单一职责原则"><a href="#遵循单一职责原则" class="headerlink" title="遵循单一职责原则"></a>遵循单一职责原则</h2><p>UML图如下：<br><img src="/images/it_oop_srp.jpg" alt="UML图"></p>
 <p>已把ImageLoader拆分和重构，单独抽取出ImageCache成一个类，各个功能已独立出来，满足单一职责。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 图片加载类</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageLoader</span> </span>&#123;</div><div class="line">    <span class="comment">// 图片缓存</span></div><div class="line">    ImageCache mImageCache = <span class="keyword">new</span> ImageCache();</div><div class="line">    <span class="comment">// 线程池，线程数量为CPU的数量</span></div><div class="line">    ExecutorService mExecutorServer = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());</div><div class="line">    <span class="comment">// 加载图片</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">displayImage</span><span class="params">(<span class="keyword">final</span> String url, <span class="keyword">final</span> ImageView imageView)</span></span>&#123;</div><div class="line">        Bitmap bitmap = mImageCache.get(url);</div><div class="line">        <span class="keyword">if</span>(bitmap != <span class="keyword">null</span>)&#123;</div><div class="line">            imageView.setImageBitmap(bitmap);</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        imageView.setTag(url);</div><div class="line">        mExecutorServer.submit(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                Bitmap bitmap = downloadImage(url);</div><div class="line">                <span class="keyword">if</span>(bitmap == <span class="keyword">null</span>)&#123;</div><div class="line">                    <span class="keyword">return</span>;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(imageView.getTag().equals(url))&#123;</div><div class="line">                    imageView.setImageBitmap(bitmap);</div><div class="line">                &#125;</div><div class="line">                mImageCache.put(url,bitmap);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Bitmap <span class="title">downloadImage</span><span class="params">(String imageUrl)</span></span>&#123;</div><div class="line">        Bitmap bitmap = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">try</span> &#123;</div><div class="line">            URL url = <span class="keyword">new</span> URL(imageUrl);</div><div class="line">            <span class="keyword">final</span> HttpURLConnection conn = (HttpURLConnection) url.openConnection();</div><div class="line">            bitmap = BitmapFactory.decodeStream(conn.getInputStream());</div><div class="line">            conn.disconnect();</div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> bitmap;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 用于处理图片缓存</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ImageCache</span> </span>&#123;</div><div class="line">    <span class="comment">// 图片LRU缓存</span></div><div class="line">    LruCache&lt;String,Bitmap&gt; mImageCache;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ImageCache</span><span class="params">()</span></span>&#123;</div><div class="line">        initImageCache();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initImageCache</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 计算可使用的最大内存</span></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> maxMemory = (<span class="keyword">int</span>)(Runtime.getRuntime().maxMemory() / <span class="number">1024</span>);</div><div class="line">        <span class="comment">// 取四分之一的可用内存作为缓存</span></div><div class="line">        <span class="keyword">final</span> <span class="keyword">int</span> cacheSize = maxMemory / <span class="number">4</span>;</div><div class="line">        mImageCache = <span class="keyword">new</span> LruCache&lt;String,Bitmap&gt;(cacheSize)&#123;</div><div class="line">            <span class="meta">@Override</span></div><div class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">int</span> <span class="title">sizeOf</span><span class="params">(String key, Bitmap value)</span> </span>&#123;</div><div class="line">                <span class="keyword">return</span> value.getRowBytes() * value.getHeight() / <span class="number">1024</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(String url,Bitmap bitmap)</span></span>&#123;</div><div class="line">        mImageCache.put(url,bitmap);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Bitmap <span class="title">get</span><span class="params">(String url)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> mImageCache.get(url);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>从上述的例子中我们能体会到，单一职责所表达的用意就是“单一”二字。<br>如果划分一个类，一个函数的职责，每个人都有自己的看法，这需要根据个人经验，具有的业务逻辑而定。<br>两个完全不一样的功能就不应该放在一个类中。一个类中应该是一组相关性很高的函数，数据的封装。<br>工程师可以不断地审视自己的代码，根据具体的业务，功能对累进行相应的拆分，这是程序员优化代码迈出的第一步。</p>
+<p>从上述的例子中我们能体会到，单一职责所表达的用意就是“单一”二字。<br>如果划分一个类，一个函数的职责，每个人都有自己的看法，这需要根据个人经验，具有的业务逻辑而定。<br>两个完全不一样的功能就不应该放在一个类中。一个类中应该是一组相关性很高的函数，数据的封装。<br>工程师可以不断地审视自己的代码，根据具体的业务，功能对类进行相应的拆分，这是程序员优化代码迈出的第一步。</p>
 
       
     </div>
@@ -496,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/01/it/2.OOP&DesignPattern/1.0.OOP/" rel="next" title="面向对象编程6大原则汇总">
-                <i class="fa fa-chevron-left"></i> 面向对象编程6大原则汇总
+              <a href="/2017/03/01/it/3.IQ/1.brain/" rel="next" title="IQ面试题 —— 脑筋急转弯系列">
+                <i class="fa fa-chevron-left"></i> IQ面试题 —— 脑筋急转弯系列
               </a>
             
           </div>
@@ -618,7 +619,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">71</span>
+                <span class="site-state-item-count">73</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -629,7 +630,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -640,7 +641,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -734,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#正文："><span class="nav-number">1.</span> <span class="nav-text">正文：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码："><span class="nav-number">2.</span> <span class="nav-text">示例代码：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#非单一职责原则"><span class="nav-number">2.1.</span> <span class="nav-text">非单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遵循单一职责原则"><span class="nav-number">2.2.</span> <span class="nav-text">遵循单一职责原则</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码："><span class="nav-number">2.</span> <span class="nav-text">示例代码：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#非单一职责原则"><span class="nav-number">2.1.</span> <span class="nav-text">非单一职责原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遵循单一职责原则"><span class="nav-number">2.2.</span> <span class="nav-text">遵循单一职责原则</span></a></li></ol></li></ol></div>
             
 
           </div>

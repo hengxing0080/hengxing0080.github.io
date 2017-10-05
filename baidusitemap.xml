@@ -4,88 +4,8 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
-    <lastmod>2017-10-04T08:47:20.675Z</lastmod>
-    <data>
-        <display>
-        <title>Java多线程并发异步的总结</title>
-        <pubTime>2017-09-06T07:54:12.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Java - 多线程" url="https://hengxing0080.github.io/categories/IT-Java-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/</loc>
-    <lastmod>2017-10-04T08:46:06.574Z</lastmod>
-    <data>
-        <display>
-        <title>IQ面试题 —— Java系列</title>
-        <pubTime>2017-08-01T15:58:10.000Z</pubTime>
-        
-        <tag>IQ面试题</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - IQ面试题 - Java" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98-Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-10-02T16:21:59.004Z</lastmod>
-    <data>
-        <display>
-        <title>Java集合框架的总结</title>
-        <pubTime>2017-09-07T10:33:02.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Java - 集合框架" url="https://hengxing0080.github.io/categories/IT-Java-%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.interview/</loc>
-    <lastmod>2017-09-30T14:02:51.391Z</lastmod>
-    <data>
-        <display>
-        <title>IQ面试题 —— 逻辑思维系列</title>
-        <pubTime>2017-08-01T15:58:10.000Z</pubTime>
-        
-        <tag>IQ面试题</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - IQ面试题 - 逻辑思维题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98-%E9%80%BB%E8%BE%91%E6%80%9D%E7%BB%B4%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/07/16/it/1.Java/OperationModulo/</loc>
-    <lastmod>2017-09-30T13:53:05.617Z</lastmod>
+    <lastmod>2017-10-05T16:06:29.100Z</lastmod>
     <data>
         <display>
         <title>运算符系列：算术运算符-取模%</title>
@@ -96,7 +16,7 @@
          
            
              
-              <breadCrumb title="IT - Java - 基础" url="https://hengxing0080.github.io/categories/IT-Java-%E5%9F%BA%E7%A1%80/"/>
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
           
         </display>
     </data>
@@ -105,7 +25,7 @@
     
   <url>
     <loc>https://hengxing0080.github.io/2017/08/25/it/1.Java/OperationBitwise/</loc>
-    <lastmod>2017-09-30T13:45:53.933Z</lastmod>
+    <lastmod>2017-10-05T16:06:24.364Z</lastmod>
     <data>
         <display>
         <title>运算符系列：位运算符</title>
@@ -116,7 +36,247 @@
          
            
              
-              <breadCrumb title="IT - Java - 基础" url="https://hengxing0080.github.io/categories/IT-Java-%E5%9F%BA%E7%A1%80/"/>
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
+    <lastmod>2017-10-05T16:06:12.152Z</lastmod>
+    <data>
+        <display>
+        <title>Java多线程并发异步的总结</title>
+        <pubTime>2017-09-06T07:54:12.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
+    <lastmod>2017-10-05T16:06:06.964Z</lastmod>
+    <data>
+        <display>
+        <title>Java集合框架的总结</title>
+        <pubTime>2017-09-07T10:33:02.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/01/it/3.IQ/1.brain/</loc>
+    <lastmod>2017-10-05T16:05:45.892Z</lastmod>
+    <data>
+        <display>
+        <title>IQ面试题 —— 脑筋急转弯系列</title>
+        <pubTime>2017-03-01T15:58:10.000Z</pubTime>
+        
+        <tag>IQ面试题</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.interview/</loc>
+    <lastmod>2017-10-05T15:51:15.844Z</lastmod>
+    <data>
+        <display>
+        <title>IQ面试题 —— 逻辑思维系列</title>
+        <pubTime>2017-08-01T15:58:10.000Z</pubTime>
+        
+        <tag>IQ面试题</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/</loc>
+    <lastmod>2017-10-05T15:51:14.765Z</lastmod>
+    <data>
+        <display>
+        <title>IQ面试题 —— Java系列</title>
+        <pubTime>2017-08-01T15:58:10.000Z</pubTime>
+        
+        <tag>IQ面试题</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/21/manager/1.Rule/</loc>
+    <lastmod>2017-10-05T13:40:00.233Z</lastmod>
+    <data>
+        <display>
+        <title>时间管理/行动管理/企业管理的实用法则</title>
+        <pubTime>2017-09-21T08:51:55.000Z</pubTime>
+        
+        <tag>管理学与心理学</tag>
+         
+         
+           
+             
+              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/07/it/3.UML/UMLClass/</loc>
+    <lastmod>2017-10-05T12:25:47.183Z</lastmod>
+    <data>
+        <display>
+        <title>UML —— 类图</title>
+        <pubTime>2017-09-07T12:25:22.000Z</pubTime>
+        
+        <tag>UML</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - UML" url="https://hengxing0080.github.io/categories/IT-UML/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
+    <lastmod>2017-10-05T12:10:23.380Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之4 —— 建造者模式（创建型模式）</title>
+        <pubTime>2017-06-08T07:21:33.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/01/it/2.OOP&DesignPattern/1.0.OOP/</loc>
+    <lastmod>2017-10-05T10:42:53.581Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则汇总</title>
+        <pubTime>2017-03-01T14:02:52.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/05/it/2.OOP&DesignPattern/1.1.SRP/</loc>
+    <lastmod>2017-10-05T10:38:01.309Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之1：单一职责原则</title>
+        <pubTime>2017-03-05T08:52:51.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/14/it/2.OOP&DesignPattern/1.2.OCP/</loc>
+    <lastmod>2017-10-05T10:31:16.052Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之2：开放闭合原则</title>
+        <pubTime>2017-03-14T02:00:51.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/25/it/2.OOP&DesignPattern/1.3.LSP/</loc>
+    <lastmod>2017-10-05T10:04:14.414Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之3：里氏替换原则</title>
+        <pubTime>2017-03-25T14:30:45.000Z</pubTime>
+        
+        <tag>面向对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
           
         </display>
     </data>
@@ -884,26 +1044,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
-    <lastmod>2017-09-29T16:18:34.088Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之4 —— 建造者模式（创建型模式）</title>
-        <pubTime>2017-06-08T07:21:33.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
     <lastmod>2017-09-29T16:18:30.589Z</lastmod>
     <data>
@@ -977,86 +1117,6 @@
            
              
               <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/25/it/2.OOP&DesignPattern/1.3.LSP/</loc>
-    <lastmod>2017-09-29T16:17:54.109Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之3：里氏替换原则</title>
-        <pubTime>2017-03-25T14:30:45.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/14/it/2.OOP&DesignPattern/1.2.OCP/</loc>
-    <lastmod>2017-09-29T16:17:51.190Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之2：开放闭合原则</title>
-        <pubTime>2017-03-14T02:00:51.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/01/it/2.OOP&DesignPattern/1.0.OOP/</loc>
-    <lastmod>2017-09-29T16:17:33.423Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则汇总</title>
-        <pubTime>2017-03-01T14:02:52.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/05/it/2.OOP&DesignPattern/1.1.SRP/</loc>
-    <lastmod>2017-09-29T16:17:32.194Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之1：单一职责原则</title>
-        <pubTime>2017-03-05T08:52:51.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
           
         </display>
     </data>
@@ -1184,26 +1244,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/21/manager/1.Rule/</loc>
-    <lastmod>2017-09-24T11:29:51.182Z</lastmod>
-    <data>
-        <display>
-        <title>时间管理/行动管理/企业管理的实用法则</title>
-        <pubTime>2017-09-21T08:51:55.000Z</pubTime>
-        
-        <tag>管理学与心理学</tag>
-         
-         
-           
-             
-              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/28/me/page11/</loc>
     <lastmod>2017-07-16T05:34:12.000Z</lastmod>
     <data>
@@ -1322,12 +1362,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        <title>励志数学公式（数据告诉你不要迷茫）</title>
+        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1342,12 +1382,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>励志数学公式（数据告诉你不要迷茫）</title>
-        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
