@@ -4,6 +4,106 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/07/28/it/2.NetworkProtocol/HTTP/</loc>
+    <lastmod>2017-10-06T09:43:59.350Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP协议</title>
+        <pubTime>2017-07-28T09:11:55.000Z</pubTime>
+        
+        <tag>网络协议</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 网络 - 协议" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
+    <lastmod>2017-10-06T05:53:02.863Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之3 —— 抽象工厂模式（创建型模式）</title>
+        <pubTime>2017-06-04T11:01:45.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/21/manager/1.Rule/</loc>
+    <lastmod>2017-10-06T05:33:58.066Z</lastmod>
+    <data>
+        <display>
+        <title>高效学习与管理的实用法则</title>
+        <pubTime>2017-09-21T08:51:55.000Z</pubTime>
+        
+        <tag>管理学与心理学</tag>
+         
+         
+           
+             
+              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
+    <lastmod>2017-10-06T04:45:28.271Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之2 —— 工厂模式（创建型模式）</title>
+        <pubTime>2017-06-02T03:31:55.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
+    <lastmod>2017-10-06T03:45:41.654Z</lastmod>
+    <data>
+        <display>
+        <title>框架模式 —— MVC & MVP & MVVM & MVPVM</title>
+        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/07/16/it/1.Java/OperationModulo/</loc>
     <lastmod>2017-10-05T16:06:29.100Z</lastmod>
     <data>
@@ -137,26 +237,6 @@
            
              
               <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/21/manager/1.Rule/</loc>
-    <lastmod>2017-10-05T13:40:00.233Z</lastmod>
-    <data>
-        <display>
-        <title>时间管理/行动管理/企业管理的实用法则</title>
-        <pubTime>2017-09-21T08:51:55.000Z</pubTime>
-        
-        <tag>管理学与心理学</tag>
-         
-         
-           
-             
-              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
           
         </display>
     </data>
@@ -884,26 +964,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
-    <lastmod>2017-09-29T16:19:18.509Z</lastmod>
-    <data>
-        <display>
-        <title>框架模式 —— MVC & MVP & MVVM & MVPVM</title>
-        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/08/23/it/2.OOP&DesignPattern/2.12.Flyweight/</loc>
     <lastmod>2017-09-29T16:19:11.051Z</lastmod>
     <data>
@@ -1044,46 +1104,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
-    <lastmod>2017-09-29T16:18:30.589Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之3 —— 抽象工厂模式（创建型模式）</title>
-        <pubTime>2017-06-04T11:01:45.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
-    <lastmod>2017-09-29T16:18:26.972Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之2 —— 工厂模式（创建型模式）</title>
-        <pubTime>2017-06-02T03:31:55.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
     <lastmod>2017-09-29T16:18:21.774Z</lastmod>
     <data>
@@ -1117,26 +1137,6 @@
            
              
               <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/28/it/2.NetworkProtocol/HTTP/</loc>
-    <lastmod>2017-09-29T08:22:15.114Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP协议</title>
-        <pubTime>2017-07-28T09:11:55.000Z</pubTime>
-        
-        <tag>网络协议</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 网络 - 协议" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
           
         </display>
     </data>
@@ -1362,12 +1362,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>励志数学公式（数据告诉你不要迷茫）</title>
-        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1382,12 +1382,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        <title>励志数学公式（数据告诉你不要迷茫）</title>
+        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
         
         <tag>励志</tag>
          
