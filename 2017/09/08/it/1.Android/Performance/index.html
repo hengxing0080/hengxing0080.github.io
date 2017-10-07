@@ -1,0 +1,1351 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹空间" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 性能优化系列">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/08/it/1.Android/Performance/index.html">
+<meta property="og:site_name" content="恒星的轨迹空间">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_performance_logo.jpg">
+<meta property="og:updated_time" content="2017-10-07T11:31:55.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 性能优化系列">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_performance_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/08/it/1.Android/Performance/"/>
+
+
+
+
+
+  <title>Android —— 性能优化系列 | 恒星的轨迹空间</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹空间</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/08/it/1.Android/Performance/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 性能优化系列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T23:56:13+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_performance_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>(上图临时占位，等后续总结成思维导图待替换…)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">优化的原则</div><div class="line">    1.时间换空间</div><div class="line">        牺牲时间换取空间, 流的读写</div><div class="line">    2.空间换时间</div><div class="line">        把文件的路径存放到数据库里面,以后查询效率就高很多</div><div class="line">        Android下的图库应用检索sd卡的图片</div><div class="line">    3.空间换空间</div><div class="line">        把内存换成硬盘 或者把硬盘换成内存</div><div class="line">    4.时间换时间</div><div class="line">        开启启动速度的优化</div></pre></td></tr></table></figure>
+<p>工作中随着代码体量变得日趋臃肿，视图层级越来越深，工程结构也越来越复杂。<br>相应的，输出的apk包越来越大，界面流畅性大不如前，经常性发生卡顿，甚至不时出现内存溢出崩溃。<br>在这个阶段，Android开发需要掌握以下方面的技术：<br>AndroidStudio的使用(包括调试工具，测试工具，快捷键等)<br>Android资源管理<br>Android视图架构（Activity视图层级、layout inflate）<br>代码优化<br>UI优化<br>内存优化<br>电量优化<br>流量优化<br>网络优化<br>数据库优化<br>动画优化<br>NDK JNI开发<br>……</p>
+<p>总结中不断尝试和收集总结的，此文将不断的更新，下面开始各个章节的介绍：</p>
+<hr>
+<h1 id="UI布局渲染优化"><a href="#UI布局渲染优化" class="headerlink" title="UI布局渲染优化"></a>UI布局渲染优化</h1><hr>
+<h2 id="巧用抽象布局标签-include-viewstub-merge"><a href="#巧用抽象布局标签-include-viewstub-merge" class="headerlink" title="巧用抽象布局标签(include, viewstub, merge)"></a>巧用抽象布局标签(include, viewstub, merge)</h2><p>在布局优化中，Androi的官方提到了这三种布局并介绍了这三种布局各有的优势<br>当你在Application中创建复杂的布局时，页面的渲染过程也变得更加缓慢。<br>此时，我们需要利用include标签(布局重用,避免重复渲染)和ViewStub标签(延迟加载)和merge标签(布局合并)来优化我们的页面。</p>
+<h2 id="OverDraw（过度绘制）-amp-渲染绘制的性能优化"><a href="#OverDraw（过度绘制）-amp-渲染绘制的性能优化" class="headerlink" title="OverDraw（过度绘制）&amp; 渲染绘制的性能优化"></a>OverDraw（过度绘制）&amp; 渲染绘制的性能优化</h2><p>相关文章：<br>    <a href="http://blog.csdn.net/lmj623565791/article/details/45556391" target="_blank" rel="external">Android UI性能优化实战 识别绘制中的性能问题</a><br>    <a href="http://hukai.me/android-performance-render/" target="_blank" rel="external">Android性能优化之渲染篇</a><br>    <a href="http://www.jianshu.com/p/9e095bacf44a" target="_blank" rel="external">实战 Android中的UI过度绘制</a></p>
+<p>准备知识：<br>    Android渲染机制</p>
+<p>处理方案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1.移除不必要的background</div><div class="line">    1.1.移除Window默认的Background</div><div class="line">    1.2.移除XML布局文件中非必需的Background</div><div class="line"></div><div class="line">2.onDraw多次重复绘制图案</div><div class="line">    1.1.clipRect的妙用</div><div class="line">    1.2.drawRect等等</div></pre></td></tr></table></figure></p>
+<h2 id="去除不必要的嵌套和View节点"><a href="#去除不必要的嵌套和View节点" class="headerlink" title="去除不必要的嵌套和View节点"></a>去除不必要的嵌套和View节点</h2><p>4.0及以上Android版本可通过设置-&gt;开发者选项-&gt;显示布局边界打开页面布局显示，看看是否有不必要的节点和嵌套。4.0以下版本可通过hierarchy viewer查看。</p>
+<p>(1) 首次不需要使用的节点设置为GONE或使用viewstub<br>很多人在工作中将不常用的元素使用INVISIBLE或者GONE进行隐藏，然后当用户需要使用这些元素的时候再把它们置成VISIBLE显示出来。使用这种方式肯定可以实现功能的，但是性能方面就表现得一般了，因为即使是将元素进行隐藏，它们其实还是在布局当中的，每个元素还拥有着自己的宽、高、背景等等属性，解析布局的时候也会将这些隐藏的元素一一解析出来。</p>
+<p>那么我们如何才能让这些不常用的元素仅在需要时才去加载呢？Android为此提供了一种非常轻量级的控件，ViewStub。ViewStub虽说也是View的一种，但是它没有大小，没有绘制功能，也不参与布局，资源消耗非常低，将它放置在布局当中基本可以认为是完全不会影响性能的。</p>
+<p>(2) 使用RelativeLayout代替LinearLayout<br>大约在Android4.0之前，新建工程的默认main.xml中顶节点是LinearLayout，而在之后已经改为RelativeLayout，因为RelativeLayout性能更优，且可以简单实现LinearLayout嵌套才能实现的布局。<br>使用RelativeLayout减少视图树的层级，防止过度绘制</p>
+<p>某网友关键评论如下：<br>通过测试，相同层级的情况下， RelativeLayout 和LinearLayour之间的效率没<br>有太大差异，但是对于同样的一个布局效果，用RelativeLayout产生的View层级嵌套比<br>LinearLayout的层级要少一些，我们知道，层级嵌套越深，资源消耗是越大的，测量和布局<br>所花费的时间是越长的。所以，相对来说RelativeLayout的效率比LinearLayout要高一些。<br>Google更加推荐咱们在写布局时，使用RelativeLayout，当我们在创建一个新工程时，<br>main_activity.xml的最外层布局是RelativeLayout。</p>
+<p><a href="http://www.jianshu.com/p/8a7d059da746" target="_blank" rel="external">Android中RelativeLayout和LinearLayout性能分析</a><br><a href="http://blog.csdn.net/wangjia55/article/details/37772763" target="_blank" rel="external">【Android性能优化】尽可能用RelativeLayout来代替多层嵌套的LinearLayout</a><br><a href="https://www.zhihu.com/question/36762882" target="_blank" rel="external">安卓FrameLayout LinearLayout RelativeLayout 效率高低？</a></p>
+<h2 id="减少不必要的infalte"><a href="#减少不必要的infalte" class="headerlink" title="减少不必要的infalte"></a>减少不必要的infalte</h2><p>(1) 对于inflate的布局可以直接缓存，用全部变量代替局部变量，避免下次需再次inflate<br>如上面ViewStub示例中的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (networkErrorView != <span class="keyword">null</span>) &#123;</div><div class="line">  networkErrorView.setVisibility(View.VISIBLE);</div><div class="line">  <span class="keyword">return</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (networkErrorView != <span class="keyword">null</span>) &#123;</div><div class="line">  networkErrorView.setVisibility(View.VISIBLE);</div><div class="line">  <span class="keyword">return</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>(2) ListView提供了item缓存，adapter getView的标准写法，如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">ViewHolder</span> </span>&#123;</div><div class="line">  ImageView appIcon;</div><div class="line">  TextView  appName;</div><div class="line">  TextView  appInfo;</div><div class="line">&#125;</div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> View <span class="title">getView</span><span class="params">(<span class="keyword">int</span> position, View convertView, ViewGroup parent)</span> </span>&#123;</div><div class="line">  ViewHolder holder;</div><div class="line">  <span class="keyword">if</span> (convertView == <span class="keyword">null</span>) &#123;</div><div class="line">    convertView = inflater.inflate(R.layout.list_item, <span class="keyword">null</span>);</div><div class="line">    holder = <span class="keyword">new</span> ViewHolder();</div><div class="line">    ……</div><div class="line">    convertView.setTag(holder);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    holder = (ViewHolder)convertView.getTag();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>关于ListView缓存原理可见Android ListView缓存机制。</p>
+<h2 id="用SurfaceView或TextureView代替普通View"><a href="#用SurfaceView或TextureView代替普通View" class="headerlink" title="用SurfaceView或TextureView代替普通View"></a>用SurfaceView或TextureView代替普通View</h2><p>SurfaceView或TextureView可以通过将绘图操作移动到另一个单独线程上提高性能。<br>普通View的绘制过程都是在主线程(UI线程)中完成，如果某些绘图操作影响性能就不好优化了，这时我们可以考虑使用SurfaceView和TextureView，他们的绘图操作发生在UI线程之外的另一个线程上。<br>因为SurfaceView在常规视图系统之外，所以无法像常规试图一样移动、缩放或旋转一个SurfaceView。<br>TextureView是Android4.0引入的，除了与SurfaceView一样在单独线程绘制外，还可以像常规视图一样被改变。</p>
+<h2 id="尽量为所有分辨率创建资源"><a href="#尽量为所有分辨率创建资源" class="headerlink" title="尽量为所有分辨率创建资源"></a>尽量为所有分辨率创建资源</h2><p>减少不必要的硬件缩放，这会降低UI的绘制速度，可借助Android asset studio</p>
+<hr>
+<h1 id="内存优化"><a href="#内存优化" class="headerlink" title="内存优化"></a>内存优化</h1><hr>
+<hr>
+<h1 id="代码优化"><a href="#代码优化" class="headerlink" title="代码优化"></a>代码优化</h1><hr>
+<h2 id="注重细节"><a href="#注重细节" class="headerlink" title="注重细节"></a>注重细节</h2><p>处理每一个细节</p>
+<p>减少变量创建的次数<br>去掉大量的临时变量和部分全局变量<br>优化for循环，建议使用增强for循环<br>在适当的生命周期中创建释放对象<br>时间和空间的处理</p>
+<h2 id="简化代码规范"><a href="#简化代码规范" class="headerlink" title="简化代码规范"></a>简化代码规范</h2><p>这是一个不可以忽略的问题。与那些连基本的Android开发编码规范都不遵守的人一起工作是很困难的。</p>
+<p>这不是什么困难的事情，要不了几个小时的时间就可以学习基本的Java 和 Android 编码规范。而且这不是一次性买卖，作为一个开发者终生受益。</p>
+<p>提示：这里 有一个开始学习标准编码规范的极佳资源。<br><a href="https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md" target="_blank" rel="external">https://github.com/ribot/android-guidelines/blob/master/project_and_code_guidelines.md</a></p>
+<hr>
+<h2 id="重构App"><a href="#重构App" class="headerlink" title="重构App"></a>重构App</h2><hr>
+<p>就是重新架构app</p>
+<p>大多数时候我们都笼统的把代码放到Activity和Fragment中（在这个问题上你也可以责怪我），导致它们变成庞大的“上帝对象”，这几乎不可维护和测试。</p>
+<p>为app采用一个好的架构是非常重要的，比如MVP, MVVM, Redux等。考虑把app的业务逻辑，视图交互，数据交换分为不同的层，让它们更易管理和测试。</p>
+<p>提示：看一看谷歌的 这些 模版可以让你在架构app的时候更容易。<br><a href="https://github.com/googlesamples/android-architecture" target="_blank" rel="external">https://github.com/googlesamples/android-architecture</a></p>
+<hr>
+<h1 id="工具优化"><a href="#工具优化" class="headerlink" title="工具优化"></a>工具优化</h1><hr>
+<h2 id="性能优化分析工具"><a href="#性能优化分析工具" class="headerlink" title="性能优化分析工具"></a>性能优化分析工具</h2><p>用途：性能分析优化监视/查看UI/调试Bug/检测内存泄露工具 </p>
+<h3 id="手机-设置-开发者选项"><a href="#手机-设置-开发者选项" class="headerlink" title="手机/设置/开发者选项"></a>手机/设置/开发者选项</h3><p>1.查看UI过度绘制<br>手机 / 设置 / 开发者选项 / 显示布局边界（Show GPU Overdraw）<br><a href="http://jingyan.baidu.com/article/1e5468f97c4772484961b72a.html" target="_blank" rel="external">手机怎么设置调试GPU过度绘制</a></p>
+<h3 id="Hierarchy-Viewer"><a href="#Hierarchy-Viewer" class="headerlink" title="Hierarchy Viewer"></a>Hierarchy Viewer</h3><p>减少不必要的层次：巧用Hierarchy Viewer<br>hierarchy viewer可以方便的查看Activity的布局，各个View的属性、measure、layout、draw的时间，如果耗时较多会用红色标记，否则显示绿色。<br>hierarchy viewer.bat位于<sdk>/tools/目录下</sdk></p>
+<h3 id="ViewServer"><a href="#ViewServer" class="headerlink" title="ViewServer"></a>ViewServer</h3><p>下载地址：<br><a href="https://github.com/romainguy/ViewServer" target="_blank" rel="external">https://github.com/romainguy/ViewServer</a></p>
+<p>相关文章：<br><a href="http://blog.csdn.net/wanglu198506/article/details/43106133" target="_blank" rel="external">使用ViewServer让Android真机可用HierarchyView视图检测工具</a></p>
+<p>参考书籍：<br>Android群英传-10.1.5</p>
+<h3 id="无线uiviewer"><a href="#无线uiviewer" class="headerlink" title="无线uiviewer"></a>无线uiviewer</h3><p>安卓UI集成调试必备利器！<br>在android手机端实现Hierarchyviewer里的uiautomatorviewer功能，查看UI布局、控件位置不再需要通过数据线连接到电脑查看，在手机上随时随地可以查看任意界面！<br>有了此工具，安卓测试人员可以底气十足的告诉开发人员，开发出来的界面控件位置、大小哪些是错的，哪些是对的！<br>有了此工具，安卓开发人员可以信心百倍的告诉测试人员，我开发出来的界面与UI标注图是一模一样的！不信你用“无线uiviewer”量一量！</p>
+<p>PS：手机需要root</p>
+<p>下载地址：<br><a href="http://download.csdn.net/download/duantihi/9448886" target="_blank" rel="external">http://download.csdn.net/download/duantihi/9448886</a></p>
+<h3 id="开发助手"><a href="#开发助手" class="headerlink" title="开发助手"></a>开发助手</h3><p><a href="http://www.trinea.cn/android/android-develop-and-debug-tools/" target="_blank" rel="external">Android应用开发调试利器——开发助手，数十倍效率提升</a></p>
+<h3 id="ddms-bat"><a href="#ddms-bat" class="headerlink" title="ddms.bat"></a>ddms.bat</h3><p>DDMS 全称是Dalvik Debug Monitor Service，是 Android 开发环境中的Dalvik虚拟机调试监控服务。<br>adt插件的功能, 提供一个调试的视图</p>
+<p>具体功能：<br>设备列表,进程列表<br>文件管理<br>模拟器控制 打入电话 发入短信 定位信息<br>查看模拟器资源信息</p>
+<h4 id="dump-View-Hierarchy-for-UI-automator"><a href="#dump-View-Hierarchy-for-UI-automator" class="headerlink" title="dump View Hierarchy for UI automator"></a>dump View Hierarchy for UI automator</h4><p><a href="http://blog.csdn.net/caiwenfeng_for_23/article/details/38498337" target="_blank" rel="external">android 开发UI好工具—–dump View Hierarchy for UI automator</a></p>
+<h3 id="TraceView"><a href="#TraceView" class="headerlink" title="TraceView"></a>TraceView</h3><p>程序性能分析器<br><a href="http://www.trinea.cn/android/android-traceview/" target="_blank" rel="external">Android性能调优工具TraceView介绍</a></p>
+<h3 id="Memory-Monitor"><a href="#Memory-Monitor" class="headerlink" title="Memory Monitor"></a>Memory Monitor</h3><p>AndroidStudio自带的内存检测工具<br>Android Memory Monitor内置于Android Studio中，用于展示应用内存的使用和释放情况。<br>当你的App占用的内存持续增加，而且你同时出发GC，也没有进行释放，那么你的App很有可能发生了内存泄漏问题。</p>
+<h3 id="StrictMode"><a href="#StrictMode" class="headerlink" title="StrictMode"></a>StrictMode</h3><p>Android性能调优利器StrictMode</p>
+<h3 id="LeakCanary"><a href="#LeakCanary" class="headerlink" title="LeakCanary"></a>LeakCanary</h3><p>Android Memory Monitor内置于Android Studio中，用于展示应用内存的使用和释放情况。它大致长成这个样子<br>当你的App占用的内存持续增加，而且你同时出发GC，也没有进行释放，那么你的App很有可能发生了内存泄漏问题。</p>
+<p>内存泄露目前在项目中一般用leakcanary基本就能搞定，配置起来也相当简单</p>
+<p><a href="http://droidyue.com/blog/2016/03/28/android-leakcanary/" target="_blank" rel="external">Android内存泄漏检测利器：LeakCanary</a></p>
+<h3 id="MAT"><a href="#MAT" class="headerlink" title="MAT"></a>MAT</h3><p>MAT：Eclipse Memory Analyzer Tool<br>内存泄漏分析工具<br><a href="http://droidyue.com/blog/2015/09/26/android-tuning-tool-strictmode/" target="_blank" rel="external">分析Android app的内存使用</a></p>
+<h3 id="Systrace"><a href="#Systrace" class="headerlink" title="Systrace"></a>Systrace</h3><p>函数流程调试工具</p>
+<h3 id="Method-Trace"><a href="#Method-Trace" class="headerlink" title="Method Trace"></a>Method Trace</h3><p>函数流程调试工具</p>
+<h3 id="draw9patch-bat"><a href="#draw9patch-bat" class="headerlink" title="draw9patch.bat"></a>draw9patch.bat</h3><p>做点九图的工具</p>
+<h3 id="emulator-exe"><a href="#emulator-exe" class="headerlink" title="emulator.exe"></a>emulator.exe</h3><p>模拟器</p>
+<h3 id="mksdcard-exe"><a href="#mksdcard-exe" class="headerlink" title="mksdcard.exe"></a>mksdcard.exe</h3><p>创建sd卡的工具</p>
+<h2 id="代码分析扫描工具"><a href="#代码分析扫描工具" class="headerlink" title="代码分析扫描工具"></a>代码分析扫描工具</h2><p>用途：静态代码扫描/程序分析/代码提示/代码检查</p>
+<h3 id="Android-Lint工具"><a href="#Android-Lint工具" class="headerlink" title="Android Lint工具"></a>Android Lint工具</h3><p>先说下layoutopt<br>layoutopt是一个可以提供layout及其层级优化提示的命令行，在sdk16以后已经被lint取代，在Windows-&gt;Show View-&gt;Other-&gt;Android-&gt;Lint Warnings查看lint优化提示，lint具体介绍可见Improving Your Code with lint。</p>
+<p>Android lint是在ADT 16提供的新工具，它是一个代码扫描工具，能够帮助我们识别代码结构存在的问题</p>
+<p>lint检查：通过Android Studio中的 Analyze-&gt;Inspect Code 对工程代码做静态扫描；找出潜在的问题代码并修改，去掉无用的图片</p>
+<p>相关文章：<br><a href="http://blog.csdn.net/xyz_lmn/article/details/14222939" target="_blank" rel="external">Android代码优化——使用Android lint工具</a><br><a href="http://www.bubuko.com/infodetail-1055648.html" target="_blank" rel="external">Android Studio使用Lint进行代码检查</a></p>
+<p>相关书籍：<br>Android群英传-10.3 Lint工具</p>
+<h3 id="Tools-Attributes"><a href="#Tools-Attributes" class="headerlink" title="Tools Attributes"></a>Tools Attributes</h3><p>官方文档：<br><a href="http://tools.android.com/tech-docs/tools-attributes" target="_blank" rel="external">http://tools.android.com/tech-docs/tools-attributes</a></p>
+<p>相关文章：<br><a href="http://www.bubuko.com/infodetail-916616.html" target="_blank" rel="external">android中xml tools属性详解（转）</a><br><a href="http://blog.csdn.net/u011277123/article/details/52814521" target="_blank" rel="external">Android Tools Attributes，让布局设计所见即所得</a></p>
+<p>看似Android开发人员只有一种方法来检查成品布局——在设备上运行它。但是，你还可以使用内置于开发框架的Tools Attributes，在我们的例子中所使用的框架是Android Studio。</p>
+<p>开发人员在设计Android Layout布局时，总会伴随着一些乱七八槽的困扰。比如，为了更加逼真的真实数据预览效果，我们在开发时会将TextView的text属性写上一些假数据，而当运行到模拟器或真机上时这些假数据就成了造成体验上甚至测试BUG的脏数据，又需要一一清除。再比如，我们想在XML的预览界面上就看到ListView的Item内容，而不是只有通过编译运行时才能查看。等等，诸如这些存在于开发Layout内容阶段的困扰，都可以通过Tools Attributes得以解决，不妨了解一下。</p>
+<p>Tools Attributes可以使用额外的命名空间来帮助管理Android Studio，这样开发框架就不会传输运行时版本的属性到最终构建。</p>
+<h3 id="Support-Annotations"><a href="#Support-Annotations" class="headerlink" title="Support Annotations"></a>Support Annotations</h3><p>官方文档<br><a href="http://tools.android.com/tech-docs/support-annotations" target="_blank" rel="external">http://tools.android.com/tech-docs/support-annotations</a></p>
+<p>学习文章<br><a href="http://www.cnblogs.com/punkisnotdead/p/4705258.html" target="_blank" rel="external">Android 注解的一些应用以及原理</a><br><a href="http://www.codeceo.com/article/android-support-annotations-2.html" target="_blank" rel="external">Android Support Annotations 使用详解</a><br><a href="http://www.mincoder.com/article/6375.shtml" target="_blank" rel="external">使用Android Support Annotations优化你的代码</a></p>
+<p>如果你还没有听说过Android Support Annotations 函数库，你将错过一个整洁的新软件包，它有助于你捕获程序中的bugs。该函数库包含了许多的Java注解，用于帮助Android Studio检测代码中可能存在的错误，并报告给开发者。注解类型有很多种</p>
+<h3 id="SonarQube"><a href="#SonarQube" class="headerlink" title="SonarQube"></a>SonarQube</h3><p>代码检查工具能帮我们检查一些隐藏的bug，代码检查工具中sonar是比较好的一个</p>
+<p><a href="http://blog.csdn.net/rain_butterfly/article/details/42170601" target="_blank" rel="external">Android 代码检查工具SonarQube</a></p>
+<h3 id="DroidJitChecker"><a href="#DroidJitChecker" class="headerlink" title="DroidJitChecker"></a>DroidJitChecker</h3><p>JIT：JIT全称Just-in-time compilation。意思为实时编译，是JVM中一种优化技术，对频繁调用并且符合条件的方法进行优化将字节码翻译成机器代码，提升执行效率。</p>
+<p><a href="http://droidyue.com/blog/2016/04/10/jit-friendly-checker-for-android/" target="_blank" rel="external">一个Android代码JIT友好度检测工具</a></p>
+<h3 id="UCDetector"><a href="#UCDetector" class="headerlink" title="UCDetector"></a>UCDetector</h3><p>UCDetector是 eclipse 工具 可以审查出程序中  未被使用的、 冗余的、 变量不规范 的代码 </p>
+<p><a href="http://blog.csdn.net/aaawqqq/article/details/46684441" target="_blank" rel="external">android优化 清除无效代码 UCDetector</a></p>
+<h3 id="FindBugs"><a href="#FindBugs" class="headerlink" title="FindBugs"></a>FindBugs</h3><p>静态分析工具承诺无需开发人员费劲就能找出代码中已有的缺陷。当然，如果有多年的编写经验，就会知道这些承诺并不是一定能兑现。</p>
+<h2 id="高效工具-自动化及格式化"><a href="#高效工具-自动化及格式化" class="headerlink" title="高效工具(自动化及格式化)"></a>高效工具(自动化及格式化)</h2><p>相关文章<br><a href="https://github.com/jiang111/awesome-androidstudio-plugins" target="_blank" rel="external">收集Android studio 常用的插件</a><br><a href="https://www.2cto.com/kf/201504/389231.html" target="_blank" rel="external">打造你的开发神器——介绍Android Studio上的几个插件</a></p>
+<h3 id="layoutformatter"><a href="#layoutformatter" class="headerlink" title="layoutformatter"></a>layoutformatter</h3><p><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2016/0424/4176.html" target="_blank" rel="external">XML 布局文件代码的优雅性</a><br><a href="https://github.com/drakeet/LayoutFormatter" target="_blank" rel="external">https://github.com/drakeet/LayoutFormatter</a></p>
+<h3 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h3><p>根据Gson库使用的要求,将JSONObject格式的String 解析成实体<br>写在前头:本插件只适用 android studio和 Intellij IDEA 工具,eclipse 的少年无视我吧!!!<br>这是一个根据JSONObject格式的字符串,自动生成实体类参数.<br><a href="https://github.com/zzz40500/GsonFormat" target="_blank" rel="external">https://github.com/zzz40500/GsonFormat</a></p>
+<h3 id="android-layout-id-converter"><a href="#android-layout-id-converter" class="headerlink" title="android layout id converter"></a>android layout id converter</h3><p>Android Studio的一个插件<br>简而言之，可以一秒定义控件并且找到<br>相关文章:<br><a href="http://blog.csdn.net/poison_h/article/details/46722649" target="_blank" rel="external">Android Studio插件之Android Layout ID Converter教程</a></p>
+<h3 id="AndroidCodeGenerator"><a href="#AndroidCodeGenerator" class="headerlink" title="AndroidCodeGenerator"></a>AndroidCodeGenerator</h3><p>Android studio 插件<br>可以自动生成findViewById方法和ViewHolder</p>
+<p>下载地址：<br><a href="https://github.com/fuxiuyuan/AndroidCodeGenerator" target="_blank" rel="external">https://github.com/fuxiuyuan/AndroidCodeGenerator</a></p>
+<h3 id="Android-Toolbox-Plugin"><a href="#Android-Toolbox-Plugin" class="headerlink" title="Android Toolbox Plugin"></a>Android Toolbox Plugin</h3><p>生成viewholder</p>
+<h3 id="Android-Studio-Prettify"><a href="#Android-Studio-Prettify" class="headerlink" title="Android Studio Prettify"></a>Android Studio Prettify</h3><p>Studio1.5以上的版本鼠标放在<a href="http://R.layout.xxx右键－Generator可以看到View" target="_blank" rel="external">http://R.layout.xxx右键－Generator可以看到View</a> Variables和View Fields，可以帮你初始化资源文件中有id的view，可以再也不用findViewById了（没有的话请安装JetBrains Plugin Repository :: Android Studio Prettify，2.0以上默认没有<br><a href="http://plugins.jetbrains.com/plugin/7405?pr=androidstudio" target="_blank" rel="external">http://plugins.jetbrains.com/plugin/7405?pr=androidstudio</a></p>
+<h3 id="Android-Parcelable-code-generator"><a href="#Android-Parcelable-code-generator" class="headerlink" title="Android Parcelable code generator"></a>Android Parcelable code generator</h3><p>生成实现了Parcelable接口的代码的插件.<br><a href="https://www.2cto.com/kf/201603/493780.html" target="_blank" rel="external">Android Studio添加Parcelable序列化小工具（快速提高开发效率）</a></p>
+<h3 id="SelectorChapek-for-Android"><a href="#SelectorChapek-for-Android" class="headerlink" title="SelectorChapek for Android"></a>SelectorChapek for Android</h3><p>这是用于生成Selector的插件</p>
+<h3 id="Sexy-Editor"><a href="#Sexy-Editor" class="headerlink" title="Sexy Editor"></a>Sexy Editor</h3><p>设置AS背景插件<br><a href="http://www.jianshu.com/p/6a176c87ef29" target="_blank" rel="external">让你的Android Studio性感起来–Sexy Editor</a></p>
+<h3 id="Strings-xml-tools"><a href="#Strings-xml-tools" class="headerlink" title="Strings-xml-tools"></a>Strings-xml-tools</h3><p><a href="http://www.codeceo.com/article/8-android-studio-plugins.html" target="_blank" rel="external">http://www.codeceo.com/article/8-android-studio-plugins.html</a></p>
+<h3 id="jimu-Mirror"><a href="#jimu-Mirror" class="headerlink" title="jimu Mirror"></a>jimu Mirror</h3><p><a href="http://www.codeceo.com/article/8-android-studio-plugins.html" target="_blank" rel="external">http://www.codeceo.com/article/8-android-studio-plugins.html</a></p>
+<h3 id="Android-Holo-Colors-Generator"><a href="#Android-Holo-Colors-Generator" class="headerlink" title="Android Holo Colors Generator"></a>Android Holo Colors Generator</h3><p><a href="http://www.codeceo.com/article/8-android-studio-plugins.html" target="_blank" rel="external">http://www.codeceo.com/article/8-android-studio-plugins.html</a></p>
+<h3 id="Android-ButterKnife-Zelezny"><a href="#Android-ButterKnife-Zelezny" class="headerlink" title="Android ButterKnife Zelezny"></a>Android ButterKnife Zelezny</h3><h3 id="Android-Drawable-Importer"><a href="#Android-Drawable-Importer" class="headerlink" title="Android Drawable Importer"></a>Android Drawable Importer</h3><h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><h3 id="Genymotion-虚拟机"><a href="#Genymotion-虚拟机" class="headerlink" title="Genymotion 虚拟机"></a>Genymotion 虚拟机</h3><p>刚开始做开发的时候，每次使用官方的虚拟机，都想吐槽一下，但是发现了Genymotion 之后，这一切都变化了，它的速度几乎可以和真机媲美了，当然如果有真机，当然还是推荐使用真机测试。</p>
+<h3 id="ES-Explorer"><a href="#ES-Explorer" class="headerlink" title="ES Explorer"></a>ES Explorer</h3><p>ES Explorer 是一款文件管理器，但实际它又不仅仅是一款文件管理器，在获得Root 之后，它的功能更强大了，它可以浏览受限制的文件目录；而且提供了一系列小工具，比如下载器；还有集成了众多云储存服务。</p>
+<h3 id="Codota"><a href="#Codota" class="headerlink" title="Codota"></a>Codota</h3><p>Codota 是一款Android 代码搜索工具，Codota 目前已经收录超过七百万精品代码实例；具体的详细介绍请看文章<br><a href="http://www.jianshu.com/p/59b89c26f9e0" target="_blank" rel="external">《Android 开发工具之Codota——搜索最好的Android 代码 - 简书》</a></p>
+<h3 id="AndroidAssetStudio"><a href="#AndroidAssetStudio" class="headerlink" title="AndroidAssetStudio"></a>AndroidAssetStudio</h3><p>Android Asset Studio 是一个在线制作工具，它可以制作Iocn，ActionBar，点9 图等等，简单的操作，大大提高了我们开发的效率。<br><a href="http://romannurik.github.io/AndroidAssetStudio/" target="_blank" rel="external">http://romannurik.github.io/AndroidAssetStudio/</a></p>
+<h3 id="WiFi-ADB"><a href="#WiFi-ADB" class="headerlink" title="WiFi ADB"></a>WiFi ADB</h3><p>WiFi ADB 是一个通过无线网络来使电脑和手机连接，当我们做测试的时候，只需在手机上打开，只需在命令行输入 adb connect xxx.xxx.xxx.xxx:5555，电脑可以连接手机，就可以通过无线网络来调试开发的应用。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/07/it/3.UML/UMLClass/" rel="next" title="UML —— 类图">
+                <i class="fa fa-chevron-left"></i> UML —— 类图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/08/it/1.Android/Safety/" rel="prev" title="Android —— 安全系列">
+                Android —— 安全系列 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UI布局渲染优化"><span class="nav-number">1.</span> <span class="nav-text">UI布局渲染优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#巧用抽象布局标签-include-viewstub-merge"><span class="nav-number">1.1.</span> <span class="nav-text">巧用抽象布局标签(include, viewstub, merge)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OverDraw（过度绘制）-amp-渲染绘制的性能优化"><span class="nav-number">1.2.</span> <span class="nav-text">OverDraw（过度绘制）& 渲染绘制的性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#去除不必要的嵌套和View节点"><span class="nav-number">1.3.</span> <span class="nav-text">去除不必要的嵌套和View节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减少不必要的infalte"><span class="nav-number">1.4.</span> <span class="nav-text">减少不必要的infalte</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用SurfaceView或TextureView代替普通View"><span class="nav-number">1.5.</span> <span class="nav-text">用SurfaceView或TextureView代替普通View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尽量为所有分辨率创建资源"><span class="nav-number">1.6.</span> <span class="nav-text">尽量为所有分辨率创建资源</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存优化"><span class="nav-number">2.</span> <span class="nav-text">内存优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码优化"><span class="nav-number">3.</span> <span class="nav-text">代码优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注重细节"><span class="nav-number">3.1.</span> <span class="nav-text">注重细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简化代码规范"><span class="nav-number">3.2.</span> <span class="nav-text">简化代码规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构App"><span class="nav-number">3.3.</span> <span class="nav-text">重构App</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具优化"><span class="nav-number">4.</span> <span class="nav-text">工具优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化分析工具"><span class="nav-number">4.1.</span> <span class="nav-text">性能优化分析工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手机-设置-开发者选项"><span class="nav-number">4.1.1.</span> <span class="nav-text">手机/设置/开发者选项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hierarchy-Viewer"><span class="nav-number">4.1.2.</span> <span class="nav-text">Hierarchy Viewer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ViewServer"><span class="nav-number">4.1.3.</span> <span class="nav-text">ViewServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无线uiviewer"><span class="nav-number">4.1.4.</span> <span class="nav-text">无线uiviewer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发助手"><span class="nav-number">4.1.5.</span> <span class="nav-text">开发助手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ddms-bat"><span class="nav-number">4.1.6.</span> <span class="nav-text">ddms.bat</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dump-View-Hierarchy-for-UI-automator"><span class="nav-number">4.1.6.1.</span> <span class="nav-text">dump View Hierarchy for UI automator</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TraceView"><span class="nav-number">4.1.7.</span> <span class="nav-text">TraceView</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memory-Monitor"><span class="nav-number">4.1.8.</span> <span class="nav-text">Memory Monitor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StrictMode"><span class="nav-number">4.1.9.</span> <span class="nav-text">StrictMode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LeakCanary"><span class="nav-number">4.1.10.</span> <span class="nav-text">LeakCanary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MAT"><span class="nav-number">4.1.11.</span> <span class="nav-text">MAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Systrace"><span class="nav-number">4.1.12.</span> <span class="nav-text">Systrace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Method-Trace"><span class="nav-number">4.1.13.</span> <span class="nav-text">Method Trace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#draw9patch-bat"><span class="nav-number">4.1.14.</span> <span class="nav-text">draw9patch.bat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#emulator-exe"><span class="nav-number">4.1.15.</span> <span class="nav-text">emulator.exe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mksdcard-exe"><span class="nav-number">4.1.16.</span> <span class="nav-text">mksdcard.exe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码分析扫描工具"><span class="nav-number">4.2.</span> <span class="nav-text">代码分析扫描工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Lint工具"><span class="nav-number">4.2.1.</span> <span class="nav-text">Android Lint工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tools-Attributes"><span class="nav-number">4.2.2.</span> <span class="nav-text">Tools Attributes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Support-Annotations"><span class="nav-number">4.2.3.</span> <span class="nav-text">Support Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SonarQube"><span class="nav-number">4.2.4.</span> <span class="nav-text">SonarQube</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DroidJitChecker"><span class="nav-number">4.2.5.</span> <span class="nav-text">DroidJitChecker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UCDetector"><span class="nav-number">4.2.6.</span> <span class="nav-text">UCDetector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FindBugs"><span class="nav-number">4.2.7.</span> <span class="nav-text">FindBugs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高效工具-自动化及格式化"><span class="nav-number">4.3.</span> <span class="nav-text">高效工具(自动化及格式化)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#layoutformatter"><span class="nav-number">4.3.1.</span> <span class="nav-text">layoutformatter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GsonFormat"><span class="nav-number">4.3.2.</span> <span class="nav-text">GsonFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#android-layout-id-converter"><span class="nav-number">4.3.3.</span> <span class="nav-text">android layout id converter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AndroidCodeGenerator"><span class="nav-number">4.3.4.</span> <span class="nav-text">AndroidCodeGenerator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Toolbox-Plugin"><span class="nav-number">4.3.5.</span> <span class="nav-text">Android Toolbox Plugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Studio-Prettify"><span class="nav-number">4.3.6.</span> <span class="nav-text">Android Studio Prettify</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Parcelable-code-generator"><span class="nav-number">4.3.7.</span> <span class="nav-text">Android Parcelable code generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SelectorChapek-for-Android"><span class="nav-number">4.3.8.</span> <span class="nav-text">SelectorChapek for Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sexy-Editor"><span class="nav-number">4.3.9.</span> <span class="nav-text">Sexy Editor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strings-xml-tools"><span class="nav-number">4.3.10.</span> <span class="nav-text">Strings-xml-tools</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jimu-Mirror"><span class="nav-number">4.3.11.</span> <span class="nav-text">jimu Mirror</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Holo-Colors-Generator"><span class="nav-number">4.3.12.</span> <span class="nav-text">Android Holo Colors Generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-ButterKnife-Zelezny"><span class="nav-number">4.3.13.</span> <span class="nav-text">Android ButterKnife Zelezny</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Drawable-Importer"><span class="nav-number">4.3.14.</span> <span class="nav-text">Android Drawable Importer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他工具"><span class="nav-number">4.4.</span> <span class="nav-text">其他工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Genymotion-虚拟机"><span class="nav-number">4.4.1.</span> <span class="nav-text">Genymotion 虚拟机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES-Explorer"><span class="nav-number">4.4.2.</span> <span class="nav-text">ES Explorer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Codota"><span class="nav-number">4.4.3.</span> <span class="nav-text">Codota</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AndroidAssetStudio"><span class="nav-number">4.4.4.</span> <span class="nav-text">AndroidAssetStudio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WiFi-ADB"><span class="nav-number">4.4.5.</span> <span class="nav-text">WiFi ADB</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

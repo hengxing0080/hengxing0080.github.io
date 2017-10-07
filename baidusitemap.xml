@@ -4,6 +4,106 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/08/it/1.Android/Performance/</loc>
+    <lastmod>2017-10-07T11:31:55.108Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 性能优化系列</title>
+        <pubTime>2017-09-08T15:56:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/08/it/1.Android/Safety/</loc>
+    <lastmod>2017-10-07T11:29:24.027Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 安全系列</title>
+        <pubTime>2017-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/22/it/4.Statistics/Specialist/</loc>
+    <lastmod>2017-10-07T11:06:37.975Z</lastmod>
+    <data>
+        <display>
+        <title>持续关注的技术博客&微信公众号&Github的总结</title>
+        <pubTime>2017-03-22T02:35:15.000Z</pubTime>
+        
+        <tag>统计分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 统计调查" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E8%B0%83%E6%9F%A5/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/05/01/it/2.OOP&DesignPattern/2.0.Info/</loc>
+    <lastmod>2017-10-07T05:11:55.164Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式汇总</title>
+        <pubTime>2017-05-01T02:21:20.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
+    <lastmod>2017-10-07T04:58:31.039Z</lastmod>
+    <data>
+        <display>
+        <title>MVC & MVP & MVVM & MVPVM</title>
+        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
+        
+        <tag>设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 架构&amp;框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/07/28/it/2.NetworkProtocol/HTTP/</loc>
     <lastmod>2017-10-06T11:56:56.575Z</lastmod>
     <data>
@@ -137,26 +237,6 @@
            
              
               <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
-    <lastmod>2017-10-06T03:45:41.654Z</lastmod>
-    <data>
-        <display>
-        <title>框架模式 —— MVC & MVP & MVVM & MVPVM</title>
-        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A1%86%E6%9E%B6/"/>
           
         </display>
     </data>
@@ -1144,26 +1224,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/05/01/it/2.OOP&DesignPattern/2.0.Info/</loc>
-    <lastmod>2017-09-29T16:18:17.049Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式汇总</title>
-        <pubTime>2017-05-01T02:21:20.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/09/01/it/2.NetworkProtocol/UDP/</loc>
     <lastmod>2017-09-29T08:21:43.696Z</lastmod>
     <data>
@@ -1362,6 +1422,26 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        
+        <tag>励志</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
@@ -1388,26 +1468,6 @@
         <display>
         <title>励志数学公式（数据告诉你不要迷茫）</title>
         <pubTime>2017-02-19T09:50:03.000Z</pubTime>
-        
-        <tag>励志</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
