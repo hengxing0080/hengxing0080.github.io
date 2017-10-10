@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
+    <lastmod>2017-10-10T16:16:39.398Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 性能优化系列</title>
+        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-10-10T15:37:20.405Z</lastmod>
+    <lastmod>2017-10-10T15:53:56.720Z</lastmod>
     <data>
         <display>
         <title>集合框架和其他容器类的总结</title>
@@ -17,6 +37,46 @@
            
              
               <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Bitmap/</loc>
+    <lastmod>2017-10-10T15:52:31.235Z</lastmod>
+    <data>
+        <display>
+        <title>Bitmap图片的总结</title>
+        <pubTime>2017-09-06T07:54:12.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/27/manager/1.Rule/</loc>
+    <lastmod>2017-10-10T15:45:07.068Z</lastmod>
+    <data>
+        <display>
+        <title>高效学习工作管理的实用法则</title>
+        <pubTime>2017-09-27T08:51:55.000Z</pubTime>
+        
+        <tag>管理学与心理学</tag>
+         
+         
+           
+             
+              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
           
         </display>
     </data>
@@ -37,46 +97,6 @@
            
              
               <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-10-09T10:38:47.050Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 性能优化系列</title>
-        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/27/manager/1.Rule/</loc>
-    <lastmod>2017-10-09T08:08:46.910Z</lastmod>
-    <data>
-        <display>
-        <title>高效学习工作管理的实用法则</title>
-        <pubTime>2017-09-27T08:51:55.000Z</pubTime>
-        
-        <tag>管理学与心理学</tag>
-         
-         
-           
-             
-              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
           
         </display>
     </data>
