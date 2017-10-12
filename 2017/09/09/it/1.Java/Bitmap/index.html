@@ -1,0 +1,1355 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹空间" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— Bitmap图片的总结">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/09/it/1.Java/Bitmap/index.html">
+<meta property="og:site_name" content="恒星的轨迹空间">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap_logo.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap1.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap2.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap3.png">
+<meta property="og:updated_time" content="2017-10-12T12:23:31.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— Bitmap图片的总结">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_bitmap_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/09/it/1.Java/Bitmap/"/>
+
+
+
+
+
+  <title>Android —— Bitmap图片的总结 | 恒星的轨迹空间</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹空间</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/09/it/1.Java/Bitmap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹空间">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— Bitmap图片的总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-09T18:12:33+08:00">
+                2017-09-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android-多媒体编程/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android - 多媒体编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_bitmap_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>Bitmap是安卓里最胖最能吃内存的对象<br>Android发生OOM百分之99都是Bitmap影响的<br>所以要避免在Bitmap这个大胖子上浪费内存</p>
+<p>相关参考文章：<br><a href="http://blog.csdn.net/guolin_blog/article/details/9316683" target="_blank" rel="external">Android高效加载大图、多图解决方案，有效避免程序OOM</a></p>
+<h1 id="Android手机加载大图片的原理"><a href="#Android手机加载大图片的原理" class="headerlink" title="Android手机加载大图片的原理"></a>Android手机加载大图片的原理</h1><p>当我们读取一个Bitmap图片的时候，有一点一定要注意，就是千万不要去加载不需要的分辨率。<br>在一个很小的ImageView上显示一张高分辨率的图片不会带来任何视觉上的好处，但却会占用我们相当多宝贵的内存。<br>需要仅记的一点是，将一张图片解析成一个Bitmap对象时所占用的内存并不是这个图片在硬盘中的大小，<br>可能一张图片只有100k你觉得它并不大，但是读取到内存当中是按照像素点来算的(按ARGB保存图片的每个像素)，</p>
+<p>Android系统以ARGB表示每个像素：<br>如ARGB_8888：A占8位，R占8位，G占8位，B占8位；<br>一个像素就占了：8+8+8+8=32位=4个字节<br>所以每个像素占用4个字节，很容易内存溢出<br>如：480<em>800=384000<br>总共占多少位：384000</em>32=12288000bit<br>总共占多少字节：12288000bit/8=153600Byte<br>总共占多少KB：153600Byte/1024=1500KB<br>所以这样这张图片在内存中占用的大小是1500KB</p>
+<p>PS:通过分辨率的像素数量也能得出是多少万像素的设备如：3264*2448=7990272（得出是800万像素的相机拍的）</p>
+<p>举例1：<br>比如有张图片是1500<em>1000像素，使用的ARGB_8888颜色类型，<br>那么每个像素点就会占用4个字节，总内存就是1500</em>1000*4字节，也就是5.7M，这个数据看起来就比较恐怖了。</p>
+<p>举例2：<br>手机有某一点击事件点击后加载SD卡的某张(大小为1.73M,图片分辨率为2400<em>3200，格式ARGB_8888)图片,<br>但是为了加载这张图片，虚拟机申请了30720012个字节(29M)，为什么呢？<br>分辨率像素数：2400</em>3200=7680000，<br>按照把图片的每一个像素保存在内存中，每个像素占用4个字节，那么就是：<br>7680000*4=30720000（29M数据就对上了），所以要注意！</p>
+<p>android系统每个进程有最大vm限制<br>android模拟器写多少都行，不过大多数真实设备的vm最大的内存申请极限为16M -32M（不然会崩掉）<br>如果图形资源太大(分辨率太多),必须对图形资源进行处理,处理完毕后才能加载到内存.<br>如果一个手机内存是16M，加载一个大图片就要29M，所以崩了！</p>
+<p>详细说下为什么BitMap占内存？<br>BitMap就是二维数组，底层存的是short类型的数组<br>数组有个特点：需要有连续的内存空间<br>比如你的应用还有空闲的16M的内存空间<br>但是这16M内存空间被各种应用各种占领不大大小的空间（16M空间被各种应用瓜分了）<br>每个空白区域找不到连续4M的内存空间<br>那么就装不下去，这个bitMap就内存溢出了<br>必须得连续，不连续就显示不出来，这是它的特点</p>
+<p>如有的应用虽然占了10几M，但是也没内存溢出，<br>就是因为这个不需要连续的内存空间，只需要零散的空间，有空间就能钻进去</p>
+<p>存储图片为什么为出现OOM异常？<br>由于图片在内存中是以shot数组的形式存储，并且需要连续的内存空间，<br>当内存中没有连续的内存大小，即使内存充足也会出现OOM异常.<br>Android最消耗内存的就是连续占用空间的，耗内存大户就是bitmap.<br>数组也是，但是没见过见过数组长度为100一点事都没有，<br>得1000到10000才能有连续空间的感觉，也没有人就故意去建这么长的数据</p>
+<p>所以加载大图片，为了节省内存，对它进行缩放（缩小），缩放到适合这个屏幕刚刚好能显示的范围就可！</p>
+<hr>
+<h1 id="大图片加载的OOM异常和优化解决方案"><a href="#大图片加载的OOM异常和优化解决方案" class="headerlink" title="大图片加载的OOM异常和优化解决方案"></a>大图片加载的OOM异常和优化解决方案</h1><hr>
+<p>java.lang.OutOfMemoryError：内存溢出、内存泄露。<br>堆内存空间主要是给类实例、数组分配空间。<br>当图片占用的空间大于堆内存空间时就会抛出内存溢出的异常。</p>
+<p>解决方案：<br>1.图片缩放<br>分析照片的尺寸，看下屏幕的尺寸，根据照片和屏幕的尺寸计算出缩放的比例，然后把图片加载到内存里<br>ListView中展示的图片缩略图，这种情况的特点是数量大，但是单个图片内存小，只有几kb，</p>
+<p>2.图片压缩<br>我们主要是首先通过BitmapFactory.Options参数获取图片的宽和高，然后再根据我们ImageView的宽高对图片进行一个最大比例压缩。</p>
+<p>3.图片缓存策略<br>加载大图片或数量过多的图片，因为图片是超级耗内存的，所以要记住对图片对象进行及时的回收。</p>
+<p>4.图片传递<br>大图片的传递用引用的方式去减少对内存的占用：<br>如A界面把大图片传递给B界面让它处理，估计很费内存空间<br>intent.setData(Uri)<br>Uri.fromFile(); </p>
+<p>5.其他细节</p>
+<p>5.1.Bitmap的recycle和isRecycled方法的灵活使用<br>BItmap对象，使用完成后没有调用recycle（）方法，告诉GC优先回收<br>图片处理不好是造成内存溢出的又一个头号原因，（在我们的产品中也有体现)，<br>当我们处理完图片之后可以通过调用recycle()方法来回收图片对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(!bitmap.isRecycled())  &#123;  </div><div class="line">    bitmap.recycle()  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>听说自Android3.0之后，由于Bitmap被放置到了堆中，其内存由GC管理，就不需要进行释放了</p>
+<p>5.2.Bitmap不要定义成静态成员变量<br>例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> Bitmap bitmap = BitmapFactory.decodeFile(“/sdcard/a.jpg”);</div><div class="line"><span class="comment">//把图片转成Bitmap，如果做成static，这个位图的引用就一直在了，直到进程结束，位图才被回收掉</span></div><div class="line"><span class="comment">//如果图片非常多，一上来就报OOM异常</span></div></pre></td></tr></table></figure></p>
+<p>5.3.Bitmap在WeakRefrence(弱引用)的使用<br>WeakRefrence是一个类，在ArrayList中我们把这个类作为对象传递进去，把我们的图片放在WeakRefrence里面，这样当davlik虚拟机内存不够用的时候，就会把WeakRefrence对象回收掉，这样我们在WeakRefrence里面保存的数据也被回收了。<br>例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Bitmap bitmap = <span class="keyword">new</span> Bitmap();</div><div class="line">SoftReference&lt;Bitmap&gt; sBitmap = <span class="keyword">new</span> SoftReference&lt;Bitmap&gt;(bitmap);</div><div class="line">Bitmap bitmap2 = sBitmap.get();</div></pre></td></tr></table></figure></p>
+<p>如果内存不足的时候虚拟机会把r的内存空间给释放掉<br>软引用：类似如果空间够，随便用，如果不够，就把软引用空间释放掉</p>
+<p>注意：<br>这些避免内存溢出的引用方式在Android 2.3+的版本上已经不再起太大作用,<br>因为垃圾回收器会频繁回收非强引用的对象,<br>Android官方建议使用LRUCache. </p>
+<p>5.4.Bitmap在onTrimMemory释放资源</p>
+<h1 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h1><p>关键字：分辨率</p>
+<p>对图片进行缩小，然后再加载<br>就是要计算缩放比例</p>
+<p>如：<br>计算宽需要缩放多少比例：2400/320=7<br>计算高需要缩放的比例：3200/480=6</p>
+<p>如果用6缩放，那么宽缩放出来的结果是2400/6=400（但是我们的屏幕宽度是320，所以超出了）<br>所以使用7缩放，那么高说放出来的结果3200/7=457 （我们的屏幕高度是480）</p>
+<p>缩放比例的几种方式：<br>1.BitmapFactory<br>用createBitmap来改变分辨率</p>
+<p>2.DisplayMetrics </p>
+<p>3.ImageLoader</p>
+<p>4.Volley</p>
+<p>5.XUtils/BitmapUtils</p>
+<p>示例代码：<br>直接使用ImageView显示bitmap会占用较多资源，特别是图片较大的时候，可能导致崩溃。<br>使用BitmapFactory.Options设置inSampleSize, 这样做可以减少对系统资源的要求。<br>属性值inSampleSize表示缩略图大小为原始图片大小的几分之一，即如果这个值为2，则取出的缩略图的宽和高都是原始图片的1/2，图片大小就为原始大小的1/4。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">BitmapFactory.Options bitmapFactoryOptions = <span class="keyword">new</span> BitmapFactory.Options();  </div><div class="line">bitmapFactoryOptions.inJustDecodeBounds = <span class="keyword">true</span>;  </div><div class="line">bitmapFactoryOptions.inSampleSize = <span class="number">2</span>;  </div><div class="line"><span class="comment">// 这里一定要将其设置回false，因为之前我们将其设置成了true  </span></div><div class="line"><span class="comment">// 设置inJustDecodeBounds为true后，decodeFile并不分配空间，即，BitmapFactory解码出来的Bitmap为Null,但可计算出原始图片的长度和宽度  </span></div><div class="line">options.inJustDecodeBounds = <span class="keyword">false</span>; </div><div class="line">Bitmap bmp = BitmapFactory.decodeFile(sourceBitmap, options);</div></pre></td></tr></table></figure></p>
+<h1 id="图片缓存策略"><a href="#图片缓存策略" class="headerlink" title="图片缓存策略"></a>图片缓存策略</h1><p>加载大图片或数量过多的图片，因为图片是超级耗内存的，所以要记住对图片对象进行及时的回收。</p>
+<p>相关文章：<br><a href="http://blog.163.com/zhou_411424/blog/static/1973621562012430101610765/" target="_blank" rel="external">Android 之图片本地缓存解决方案</a></p>
+<h2 id="图片的三级缓存"><a href="#图片的三级缓存" class="headerlink" title="图片的三级缓存"></a>图片的三级缓存</h2><p>图片的三级缓存流程图：<br><img src="/images/it_android_bitmap1.png" alt="UML图"></p>
+<p>图片的三级缓存概念：<br>当界面请求显示图片时，会去内存中拿数据显示；<br>如果内存中没有，就从本地拿，<br>如果本地有图片就保存到内存，<br>如果本地没有图片，就去网络中获取保存在本地，再保存到内存中。</p>
+<p>到内存中获取图片，是界面最快显示图片的最好的方法。</p>
+<p>XUtils和Volley等等工具都是这种三级缓存思想</p>
+<h2 id="强引用，软引用，弱引用，虚引用"><a href="#强引用，软引用，弱引用，虚引用" class="headerlink" title="强引用，软引用，弱引用，虚引用"></a>强引用，软引用，弱引用，虚引用</h2><p>1.强引用 : 成员变量</p>
+<p>StrongReference 是 Java 的默认引用实现,<br>虚拟机不会回收：应用程序或JVM崩溃时都不会回收<br>就是我们平时使用的集合, ArrayList,hashMap, HashSet<br>引用会一直存在，即使应用资源挂了，即使内存不足抛出OOM异常也不会回收对象释放资源</p>
+<p>例：<br><img src="/images/it_android_bitmap2.png" alt="UML图"><br>没初始化就会报空指针<br>但是变量不会被系统回收，应用程序崩溃都不会回收</p>
+<p>在开发时绝大部分是在用强引用</p>
+<p>2.软引用：SoftReference 类 ( java.lang.ref )</p>
+<p>SoftReference 会尽可能长的保留引用直到 JVM 内存不足时才会被回收(虚拟机保证), 这一特性使得 SoftReference 非常适合缓存</p>
+<p>在API9 ( 3.0 之前) : bitmap缓存时，用软引用<br>3.0之后就不起作用了，因为3.0之前用的是davik虚拟机或者ART虚拟机（4.4后又的Androidruntime）<br>3.0之后改机制了，就不再遵循JVM的规范了，只要内存不足，不管是软引用还是弱引用，一律回收</p>
+<p>例：<br><img src="/images/it_android_bitmap3.png" alt="UML图"><br>mIB一个get方法就能把imageButton给拿到了，因为是软引用，有可能是空（被系统回收了）<br>就多了一个get步骤就获得这个实例，只需用的时候判断是否为空就行了<br>和硬引用比就是多套了一层</p>
+<p>建议：<br>要避免用软引用去处理缓存</p>
+<p>在实践中，软引用在缓存的处理上是没有效率的。运行时没有足够的信息用于判断哪些引用要清理回收，还有哪些要保存。</p>
+<p>最致命的，当同时面对清晰软引用和增加堆内存两种选择时它不知道做什么。</p>
+<p>对于应用的每一个引用都缺乏有价值的信息，这一点限制了软引用让它的可用性十分有限。<br>过早清理回收的引用导致了无必要的工作，而那么过晚清理掉的引用又浪费了内存。</p>
+<p>大多数应用程序应用使用一个LruCache代替软引用.<br>LruCache有一个有效的回收机制，让用户能够调整有什么内存分配.</p>
+<p>简而言之，直接使用软引用缓存的话效果不咋滴，推荐使用LruCache</p>
+<p>Level12以后开始引入的，为了兼容更早版本,android-support-v4包内添加了一个Lraucache类<br>所以在12版本以上用的话发现有两个包内都有这个类，其实都是一样的.</p>
+<p>3.弱引用：WeakReference 类 ( java.lang.ref )</p>
+<p>当jvm的回收机制运行时，就回收<br>JVM: 内存回收机制，gc运行过程中,直接回收WeakReference</p>
+<p>弱引用和软引用的区别？<br>虚拟机在跑的时候内存是够了就不会回收软引用<br>但是还是这个情况，虚拟机在跑的时候注定要干掉全部的弱引用</p>
+<p>在Android中引用四大组件和Fragment这些重量级对象的时候要用WeakReference，常用的场景是static Handler持有Activity。</p>
+<p>4.虚引用：PhantomReference 类 ( java.lang.ref )<br>一旦使用，就回收了<br>应用场景很少, 几乎没有，级别最低<br>就是起个标记的作用（打个标记，就没了）</p>
+<p>引用级别总结：<br>强引用 默认引用, 即使内存溢出,也不会回收<br>软引用 SoftReference, 内存不够时, 会考虑回收（注意3.0前后的区别）<br>弱引用 WeakReference 内存不够时, 更会考虑回收<br>虚引用 PhantomReference 内存不够时, 最优先考虑回收!</p>
+<p>相关文章：<br><a href="http://droidyue.com/blog/2014/10/12/understanding-weakreference-in-java/" target="_blank" rel="external">译文：理解Java中的弱引用</a></p>
+<h2 id="LruCache"><a href="#LruCache" class="headerlink" title="LruCache"></a>LruCache</h2><p>内容已移至以下文章：<br><a href="http://www.hengxing.me/2017/09/07/it/1.Java/CollectionsFramework/" target="_blank" rel="external">集合框架和其他容器类的总结</a></p>
+<h1 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h1><p><a href="http://blog.csdn.net/ls703/article/details/40617465" target="_blank" rel="external">Android应用开发之图片（Bitmap）压缩（三）———采样率压缩</a><br><a href="http://www.cnblogs.com/yrhua/p/3499910.html" target="_blank" rel="external">Bitmap 实现对图片压缩的2种方法小结</a></p>
+<h1 id="图片转换"><a href="#图片转换" class="headerlink" title="图片转换"></a>图片转换</h1><h2 id="将view转换成bitmap"><a href="#将view转换成bitmap" class="headerlink" title="将view转换成bitmap"></a>将view转换成bitmap</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">captureView</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> height = getStatusHeight(mContext);</div><div class="line">    Bitmap bmp1 = Bitmap.createBitmap(tempView.getWidth(), tempView.getHeight(),Bitmap.Config.ARGB_8888);</div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(bmp1);</div><div class="line">    tempView.draw(canvas);</div><div class="line">    <span class="keyword">int</span> currentapiVersion = android.os.Build.VERSION.SDK_INT;</div><div class="line">    Bitmap bmp2 = <span class="keyword">null</span>;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 如果版本是5.0以上,要去掉状态栏</div><div class="line">     */</div><div class="line">    <span class="keyword">if</span> (currentapiVersion &gt;= Build.VERSION_CODES.LOLLIPOP) &#123;</div><div class="line">        bmp2 = Bitmap.createBitmap(bmp1, <span class="number">0</span>, height, bmp1.getWidth(), bmp1.getHeight() - height);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        bmp2 = Bitmap.createBitmap(bmp1);</div><div class="line">    &#125;</div><div class="line">    bmp1.recycle();</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getStatusHeight</span><span class="params">(Context ct)</span> </span>&#123;</div><div class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">    <span class="keyword">int</span> resourceId = ct.getResources().getIdentifier(<span class="string">"status_bar_height"</span>, <span class="string">"dimen"</span>, <span class="string">"android"</span>);</div><div class="line">    <span class="keyword">if</span> (resourceId &gt; <span class="number">0</span>) &#123;</div><div class="line">        result = ct.getResources().getDimensionPixelSize(resourceId);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="其他转换"><a href="#其他转换" class="headerlink" title="其他转换"></a>其他转换</h2><p>相关文章：<br><a href="http://www.cnblogs.com/yrhua/p/3946196.html" target="_blank" rel="external">android那些事之Bitmap、InputStream、Drawable、byte[]、Base64之间的转换关系</a></p>
+<hr>
+<h1 id="图片加水印"><a href="#图片加水印" class="headerlink" title="图片加水印"></a>图片加水印</h1><hr>
+<p><a href="http://blog.csdn.net/dawanganban/article/details/51148070" target="_blank" rel="external">Android给图片加文字和图片水印</a></p>
+<hr>
+<h1 id="图片防盗链"><a href="#图片防盗链" class="headerlink" title="图片防盗链"></a>图片防盗链</h1><hr>
+<p><a href="http://blog.csdn.net/wangsf1112/article/details/73188977" target="_blank" rel="external">android获取视频、图片时添加防盗链</a></p>
+<hr>
+<h1 id="加载图片的时候出现错位、重复、闪烁的解决方案"><a href="#加载图片的时候出现错位、重复、闪烁的解决方案" class="headerlink" title="加载图片的时候出现错位、重复、闪烁的解决方案"></a>加载图片的时候出现错位、重复、闪烁的解决方案</h1><hr>
+<p>我们在使用ListView异步加载图片的时候，在快速滑动或者网络不好的情况下，会出现图片错位、重复、闪烁等问题，其实这些问题总结起来就是一个问题，我们需要对这些问题进行ListView的优化。</p>
+<p>1.Item图片显示重复</p>
+<p>这个显示重复是指当前行Item显示了之前某行Item的图片。</p>
+<p>比如ListView滑动到第2行会异步加载某个图片，但是加载很慢，加载过程中ListView已经滑动到了第14行，且滑动过程中该图片加载结束。第2行已不在屏幕内，根据上面介绍的缓存原理，第2行的View对象可能被第14行复用，这样我们看到的就是第14行显示了本该属于第2行的图片，造成显示重复。</p>
+<p>2.Item图片显示错乱<br>这个显示错乱是指某行Item显示了不属于该行Item的图片。<br>跟上面的原因一样。</p>
+<p>3.Item图片显示闪烁<br>上面介绍的另外一种情况，如果第14行图片又很快加载结束，所以我们看到第14行先显示了复用的第2行的图片，立马又显示了自己的图片进行覆盖造成闪烁错乱。</p>
+<h2 id="解决方案1：打标记"><a href="#解决方案1：打标记" class="headerlink" title="解决方案1：打标记"></a>解决方案1：打标记</h2><p>通过上面的分析我们知道了出现错乱的原因是异步加载及对象被复用造成的，如果每次getView能给对象一个标识，在异步加载完成时比较标识与当前行Item的标识是否一致，一致则显示，否则不做处理即可。<br>原理：首先给ImageView设置一个Tag，这个Tag中设置的是图片的url，然后在加载的时候取得这个url和要加载那position中的url对比，如果不相同就加载，相同就是复用以前的就不加载了。</p>
+<h2 id="解决方案2：通过线程管理"><a href="#解决方案2：通过线程管理" class="headerlink" title="解决方案2：通过线程管理"></a>解决方案2：通过线程管理</h2><p>可以把线程中断，又能节省线程，节省资源，又能避免这种情况<br>Future能让线程池什么时候跑，什么时候关，就能对线程有可控性<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义成员变量</span></div><div class="line"><span class="keyword">private</span> <span class="keyword">static</span> ExcutorService  mPool;</div><div class="line"><span class="keyword">private</span> statia Map&lt;ImageView,Future&lt;?&gt;&gt;  mFutures;</div><div class="line"></div><div class="line"><span class="comment">//初始化</span></div><div class="line"><span class="keyword">if</span>(mPool == <span class="keyword">null</span>)&#123;</div><div class="line">    mPool = Executors.newFixedThreadPool(<span class="number">3</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span>(mFutures == <span class="keyword">null</span>)&#123;</div><div class="line">    mFutures = <span class="keyword">new</span> LinkedHashMap&lt;ImageView,Future&lt;?&gt;&gt;();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getBitmapFromNet</span><span class="params">(ImageView,String url)</span></span>&#123;</div><div class="line">    <span class="comment">//判断是否有线程在为imageView加载数据而执行的</span></div><div class="line">    Future&lt;?&gt; future = mFutures.get(view);</div><div class="line"></div><div class="line">    <span class="comment">//判断是否有而且没干完而且没取消</span></div><div class="line">    <span class="keyword">if</span>(future != <span class="keyword">null</span> &amp;&amp; !future.isDone() &amp;&amp; !future.isCancelled())&#123;</div><div class="line">        <span class="comment">//正在执行的被强制取消掉</span></div><div class="line">        future.cancenl(<span class="keyword">true</span>);</div><div class="line">        future = <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    future = mPool.submit(<span class="keyword">new</span> ImageRequestTask(view,url));  </div><div class="line">    <span class="comment">//ImageRequest：task的运行状态对象</span></div><div class="line">    <span class="comment">//将future存起来</span></div><div class="line">    <span class="comment">//key-value key：ImageView，value：future</span></div><div class="line">    <span class="comment">//Future和callback/Runnable</span></div><div class="line">    <span class="comment">//返回值，持有正在执行的线程</span></div><div class="line">    <span class="comment">//保存</span></div><div class="line">    mFureus.put(view,future);  </div><div class="line">    <span class="comment">//这样就是把某个图对应的状态给存起来</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="解决方式3：BitmapUtils"><a href="#解决方式3：BitmapUtils" class="headerlink" title="解决方式3：BitmapUtils"></a>解决方式3：BitmapUtils</h2><p>BitmapUtils模块特点：<br>加载bitmap的时候无需考虑bitmap加载过程中出现的oom和android容器快速滑动时候出现的图片错位等现象.</p>
+<h1 id="Bitmap创建图片副本"><a href="#Bitmap创建图片副本" class="headerlink" title="Bitmap创建图片副本"></a>Bitmap创建图片副本</h1><p>在内存中创建原图的副本</p>
+<ol>
+<li><p>纸张完全一致<br> 前提是知道原来图形的宽高和纸张材料<br> bitmap.getWidth() 宽度<br> bitmap.getHeight() 高度<br> bitmap.getConfig() 纸张的材料<br> Bitmap.createBitmap(宽度, 高度,纸张材料);</p>
+</li>
+<li><p>画板和画笔<br> Canvas canvas = new Canvas(newBitmap你创建的纸张);<br> Paint paint = new Paint();<br> paint.setColor(Color.RED);</p>
+</li>
+<li><p>作画<br> canvas.drawBitmap(临摹的原图,matrix变化的矩阵,画笔);</p>
+</li>
+</ol>
+<p>相关文章：<br><a href="http://blog.csdn.net/dpf1103977916/article/details/51174079" target="_blank" rel="external">Bitmap创建图片副本</a></p>
+<hr>
+<h1 id="Bitmap图形的变化处理"><a href="#Bitmap图形的变化处理" class="headerlink" title="Bitmap图形的变化处理"></a>Bitmap图形的变化处理</h1><hr>
+<p>镜面<br>倒影<br>缩放<br>旋转<br>平移<br>透明度</p>
+<h2 id="图形缩放"><a href="#图形缩放" class="headerlink" title="图形缩放"></a>图形缩放</h2><p>就是放大缩小</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnBig</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"></div><div class="line">    matrix.setScale(<span class="number">2</span>, <span class="number">2</span>);</div><div class="line"></div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth()*<span class="number">2</span>, bitmap.getHeight()*<span class="number">2</span>, bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnSmall</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResourceetResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"></div><div class="line">    matrix.setScale(<span class="number">0.5f</span>, <span class="number">0.5f</span>);  <span class="comment">//宽一半，高一半 （+f是float类型，如果是1就表示不变）</span></div><div class="line"></div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth()/<span class="number">2</span>, bitmap.getHeight()/<span class="number">2</span>,bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="图形平移"><a href="#图形平移" class="headerlink" title="图形平移"></a>图形平移</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//左移</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnleft</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"></div><div class="line">    dx --;</div><div class="line">    matrix.setTranslate(dx, <span class="number">0</span>);</div><div class="line"></div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    canvas.drawColor(Color.WHITE);</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//右移</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnRight</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"></div><div class="line">    dx ++;</div><div class="line">    matrix.setTranslate(dx, <span class="number">0</span>);</div><div class="line"></div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    canvas.drawColor(Color.WHITE);</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="图形旋转"><a href="#图形旋转" class="headerlink" title="图形旋转"></a>图形旋转</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//逆时针 倒转</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnleft</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line">    degrees--;</div><div class="line">    </div><div class="line">    matrix.setRotate(degrees, bitmap.getWidth(), bitmap.getHeight());</div><div class="line">    matrix.postTranslate(<span class="number">100</span>, <span class="number">100</span>);</div><div class="line"></div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth()*<span class="number">2</span>, bitmap.getHeight()*<span class="number">2</span>, bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    canvas.drawColor(Color.WHITE);</div><div class="line">    paint.setColor(Color.WHITE);</div><div class="line">    paint.setAntiAlias(<span class="keyword">true</span>);<span class="comment">//锯齿消除</span></div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//顺时针 正转</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">turnRight</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Thread()&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">                Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line">                degrees++;</div><div class="line">                matrix.setRotate(degrees, bitmap.getWidth(), bitmap.getHeight());</div><div class="line">                matrix.postTranslate(<span class="number">30</span>, <span class="number">30</span>);</div><div class="line">                <span class="comment">//1.买一张纸</span></div><div class="line">                <span class="keyword">final</span> Bitmap newBitmap = Bitmap.</div><div class="line">createBitmap((<span class="keyword">int</span>)(bitmap.getWidth()*<span class="number">1.5</span>), (<span class="keyword">int</span>)(bitmap.getHeight()*<span class="number">1.5</span>), bitmap.getConfig());</div><div class="line">                <span class="comment">//2.买个画板</span></div><div class="line">                Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">                <span class="comment">//3.临摹作画</span></div><div class="line">                Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">                canvas.drawColor(Color.WHITE);</div><div class="line">                paint.setAntiAlias(<span class="keyword">true</span>);<span class="comment">//锯齿消除</span></div><div class="line">                paint.setColor(Color.WHITE);</div><div class="line">                canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">                runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        iv.setImageBitmap(newBitmap);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">                <span class="keyword">try</span> &#123;</div><div class="line">                    Thread.sleep(<span class="number">20</span>);</div><div class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">                    e.printStackTrace();</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="图像透明度"><a href="#图像透明度" class="headerlink" title="图像透明度"></a>图像透明度</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 显示原图</div><div class="line">	 */</div><div class="line">	<span class="keyword">private</span> ImageView iv_src;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 显示副本</div><div class="line">	 */</div><div class="line">	<span class="keyword">private</span> ImageView iv_copyed;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        iv_src = (ImageView) findViewById(R.id.iv_src);</div><div class="line">        iv_copyed = (ImageView) findViewById(R.id.iv_copyed);</div><div class="line">        <span class="comment">//设置原图</span></div><div class="line">        Bitmap bitmapSrc = BitmapFactory.decodeResource(getResources(), R.drawable.head);</div><div class="line">        iv_src.setImageBitmap(bitmapSrc);</div><div class="line">        <span class="comment">//不能直接对原图进行变化。--前提创建出来一个原图的拷贝（副本）</span></div><div class="line">        <span class="comment">//获取原图的纸张类型</span></div><div class="line">        Config config = bitmapSrc.getConfig();</div><div class="line">        <span class="comment">//创建的副本，里面的内容是空白的。</span></div><div class="line">        Bitmap alertBitmap = Bitmap.createBitmap(bitmapSrc.getWidth(), bitmapSrc.getHeight(), config);</div><div class="line">        <span class="comment">//以alertbitmap为模板创建一个画板。</span></div><div class="line">        Canvas canvas = <span class="keyword">new</span> Canvas(alertBitmap);</div><div class="line">        <span class="comment">//创建画笔</span></div><div class="line">        Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">        paint.setAlpha(<span class="number">20</span>);</div><div class="line">        <span class="comment">//第一个参数是临摹的图片</span></div><div class="line">        Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line">        canvas.drawBitmap(bitmapSrc,matrix , paint);</div><div class="line">        iv_copyed.setImageBitmap(alertBitmap);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="图形的倒影效果-和-镜面效果"><a href="#图形的倒影效果-和-镜面效果" class="headerlink" title="图形的倒影效果 和 镜面效果"></a>图形的倒影效果 和 镜面效果</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//倒影</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">click01</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line"></div><div class="line">    matrix.setScale(<span class="number">1</span>, -<span class="number">1</span>);</div><div class="line">    matrix.postTranslate(<span class="number">0</span>, bitmap.getHeight());</div><div class="line"></div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    canvas.drawColor(Color.WHITE);</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//镜面</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">click02</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">    Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.meinv);</div><div class="line">    Matrix matrix = <span class="keyword">new</span> Matrix();</div><div class="line">    matrix.setScale(-<span class="number">1</span>, <span class="number">1</span>);</div><div class="line">    matrix.postTranslate(bitmap.getWidth(),<span class="number">0</span>);</div><div class="line">    <span class="comment">//1.买一张纸</span></div><div class="line">    Bitmap newBitmap = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());</div><div class="line">    <span class="comment">//2.买个画板</span></div><div class="line">    Canvas canvas = <span class="keyword">new</span> Canvas(newBitmap);</div><div class="line">    <span class="comment">//3.临摹作画</span></div><div class="line">    Paint paint = <span class="keyword">new</span> Paint();</div><div class="line">    canvas.drawColor(Color.WHITE);</div><div class="line">    paint.setColor(Color.BLACK);</div><div class="line">    canvas.drawBitmap(bitmap, matrix, paint);</div><div class="line">    iv.setImageBitmap(newBitmap);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/07/it/3.UML/UMLClass/" rel="next" title="UML —— 类图">
+                <i class="fa fa-chevron-left"></i> UML —— 类图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/27/manager/1.Rule/" rel="prev" title="高效学习工作管理的实用法则">
+                高效学习工作管理的实用法则 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android手机加载大图片的原理"><span class="nav-number">1.</span> <span class="nav-text">Android手机加载大图片的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大图片加载的OOM异常和优化解决方案"><span class="nav-number">2.</span> <span class="nav-text">大图片加载的OOM异常和优化解决方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片缩放"><span class="nav-number">3.</span> <span class="nav-text">图片缩放</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片缓存策略"><span class="nav-number">4.</span> <span class="nav-text">图片缓存策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片的三级缓存"><span class="nav-number">4.1.</span> <span class="nav-text">图片的三级缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强引用，软引用，弱引用，虚引用"><span class="nav-number">4.2.</span> <span class="nav-text">强引用，软引用，弱引用，虚引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LruCache"><span class="nav-number">4.3.</span> <span class="nav-text">LruCache</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片压缩"><span class="nav-number">5.</span> <span class="nav-text">图片压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片转换"><span class="nav-number">6.</span> <span class="nav-text">图片转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#将view转换成bitmap"><span class="nav-number">6.1.</span> <span class="nav-text">将view转换成bitmap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他转换"><span class="nav-number">6.2.</span> <span class="nav-text">其他转换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片加水印"><span class="nav-number">7.</span> <span class="nav-text">图片加水印</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图片防盗链"><span class="nav-number">8.</span> <span class="nav-text">图片防盗链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#加载图片的时候出现错位、重复、闪烁的解决方案"><span class="nav-number">9.</span> <span class="nav-text">加载图片的时候出现错位、重复、闪烁的解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案1：打标记"><span class="nav-number">9.1.</span> <span class="nav-text">解决方案1：打标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案2：通过线程管理"><span class="nav-number">9.2.</span> <span class="nav-text">解决方案2：通过线程管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方式3：BitmapUtils"><span class="nav-number">9.3.</span> <span class="nav-text">解决方式3：BitmapUtils</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bitmap创建图片副本"><span class="nav-number">10.</span> <span class="nav-text">Bitmap创建图片副本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bitmap图形的变化处理"><span class="nav-number">11.</span> <span class="nav-text">Bitmap图形的变化处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形缩放"><span class="nav-number">11.1.</span> <span class="nav-text">图形缩放</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形平移"><span class="nav-number">11.2.</span> <span class="nav-text">图形平移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形旋转"><span class="nav-number">11.3.</span> <span class="nav-text">图形旋转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图像透明度"><span class="nav-number">11.4.</span> <span class="nav-text">图像透明度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形的倒影效果-和-镜面效果"><span class="nav-number">11.5.</span> <span class="nav-text">图形的倒影效果 和 镜面效果</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

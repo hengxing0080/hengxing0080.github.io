@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Java/Bitmap/</loc>
+    <lastmod>2017-10-12T12:23:31.845Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android - 多媒体编程" url="https://hengxing0080.github.io/categories/IT-Android-%E5%A4%9A%E5%AA%92%E4%BD%93%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-10-10T16:16:39.398Z</lastmod>
+    <lastmod>2017-10-12T12:12:51.708Z</lastmod>
     <data>
         <display>
         <title>Android —— 性能优化系列</title>
@@ -16,7 +36,7 @@
          
            
              
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+              <breadCrumb title="IT - Android - 优化" url="https://hengxing0080.github.io/categories/IT-Android-%E4%BC%98%E5%8C%96/"/>
           
         </display>
     </data>
@@ -25,31 +45,11 @@
     
   <url>
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-10-10T15:53:56.720Z</lastmod>
+    <lastmod>2017-10-12T12:12:16.336Z</lastmod>
     <data>
         <display>
         <title>集合框架和其他容器类的总结</title>
         <pubTime>2017-09-07T10:33:02.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Bitmap/</loc>
-    <lastmod>2017-10-10T15:52:31.235Z</lastmod>
-    <data>
-        <display>
-        <title>Bitmap图片的总结</title>
-        <pubTime>2017-09-06T07:54:12.000Z</pubTime>
         
         <tag>Java</tag>
          
@@ -1422,26 +1422,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>励志数学公式（数据告诉你不要迷茫）</title>
-        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
-        
-        <tag>励志</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
@@ -1468,6 +1448,26 @@
         <display>
         <title>哈佛大学经典校训20条</title>
         <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        
+        <tag>励志</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
+    <data>
+        <display>
+        <title>励志数学公式（数据告诉你不要迷茫）</title>
+        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
         
         <tag>励志</tag>
          
