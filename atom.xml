@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hengxing0080.github.io/"/>
-  <updated>2017-10-12T12:12:51.708Z</updated>
+  <updated>2017-10-12T12:27:58.402Z</updated>
   <id>https://hengxing0080.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/"/>
     <id>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</id>
     <published>2017-09-28T15:56:13.000Z</published>
-    <updated>2017-10-12T12:12:51.708Z</updated>
+    <updated>2017-10-12T12:27:58.402Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_performance_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>(上图临时占位，等后续总结成思维导图待替换…)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">优化的原则</div><div class="line">    1.时间换空间</div><div class="line">        牺牲时间换取空间, 流的读写</div><div class="line">    2.空间换时间</div><div class="line">        把文件的路径存放到数据库里面,以后查询效率就高很多</div><div class="line">        Android下的图库应用检索sd卡的图片</div><div class="line">    3.空间换空间</div><div class="line">        把内存换成硬盘 或者把硬盘换成内存</div><div class="line">    4.时间换时间</div><div class="line">        开启启动速度的优化</div></pre></td></tr></table></figure>
-<p>工作中随着代码体量变得日趋臃肿，视图层级越来越深，工程结构也越来越复杂。<br>相应的，输出的apk包越来越大，界面流畅性大不如前，经常性发生卡顿，甚至不时出现内存溢出崩溃。<br>在这个阶段，Android开发需要掌握以下方面的技术：<br>AndroidStudio的使用(包括调试工具，测试工具，快捷键等)<br>Android资源管理<br>Android视图架构（Activity视图层级、layout inflate）<br>代码优化<br>UI优化<br>内存优化<br>电量优化<br>流量优化<br>网络优化<br>数据库优化<br>动画优化<br>NDK JNI开发<br>……</p>
+<p>工作中随着代码体量变得日趋臃肿，视图层级越来越深，工程结构也越来越复杂。<br>相应的，输出的apk包越来越大，界面流畅性大不如前，经常性发生卡顿，甚至不时出现内存溢出崩溃。<br>在这个阶段，Android开发需要掌握以下方面的技术：<br>AndroidStudio的使用(包括调试工具，测试工具，快捷键等)<br>Android资源管理<br>Android视图架构（Activity视图层级、layout inflate）<br>代码优化<br>UI优化<br>内存优化<br>电量优化<br>网络优化<br>数据库优化<br>动画优化<br>NDK JNI开发<br>……</p>
 <p>工作学习中不断自我收集和收集各种技术大牛博客总结的，此文将不断的更新，下面开始各个章节的介绍：</p>
 <hr>
 <h1 id="布局优化"><a href="#布局优化" class="headerlink" title="布局优化"></a>布局优化</h1><hr>
@@ -604,10 +604,10 @@
   
   <entry>
     <title>Android —— Bitmap图片的总结</title>
-    <link href="https://hengxing0080.github.io/2017/09/09/it/1.Java/Bitmap/"/>
-    <id>https://hengxing0080.github.io/2017/09/09/it/1.Java/Bitmap/</id>
+    <link href="https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/"/>
+    <id>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</id>
     <published>2017-09-09T10:12:33.000Z</published>
-    <updated>2017-10-12T12:23:31.845Z</updated>
+    <updated>2017-10-12T12:29:26.846Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_bitmap_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>Bitmap是安卓里最胖最能吃内存的对象<br>Android发生OOM百分之99都是Bitmap影响的<br>所以要避免在Bitmap这个大胖子上浪费内存</p>
