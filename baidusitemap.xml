@@ -3,6 +3,47 @@
 
 
     
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    <lastmod>2017-10-14T16:38:23.050Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android - 多媒体编程" url="https://hengxing0080.github.io/categories/IT-Android-%E5%A4%9A%E5%AA%92%E4%BD%93%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
+    <lastmod>2017-10-14T16:37:20.238Z</lastmod>
+    <data>
+        <display>
+        <title>集合框架和其他容器类的总结</title>
+        <pubTime>2017-09-07T10:33:02.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/</loc>
     <lastmod>2017-10-14T12:16:23.396Z</lastmod>
@@ -82,7 +123,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
@@ -185,26 +225,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    <lastmod>2017-10-12T16:50:07.429Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Bitmap图片的总结</title>
-        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android - 多媒体编程" url="https://hengxing0080.github.io/categories/IT-Android-%E5%A4%9A%E5%AA%92%E4%BD%93%E7%BC%96%E7%A8%8B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/</loc>
     <lastmod>2017-10-12T16:50:06.391Z</lastmod>
     <data>
@@ -218,26 +238,6 @@
            
              
               <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-10-12T12:12:16.336Z</lastmod>
-    <data>
-        <display>
-        <title>集合框架和其他容器类的总结</title>
-        <pubTime>2017-09-07T10:33:02.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
           
         </display>
     </data>
@@ -1463,26 +1463,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    <data>
-        <display>
-        <title>励志数学公式（数据告诉你不要迷茫）</title>
-        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
-        
-        <tag>励志</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
@@ -1503,12 +1483,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
-    <lastmod>2017-07-16T04:44:56.000Z</lastmod>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>蛰伏——人生不可缺的阶段</title>
-        <pubTime>2017-02-22T14:11:01.000Z</pubTime>
+        <title>励志数学公式（数据告诉你不要迷茫）</title>
+        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1529,6 +1509,26 @@
         <display>
         <title>关于21世纪最重要的是什么</title>
         <pubTime>2017-02-25T04:50:26.000Z</pubTime>
+        
+        <tag>励志</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <lastmod>2017-07-16T04:44:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>蛰伏——人生不可缺的阶段</title>
+        <pubTime>2017-02-22T14:11:01.000Z</pubTime>
         
         <tag>励志</tag>
          

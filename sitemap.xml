@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hengxing0080.github.io/about/index.html</loc>
+    
+    <lastmod>2017-10-14T16:43:24.369Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    
+    <lastmod>2017-10-14T16:38:23.050Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
+    
+    <lastmod>2017-10-14T16:37:20.238Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/</loc>
     
     <lastmod>2017-10-14T12:16:23.396Z</lastmod>
@@ -26,13 +47,6 @@
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
     
     <lastmod>2017-10-14T11:02:06.134Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/about/index.html</loc>
-    
-    <lastmod>2017-10-14T10:32:14.809Z</lastmod>
     
   </url>
   
@@ -72,23 +86,9 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    
-    <lastmod>2017-10-12T16:50:07.429Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/</loc>
     
     <lastmod>2017-10-12T16:50:06.391Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    
-    <lastmod>2017-10-12T12:12:16.336Z</lastmod>
     
   </url>
   
@@ -520,13 +520,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
-    
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
@@ -534,14 +527,21 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
