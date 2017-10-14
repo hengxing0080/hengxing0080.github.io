@@ -2,16 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
+    <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/</loc>
     
-    <lastmod>2017-10-12T17:07:16.601Z</lastmod>
+    <lastmod>2017-10-14T12:16:23.396Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/18/it/2.DataStructure&Algorithm/String/</loc>
+    
+    <lastmod>2017-10-14T11:39:57.181Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&Algorithm/LinearList/</loc>
+    
+    <lastmod>2017-10-14T11:39:24.258Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
     
-    <lastmod>2017-10-12T17:04:57.931Z</lastmod>
+    <lastmod>2017-10-14T11:02:06.134Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/about/index.html</loc>
+    
+    <lastmod>2017-10-14T10:32:14.809Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
+    
+    <lastmod>2017-10-14T07:42:09.743Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/07/it/3.UML/UMLClass/</loc>
+    
+    <lastmod>2017-10-14T07:40:40.199Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/27/manager/1.Rule/</loc>
+    
+    <lastmod>2017-10-13T17:01:08.347Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/04/25/it/1.Java/PrimaryDataType/</loc>
+    
+    <lastmod>2017-10-13T13:19:24.217Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/27/manager/1.Psychology/</loc>
+    
+    <lastmod>2017-10-13T11:29:38.226Z</lastmod>
     
   </url>
   
@@ -33,13 +89,6 @@
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
     
     <lastmod>2017-10-12T12:12:16.336Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/27/manager/1.Rule/</loc>
-    
-    <lastmod>2017-10-10T15:45:07.068Z</lastmod>
     
   </url>
   
@@ -142,13 +191,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/07/it/3.UML/UMLClass/</loc>
-    
-    <lastmod>2017-10-05T12:25:47.183Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
     
     <lastmod>2017-10-05T12:10:23.380Z</lastmod>
@@ -212,13 +254,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&Algorithm/LinearList/</loc>
-    
-    <lastmod>2017-09-30T12:23:06.826Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/15/it/2.OOP&DesignPattern/2.5.Prototype/</loc>
     
     <lastmod>2017-09-30T08:42:16.150Z</lastmod>
@@ -250,27 +285,6 @@
     <loc>https://hengxing0080.github.io/2017/07/19/it/2.DataStructure&Algorithm/Recursion/</loc>
     
     <lastmod>2017-09-29T16:28:59.745Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/15/it/2.DataStructure&Algorithm/Queue/</loc>
-    
-    <lastmod>2017-09-29T16:23:56.698Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/String/</loc>
-    
-    <lastmod>2017-09-29T16:21:53.317Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/18/it/2.DataStructure&Algorithm/Stack/</loc>
-    
-    <lastmod>2017-09-29T16:21:46.399Z</lastmod>
     
   </url>
   
@@ -499,14 +513,14 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
@@ -551,13 +565,6 @@
     <loc>https://hengxing0080.github.io/tags/index.html</loc>
     
     <lastmod>2017-05-19T06:38:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/about/index.html</loc>
-    
-    <lastmod>2017-05-19T06:38:20.000Z</lastmod>
     
   </url>
   

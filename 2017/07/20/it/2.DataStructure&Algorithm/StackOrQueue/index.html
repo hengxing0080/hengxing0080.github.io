@@ -1,0 +1,1376 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据结构," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法 —— 线性表：栈和队列">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack_queue_logo.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack1.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack2.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack3.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack4.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack8.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack9.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack5.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack6.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stack7.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue1.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue2.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue3.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue4.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue5.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue6.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue7.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue8.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_queue9.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_datastructure_stackandqueue1.png">
+<meta property="og:updated_time" content="2017-10-14T12:16:23.396Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与算法 —— 线性表：栈和队列">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_datastructure_stack_queue_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/"/>
+
+
+
+
+
+  <title>数据结构与算法 —— 线性表：栈和队列 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据结构与算法 —— 线性表：栈和队列</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-20T17:28:23+08:00">
+                2017-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-数据结构与算法-数据结构-线性表/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - 数据结构与算法 - 数据结构 - 线性表</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_datastructure_stack_queue_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<hr>
+<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><hr>
+<p><img src="/images/it_datastructure_stack1.png" alt="UML图"></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>&nbsp;<br>中文名 栈<br>英文名 Stack<br>又名   堆栈</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>&nbsp;<br>栈是限定仅在表尾进行插入和删除操作的线性表</p>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>&nbsp;<br>它是一种运算受限的线性表。<br>其限制是仅允许在表的一端进行插入和删除运算。<br>访问栈中的元素时，遵守后进先出的运算规则。<br>因此，栈也成为后进先出表（Last In First Out的线性表），简称LIFO。</p>
+<p>它的特殊之处就在于限制了这个线性表的插入和删除位置，它始终只在栈顶进行。<br>这也就使得：栈底是固定的，最先进栈的只能在栈底。<br><img src="/images/it_datastructure_stack2.png" alt="UML图"></p>
+<h2 id="情景比喻"><a href="#情景比喻" class="headerlink" title="情景比喻"></a>情景比喻</h2><p>&nbsp;<br>中文解释是存储货物或供旅客住宿的房屋。</p>
+<p>如同一个杯子，水桶。<br>水桶相当于栈，往水桶里倒水就是进栈，相反，把水桶里的水导出来就是出栈。<br>水桶的底部就是栈底，水桶的顶部就是栈顶。<br>由于后进先出规则，先导入水桶的水当我们倒出的时间肯定是最后才倒出来。</p>
+<h2 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h2><p>&nbsp;<br>空栈：不包含任何数据元素的栈称为空栈。　<br>栈顶和栈底：我们把允许插入和删除的一段称为栈顶（top），另一端称为栈底（botton）<br>栈顶元素和栈底元素：存储在栈底位置的数据元素称为栈底元素，反之，在栈顶的叫栈顶元素。<br>进栈入栈/压栈：push（压），插入的操作，类似子弹压入（入弹夹）<br>出栈/退栈：pop（弹），删除的操作，类似弹夹的子弹弹出（出夹）</p>
+<h2 id="栈的抽象数据类型"><a href="#栈的抽象数据类型" class="headerlink" title="栈的抽象数据类型"></a>栈的抽象数据类型</h2><p>&nbsp;<br>由于栈本身就是一个线性表，那么线性表的顺序存储和链式存储，对于栈也是同样适用的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ADT 栈(stack)  </div><div class="line">Data  </div><div class="line">    同线性表。元素具有相同的类型，相邻元素具有前驱和后堆关系。  </div><div class="line">Operation  </div><div class="line">    InitStack ( *S )：初始化操作.建立一个空栈S。  </div><div class="line">    DestroyStack ( *S )：若栈存在，則销毁它。  </div><div class="line">    ClearStack (*S)：将栈清空。  </div><div class="line">    StackEmpty ( S ):若栈为空，返回true,否則返回 false。  </div><div class="line">    GetTop (S,*e)：若栈存在且非空，用e返回S的栈顶元素。  </div><div class="line">    Push (*S,e)：若栈S存在，插入新元素e到栈S中并成为栈頂元素。  </div><div class="line">    Pop (*S,*e)：删除栈S中栈顶元素，并用e返回其值。  </div><div class="line">    StackLength (S)：返回回栈S的元素个数。  </div><div class="line">endADT</div></pre></td></tr></table></figure>
+<p>&nbsp;</p>
+<h2 id="栈的两种存储方式"><a href="#栈的两种存储方式" class="headerlink" title="栈的两种存储方式"></a>栈的两种存储方式</h2><p>&nbsp;<br>栈的种类分为顺序栈和链栈</p>
+<hr>
+<h3 id="顺序栈"><a href="#顺序栈" class="headerlink" title="顺序栈"></a>顺序栈</h3><hr>
+<h4 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h4><p>栈的顺序存储结构简称顺序栈。<br>顺序栈用一组连续的存储单元依次存放从栈底到栈顶的数据元素。同时用一个指针top指示栈顶元素在顺序栈中的位置。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p>1.数据元素存放在连续的存储地址中。<br>2.栈底位置固定不变。<br>3.栈顶位置随进栈，出栈操作而变化。 </p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>很方便，因为它只准栈顶进出元素，所以不存在线性表插入和删除时移动元素的问题。</p>
+<h4 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h4><p>必须事先确定数组存储空间大小，万一不够用了，就需要编程手段来扩展数组的容量，非常麻烦。</p>
+<h4 id="判断条件"><a href="#判断条件" class="headerlink" title="判断条件"></a>判断条件</h4><p>空栈：top == -1<br>满栈：top == MAXSIZE -1</p>
+<h4 id="栈的结构定义"><a href="#栈的结构定义" class="headerlink" title="栈的结构定义"></a>栈的结构定义</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> SElemType; <span class="comment">/* SElemType类型根据实际情况而定，这里假设为int */</span></div><div class="line"></div><div class="line"><span class="comment">/* 顺序栈结构 */</span></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></div><div class="line">&#123;</div><div class="line">        SElemType data[MAXSIZE];</div><div class="line">        <span class="keyword">int</span> top; <span class="comment">/* 用于栈顶指针 */</span></div><div class="line">&#125;SqStack;</div></pre></td></tr></table></figure>
+<p>若现在有一个栈，StackSize是5，则栈普通情况，空栈和栈满的情况示意图</p>
+<p><img src="/images/it_datastructure_stack3.png" alt="UML图"></p>
+<h4 id="进出栈操作"><a href="#进出栈操作" class="headerlink" title="进出栈操作"></a>进出栈操作</h4><p>两者没有涉及任何循环语句，因此时间复杂度是O(1)<br>进栈图示<br><img src="/images/it_datastructure_stack4.png" alt="UML图"></p>
+<p>进栈代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 插入元素e为新的栈顶元素 */</span></div><div class="line"><span class="function">Status <span class="title">Push</span><span class="params">(SqStack *S,SElemType e)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">if</span>(S-&gt;top == MAXSIZE <span class="number">-1</span>) <span class="comment">/* 栈满 */</span></div><div class="line">        &#123;</div><div class="line">                <span class="keyword">return</span> ERROR;</div><div class="line">        &#125;</div><div class="line">        S-&gt;top++;		   <span class="comment">/* 栈顶指针增加一 */</span></div><div class="line">        S-&gt;data[S-&gt;top]=e; <span class="comment">/* 将新插入元素赋值给栈顶空间 */</span></div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>出栈代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 若栈不空，则删除S的栈顶元素，用e返回其值，并返回OK；否则返回ERROR */</span></div><div class="line"><span class="function">Status <span class="title">Pop</span><span class="params">(SqStack *S,SElemType *e)</span></span></div><div class="line">&#123; </div><div class="line">        <span class="keyword">if</span>(S-&gt;top==<span class="number">-1</span>)</div><div class="line">                <span class="keyword">return</span> ERROR;</div><div class="line">        *e=S-&gt;data[S-&gt;top];	<span class="comment">/* 将要删除的栈顶元素赋值给e */</span></div><div class="line">        S-&gt;top--;			<span class="comment">/* 栈顶指针减一 */</span></div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="两栈共享空间"><a href="#两栈共享空间" class="headerlink" title="两栈共享空间"></a>两栈共享空间</h4><p>对于与一个栈，我们也只能尽量考虑周全，设计出合适大小的数组来处理，但对于与两个相同类似的栈，我们可以做到最大限度的利用其事先开辟的存储空间来进行操作。</p>
+<p>比如数组有两个端点，两个栈有两个栈底，让一个栈的栈底为数组的始端，即下标0处，另一个栈为栈的末端，即下标为数组长度n-1处。<br>这样，两个栈如果增加元素，就是两端点向中间延伸.</p>
+<p>关键思路：它们是数组的两端，向中间靠拢。top1和top2是栈1和栈2的栈顶指针，可以想象，只要它们俩不见面，两个栈可以一直使用。</p>
+<p><img src="/images/it_datastructure_stack8.jpg" alt="UML图"><br><img src="/images/it_datastructure_stack9.png" alt="UML图"></p>
+<p>这里可以分析出来<br>栈1为空时：top1 == -1<br>栈2为空时：top2 == n<br>栈满情况1：若栈2是空栈，栈1的top1 == n -1，就是栈1满了<br>栈满情况2：反之，栈1为空栈时，top2 == 0，为栈2满<br>栈满情况3：两个栈见面之时，就是指针之间相差1时，即top1+1 == top2为栈满</p>
+<h5 id="两栈共享空间的结构"><a href="#两栈共享空间的结构" class="headerlink" title="两栈共享空间的结构"></a>两栈共享空间的结构</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 两栈共享空间结构 */</span></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> </span></div><div class="line">&#123;</div><div class="line">        SElemType data[MAXSIZE];</div><div class="line">        <span class="keyword">int</span> top1;	<span class="comment">/* 栈1栈顶指针 */</span></div><div class="line">        <span class="keyword">int</span> top2;	<span class="comment">/* 栈2栈顶指针 */</span></div><div class="line">&#125;SqDoubleStack;</div></pre></td></tr></table></figure>
+<h5 id="两栈共享空间的push方法"><a href="#两栈共享空间的push方法" class="headerlink" title="两栈共享空间的push方法"></a>两栈共享空间的push方法</h5><p>除了要插入元素值参数外，还需要有一个判断是栈1还是栈2的栈号参数stackNumber</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 插入元素e为新的栈顶元素 */</span></div><div class="line"><span class="function">Status <span class="title">Push</span><span class="params">(SqDoubleStack *S,SElemType e,<span class="keyword">int</span> stackNumber)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="keyword">if</span> (S-&gt;top1+<span class="number">1</span>==S-&gt;top2)	<span class="comment">/* 栈已满，不能再push新元素了 */</span></div><div class="line">                <span class="keyword">return</span> ERROR;	</div><div class="line">        <span class="keyword">if</span> (stackNumber==<span class="number">1</span>)			<span class="comment">/* 栈1有元素进栈 */</span></div><div class="line">                S-&gt;data[++S-&gt;top1]=e; <span class="comment">/* 若是栈1则先top1+1后给数组元素赋值。 */</span></div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (stackNumber==<span class="number">2</span>)	<span class="comment">/* 栈2有元素进栈 */</span></div><div class="line">                S-&gt;data[--S-&gt;top2]=e; <span class="comment">/* 若是栈2则先top2-1后给数组元素赋值。 */</span></div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>因为在开始已经判断了是否有栈满的情况，所以后面的top1+1或top2-1是不用担心溢出问题的</p>
+<h5 id="两栈共享空间的pop方法"><a href="#两栈共享空间的pop方法" class="headerlink" title="两栈共享空间的pop方法"></a>两栈共享空间的pop方法</h5><p>参数就只是判断栈1栈2的参数stackNumber</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 若栈不空，则删除S的栈顶元素，用e返回其值，并返回OK；否则返回ERROR */</span></div><div class="line"><span class="function">Status <span class="title">Pop</span><span class="params">(SqDoubleStack *S,SElemType *e,<span class="keyword">int</span> stackNumber)</span></span></div><div class="line">&#123; </div><div class="line">        <span class="keyword">if</span> (stackNumber==<span class="number">1</span>) </div><div class="line">        &#123;</div><div class="line">                <span class="keyword">if</span> (S-&gt;top1==<span class="number">-1</span>) </div><div class="line">                        <span class="keyword">return</span> ERROR; <span class="comment">/* 说明栈1已经是空栈，溢出 */</span></div><div class="line">                *e=S-&gt;data[S-&gt;top1--]; <span class="comment">/* 将栈1的栈顶元素出栈 */</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (stackNumber==<span class="number">2</span>)</div><div class="line">        &#123; </div><div class="line">                <span class="keyword">if</span> (S-&gt;top2==MAXSIZE) </div><div class="line">                        <span class="keyword">return</span> ERROR; <span class="comment">/* 说明栈2已经是空栈，溢出 */</span></div><div class="line">                *e=S-&gt;data[S-&gt;top2++]; <span class="comment">/* 将栈2的栈顶元素出栈 */</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这只是针对两个具有数据类型的栈的一个设计上的技巧，如果是不同数据类型的栈，这种办法不但不能更好处理问题，反而使问题变得更复杂，所以要注意这个前提。</p>
+<h4 id="顺序栈的Java实现"><a href="#顺序栈的Java实现" class="headerlink" title="顺序栈的Java实现"></a>顺序栈的Java实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IsSymmetry</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">                <span class="comment">// 检验字符串符号是否平衡</span></div><div class="line">		String symbolString=<span class="string">"&#123;ss[aa(bb)]&#125;"</span>;</div><div class="line">		IsSymmetry(symbolString);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">IsSymmetry</span><span class="params">(String args)</span></span>&#123;</div><div class="line">		Stack SS=<span class="keyword">new</span> SequenceStack();</div><div class="line">		<span class="keyword">int</span> size=args.length();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</div><div class="line">			<span class="keyword">char</span> charj=args.charAt(i);</div><div class="line">			<span class="keyword">switch</span>(charj)&#123;</div><div class="line">			<span class="keyword">case</span> <span class="number">123</span>: <span class="comment">//对应"&#123;"</span></div><div class="line">				SS.push(<span class="string">"&#123;"</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">91</span>:  <span class="comment">//对应"["</span></div><div class="line">				SS.push(<span class="string">"["</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">40</span>:  <span class="comment">//对应"("</span></div><div class="line">				SS.push(<span class="string">"("</span>);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">41</span>:  <span class="comment">//对应")"</span></div><div class="line">				System.out.println(SS.pop().equals(<span class="string">"("</span>));</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">93</span>:  <span class="comment">//对应"]"</span></div><div class="line">				System.out.println(SS.pop().equals(<span class="string">"["</span>));</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			<span class="keyword">case</span> <span class="number">125</span>: <span class="comment">//对应"&#125;"</span></div><div class="line">				System.out.println(SS.pop().equals(<span class="string">"&#123;"</span>));</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SequenceStack</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">Stack</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line"></div><div class="line">	<span class="keyword">private</span> SequenceList&lt;E&gt; stackList = <span class="keyword">null</span>;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SequenceStack</span><span class="params">()</span></span>&#123;</div><div class="line">	      stackList = <span class="keyword">new</span> SequenceList&lt;E&gt;();</div><div class="line">	   &#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> stackList.isEmpty();</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">peek</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (isEmpty())</div><div class="line">	         <span class="keyword">throw</span> <span class="keyword">new</span> EmptyStackException();</div><div class="line"></div><div class="line">	    <span class="keyword">return</span> stackList.get(stackList.size()-<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (isEmpty())</div><div class="line">	         <span class="keyword">throw</span> <span class="keyword">new</span> EmptyStackException();</div><div class="line"></div><div class="line">	    <span class="keyword">return</span> stackList.remove(stackList.size()-<span class="number">1</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(E item)</span> </span>&#123;</div><div class="line">		stackList.add(item);		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> stackList.size();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Stack</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(E iEem)</span></span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">pop</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">peek</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SequenceList</span> <span class="keyword">implements</span> <span class="title">LinearList</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> Object[] sList;    <span class="comment">// 实际存储线性表元素的容器</span></div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size;    <span class="comment">// 实际存储元素的数量</span></div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SequenceList</span><span class="params">(<span class="keyword">int</span> length)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (length &lt; <span class="number">0</span>)</div><div class="line">			sList = <span class="keyword">new</span> Object[<span class="number">10</span>];</div><div class="line">		<span class="keyword">else</span></div><div class="line">			sList = <span class="keyword">new</span> Object[length];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SequenceList</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>(<span class="number">10</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 检查索引值的有效性（用于向指定位置插入元素）</div><div class="line">	 * <span class="doctag">@param</span> index</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkIndexForAdd</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (index &lt; <span class="number">0</span> || index &gt; size)</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException(<span class="string">"index:"</span> + index + <span class="string">",size:"</span>+ size);		</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 检查索引有效性（用于获取、移除、替换指定位置的元素）</div><div class="line">	 * <span class="doctag">@param</span> index</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">checkIndex</span><span class="params">(<span class="keyword">int</span> index)</span></span>&#123;</div><div class="line">		<span class="keyword">if</span> (index &gt;= size)</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IndexOutOfBoundsException(<span class="string">"index:"</span> + index + <span class="string">",size:"</span>+ size);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, Object element)</span> </span>&#123;</div><div class="line">		<span class="comment">//检查索引有效性</span></div><div class="line">		checkIndexForAdd(index);</div><div class="line">		<span class="comment">//如果存储线性表元素的容器没有容量</span></div><div class="line">		<span class="keyword">if</span>(size==sList.length)&#123;</div><div class="line">			<span class="keyword">if</span>(sList.length==<span class="number">0</span>)</div><div class="line">				sList=<span class="keyword">new</span> Object[<span class="number">10</span>];</div><div class="line">			<span class="keyword">else</span>&#123;</div><div class="line">				<span class="comment">//将原容器赋值给新创建的中间数组容器</span></div><div class="line">				Object[] temp=sList;</div><div class="line">				<span class="comment">//重新申请一个容量更大的容器</span></div><div class="line">				<span class="keyword">this</span>.sList=<span class="keyword">new</span> Object[sList.length*<span class="number">2</span>];</div><div class="line">				<span class="comment">//复制数组元素</span></div><div class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;temp.length;i++)&#123;</div><div class="line">					<span class="keyword">this</span>.sList[i]=temp[i];</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//元素后移</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=size-<span class="number">1</span>;i&gt;=index;i--)&#123;</div><div class="line">			sList[i+<span class="number">1</span>]=sList[i];</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//插入元素</span></div><div class="line">		sList[index]=element;</div><div class="line">		size++;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(Object element)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> add(size,element);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(size!=<span class="number">0</span>)&#123;</div><div class="line">	        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) <span class="comment">//遍历已经存储的元素并清空</span></div><div class="line">	            <span class="keyword">this</span>.sList[i] = <span class="keyword">null</span>;</div><div class="line">	       size=<span class="number">0</span>;   <span class="comment">//设置实际存储元素的数量</span></div><div class="line">	    &#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">		checkIndex(index); <span class="comment">//检查索引有效性</span></div><div class="line">		<span class="keyword">return</span> sList[index];</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> size==<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">		<span class="comment">//检查索引有效性</span></div><div class="line">		checkIndex(index);</div><div class="line">		<span class="comment">//获取要移除的元素</span></div><div class="line">		Object old=sList[index];</div><div class="line">		<span class="comment">//元素前移</span></div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=index;i&lt;size-<span class="number">1</span>;i++)&#123;</div><div class="line">			sList[i]=sList[i+<span class="number">1</span>];</div><div class="line">		&#125;</div><div class="line">		<span class="comment">//将实际存储元素的数量减1，并将移除前存储的最后一个位置清空</span></div><div class="line">		sList[--size]=<span class="keyword">null</span>;	</div><div class="line">		<span class="keyword">return</span> old;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, Object element)</span> </span>&#123;</div><div class="line">		checkIndex(index);  <span class="comment">//检查索引有效性</span></div><div class="line">		Object old=sList[index];  <span class="comment">//获取要替换的元素</span></div><div class="line">		sList[index]=element;   <span class="comment">//替换元素</span></div><div class="line">		<span class="keyword">return</span> old;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> size;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LinearList</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;    <span class="comment">//判断线性表是否为空</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;    <span class="comment">//返回线性表元素数量</span></div><div class="line">    <span class="function">Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>;    <span class="comment">//返回索引为index的元素</span></div><div class="line">    <span class="function">Object <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, Object element)</span></span>;    <span class="comment">//用指定元素替换线性表中指定位置的元素</span></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, Object element)</span></span>;    <span class="comment">//在线性表的指定位置插入指定元素</span></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(Object element)</span></span>;    <span class="comment">//向线性表的尾部添加指定的元素</span></div><div class="line">    <span class="function">Object <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>;    <span class="comment">//移除线性表中指定位置的元素</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>;    <span class="comment">//从线性表中移除所有元素</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h3><hr>
+<p>栈的链式存储结构</p>
+<p><img src="/images/it_datastructure_stack5.png" alt="UML图"></p>
+<h4 id="链栈的栈满"><a href="#链栈的栈满" class="headerlink" title="链栈的栈满"></a>链栈的栈满</h4><p>不存在栈满的情况，除非内存已经没有可以使用的空间，如果真的发生，那此时的计算机操作系统面临死机崩溃的情况，而不是这个链栈是否溢出的问题。</p>
+<h4 id="链栈的空栈"><a href="#链栈的空栈" class="headerlink" title="链栈的空栈"></a>链栈的空栈</h4><p>因链表定义是头指针指向空，那么链栈的空其实就是top=NULL </p>
+<h4 id="链栈的结构代码"><a href="#链栈的结构代码" class="headerlink" title="链栈的结构代码"></a>链栈的结构代码</h4><p>链栈的操作绝大部分和单链表类似，只是在插入和删除上特殊一些。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 链栈结构 */</span></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StackNode</span></span></div><div class="line">&#123;</div><div class="line">        SElemType data;</div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">StackNode</span> *<span class="title">next</span>;</span></div><div class="line">&#125;StackNode,*LinkStackPtr;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></div><div class="line">&#123;</div><div class="line">        LinkStackPtr top;</div><div class="line">        <span class="keyword">int</span> count;</div><div class="line">&#125;LinkStack;</div><div class="line"></div><div class="line"><span class="function">Status <span class="title">visit</span><span class="params">(SElemType c)</span></span></div><div class="line">&#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,c);</div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="链栈的进栈操作"><a href="#链栈的进栈操作" class="headerlink" title="链栈的进栈操作"></a>链栈的进栈操作</h4><p>假设元素值为e的新结点是s，top为栈顶指针。<br>图示↓<br><img src="/images/it_datastructure_stack6.png" alt="UML图"></p>
+<p>代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 插入元素e为新的栈顶元素 */</span></div><div class="line"><span class="function">Status <span class="title">Push</span><span class="params">(LinkStack *S,SElemType e)</span></span></div><div class="line">&#123;</div><div class="line">        LinkStackPtr s=(LinkStackPtr)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(StackNode)); </div><div class="line">        s-&gt;data=e; </div><div class="line">        s-&gt;next=S-&gt;top;	<span class="comment">/* 把当前的栈顶元素赋值给新结点的直接后继，见图中① */</span></div><div class="line">        S-&gt;top=s;         <span class="comment">/* 将新的结点s赋值给栈顶指针，见图中② */</span></div><div class="line">        S-&gt;count++;</div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="链栈的出栈操作"><a href="#链栈的出栈操作" class="headerlink" title="链栈的出栈操作"></a>链栈的出栈操作</h4><p>假设变量p用来存储要删除的栈顶节点，将栈顶指针下移一位，最后释放p即可。<br>图示↓<br><img src="/images/it_datastructure_stack7.png" alt="UML图"></p>
+<p>代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 若栈不空，则删除S的栈顶元素，用e返回其值，并返回OK；否则返回ERROR */</span></div><div class="line"><span class="function">Status <span class="title">Pop</span><span class="params">(LinkStack *S,SElemType *e)</span></span></div><div class="line">&#123; </div><div class="line">        LinkStackPtr p;</div><div class="line">        <span class="keyword">if</span>(StackEmpty(*S))</div><div class="line">                <span class="keyword">return</span> ERROR;</div><div class="line">        *e=S-&gt;top-&gt;data;</div><div class="line">        p=S-&gt;top;	      <span class="comment">/* 将栈顶结点赋值给p，见图中③ */</span></div><div class="line">        S-&gt;top=S-&gt;top-&gt;next;  <span class="comment">/* 使得栈顶指针下移一位，指向后一结点，见图中④ */</span></div><div class="line">        <span class="built_in">free</span>(p);              <span class="comment">/* 释放结点p */</span>        </div><div class="line">        S-&gt;count--;</div><div class="line">        <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="顺序栈与链栈的对比"><a href="#顺序栈与链栈的对比" class="headerlink" title="顺序栈与链栈的对比"></a>顺序栈与链栈的对比</h3><p>进出栈都很简单，没有任何循环操作，时间复杂度均为0(1)<br>对于空间性能，顺序栈需要事先确定一个固定的长度，可能会存在内存空间浪费的问题，但它的优势是存取时定位很方便，链栈则要求每个元素都有指针域，这同时也增加了一些内存开销，但对于栈的长度无限制。<br>所以他没的区别和线性表讨论的一样，如果栈的使用过程元素变化不可预料，有时很小，有时非常大，那么最好是用链栈，反之，如果变化在可控范围内，建议使用顺序栈会更好一些。</p>
+<hr>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><hr>
+<p><img src="/images/it_datastructure_queue1.jpg" alt="UML图"></p>
+<h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p>中文名 队列<br>英文名 Queue</p>
+<h2 id="描述-1"><a href="#描述-1" class="headerlink" title="描述"></a>描述</h2><p>队列是一种先进先出（First in First out（缩写FIFO））一种特殊的线性表<br>特殊之处在于它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作，<br>和栈一样，队列是一种操作受限制的线性表。<br>进行插入操作的端称为队尾，进行删除操作的端称为队头。</p>
+<h2 id="情景比喻-1"><a href="#情景比喻-1" class="headerlink" title="情景比喻"></a>情景比喻</h2><p>队列非常好理解<br>如同一个水管<br>或者就像电影院前人们站成的排一样，第一个进入队列的人最先买票（出列），最后面的人不断紧跟队伍排队（入列）。<br><img src="/images/it_datastructure_queue2.png" alt="UML图"></p>
+<h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>队列在程序设计中用得非常频繁<br>如操作系统和客服系统<br>键盘进行各种字母数字的输入，到显示器上如记事本软件上的输出，其实就是队列的典型应用。</p>
+<h2 id="队列的抽象数据类型"><a href="#队列的抽象数据类型" class="headerlink" title="队列的抽象数据类型"></a>队列的抽象数据类型</h2><p>同样是线性表，队列也有类似线性表的各种操作，不同的就是插入数据只能在队尾进行，删除数据只能在队头进行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">ADT 队列（Queue）</div><div class="line">Data</div><div class="line">    同线性表。元素具有相同的类型，相邻元素具有前驱和后继关系。</div><div class="line">Operatoion</div><div class="line">    InitQueue( *Q )</div><div class="line">        初始化操作，构造一个空队列Q。</div><div class="line">    DestroyQueue ( *Q )</div><div class="line">      	若队列Q已存在，则销毁它。</div><div class="line">    ClearQueue ( *Q )</div><div class="line">      	将Q清为空队列。</div><div class="line">    QueueEmpty( Q )</div><div class="line">     	若Q为空队列，则返回TRUE，否则返回FALSE。</div><div class="line">    QueueLength( Q )</div><div class="line">      	返回Q的数据元素个数，即队列的长度。</div><div class="line">    GetHead( Q, *e )</div><div class="line">     	队列Q已存在且非空，用e返回Q的队头元素。</div><div class="line">    EnQueue( *Q, e )</div><div class="line">      	队列Q已存在，插入元素e为Q的新的队尾元素。</div><div class="line">    DeQueue( *Q, *e )</div><div class="line">      	队列Q已存在且非空，删除Q的队头元素，并用e返回其值。</div><div class="line">endADT</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="队列的两种存储方式"><a href="#队列的两种存储方式" class="headerlink" title="队列的两种存储方式"></a>队列的两种存储方式</h2><hr>
+<p>线性表有顺序存储和链式存储，栈是线性表，所以有这两种存储方式。同样，队列作为一种特殊的线性表，也同样存在这两种存储方式。<br>先看下队列的顺序存储结构。</p>
+<h3 id="顺序队列"><a href="#顺序队列" class="headerlink" title="顺序队列"></a>顺序队列</h3><h4 id="解释-1"><a href="#解释-1" class="headerlink" title="解释"></a>解释</h4><p>队列的顺序储存结构称为顺序队列，就是用一组地址连续的存储空间来存放队列中的数据元素的。<br>顺序队列是队列的一种，它具有队列的特征。<br>顺序队列使用front和rear两个指针分别指示队头元素和队尾元素的位置。<br>顺序队列只能从队头（front端）删除元素，向队尾（rear端）添加新元素。</p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p>1.静态分配存储空间。<br>2.入队操作只能在队尾，出队操作只能在队首<br>3.队列为空时，front = rear<br>4.队列为满时， rear = 队列长度 -1<br>5.队列非空非满时，Front &lt; rear &lt; 队列长度 -1</p>
+<h4 id="队列顺序存储的不足"><a href="#队列顺序存储的不足" class="headerlink" title="队列顺序存储的不足"></a>队列顺序存储的不足</h4><p>为了避免当只有一个元素时，队头和队尾重合使处理变得麻烦，所以引入两个指针，front指针指向队头元素，rear指针指向队尾元素的下一个位置，这样当front等于rear时，此队列不是还剩一个元素，而是空队列。</p>
+<p>假设长度为5的数组，front与rear指针均指向下标为0的的位置，然后入队a1,a2,a3,a3,a4,front指针依然指向下标为0位置，而rear指针指向下标为4的位置<br><img src="/images/it_datastructure_queue3.png" alt="UML图"></p>
+<p>出队a1,a2,则dfront指针指向下标为2的位置，rear不变，再入队a5,此时front指针不变，rear指针移动到数组之外？（问题来了）<br><img src="/images/it_datastructure_queue4.png" alt="UML图"></p>
+<p>问题还不止于此。假设这个队列的总个数不超过5个，但目前如果接着入队的话，因数组末尾已经占用，再向后加，就会产生数组越界的错误，可实际上，我们的队列在下标为0和1的地方还是空闲的，这种现象叫做’假溢出’.</p>
+<p>解决假溢出的方法就是后面满了，就再从头开始，也就是头尾相接的循环，<br>把队列的这种头尾相接的顺序存储结构称为循环队列。</p>
+<h4 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h4><h5 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h5><p>对于队列来说，为了避免数组插入和删除时需要移动数据，引入循环队列，使得本来插入和删除是O(n)的时间复杂度变成了O(1)。</p>
+<h5 id="判断公式"><a href="#判断公式" class="headerlink" title="判断公式"></a>判断公式</h5><ul>
+<li><p><strong>1.判断空队列条件</strong><br>front == rear</p>
+<p>  不过下列图中有个问题<br>  <img src="/images/it_datastructure_queue5.png" alt="UML图"><br>  正常通用的情况是空队列时，front等于rear，不过上述图中当队列满时也是front等于rear，那么如何判断此时的队列究竟是空还是满呢？</p>
+<p>  办法1：设置一个标志遍历flag，当front == rear，且flag = 0时为队列空，当front==rear，且flag = 1时为队列满。</p>
+<p>  办法2：当队列空时，条件就是front = rear当队列满时，我们修改其条件，数组中保留一个空闲元素空间。如上图左，我们就认为此队列已经满了，也就是说，不允许右图情况出现。</p>
+</li>
+<li><p><strong>2.判断满队列条件</strong><br>(rear+1)%QueueSize == front</p>
+</li>
+<li><p><strong>3.获取通用计算队列长度公式</strong><br>(rear-front+QueueSize)%QueueSize</p>
+</li>
+</ul>
+<hr>
+<h5 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h5><hr>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Status; </div><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> QElemType; <span class="comment">/* QElemType类型根据实际情况而定，这里假设为int */</span></div><div class="line"></div><div class="line"><span class="comment">/* 循环队列的顺序存储结构 */</span></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></div><div class="line">&#123;</div><div class="line">    QElemType data[MAXSIZE];</div><div class="line">    <span class="keyword">int</span> front;      <span class="comment">/* 头指针 */</span></div><div class="line">    <span class="keyword">int</span> rear;       <span class="comment">/* 尾指针，若队列不空，指向队列尾元素的下一个位置 */</span></div><div class="line">&#125;SqQueue;</div><div class="line"></div><div class="line"><span class="comment">/* 初始化一个空队列Q */</span></div><div class="line"><span class="function">Status <span class="title">InitQueue</span><span class="params">(SqQueue *Q)</span></span></div><div class="line">&#123;</div><div class="line">    Q-&gt;front=<span class="number">0</span>;</div><div class="line">    Q-&gt;rear=<span class="number">0</span>;</div><div class="line">    <span class="keyword">return</span>  OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 返回Q的元素个数，也就是队列的当前长度 */</span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">QueueLength</span><span class="params">(SqQueue Q)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span>  (Q.rear-Q.front+MAXSIZE)%MAXSIZE;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 循环队列的入队操作*/</span></div><div class="line"><span class="comment">/* 若队列未满，则插入元素e为Q新的队尾元素 */</span></div><div class="line"><span class="function">Status <span class="title">EnQueue</span><span class="params">(SqQueue *Q,QElemType e)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> ((Q-&gt;rear+<span class="number">1</span>)%MAXSIZE == Q-&gt;front)    <span class="comment">/* 队列满的判断 */</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    Q-&gt;data[Q-&gt;rear]=e;         <span class="comment">/* 将元素e赋值给队尾 */</span></div><div class="line">    Q-&gt;rear=(Q-&gt;rear+<span class="number">1</span>)%MAXSIZE;<span class="comment">/* rear指针向后移一位置， */</span></div><div class="line">                                <span class="comment">/* 若到最后则转到数组头部 */</span></div><div class="line">    <span class="keyword">return</span>  OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* 循环队列的出队操作*/</span></div><div class="line"><span class="comment">/* 若队列不空，则删除Q中队头元素，用e返回其值 */</span></div><div class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(SqQueue *Q,QElemType *e)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (Q-&gt;front == Q-&gt;rear)        <span class="comment">/* 队列空的判断 */</span></div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    *e=Q-&gt;data[Q-&gt;front];           <span class="comment">/* 将队头元素赋值给e */</span></div><div class="line">    Q-&gt;front=(Q-&gt;front+<span class="number">1</span>)%MAXSIZE;  <span class="comment">/* front指针向后移一位置， */</span></div><div class="line">                                    <span class="comment">/* 若到最后则转到数组头部 */</span></div><div class="line">    <span class="keyword">return</span>  OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="弊端"><a href="#弊端" class="headerlink" title="弊端"></a>弊端</h5><p>顺序存储，若不是循环队列，算法的实践性能是不高的，但循环队列又面临着数组可能会溢出的问题，所以我们还要研究一下不需要担心队列长度的链式存储结构。</p>
+<hr>
+<h3 id="链式队列"><a href="#链式队列" class="headerlink" title="链式队列"></a>链式队列</h3><hr>
+<h4 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h4><p>队列的链式存储结构，其实就是线性表的单链表，只不过它只能尾进头出，简称链队列。</p>
+<p>队头指针指向链队列的头结点<br>队尾指针指向终端结点<br><img src="/images/it_datastructure_queue6.png" alt="UML图"></p>
+<p>空队列时，front和rear都指向头结点。<br><img src="/images/it_datastructure_queue7.png" alt="UML图"></p>
+<h4 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h4><p>1.动态分配存储空间<br>2.入队操作在队尾进行，出队操作在队头进行。<br>3.链式队列在入队时无队满情况问题<br>4.链式队列为空队列的条件：front = rear</p>
+<h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> QElemType; 	<span class="comment">/* QElemType类型根据实际情况而定，这里假设为int */</span></div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span>	/* 结点结构 */</span></div><div class="line">&#123;</div><div class="line">   QElemType data;</div><div class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></div><div class="line">&#125;QNode,*QueuePtr;</div><div class="line"></div><div class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span>			/* 队列的链表结构 */</span></div><div class="line">&#123;</div><div class="line">   QueuePtr front,rear; <span class="comment">/* 队头、队尾指针 */</span></div><div class="line">&#125;LinkQueue;</div></pre></td></tr></table></figure>
+<h4 id="入队操作"><a href="#入队操作" class="headerlink" title="入队操作"></a>入队操作</h4><p>其实就是在链表尾部插入结点<br><img src="/images/it_datastructure_queue8.png" alt="UML图"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 插入元素e为Q的新的队尾元素 */</span></div><div class="line"><span class="function">Status <span class="title">EnQueue</span><span class="params">(LinkQueue *Q,QElemType e)</span></span></div><div class="line">&#123; </div><div class="line">    QueuePtr s=(QueuePtr)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QNode));</div><div class="line">    <span class="keyword">if</span>(!s) <span class="comment">/* 存储分配失败 */</span></div><div class="line">        <span class="built_in">exit</span>(OVERFLOW);</div><div class="line">    s-&gt;data=e;</div><div class="line">    s-&gt;next=<span class="literal">NULL</span>;</div><div class="line">    Q-&gt;rear-&gt;next=s; <span class="comment">/* 把拥有元素e的新结点s赋值给原队尾结点的后继，见图中① */</span></div><div class="line">    Q-&gt;rear=s;       <span class="comment">/* 把当前的s设置为队尾结点，rear指向s，见图中② */</span></div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="出队操作"><a href="#出队操作" class="headerlink" title="出队操作"></a>出队操作</h4><p>就是头结点的后继结点出队，将头结点的后继改为它后面的结点<br>若链表除头结点外只剩一个元素时，则需将rear指向头结点<br><img src="/images/it_datastructure_queue9.png" alt="UML图"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 若队列不空,删除Q的队头元素,用e返回其值,并返回OK,否则返回ERROR */</span></div><div class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(LinkQueue *Q,QElemType *e)</span></span></div><div class="line">&#123;</div><div class="line">    QueuePtr p;</div><div class="line">    <span class="keyword">if</span>(Q-&gt;front==Q-&gt;rear)</div><div class="line">        <span class="keyword">return</span> ERROR;</div><div class="line">    p=Q-&gt;front-&gt;next;    <span class="comment">/* 将欲删除的队头结点暂存给p，见图中① */</span></div><div class="line">    *e=p-&gt;data;          <span class="comment">/* 将欲删除的队头结点的值赋值给e */</span></div><div class="line">    Q-&gt;front-&gt;next=p-&gt;next;<span class="comment">/* 将原队头结点的后继p-&gt;next赋值给头结点后继，见图中② */</span></div><div class="line">    <span class="keyword">if</span>(Q-&gt;rear==p)       <span class="comment">/* 若队头就是队尾，则删除后将rear指向头结点，见图中③ */</span></div><div class="line">        Q-&gt;rear=Q-&gt;front;</div><div class="line">    <span class="built_in">free</span>(p);</div><div class="line">    <span class="keyword">return</span> OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="链式队列的Java实现"><a href="#链式队列的Java实现" class="headerlink" title="链式队列的Java实现"></a>链式队列的Java实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QueueAct</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Queue LQ=<span class="keyword">new</span> LinkedQueue();</div><div class="line">		Scanner input = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		System.out.println(<span class="string">"请输入前来打饭的人员姓名，输入f表示输入结束："</span>);</div><div class="line">		String name=input.next();</div><div class="line">		<span class="keyword">while</span>(!name.equals(<span class="string">"f"</span>))&#123;</div><div class="line">			LQ.push(name);</div><div class="line">			name=input.next();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">while</span>(!LQ.isEmpty())&#123;</div><div class="line">			System.out.println(LQ.pop()+<span class="string">"打完饭离开打饭队伍"</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">	<span class="keyword">private</span> DoubleLinkedList&lt;E&gt; qlist = <span class="keyword">null</span>;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">LinkedQueue</span> <span class="params">()</span></span>&#123;</div><div class="line">	        qlist = <span class="keyword">new</span> DoubleLinkedList&lt;E&gt;();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(E item)</span> </span>&#123;</div><div class="line">                qlist.add(item);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span> (isEmpty())</div><div class="line">	         <span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException (<span class="string">"LinkedQueue pop(): queue empty"</span>);</div><div class="line">	        <span class="keyword">return</span> qlist.removeFirst();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">peek</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span> (isEmpty())</div><div class="line">	         <span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException (<span class="string">"LinkedQueue front(): queue empty"</span>);</div><div class="line"></div><div class="line">	        <span class="keyword">return</span> qlist.getFirst();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> qlist.isEmpty();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">return</span> qlist.size();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(E item)</span></span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> E <span class="title">pop</span><span class="params">()</span></span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> E <span class="title">peek</span><span class="params">()</span></span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DoubleLinkedList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">LinearList</span>&lt;<span class="title">E</span>&gt; </span>&#123;</div><div class="line">	<span class="keyword">private</span> DoubleNode&lt;E&gt; header;	</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> size=<span class="number">0</span>;       </div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">DoubleLinkedList</span><span class="params">()</span>	</span>&#123;</div><div class="line">		header = <span class="keyword">new</span> DoubleNode&lt;E&gt;();</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		DoubleNode&lt;E&gt; curr;</div><div class="line">		<span class="keyword">for</span> (curr = header.next; curr != header; curr = curr.next)&#123;</div><div class="line">			i++;</div><div class="line">			<span class="keyword">if</span> (index==i)</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		addBefore(curr,element);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E element)</span> </span>&#123;</div><div class="line">		addLast(element);</div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E item)</span> </span>&#123;</div><div class="line">	        addBefore(header,item);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E item)</span></span>&#123;</div><div class="line">	        addBefore(header.next,item);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">if</span>(size!=<span class="number">0</span>)&#123;</div><div class="line">			header.next=header;</div><div class="line">			header.prev=header;</div><div class="line">			size=<span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		DoubleNode&lt;E&gt; curr;</div><div class="line"></div><div class="line">		<span class="comment">// search for item</span></div><div class="line">		<span class="keyword">for</span> (curr = header.next; curr != header; curr = curr.next)&#123;</div><div class="line">			i++;</div><div class="line">			<span class="keyword">if</span> (index==i)</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> curr.nodeValue;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">getFirst</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.size() == <span class="number">0</span>)</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException();</div><div class="line">		<span class="keyword">return</span> header.next.nodeValue;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">getLast</span><span class="params">()</span>	</span>&#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.size() == <span class="number">0</span>)</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException();</div><div class="line">		<span class="keyword">return</span> header.prev.nodeValue;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> size==<span class="number">0</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		DoubleNode&lt;E&gt; curr;</div><div class="line">		<span class="keyword">for</span> (curr = header.next; curr != header; curr = curr.next)&#123;</div><div class="line">			i++;</div><div class="line">			<span class="keyword">if</span> (index==i)</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		remove(curr);</div><div class="line">		<span class="keyword">return</span> curr.nodeValue;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(DoubleNode&lt;E&gt; item)</span></span>&#123;</div><div class="line">		<span class="keyword">boolean</span> retValue = <span class="keyword">false</span>;</div><div class="line">		DoubleNode&lt;E&gt; curr;</div><div class="line"></div><div class="line">		<span class="comment">// search for item</span></div><div class="line">		<span class="keyword">for</span> (curr = header.next; curr != header; curr = curr.next)&#123;</div><div class="line">			<span class="keyword">if</span> (item.nodeValue.equals(curr.nodeValue))</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">if</span> (curr != header)&#123;</div><div class="line">			retValue = <span class="keyword">true</span>;</div><div class="line">			curr.prev.next = curr.next;</div><div class="line">			curr.next.prev = curr.prev;</div><div class="line">		&#125;</div><div class="line">		size--;</div><div class="line">		<span class="keyword">return</span> retValue;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">removeFirst</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span> (size == <span class="number">0</span>)</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException(<span class="string">"LinkedList removeFirst(): list empty"</span>);</div><div class="line"></div><div class="line">		E first = header.next.nodeValue;</div><div class="line">		remove(header.next);</div><div class="line">		<span class="keyword">return</span> first;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">removeLast</span><span class="params">()</span></span>&#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">this</span>.size() == <span class="number">0</span>)</div><div class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException(<span class="string">"LinkedList removeLast(): list empty"</span>);</div><div class="line"></div><div class="line">		E last = header.prev.nodeValue;</div><div class="line">		remove(header.prev);</div><div class="line">		<span class="keyword">return</span> last;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">public</span> E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</div><div class="line">		<span class="keyword">return</span> size;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	<span class="function"><span class="keyword">private</span> DoubleNode&lt;E&gt; <span class="title">addBefore</span><span class="params">(DoubleNode&lt;E&gt; curr, E item)</span></span>&#123;</div><div class="line">		DoubleNode&lt;E&gt; newNode, prevNode;</div><div class="line"></div><div class="line">		newNode = <span class="keyword">new</span> DoubleNode&lt;E&gt;(item);</div><div class="line"></div><div class="line">		prevNode = curr.prev;</div><div class="line"></div><div class="line">		newNode.prev = prevNode;</div><div class="line">		newNode.next = curr;</div><div class="line"></div><div class="line">		prevNode.next = newNode;</div><div class="line">		curr.prev = newNode;</div><div class="line">		size++;</div><div class="line">		<span class="keyword">return</span> newNode;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LinearList</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;    <span class="comment">//判断线性表是否为空</span></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>;    <span class="comment">//返回线性表元素数量</span></div><div class="line">    <span class="function">Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>;    <span class="comment">//返回索引为index的元素</span></div><div class="line">    <span class="function">Object <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, Object element)</span></span>;    <span class="comment">//用指定元素替换线性表中指定位置的元素</span></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, Object element)</span></span>;    <span class="comment">//在线性表的指定位置插入指定元素</span></div><div class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(Object element)</span></span>;    <span class="comment">//向线性表的尾部添加指定的元素</span></div><div class="line">    <span class="function">Object <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>;    <span class="comment">//移除线性表中指定位置的元素</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>;    <span class="comment">//从线性表中移除所有元素</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="链式队列和循环队列的比较"><a href="#链式队列和循环队列的比较" class="headerlink" title="链式队列和循环队列的比较"></a>链式队列和循环队列的比较</h4><ul>
+<li>1.从时间上<br>它们的基本操作都是常数时间O（1）<br>不过循环队列是事先申请好空间，使用期间不释放<br>而对于链队列，每次申请和释放节点也会存在一些时间开销<br>如果入队出队频繁，则两者还是有细微差异。</li>
+<li>2.从空间上<br>循环队列必须有一个固定的长度，所以就有了存储元素个数和空间浪费的问题。<br>而连队列不存在这个问题，尽管它需要一个指针域，会产生一些空间上的开销，但也可以接受。<br>所以在空间上，连队列更加灵活。<br>总的来说，在可以确定队列长度的情况下，建议用循环队列，如果无法预估队列长度时，用链队列。</li>
+</ul>
+<h1 id="栈和队列的总结"><a href="#栈和队列的总结" class="headerlink" title="栈和队列的总结"></a>栈和队列的总结</h1><p><img src="/images/it_datastructure_stackandqueue1.png" alt="UML图"></p>
+<p>1.它们都是特殊的线性表，只不过对插入和删除操作做了限制：<br>栈：限定仅在表尾进行插入和删除操作的线性表。<br>队列：只允许在一端进行插入操作，而在另一端进行删除操作的线性表。</p>
+<p>2.栈和队列的顺序存储结构：<br>它们都可以用线性表的顺序存储结构实现，但都存在着顺序存储的一些弊端，因此它们各自有一些技巧解决这个问题。<br>对于栈来说，如果两个相同数据类型的栈，则可以用数组的两端作栈底的方法让两个栈共享数据，最大化利用数组的空间。<br>对于队列来说，为了避免数组插入和删除时需要移动数据，引入循环队列，使得本来插入和删除是O(n)的时间复杂度变成了O(1)。</p>
+<p>3.栈和队列的链式存储结构：<br>栈和队列的链式存储结构的实现原理和线性表的实现原理基本上相同。</p>
+<h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><p><a href="http://www.cnblogs.com/CherishFX/p/4608880.html" target="_blank" rel="external">Java实现栈和队列</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/19/it/2.DataStructure&Algorithm/Recursion/" rel="next" title="数据结构与算法 —— 算法：递归">
+                <i class="fa fa-chevron-left"></i> 数据结构与算法 —— 算法：递归
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/21/it/2.DataStructure&Algorithm/SortInsert/" rel="prev" title="数据结构与算法 —— 排序系列：插入排序">
+                数据结构与算法 —— 排序系列：插入排序 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">78</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#栈"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.3.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情景比喻"><span class="nav-number">1.4.</span> <span class="nav-text">情景比喻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键词"><span class="nav-number">1.5.</span> <span class="nav-text">关键词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈的抽象数据类型"><span class="nav-number">1.6.</span> <span class="nav-text">栈的抽象数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈的两种存储方式"><span class="nav-number">1.7.</span> <span class="nav-text">栈的两种存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序栈"><span class="nav-number">1.7.1.</span> <span class="nav-text">顺序栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解释"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优点"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺陷"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">缺陷</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断条件"><span class="nav-number">1.7.1.5.</span> <span class="nav-text">判断条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#栈的结构定义"><span class="nav-number">1.7.1.6.</span> <span class="nav-text">栈的结构定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进出栈操作"><span class="nav-number">1.7.1.7.</span> <span class="nav-text">进出栈操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#两栈共享空间"><span class="nav-number">1.7.1.8.</span> <span class="nav-text">两栈共享空间</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#两栈共享空间的结构"><span class="nav-number">1.7.1.8.1.</span> <span class="nav-text">两栈共享空间的结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两栈共享空间的push方法"><span class="nav-number">1.7.1.8.2.</span> <span class="nav-text">两栈共享空间的push方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#两栈共享空间的pop方法"><span class="nav-number">1.7.1.8.3.</span> <span class="nav-text">两栈共享空间的pop方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序栈的Java实现"><span class="nav-number">1.7.1.9.</span> <span class="nav-text">顺序栈的Java实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链栈"><span class="nav-number">1.7.2.</span> <span class="nav-text">链栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈的栈满"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">链栈的栈满</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈的空栈"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">链栈的空栈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈的结构代码"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">链栈的结构代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈的进栈操作"><span class="nav-number">1.7.2.4.</span> <span class="nav-text">链栈的进栈操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链栈的出栈操作"><span class="nav-number">1.7.2.5.</span> <span class="nav-text">链栈的出栈操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序栈与链栈的对比"><span class="nav-number">1.7.3.</span> <span class="nav-text">顺序栈与链栈的对比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介-1"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述-1"><span class="nav-number">2.2.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#情景比喻-1"><span class="nav-number">2.3.</span> <span class="nav-text">情景比喻</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用场景"><span class="nav-number">2.4.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列的抽象数据类型"><span class="nav-number">2.5.</span> <span class="nav-text">队列的抽象数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列的两种存储方式"><span class="nav-number">2.6.</span> <span class="nav-text">队列的两种存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序队列"><span class="nav-number">2.6.1.</span> <span class="nav-text">顺序队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解释-1"><span class="nav-number">2.6.1.1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点-1"><span class="nav-number">2.6.1.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#队列顺序存储的不足"><span class="nav-number">2.6.1.3.</span> <span class="nav-text">队列顺序存储的不足</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环队列"><span class="nav-number">2.6.1.4.</span> <span class="nav-text">循环队列</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#作用"><span class="nav-number">2.6.1.4.1.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断公式"><span class="nav-number">2.6.1.4.2.</span> <span class="nav-text">判断公式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#示例代码"><span class="nav-number">2.6.1.4.3.</span> <span class="nav-text">示例代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#弊端"><span class="nav-number">2.6.1.4.4.</span> <span class="nav-text">弊端</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链式队列"><span class="nav-number">2.6.2.</span> <span class="nav-text">链式队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-1"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特点-2"><span class="nav-number">2.6.2.2.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构"><span class="nav-number">2.6.2.3.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#入队操作"><span class="nav-number">2.6.2.4.</span> <span class="nav-text">入队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出队操作"><span class="nav-number">2.6.2.5.</span> <span class="nav-text">出队操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式队列的Java实现"><span class="nav-number">2.6.2.6.</span> <span class="nav-text">链式队列的Java实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式队列和循环队列的比较"><span class="nav-number">2.6.2.7.</span> <span class="nav-text">链式队列和循环队列的比较</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈和队列的总结"><span class="nav-number">3.</span> <span class="nav-text">栈和队列的总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关文章"><span class="nav-number">4.</span> <span class="nav-text">相关文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>
