@@ -1,0 +1,1498 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 开源项目：工具库篇">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenUtils/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_openutils_logo.jpg">
+<meta property="og:updated_time" content="2017-10-26T11:35:26.096Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 开源项目：工具库篇">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_openutils_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenUtils/"/>
+
+
+
+
+
+  <title>Android —— 开源项目：工具库篇 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenUtils/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 开源项目：工具库篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-02T23:56:13+08:00">
+                2017-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_openutils_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>主要包括那些不错的开发库，包括依赖注入框架、图片缓存、网络请求、数据库 ORM 建模、Android 公共库、Android 高版本向低版本兼容、多媒体相关及其他。</p>
+<p>思维导图地址：<a href="http://naotu.baidu.com/file/680bda2c67e4a888b086d49852982a5e?token=37669eaa5e7a778d&amp;qq-pf-to=pcqq.group" target="_blank" rel="external">百度脑图-开源项目工具库篇-鱼骨头图</a><br>PS：这篇是别人总结的，先心领神会看个大概，后期陆陆续续加入自己总结的</p>
+<hr>
+<h1 id="综合框架"><a href="#综合框架" class="headerlink" title="综合框架"></a>综合框架</h1><hr>
+<p>关键词：公共库/大而全的框架/快速开发型框架</p>
+<h2 id="Afinal"><a href="#Afinal" class="headerlink" title="Afinal"></a>Afinal</h2><p>项目Github：<a href="https://github.com/yangfuhai/afinal" target="_blank" rel="external">https://github.com/yangfuhai/afinal</a></p>
+<p>简介：<br>Afinal 是一个android的sqlite orm 和 ioc 框架。同时封装了android中的http框架，使其更加简单易用；<br>使用finalBitmap，无需考虑bitmap在android中加载的时候oom的问题和快速滑动的时候图片加载位置错位等问题。<br>Afinal的宗旨是简洁，快速。约定大于配置的方式。尽量一行代码完成所有事情。</p>
+<p>目前Afinal主要有四大模块：<br>1.FinalDB模块<br>android中的orm框架，一行代码就可以进行增删改查。支持一对多，多对一等查询。</p>
+<p>2.FinalActivity模块<br>android中的ioc框架，完全注解方式就可以进行UI绑定和事件绑定。无需findViewById和setClickListener等。</p>
+<p>3.FinalHttp模块<br>通过httpclient进行封装http数据请求，支持ajax方式加载。</p>
+<p>4.FinalBitmap模块<br>通过FinalBitmap，imageview加载bitmap的时候无需考虑bitmap加载过程中出现的oom和android容器快速滑动时候出现的图片错位等现象。FinalBitmap可以配置线程加载线程数量，缓存大小，缓存路径，加载显示动画等。FinalBitmap的内存管理使用lru算法，没有使用弱引用（android2.3以后google已经不建议使用弱引用，android2.3后强行回收软引用和弱引用，详情查看android官方文档），更好的管理bitmap内存。FinalBitmap可以自定义下载器，用来扩展其他</p>
+<h2 id="XUtils"><a href="#XUtils" class="headerlink" title="XUtils"></a>XUtils</h2><p>项目Github：<a href="https://github.com/wyouflf/xUtils" target="_blank" rel="external">https://github.com/wyouflf/xUtils</a></p>
+<p>简介：<br>快速开发型框架<br>众多开源的集合，出现时间大概是2010-2011</p>
+<p>特色：<br>(1)xUtils 包含了很多实用的android工具。<br>(2)xUtils 最初源于Afinal框架，进行了大量重构，使得xUtils支持大文件上传，更全面的http请求协议支持(10种谓词)，拥有更加灵活的ORM，更多的事件注解支持且不受混淆影响…<br>(3)xUitls最低兼容android 2.2 (api level 8)</p>
+<p>主要有四大模块：<br>(1) 数据库模块：<br>android中的orm框架，一行代码就可以进行增删改查；<br>支持事务，默认关闭；<br>可通过注解自定义表名，列名，外键，唯一性约束，NOT NULL约束，CHECK约束等（需要混淆的时候请注解表名和列名）；<br>支持绑定外键，保存实体时外键关联实体自动保存或更新；<br> 自动加载外键关联实体，支持延时加载；<br>支持链式表达查询，更直观的查询语义，参考下面的介绍或sample中的例子。    </p>
+<p>(2) 注解模块<br>android中的ioc框架，完全注解方式就可以进行UI，资源和事件绑定；<br>新的事件绑定方式，使用混淆工具混淆后仍可正常工作；<br>目前支持常用的20种事件绑定，参见ViewCommonEventListener类和包com.lidroid.xutils.view.annotation.event。</p>
+<p>(3) 网络模块：<br>支持同步，异步方式的请求；<br>支持大文件上传，上传大文件不会oom；<br>支持GET，POST，PUT，MOVE，COPY，DELETE，HEAD，OPTIONS，TRACE，CONNECT请求；<br>下载支持301/302重定向，支持设置是否根据Content-Disposition重命名下载的文件；<br>返回文本内容的请求(默认只启用了GET请求)支持缓存，可设置默认过期时间和针对当前请求的过期时间。            </p>
+<p>(4) 图片缓存模块<br>加载bitmap的时候无需考虑bitmap加载过程中出现的oom和android容器快速滑动时候出现的图片错位等现象；<br>支持加载网络图片和本地图片；<br>内存管理使用lru算法，更好的管理bitmap内存；<br>可配置线程加载线程数量，缓存大小，缓存路径，加载显示动画等…</p>
+<p>Xutils是单例吗   不是</p>
+<h2 id="UltimateAndroid"><a href="#UltimateAndroid" class="headerlink" title="UltimateAndroid"></a>UltimateAndroid</h2><p>项目github：<a href="https://github.com/cymcsg/UltimateAndroid" target="_blank" rel="external">https://github.com/cymcsg/UltimateAndroid</a><br>相关：<a href="http://blog.csdn.net/marshalchen/article/details/39138365" target="_blank" rel="external">UltimateAndroid快速开发框架简介与教程（也是一套Android快速开发的教程）</a></p>
+<h2 id="LoonAndroid"><a href="#LoonAndroid" class="headerlink" title="LoonAndroid"></a>LoonAndroid</h2><p>项目Github：<a href="https://github.com/gdpancheng/LoonAndroid" target="_blank" rel="external">https://github.com/gdpancheng/LoonAndroid</a></p>
+<h2 id="ThinkAndroid"><a href="#ThinkAndroid" class="headerlink" title="ThinkAndroid"></a>ThinkAndroid</h2><p>项目Github：<a href="https://github.com/white-cat/ThinkAndroid" target="_blank" rel="external">https://github.com/white-cat/ThinkAndroid</a></p>
+<p>ThinkAndroid是一个免费的开源的、简易的、遵循Apache2开源协议发布的Android开发框架，其开发宗旨是简单、快速的进行 Android应用程序的开发，包含Android mvc、简易sqlite orm、ioc模块、封装Android httpclitent的http模块, 具有快速构建文件缓存功能，无需考虑缓存文件的格式，都可以非常轻松的实现缓存，它还基于文件缓存模块实现了图片缓存功能， 在android中加载的图片的时候，对oom的问题，和对加载图片错位的问题都轻易解决。他还包括了一个手机开发中经常应用的实用工具类， 如日志管理，配置文件管理，android下载器模块，网络切换检测等等工具。</p>
+<p>目前ThinkAndroid主要有以下模块：</p>
+<p>1.MVC模块：实现视图与模型的分离。</p>
+<p>2.ioc模块：android中的ioc模块，完全注解方式就可以进行UI绑定、res中的资源的读取、以及对象的初始化。</p>
+<p>3.数据库模块：android中的orm框架，使用了线程池对sqlite进行操作。</p>
+<p>4.http模块：通过httpclient进行封装http数据请求，支持异步及同步方式加载。</p>
+<p>5.缓存模块：通过简单的配置及设计可以很好的实现缓存，对缓存可以随意的配置</p>
+<p>6.图片缓存模块：imageview加载图片的时候无需考虑图片加载过程中出现的oom和android容器快速滑动时候出现的图片错位等现象。</p>
+<p>7.配置器模块：可以对简易的实现配对配置的操作，目前配置文件可以支持Preference、Properties对配置进行存取。</p>
+<p>8.日志打印模块：可以较快的轻易的是实现日志打印，支持日志打印的扩展，目前支持对sdcard写入本地打印、以及控制台打印</p>
+<p>9.下载器模块:可以简单的实现多线程下载、后台下载、断点续传、对下载进行控制、如开始、暂停、删除等等。</p>
+<p>10.网络状态检测模块：当网络状态改变时，对其进行检测。</p>
+<h2 id="TrineaAndroidCommon"><a href="#TrineaAndroidCommon" class="headerlink" title="TrineaAndroidCommon"></a>TrineaAndroidCommon</h2><p>作者：Trinea<br>来源地址：<a href="http://www.trinea.cn/android/android-common-lib/" target="_blank" rel="external">Android公共库——图片缓存 网络缓存 下拉及底部更多ListView 公共类</a><br>项目Github：<a href="https://github.com/Trinea/android-common" target="_blank" rel="external">AndroidCommon</a></p>
+<h2 id="KJFrameForAndroid"><a href="#KJFrameForAndroid" class="headerlink" title="KJFrameForAndroid"></a>KJFrameForAndroid</h2><p>项目Github：<a href="https://github.com/kymjs/KJFrameForAndroid" target="_blank" rel="external">https://github.com/kymjs/KJFrameForAndroid</a><br>相关：<a href="http://blog.csdn.net/zhongjc_bill/article/details/49930269" target="_blank" rel="external">与android不得不说的故事之KJFrameForAndroid</a></p>
+<hr>
+<h1 id="响应式开发框架"><a href="#响应式开发框架" class="headerlink" title="响应式开发框架"></a>响应式开发框架</h1><hr>
+<h2 id="RxJava"><a href="#RxJava" class="headerlink" title="RxJava"></a>RxJava</h2><p>项目Github：<a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a></p>
+<h2 id="RxBinding"><a href="#RxBinding" class="headerlink" title="RxBinding"></a>RxBinding</h2><p>项目Github：<a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="external">https://github.com/JakeWharton/RxBinding</a><br>RxBinding出自Square公司的Jake Wharton大神之手，往往是结合RxJava一起使用。</p>
+<h2 id="RxAndroid"><a href="#RxAndroid" class="headerlink" title="RxAndroid"></a>RxAndroid</h2><p>项目Github：<a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">https://github.com/ReactiveX/RxAndroid</a></p>
+<h2 id="RxKotlin"><a href="#RxKotlin" class="headerlink" title="RxKotlin"></a>RxKotlin</h2><p>项目Github：<a href="https://github.com/ReactiveX/RxKotlin" target="_blank" rel="external">https://github.com/ReactiveX/RxKotlin</a></p>
+<hr>
+<h1 id="网络框架"><a href="#网络框架" class="headerlink" title="网络框架"></a>网络框架</h1><hr>
+<h2 id="网络请求库-网络通信库"><a href="#网络请求库-网络通信库" class="headerlink" title="网络请求库/网络通信库"></a>网络请求库/网络通信库</h2><h3 id="Volley"><a href="#Volley" class="headerlink" title="Volley"></a>Volley</h3><p>项目Github：<a href="https://github.com/mcxiaoke/android-volley" target="_blank" rel="external">https://github.com/mcxiaoke/android-volley</a></p>
+<p>Google 提供的网络通信库，使得网络请求更简单、更快速</p>
+<p>相关：<br><a href="http://www.kwstu.com/ArticleView/kwstu_20144118313429" target="_blank" rel="external">Android Volley完全解析(一)，初识Volley的基本用法</a><br><a href="http://blog.csdn.net/guolin_blog/article/details/17656437" target="_blank" rel="external">Android Volley完全解析(四)，带你从源码的角度理解Volley</a></p>
+<h3 id="OkHttp"><a href="#OkHttp" class="headerlink" title="OkHttp"></a>OkHttp</h3><p>相关Github：<a href="https://github.com/square/okhttp" target="_blank" rel="external">https://github.com/square/okhttp</a></p>
+<p>Android系统提供了两种HTTP通信类，HttpURLConnection和HttpClient。</p>
+<p>尽管Google在大部分安卓版本中推荐使用HttpURLConnection，但是这个类相比HttpClient实在是太难用，太弱爆了。<br>OkHttp是一个相对成熟的解决方案，据说Android4.4的源码中可以看到HttpURLConnection已经替换成OkHttp实现了。所以我们更有理由相信OkHttp的强大。</p>
+<p>OkHttp 处理了很多网络疑难杂症：会从很多常用的连接问题中自动恢复。如果您的服务器配置了多个IP地址，当第一个IP连接失败的时候，OkHttp会自动尝试下一个IP。OkHttp还处理了代理服务器问题和SSL握手失败问题。</p>
+<p>使用 OkHttp 无需重写您程序中的网络代码。OkHttp实现了几乎和java.net.HttpURLConnection一样的API。如果你用了 Apache HttpClient，则OkHttp也提供了一个对应的okhttp-apache 模块。</p>
+<p>注：在国内使用OkHttp会因为这个问题导致部分酷派手机用户无法联网，所以对于大众app来说，需要等待这个bug修复后再使用。或者尝试使用OkHttp的老版本。<br>截止到目前，OkHttp一直没有修复，并把修复计划延迟到了OkHttp2.3中。不是所有设备都能重现，仅少量设备会出现这个问题。（如果问题这么明显，OkHttp早就修复了）</p>
+<p>相关：<a href="http://blog.csdn.net/lmj623565791/article/details/47911083" target="_blank" rel="external">Android OkHttp完全解析 是时候来了解OkHttp了</a></p>
+<h3 id="Retrofit"><a href="#Retrofit" class="headerlink" title="Retrofit"></a>Retrofit</h3><p>项目Github：<a href="https://github.com/square/retrofit" target="_blank" rel="external">https://github.com/square/retrofit</a><br>最新版本：Retrofit2.0</p>
+<p>简介：<br>Retrofit与okhttp共同出自于Square公司，retrofit就是对okhttp做了一层封装。把网络请求都交给给了Okhttp，我们只需要通过简单的配置就能使用retrofit来进行网络请求了，其主要作者是Android大神JakeWharton。</p>
+<p>相关：<br><a href="http://blog.csdn.net/bitian123/article/details/51899716" target="_blank" rel="external">android 介绍Retrofit的简单使用</a></p>
+<h3 id="AsyncHttpClient"><a href="#AsyncHttpClient" class="headerlink" title="AsyncHttpClient"></a>AsyncHttpClient</h3><p>项目Github：<a href="https://github.com/loopj/android-async-http" target="_blank" rel="external">https://github.com/loopj/android-async-http</a></p>
+<p>异步的HttpClient，用于纯异步的下载网页</p>
+<p>(1) 在匿名回调中处理请求结果<br>(2) 在UI线程外进行http请求<br>(3) 文件断点上传<br>(4) 智能重试<br>(5) 默认gzip压缩<br>(6) 支持解析成Json格式<br>(7) 可将Cookies持久化到SharedPreferences</p>
+<h2 id="网络数据-Gson-解析库"><a href="#网络数据-Gson-解析库" class="headerlink" title="网络数据(Gson)解析库"></a>网络数据(Gson)解析库</h2><h3 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h3><p>项目Github：<a href="https://github.com/google/gson" target="_blank" rel="external">https://github.com/google/gson</a></p>
+<p>Google提供的用来解析GSON</p>
+<p>Gson解决对象和json的转换，方便简单快速</p>
+<h3 id="FastJson"><a href="#FastJson" class="headerlink" title="FastJson"></a>FastJson</h3><p>项目Github：<a href="https://github.com/alibaba/fastjson" target="_blank" rel="external">https://github.com/alibaba/fastjson</a></p>
+<p>阿里巴巴FastJson是一个Json处理工具包，包括“序列化”和“反序列化”两部分，它具备如下特征：<br>速度最快，测试表明，fastjson具有极快的性能，超越任其他的Java Json parser。包括自称最快的JackJson；<br>功能强大，完全支持Java Bean、集合、Map、日期、Enum，支持范型，支持自省；无依赖，能够直接运行在Java SE 5.0以上版本；支持Android；开源 (Apache 2.0)</p>
+<h3 id="Jackson"><a href="#Jackson" class="headerlink" title="Jackson"></a>Jackson</h3><p>项目Github：<a href="https://github.com/FasterXML/jackson" target="_blank" rel="external">https://github.com/FasterXML/jackson</a></p>
+<p>轻易转换JSON</p>
+<p>Jackson可以轻松的将Java对象转换成json对象和xml文档，同样也可以将json、xml转换成Java对象。</p>
+<p>相比json-lib框架，Jackson所依赖的jar包较少，简单易用并且性能也要相对高些。而且Jackson社区相对比较活跃，更新速度也比较快。</p>
+<p>在线博文：<a href="http://www.cnblogs.com/hoojo/archive/2011/04/21/2023805.html" target="_blank" rel="external">http://www.cnblogs.com/hoojo/archive/2011/04/21/2023805.html</a></p>
+<h3 id="Moshi"><a href="#Moshi" class="headerlink" title="Moshi"></a>Moshi</h3><p>项目Github：<a href="https://github.com/square/moshi" target="_blank" rel="external">https://github.com/square/moshi</a></p>
+<h3 id="LoganSquare"><a href="#LoganSquare" class="headerlink" title="LoganSquare"></a>LoganSquare</h3><p>项目Github：<a href="https://github.com/bluelinelabs/LoganSquare" target="_blank" rel="external">https://github.com/bluelinelabs/LoganSquare</a></p>
+<p>相关：<br><a href="http://www.jianshu.com/p/9c3173b2e70b" target="_blank" rel="external">LoganSquare的简单使用——快到爆炸地解析和序列化JSON</a></p>
+<h3 id="json-lib"><a href="#json-lib" class="headerlink" title="json-lib"></a>json-lib</h3><p><a href="http://www.cnblogs.com/sunzn/archive/2013/02/12/2910241.html" target="_blank" rel="external">Json 和 Jsonlib 的使用 </a></p>
+<hr>
+<h1 id="多媒体框架"><a href="#多媒体框架" class="headerlink" title="多媒体框架"></a>多媒体框架</h1><hr>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h3 id="图片加载库"><a href="#图片加载库" class="headerlink" title="图片加载库"></a>图片加载库</h3><p>关键词：异步图片加载/图片缓存</p>
+<p>相关：<br><a href="http://www.trinea.cn/android/android-image-cache-compare/" target="_blank" rel="external">Android 三大图片缓存原理、特性对比</a></p>
+<h4 id="Fresco"><a href="#Fresco" class="headerlink" title="Fresco"></a>Fresco</h4><p>项目地址：<a href="https://github.com/facebook/fresco" target="_blank" rel="external">https://github.com/facebook/fresco</a></p>
+<p>一款强大的图片缓存工具，由 Facebook 开发<br>特点：<br>(1) 两个内存缓存加上磁盘缓存构成了三级缓存<br>(2) 支持流式，可以类似网页上模糊渐进式显示图片<br>(3) 对多帧动画图片支持更好，如 Gif、WebP<br>(4) 更多样的显示，如圆角、进度条、点击重试、自定义对焦点<br>(5) 更多样的加载，如支持 EXIF、全面支持 WebP<br>(6) 支持 Android 2.3+</p>
+<h4 id="Picasso"><a href="#Picasso" class="headerlink" title="Picasso"></a>Picasso</h4><p>项目地址：<a href="https://github.com/square/picasso" target="_blank" rel="external">https://github.com/square/picasso</a></p>
+<p>square 开源的图片缓存</p>
+<p>特点：<br>(1)可以自动检测 adapter 的重用并取消之前的下载<br>(2)图片变换<br>(3)可以加载本地资源<br>(4)可以设置占位资源<br>(5)支持 debug 模式</p>
+<h4 id="Glide"><a href="#Glide" class="headerlink" title="Glide"></a>Glide</h4><p>项目地址：<a href="https://github.com/bumptech/glide" target="_blank" rel="external">https://github.com/bumptech/glide</a></p>
+<p>相关：<br><a href="http://blog.csdn.net/fancylovejava/article/details/44747759" target="_blank" rel="external">Google推荐的图片加载库Glide介绍</a></p>
+<h4 id="Android-Universal-Imageloader"><a href="#Android-Universal-Imageloader" class="headerlink" title="Android Universal Imageloader"></a>Android Universal Imageloader</h4><p>项目地址：<a href="https://github.com/nostra13/Android-Universal-Image-Loader" target="_blank" rel="external">https://github.com/nostra13/Android-Universal-Image-Loader</a></p>
+<p>简介：<br>android端用于异步加载图片，内存缓存，文件缓存，imageview显示图片时增加淡入淡出动画<br>图片缓存是最大特色，目前使用最广泛的图片缓存，支持主流图片缓存的绝大多数特性。</p>
+<p>特殊：<br>•多线程下载图片，图片可以来源于网络，文件系统，项目文件夹assets中以及drawable中等<br>•支持随意的配置ImageLoader，例如线程池，图片下载器，内存缓存策略，硬盘缓存策略，图片显示选项以及其他的一些配置<br>•支持图片的内存缓存，文件系统缓存或者SD卡缓存<br>•支持图片下载过程的监听<br>•根据控件(ImageView)的大小对Bitmap进行裁剪，减少Bitmap占用过多的内存<br>•较好的控制图片的加载过程，例如暂停图片加载，重新开始加载图片，一般使用在ListView,GridView中，滑动过程中暂停加载图片，停止滑动的时候去加载图片<br>•提供在较慢的网络下对图片进行加载</p>
+<h4 id="SmartImageView"><a href="#SmartImageView" class="headerlink" title="SmartImageView"></a>SmartImageView</h4><p>项目地址：<a href="https://github.com/JackCho/SmartImageView" target="_blank" rel="external">https://github.com/JackCho/SmartImageView</a></p>
+<p>Android中加载网络图片的ImageView，功能强大，代码简单，使用无后顾之忧。</p>
+<h3 id="图片处理库"><a href="#图片处理库" class="headerlink" title="图片处理库"></a>图片处理库</h3><h4 id="大图片缩放"><a href="#大图片缩放" class="headerlink" title="大图片缩放"></a>大图片缩放</h4><h5 id="PhotoView"><a href="#PhotoView" class="headerlink" title="PhotoView"></a>PhotoView</h5><p>项目地址：<a href="https://github.com/chrisbanes/PhotoView" target="_blank" rel="external">https://github.com/chrisbanes/PhotoView</a></p>
+<p>PhotoView 是一款扩展自Android ImageView ，支持通过单点/多点触摸来进行图片缩放的智能控件。</p>
+<p>类似微信,微博 图片点击放大浏览功能的库</p>
+<p>特性：<br>支持单点/多点触摸，即时缩放图片；<br>支持平滑滚动；<br>在滑动父控件下能够运行良好；（例如：ViewPager）</p>
+<p>缺点：<br>不支持网络过来的图片，用下面的PhotoDraweeView来替代</p>
+<h6 id="问题集锦"><a href="#问题集锦" class="headerlink" title="问题集锦"></a>问题集锦</h6><p>1.IllegalArgumentException: pointerIndex out of range<br>解决方案：<br><a href="http://www.cnblogs.com/lao-liang/p/4941653.html" target="_blank" rel="external">Android开发的那些坑和小技巧</a></p>
+<h5 id="PhotoDraweeView"><a href="#PhotoDraweeView" class="headerlink" title="PhotoDraweeView"></a>PhotoDraweeView</h5><p>项目地址：<a href="https://github.com/ongakuer/PhotoDraweeView" target="_blank" rel="external">https://github.com/ongakuer/PhotoDraweeView</a></p>
+<h5 id="SubsamplingScaleImageView"><a href="#SubsamplingScaleImageView" class="headerlink" title="SubsamplingScaleImageView"></a>SubsamplingScaleImageView</h5><p>项目地址：<a href="https://github.com/davemorrissey/subsampling-scale-image-view" target="_blank" rel="external">https://github.com/davemorrissey/subsampling-scale-image-view</a></p>
+<p>相关地址：<br><a href="http://blog.csdn.net/zhangphil/article/details/49557549" target="_blank" rel="external">Android加载/处理超大图片神器！</a></p>
+<h5 id="TouchImageView"><a href="#TouchImageView" class="headerlink" title="TouchImageView"></a>TouchImageView</h5><p>项目地址：<a href="https://github.com/MikeOrtiz/TouchImageView" target="_blank" rel="external">https://github.com/MikeOrtiz/TouchImageView</a></p>
+<p>相关：<br><a href="http://blog.csdn.net/leilifengxingmw/article/details/50813006" target="_blank" rel="external">TouchImageView 实现图片的缩放，双击放大缩小，多点触控的功能</a></p>
+<h5 id="ImageViewZoom"><a href="#ImageViewZoom" class="headerlink" title="ImageViewZoom"></a>ImageViewZoom</h5><p>项目地址：<a href="https://github.com/sephiroth74/ImageViewZoom" target="_blank" rel="external">https://github.com/sephiroth74/ImageViewZoom</a></p>
+<h5 id="GestureImageview"><a href="#GestureImageview" class="headerlink" title="GestureImageview"></a>GestureImageview</h5><p>项目地址：<a href="https://github.com/jasonpolites/gesture-imageview" target="_blank" rel="external">https://github.com/jasonpolites/gesture-imageview</a></p>
+<h4 id="照相选相册裁剪照片"><a href="#照相选相册裁剪照片" class="headerlink" title="照相选相册裁剪照片"></a>照相选相册裁剪照片</h4><h5 id="CanPhotos"><a href="#CanPhotos" class="headerlink" title="CanPhotos"></a>CanPhotos</h5><p>项目地址：<a href="https://github.com/canyinghao/CanPhotos" target="_blank" rel="external">https://github.com/canyinghao/CanPhotos</a></p>
+<p>使用fresco选取多张图片并可预览图片</p>
+<h5 id="MultiImageSelector"><a href="#MultiImageSelector" class="headerlink" title="MultiImageSelector"></a>MultiImageSelector</h5><p>项目地址：<a href="https://github.com/lovetuzitong/MultiImageSelector.git" target="_blank" rel="external">https://github.com/lovetuzitong/MultiImageSelector.git</a></p>
+<p>一个本地图片选择器，支持图片的单选和多选，直接返回所选图片的路径。</p>
+<h5 id="Cropper"><a href="#Cropper" class="headerlink" title="Cropper"></a>Cropper</h5><p>项目地址：<a href="https://github.com/edmodo/cropper" target="_blank" rel="external">https://github.com/edmodo/cropper</a></p>
+<p>图片局部剪切工具，可触摸控制选择区域或旋转</p>
+<h5 id="PhotoCropper"><a href="#PhotoCropper" class="headerlink" title="PhotoCropper"></a>PhotoCropper</h5><p>项目地址：<a href="https://github.com/ryanhoo/PhotoCropper" target="_blank" rel="external">https://github.com/ryanhoo/PhotoCropper</a></p>
+<h5 id="Android-crop"><a href="#Android-crop" class="headerlink" title="Android-crop"></a>Android-crop</h5><p>项目地址：<a href="https://github.com/jdamcd/android-crop" target="_blank" rel="external">https://github.com/jdamcd/android-crop</a></p>
+<h4 id="高斯模糊-毛玻璃-效果"><a href="#高斯模糊-毛玻璃-效果" class="headerlink" title="高斯模糊(毛玻璃)效果"></a>高斯模糊(毛玻璃)效果</h4><h5 id="Stackblur"><a href="#Stackblur" class="headerlink" title="Stackblur"></a>Stackblur</h5><p>项目地址：<a href="https://github.com/kikoso/android-stackblur" target="_blank" rel="external">https://github.com/kikoso/android-stackblur</a></p>
+<p>高斯模糊框架 </p>
+<h5 id="ImageBlurring"><a href="#ImageBlurring" class="headerlink" title="ImageBlurring"></a>ImageBlurring</h5><p>项目地址：<a href="https://github.com/qiujuer/ImageBlurring" target="_blank" rel="external">https://github.com/qiujuer/ImageBlurring</a></p>
+<h2 id="音视频处理"><a href="#音视频处理" class="headerlink" title="音视频处理"></a>音视频处理</h2><h3 id="Vitamio"><a href="#Vitamio" class="headerlink" title="Vitamio"></a>Vitamio</h3><p>项目地址：<a href="https://github.com/yixia/VitamioBundle" target="_blank" rel="external">https://github.com/yixia/VitamioBundle</a></p>
+<p>是一款 Android 与 iOS 平台上的全能多媒体开发框架</p>
+<p>特点：<br>(1) 全面支持硬件解码与 GPU 渲染<br>(2) 能够流畅播放 720P 甚至 1080P 高清 MKV，FLV，MP4，MOV，TS，RMVB 等常见格式的视频<br>(3) 在 Android 与 iOS 上跨平台支持 MMS, RTSP, RTMP, HLS(m3u8)等常见的多种视频流媒体协议，包括点播与直播。</p>
+<h4 id="待整理"><a href="#待整理" class="headerlink" title="待整理"></a>待整理</h4><p>Telecine</p>
+<p>Jitsi</p>
+<p>Amphitheatre</p>
+<p>MediaChooser</p>
+<p>OPlayer</p>
+<p>BambooPlayer</p>
+<p>VideoRecorder</p>
+<p>video-crop</p>
+<p>AndroidVideoView</p>
+<p>LandscapeVideoCamera</p>
+<p>VideoEnabledWebView</p>
+<p>ZmqVideoChat</p>
+<p>Android-ScalableVideoView</p>
+<p>AndroidRecording</p>
+<p>Fenster</p>
+<p>FFmpegMediaPlayer</p>
+<p>Audiorecognizer</p>
+<hr>
+<h1 id="数据库ORM框架"><a href="#数据库ORM框架" class="headerlink" title="数据库ORM框架"></a>数据库ORM框架</h1><hr>
+<p>用途：数据库建模/数据库加密</p>
+<p>说明：orm 的 db 工具类，简化建表、查询、更新、插入、事务、索引的操作</p>
+<h2 id="GreenDao"><a href="#GreenDao" class="headerlink" title="GreenDao"></a>GreenDao</h2><p>Android Sqlite orm 的 db 工具类<br>项目地址：<a href="https://github.com/greenrobot/greenDAO" target="_blank" rel="external">https://github.com/greenrobot/greenDAO</a><br>特点：<br>(1) 性能佳<br>(2) 简单易用的 API<br>(3) 内存小好小<br>(4) 库大小小</p>
+<h2 id="SQLCipher"><a href="#SQLCipher" class="headerlink" title="SQLCipher"></a>SQLCipher</h2><p>Android本地数据库加密库SQLCipher<br>•基于SQLite扩展的开源数据库，在SQLite的基础之上增加了数据加密功能<br>•SQLCipher对Android SDK中所有与数据库相关的API都制作了一份镜像，使得开发者可以像操作普遍的数据库文件一样来操作SQLCipher</p>
+<h2 id="ActiveAndroid"><a href="#ActiveAndroid" class="headerlink" title="ActiveAndroid"></a>ActiveAndroid</h2><p>项目地址：<a href="https://github.com/pardom/ActiveAndroid" target="_blank" rel="external">https://github.com/pardom/ActiveAndroid</a></p>
+<p>相关：<br><a href="http://blog.csdn.net/u012702547/article/details/51355355" target="_blank" rel="external">玩转Android之数据库框架ActiveAndroid的使用</a></p>
+<h2 id="AndroidOrmLite"><a href="#AndroidOrmLite" class="headerlink" title="AndroidOrmLite"></a>AndroidOrmLite</h2><p>项目地址：<a href="https://github.com/pardom/ActiveAndroid" target="_blank" rel="external">https://github.com/pardom/ActiveAndroid</a></p>
+<p>相关：<br><a href="http://blog.csdn.net/ziqiang1/article/details/52121643" target="_blank" rel="external">android OrmLite 入门</a></p>
+<h2 id="Android-lite-orm"><a href="#Android-lite-orm" class="headerlink" title="Android-lite-orm"></a>Android-lite-orm</h2><p>项目地址：<a href="https://github.com/litesuits/android-lite-orm" target="_blank" rel="external">https://github.com/litesuits/android-lite-orm</a></p>
+<p>相关：<br><a href="http://blog.csdn.net/u014099894/article/details/51586500" target="_blank" rel="external">Android ORM框架 LiteOrm使用</a></p>
+<h2 id="Sugar-ORM"><a href="#Sugar-ORM" class="headerlink" title="Sugar ORM"></a>Sugar ORM</h2><p><a href="http://blog.csdn.net/Norwaya007/article/details/51595908" target="_blank" rel="external">SugarOrm使用</a></p>
+<h2 id="Realm"><a href="#Realm" class="headerlink" title="Realm"></a>Realm</h2><h2 id="DEFlow"><a href="#DEFlow" class="headerlink" title="DEFlow"></a>DEFlow</h2><hr>
+<h1 id="快速开发辅助库"><a href="#快速开发辅助库" class="headerlink" title="快速开发辅助库"></a>快速开发辅助库</h1><hr>
+<h2 id="IOC-DI框架"><a href="#IOC-DI框架" class="headerlink" title="IOC/DI框架"></a>IOC/DI框架</h2><p>关键词：依赖注入库/DI框架/视图注入库</p>
+<p>用途：通过依赖注入减少 View、服务、资源简化初始化，事件绑定等重复繁琐工作</p>
+<p>相关文章：<br><a href="http://a.codekk.com/detail/Android/%E6%89%94%E7%89%A9%E7%BA%BF/%E5%85%AC%E5%85%B1%E6%8A%80%E6%9C%AF%E7%82%B9%E4%B9%8B%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5" target="_blank" rel="external">公共技术点之依赖注入</a><br><a href="http://www.jianshu.com/p/3968ffabdf9d" target="_blank" rel="external">Android主流IOC框架浅析</a></p>
+<h3 id="Android-Annotations"><a href="#Android-Annotations" class="headerlink" title="Android Annotations"></a>Android Annotations</h3><p>地址：<a href="https://github.com/androidannotations/androidannotations/wiki" target="_blank" rel="external">https://github.com/androidannotations/androidannotations/wiki</a></p>
+<p>相关：<br><a href="http://blog.csdn.net/zjbpku/article/details/18676149" target="_blank" rel="external">Android开源框架(一)：AndroidAnnotations</a></p>
+<h3 id="Butter-Knife"><a href="#Butter-Knife" class="headerlink" title="Butter Knife"></a>Butter Knife</h3><p>地址：<a href="https://github.com/JakeWharton/butterknife" target="_blank" rel="external">https://github.com/JakeWharton/butterknife</a></p>
+<p>Android视图注入库，它使用注释来处理findViewById，Onclick()等内容<br>View的依赖注入</p>
+<p>相关：<br><a href="https://mp.weixin.qq.com/s/HJVsyjnqR9W0urKxkJqv6A" target="_blank" rel="external">一篇文章玩转ButterKnife，让代码更简洁</a></p>
+<h3 id="Dagger"><a href="#Dagger" class="headerlink" title="Dagger"></a>Dagger</h3><p>项目地址：<a href="https://github.com/square/dagger" target="_blank" rel="external">https://github.com/square/dagger</a><br>最新版本：Dagger2</p>
+<p>依赖注入，适用于Android和Java</p>
+<h3 id="guice"><a href="#guice" class="headerlink" title="guice"></a>guice</h3><p>地址：<a href="https://github.com/google/guice" target="_blank" rel="external">https://github.com/google/guice</a></p>
+<h3 id="RoboGuice"><a href="#RoboGuice" class="headerlink" title="RoboGuice"></a>RoboGuice</h3><p>地址：<a href="https://github.com/roboguice/roboguice" target="_blank" rel="external">https://github.com/roboguice/roboguice</a></p>
+<h2 id="事件总线框架"><a href="#事件总线框架" class="headerlink" title="事件总线框架"></a>事件总线框架</h2><p>用途：事件管理(订阅者模式)/组件内通讯</p>
+<p>基于发布者/订阅者(publisher/subscriber)模式<br>解耦事件发送和接受<br>从而简化应用程序组件(Activities, Fragments 及后台线程)之间的通信</p>
+<h3 id="EventBus"><a href="#EventBus" class="headerlink" title="EventBus"></a>EventBus</h3><p>项目地址：<a href="https://github.com/greenrobot/EventBus" target="_blank" rel="external">https://github.com/greenrobot/EventBus</a></p>
+<p>greenrobot 的开源项目</p>
+<p>组件内通讯</p>
+<p>采用EventBus作为事件管理，简直就是爽。简简单单就可以跨线程，跨组件通信，很多以前要很复杂才能实现的功能一下子就可以实现了。</p>
+<p>特点：<br>(1) 支持在不同类型的线程中处理订阅，包括发布所在线程，UI 线程、单一后台线程、异步线程<br>(2) 支持事件优先级定义，支持优先级高的订阅者取消事件继续传递，支持粘性事件，是不是跟系统的有序广播、粘性广播很像啊<br>(3) 不是基于 annotations<br>(4) 性能更优<br>(5) 体积小<br>(6) 支持单例创建或创建多个对象<br>(7) 支持根据事件类型订阅</p>
+<p>相关：<br><a href="http://blog.csdn.net/stimgo/article/details/52684390" target="_blank" rel="external">EventBus事件总线——优雅地替换Handler</a><br><a href="http://blog.csdn.net/harvic880925/article/details/40660137" target="_blank" rel="external">EventBus使用详解(一)——初步使用EventBus</a><br><a href="http://blog.csdn.net/harvic880925/article/details/40787203" target="_blank" rel="external">EventBus使用详解(二)——EventBus使用进阶</a></p>
+<h3 id="otto"><a href="#otto" class="headerlink" title="otto"></a>otto</h3><p>项目地址：<a href="https://github.com/square/otto" target="_blank" rel="external">https://github.com/square/otto</a></p>
+<p>Square 的开源项目，基于 Guava 的 Android 优化</p>
+<h3 id="AndroidEventBus"><a href="#AndroidEventBus" class="headerlink" title="AndroidEventBus"></a>AndroidEventBus</h3><p>地址：<a href="https://github.com/hehonghui/AndroidEventBus" target="_blank" rel="external">https://github.com/hehonghui/AndroidEventBus</a></p>
+<p>书籍：Android源码设计模式解析与实战——12.8 实战 推荐的库</p>
+<h2 id="兼容库"><a href="#兼容库" class="headerlink" title="兼容库"></a>兼容库</h2><p>用途：Android 高版本向低版本兼容</p>
+<h3 id="Nineoldandroids"><a href="#Nineoldandroids" class="headerlink" title="Nineoldandroids"></a>Nineoldandroids</h3><p>Nineold是比API9早的动画，支持低版本，因为属性动画是3.0才出现的</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>HoloEverywhere</p>
+<p>Android-styled-dialogs</p>
+<p>Android-switch-backport</p>
+<p>MaterialDesignLibrary</p>
+<p>Material</p>
+<p>Material-dialogs</p>
+<h2 id="缓存库"><a href="#缓存库" class="headerlink" title="缓存库"></a>缓存库</h2><p>DiskLurCacje</p>
+<p>ASimpleCache</p>
+<p>ObjectCache</p>
+<p>Android-easy-cache</p>
+<p>AndridVideoCache</p>
+<p>Base-diskcache</p>
+<h2 id="工具集"><a href="#工具集" class="headerlink" title="工具集"></a>工具集</h2><p>Guava</p>
+<p>AndroidCommon</p>
+<p>LiteCommon</p>
+<p>AndResGuard</p>
+<h2 id="Android插件化"><a href="#Android插件化" class="headerlink" title="Android插件化"></a>Android插件化</h2><p>DroidPlugin</p>
+<p>Dynamic-load-apk</p>
+<p>CJFrameForAndroid</p>
+<p>Android-Skin-Loader</p>
+<p>AndroidDynamicLoader</p>
+<p>xCombine</p>
+<p>Apf</p>
+<p>OpenAtlas</p>
+<p>Android-plugin</p>
+<hr>
+<h1 id="测试库"><a href="#测试库" class="headerlink" title="测试库"></a>测试库</h1><hr>
+<h2 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h2><p>Robotium<br>自动化测试框架。<br>想想你要花多久的时间在调试、测试上面，就知道这个自动化测试框架有多重要了。</p>
+<p>selendroid</p>
+<p>Android-testing</p>
+<p>Assertj-android</p>
+<p>Android-testing-templates</p>
+<p>Appium</p>
+<p>Robolectric</p>
+<p>UiAutomator</p>
+<h2 id="日志打印"><a href="#日志打印" class="headerlink" title="日志打印"></a>日志打印</h2><h3 id="Logger"><a href="#Logger" class="headerlink" title="Logger"></a>Logger</h3><p>项目地址：<a href="https://github.com/orhanobut/logger" target="_blank" rel="external">https://github.com/orhanobut/logger</a></p>
+<p>一个简单、漂亮、功能强大的Android日志程序。<br>简单、美观而且十分强大的 Android 日志工具</p>
+<p>相关：<br><a href="http://www.open-open.com/lib/view/open1427166371418.html" target="_blank" rel="external">一个简单、漂亮、功能强大的Android日志程序：logger</a></p>
+<h3 id="DebugLog"><a href="#DebugLog" class="headerlink" title="DebugLog"></a>DebugLog</h3><p>项目地址：<a href="https://github.com/MustafaFerhan/DebugLog" target="_blank" rel="external">https://github.com/MustafaFerhan/DebugLog</a></p>
+<p>很简单的一个Lib项目，却能在很大程度上帮助开发者。可以在打印Log的时候自动打印出方法名和行号。<br>可以帮你创建更简单和更容易理解的调试日志，能够友好的显示调试信息所在类和函数。</p>
+<h3 id="jlog"><a href="#jlog" class="headerlink" title="jlog"></a>jlog</h3><p>项目地址：<a href="https://github.com/JiongBull/jlog" target="_blank" rel="external">https://github.com/JiongBull/jlog</a></p>
+<p>可以灵活配置的日志工具，支持JSON打印，日志保存到指定文件，日志显示调用位置（混淆模式下依然有效）</p>
+<h3 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h3><p>是Apache的一个开放源代码项目，通过使用Log4j，我们可以控制日志信息输送的目的地是控制台、文件、GUI组件，甚至是套接口服务器、NT的事件记录器、UNIX Syslog守护进程等;我们也可以控制每一条日志的输出格式;通过定义每一条日志信息的级别，我们能够更加细致地控制日志的生成过程。最令人感兴趣的就是，这些可以通过一个配置文件来灵活地进行配置，而不需要修改应用的代码。</p>
+<p>网络有个工具（log4j.jar）建立Java日志信息的，<br>把这工具下载下来，里面有很多对象，可以完成日志信息的建立，它更方便一些，而且存储格式更好看一些.</p>
+<h3 id="其他-1"><a href="#其他-1" class="headerlink" title="其他"></a>其他</h3><p>Hugo</p>
+<p>Timber</p>
+<p>Galgo</p>
+<p>Puree-android</p>
+<p>LogUtils</p>
+<hr>
+<h1 id="其他三方库"><a href="#其他三方库" class="headerlink" title="其他三方库"></a>其他三方库</h1><hr>
+<h2 id="智能识别"><a href="#智能识别" class="headerlink" title="智能识别"></a>智能识别</h2><p>用途：人脸识别，指纹识别，文字识别，语音识别，图像识别，地理区域识别</p>
+<p>OpenCV<br>人脸识别</p>
+<p>Android-tesseract-ocr</p>
+<p>Card.io SDK for Android</p>
+<h2 id="二维码识别"><a href="#二维码识别" class="headerlink" title="二维码识别"></a>二维码识别</h2><p>用户：二维码生成与扫描    </p>
+<h3 id="zxing"><a href="#zxing" class="headerlink" title="zxing"></a>zxing</h3><p>项目地址：<a href="https://github.com/zxing/zxing" target="_blank" rel="external">https://github.com/zxing/zxing</a><br>二维码，条形码</p>
+<h3 id="ZBar"><a href="#ZBar" class="headerlink" title="ZBar"></a>ZBar</h3><h3 id="QrCodeScan"><a href="#QrCodeScan" class="headerlink" title="QrCodeScan"></a>QrCodeScan</h3><p>项目地址：<a href="https://github.com/SkillCollege/QrCodeScan" target="_blank" rel="external">https://github.com/SkillCollege/QrCodeScan</a><br>ZXing 和 ZBar 结合的二维码扫描项目，提高了扫描效率</p>
+<h2 id="消息推送-即时通信"><a href="#消息推送-即时通信" class="headerlink" title="消息推送/即时通信"></a>消息推送/即时通信</h2><p>Conversations</p>
+<p>Asmack</p>
+<p>Smack</p>
+<p>Openfire</p>
+<p>Androidpn</p>
+<p>Yaxim</p>
+<p>Jitsi-android</p>
+<p>PushTalk</p>
+<p>Android-tcp-long-connection-based-on-Apache-mina</p>
+<p>DDPush</p>
+<p>TeamTalk</p>
+<h2 id="地图定位"><a href="#地图定位" class="headerlink" title="地图定位"></a>地图定位</h2><p>Android-maps-utils</p>
+<p>Android-play-location</p>
+<p>Smart-location-lib</p>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><h3 id="HeiPermission"><a href="#HeiPermission" class="headerlink" title="HeiPermission"></a>HeiPermission</h3><p>用处：<br>一句代码搞定 Android 6.0 权限检测</p>
+<p>发现出处：<br><a href="http://p.codekk.com/" target="_blank" rel="external">http://p.codekk.com/</a><br><a href="http://p.codekk.com/detail/Android/forJrking/HeiPermission" target="_blank" rel="external">http://p.codekk.com/detail/Android/forJrking/HeiPermission</a></p>
+<p>地址：<br><a href="https://github.com/forJrking/HeiPermission" target="_blank" rel="external">https://github.com/forJrking/HeiPermission</a></p>
+<h2 id="反射库"><a href="#反射库" class="headerlink" title="反射库"></a>反射库</h2><p><a href="http://droidyue.com/blog/2017/01/09/joor-examples/" target="_blank" rel="external">一个事半功倍的Java反射库</a></p>
+<h2 id="拼音搜索"><a href="#拼音搜索" class="headerlink" title="拼音搜索"></a>拼音搜索</h2><h3 id="PinyinSearch"><a href="#PinyinSearch" class="headerlink" title="PinyinSearch"></a>PinyinSearch</h3><p>项目地址： <a href="https://github.com/handsomezhou/PinyinSearchLibrary" target="_blank" rel="external">https://github.com/handsomezhou/PinyinSearchLibrary</a></p>
+<p>一个为 T9 搜索和 Qwerty 搜索,提供数据解析与匹配等方法的拼音搜索 java 库。</p>
+<p>APP使用场所示例： 通讯录应用，微信电话本</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/28/it/1.Android/Performance/" rel="next" title="Android —— 性能优化系列">
+                <i class="fa fa-chevron-left"></i> Android —— 性能优化系列
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">79</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#综合框架"><span class="nav-number">1.</span> <span class="nav-text">综合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Afinal"><span class="nav-number">1.1.</span> <span class="nav-text">Afinal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XUtils"><span class="nav-number">1.2.</span> <span class="nav-text">XUtils</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UltimateAndroid"><span class="nav-number">1.3.</span> <span class="nav-text">UltimateAndroid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LoonAndroid"><span class="nav-number">1.4.</span> <span class="nav-text">LoonAndroid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThinkAndroid"><span class="nav-number">1.5.</span> <span class="nav-text">ThinkAndroid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TrineaAndroidCommon"><span class="nav-number">1.6.</span> <span class="nav-text">TrineaAndroidCommon</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KJFrameForAndroid"><span class="nav-number">1.7.</span> <span class="nav-text">KJFrameForAndroid</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式开发框架"><span class="nav-number">2.</span> <span class="nav-text">响应式开发框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RxJava"><span class="nav-number">2.1.</span> <span class="nav-text">RxJava</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RxBinding"><span class="nav-number">2.2.</span> <span class="nav-text">RxBinding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RxAndroid"><span class="nav-number">2.3.</span> <span class="nav-text">RxAndroid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RxKotlin"><span class="nav-number">2.4.</span> <span class="nav-text">RxKotlin</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络框架"><span class="nav-number">3.</span> <span class="nav-text">网络框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络请求库-网络通信库"><span class="nav-number">3.1.</span> <span class="nav-text">网络请求库/网络通信库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Volley"><span class="nav-number">3.1.1.</span> <span class="nav-text">Volley</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OkHttp"><span class="nav-number">3.1.2.</span> <span class="nav-text">OkHttp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrofit"><span class="nav-number">3.1.3.</span> <span class="nav-text">Retrofit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncHttpClient"><span class="nav-number">3.1.4.</span> <span class="nav-text">AsyncHttpClient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络数据-Gson-解析库"><span class="nav-number">3.2.</span> <span class="nav-text">网络数据(Gson)解析库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gson"><span class="nav-number">3.2.1.</span> <span class="nav-text">Gson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FastJson"><span class="nav-number">3.2.2.</span> <span class="nav-text">FastJson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jackson"><span class="nav-number">3.2.3.</span> <span class="nav-text">Jackson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Moshi"><span class="nav-number">3.2.4.</span> <span class="nav-text">Moshi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LoganSquare"><span class="nav-number">3.2.5.</span> <span class="nav-text">LoganSquare</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json-lib"><span class="nav-number">3.2.6.</span> <span class="nav-text">json-lib</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多媒体框架"><span class="nav-number">4.</span> <span class="nav-text">多媒体框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">4.1.</span> <span class="nav-text">图片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图片加载库"><span class="nav-number">4.1.1.</span> <span class="nav-text">图片加载库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Fresco"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">Fresco</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Picasso"><span class="nav-number">4.1.1.2.</span> <span class="nav-text">Picasso</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Glide"><span class="nav-number">4.1.1.3.</span> <span class="nav-text">Glide</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Android-Universal-Imageloader"><span class="nav-number">4.1.1.4.</span> <span class="nav-text">Android Universal Imageloader</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SmartImageView"><span class="nav-number">4.1.1.5.</span> <span class="nav-text">SmartImageView</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片处理库"><span class="nav-number">4.1.2.</span> <span class="nav-text">图片处理库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#大图片缩放"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">大图片缩放</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PhotoView"><span class="nav-number">4.1.2.1.1.</span> <span class="nav-text">PhotoView</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#问题集锦"><span class="nav-number">4.1.2.1.1.1.</span> <span class="nav-text">问题集锦</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PhotoDraweeView"><span class="nav-number">4.1.2.1.2.</span> <span class="nav-text">PhotoDraweeView</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#SubsamplingScaleImageView"><span class="nav-number">4.1.2.1.3.</span> <span class="nav-text">SubsamplingScaleImageView</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TouchImageView"><span class="nav-number">4.1.2.1.4.</span> <span class="nav-text">TouchImageView</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ImageViewZoom"><span class="nav-number">4.1.2.1.5.</span> <span class="nav-text">ImageViewZoom</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#GestureImageview"><span class="nav-number">4.1.2.1.6.</span> <span class="nav-text">GestureImageview</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#照相选相册裁剪照片"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">照相选相册裁剪照片</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#CanPhotos"><span class="nav-number">4.1.2.2.1.</span> <span class="nav-text">CanPhotos</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MultiImageSelector"><span class="nav-number">4.1.2.2.2.</span> <span class="nav-text">MultiImageSelector</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cropper"><span class="nav-number">4.1.2.2.3.</span> <span class="nav-text">Cropper</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PhotoCropper"><span class="nav-number">4.1.2.2.4.</span> <span class="nav-text">PhotoCropper</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Android-crop"><span class="nav-number">4.1.2.2.5.</span> <span class="nav-text">Android-crop</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高斯模糊-毛玻璃-效果"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">高斯模糊(毛玻璃)效果</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Stackblur"><span class="nav-number">4.1.2.3.1.</span> <span class="nav-text">Stackblur</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ImageBlurring"><span class="nav-number">4.1.2.3.2.</span> <span class="nav-text">ImageBlurring</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#音视频处理"><span class="nav-number">4.2.</span> <span class="nav-text">音视频处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vitamio"><span class="nav-number">4.2.1.</span> <span class="nav-text">Vitamio</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待整理"><span class="nav-number">4.2.1.1.</span> <span class="nav-text">待整理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库ORM框架"><span class="nav-number">5.</span> <span class="nav-text">数据库ORM框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GreenDao"><span class="nav-number">5.1.</span> <span class="nav-text">GreenDao</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLCipher"><span class="nav-number">5.2.</span> <span class="nav-text">SQLCipher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveAndroid"><span class="nav-number">5.3.</span> <span class="nav-text">ActiveAndroid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AndroidOrmLite"><span class="nav-number">5.4.</span> <span class="nav-text">AndroidOrmLite</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android-lite-orm"><span class="nav-number">5.5.</span> <span class="nav-text">Android-lite-orm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sugar-ORM"><span class="nav-number">5.6.</span> <span class="nav-text">Sugar ORM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Realm"><span class="nav-number">5.7.</span> <span class="nav-text">Realm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DEFlow"><span class="nav-number">5.8.</span> <span class="nav-text">DEFlow</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速开发辅助库"><span class="nav-number">6.</span> <span class="nav-text">快速开发辅助库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IOC-DI框架"><span class="nav-number">6.1.</span> <span class="nav-text">IOC/DI框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Android-Annotations"><span class="nav-number">6.1.1.</span> <span class="nav-text">Android Annotations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Butter-Knife"><span class="nav-number">6.1.2.</span> <span class="nav-text">Butter Knife</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dagger"><span class="nav-number">6.1.3.</span> <span class="nav-text">Dagger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#guice"><span class="nav-number">6.1.4.</span> <span class="nav-text">guice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RoboGuice"><span class="nav-number">6.1.5.</span> <span class="nav-text">RoboGuice</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件总线框架"><span class="nav-number">6.2.</span> <span class="nav-text">事件总线框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EventBus"><span class="nav-number">6.2.1.</span> <span class="nav-text">EventBus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#otto"><span class="nav-number">6.2.2.</span> <span class="nav-text">otto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AndroidEventBus"><span class="nav-number">6.2.3.</span> <span class="nav-text">AndroidEventBus</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#兼容库"><span class="nav-number">6.3.</span> <span class="nav-text">兼容库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nineoldandroids"><span class="nav-number">6.3.1.</span> <span class="nav-text">Nineoldandroids</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">6.3.2.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缓存库"><span class="nav-number">6.4.</span> <span class="nav-text">缓存库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具集"><span class="nav-number">6.5.</span> <span class="nav-text">工具集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android插件化"><span class="nav-number">6.6.</span> <span class="nav-text">Android插件化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试库"><span class="nav-number">7.</span> <span class="nav-text">测试库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试框架"><span class="nav-number">7.1.</span> <span class="nav-text">测试框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志打印"><span class="nav-number">7.2.</span> <span class="nav-text">日志打印</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logger"><span class="nav-number">7.2.1.</span> <span class="nav-text">Logger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DebugLog"><span class="nav-number">7.2.2.</span> <span class="nav-text">DebugLog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jlog"><span class="nav-number">7.2.3.</span> <span class="nav-text">jlog</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Log4j"><span class="nav-number">7.2.4.</span> <span class="nav-text">Log4j</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他-1"><span class="nav-number">7.2.5.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他三方库"><span class="nav-number">8.</span> <span class="nav-text">其他三方库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#智能识别"><span class="nav-number">8.1.</span> <span class="nav-text">智能识别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维码识别"><span class="nav-number">8.2.</span> <span class="nav-text">二维码识别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#zxing"><span class="nav-number">8.2.1.</span> <span class="nav-text">zxing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ZBar"><span class="nav-number">8.2.2.</span> <span class="nav-text">ZBar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QrCodeScan"><span class="nav-number">8.2.3.</span> <span class="nav-text">QrCodeScan</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消息推送-即时通信"><span class="nav-number">8.3.</span> <span class="nav-text">消息推送/即时通信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地图定位"><span class="nav-number">8.4.</span> <span class="nav-text">地图定位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权限"><span class="nav-number">8.5.</span> <span class="nav-text">权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HeiPermission"><span class="nav-number">8.5.1.</span> <span class="nav-text">HeiPermission</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反射库"><span class="nav-number">8.6.</span> <span class="nav-text">反射库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼音搜索"><span class="nav-number">8.7.</span> <span class="nav-text">拼音搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PinyinSearch"><span class="nav-number">8.7.1.</span> <span class="nav-text">PinyinSearch</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>
