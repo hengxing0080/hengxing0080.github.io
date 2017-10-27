@@ -554,7 +554,7 @@
     <link href="https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/"/>
     <id>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</id>
     <published>2017-09-28T15:56:13.000Z</published>
-    <updated>2017-10-18T12:23:35.770Z</updated>
+    <updated>2017-10-27T13:25:57.191Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_performance_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>(上图临时占位，等后续总结成思维导图待替换…)</p>
@@ -899,7 +899,7 @@
     
     </summary>
     
-      <category term="IT - Android - 优化" scheme="https://hengxing0080.github.io/categories/IT-Android-%E4%BC%98%E5%8C%96/"/>
+      <category term="IT - Android" scheme="https://hengxing0080.github.io/categories/IT-Android/"/>
     
     
       <category term="Android" scheme="https://hengxing0080.github.io/tags/Android/"/>
@@ -1223,7 +1223,7 @@
     <link href="https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/"/>
     <id>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</id>
     <published>2017-09-09T10:12:33.000Z</published>
-    <updated>2017-10-18T05:24:13.866Z</updated>
+    <updated>2017-10-27T13:26:05.125Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_bitmap_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>Bitmap是安卓里最胖最能吃内存的对象<br>Android发生OOM百分之99都是Bitmap影响的<br>所以要避免在Bitmap这个大胖子上浪费内存</p>
@@ -1342,7 +1342,7 @@
     
     </summary>
     
-      <category term="IT - Android - 多媒体编程" scheme="https://hengxing0080.github.io/categories/IT-Android-%E5%A4%9A%E5%AA%92%E4%BD%93%E7%BC%96%E7%A8%8B/"/>
+      <category term="IT - Android" scheme="https://hengxing0080.github.io/categories/IT-Android/"/>
     
     
       <category term="Android" scheme="https://hengxing0080.github.io/tags/Android/"/>
