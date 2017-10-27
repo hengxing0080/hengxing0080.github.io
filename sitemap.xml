@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenUtils/</loc>
+    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
     
-    <lastmod>2017-10-26T11:42:09.970Z</lastmod>
+    <lastmod>2017-10-27T13:12:41.389Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
+    
+    <lastmod>2017-10-27T13:02:56.550Z</lastmod>
     
   </url>
   
@@ -520,13 +527,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
-    
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
@@ -541,14 +541,21 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     

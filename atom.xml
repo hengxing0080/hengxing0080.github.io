@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hengxing0080.github.io/"/>
-  <updated>2017-10-26T11:42:09.970Z</updated>
+  <updated>2017-10-27T13:12:41.389Z</updated>
   <id>https://hengxing0080.github.io/</id>
   
   <author>
@@ -16,11 +16,265 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Android —— 开源项目：工具库篇</title>
-    <link href="https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenUtils/"/>
-    <id>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenUtils/</id>
+    <title>Android —— 第三方开放云平台服务篇</title>
+    <link href="https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/"/>
+    <id>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</id>
+    <published>2017-10-04T07:11:16.000Z</published>
+    <updated>2017-10-27T13:12:41.389Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/it_android_opencloud_logo1.jpg" alt="UML图"><br><a id="more"></a></p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>开放平台（Open Platform）<br>在软件业和网络中，开放平台是指软件系统通过公开其应用程序编程接口（API）或函数（function)来使外部的程序可以增加该软件系统的功能或使用该软件系统的资源，而不需要更改该软件系统的源代码。</p>
+<p>开发平台的作用:提供功能,提供资源</p>
+<p><img src="/images/it_android_opencloud_logo2.png" alt="UML图"></p>
+<h1 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h1><ul>
+<li><p>OSS<br>Open Source Software，开源软件（开放源代码软件）</p>
+</li>
+<li><p>bucket<br>Bucket是OSS上的命名空间，也是计费、权限控制、日志记录等高级功能的管理实体；Bucket名称在整个OSS服务中具有全局唯一性，且不能修改；<br>存储在OSS上的每个Object必须都包含在某个Bucket中。<br>一个应用，例如图片分享网站，可以对应一个或多个Bucket。<br>一个用户最多可创建10个Bucket，但每个Bucket中存放的Object的数量和大小总和没有限制，用户不需要考虑数据的可扩展性。<br>命名规范<br>Bucket的命名有以下规范：<br>只能包括小写字母，数字，短横线（-）<br>必须以小写字母或者数字开头<br>长度必须在3-63字节之间</p>
+</li>
+<li><p>appid<br>软件的ID编号<br>标记你的开发者账号的, 是你的用户id, 这个id 在数据库添加检索, 方便快速查找<br>简化的场景:省去 app_id, 他默认每一个用户有且仅有一套权限配置, 所以直接将 app_id = app_key , 然后外加一个app_secret就够了. </p>
+</li>
+<li><p>appkey<br>调用服务所需要的密钥。<br>一个用户只有一个appkey，可以调用平台所有即用服务.<br>app_key 和 app_secret 是一对出现的账号, 同一个 app_id 可以对应多个 app_key+app_secret, 这样 平台就可以分配你不一样的权限, 比如 app_key1 + app_secect1 只有只读权限 但是 app_key2+app_secret2 有读写权限.. 这样你就可以把对应的权限 放给不同的开发者.  其中权限的配置都是直接跟app_key 做关联的, app_key 也需要添加数据库检索, 方便快速查找<br>简化的场景:省去app_id 和 app_key,  相当于 app_id = app_key = app_secret,  通常用于开放性接口的地方, 特别是很多地图类api 都采用这种模式, 这种模式下, 带上app_id 的目的仅仅是统计 某一个用户调用接口的次数而已了.</p>
+</li>
+<li><p>appsecret<br>签名的密钥<br>至于为什么 要有app_key + app_secret 这种成对出现的机制呢, 因为 要加密, 通常 在首次验证(类似登录场景) , 你需要用 app_key(标记要申请的权限有哪些) + app_secret(密码, 表示你真的拥有这个权限) 来申请一个token, 就是我们经常用到的 access_token, 之后的数据请求, 就直接提供access_token 就可以验证权限了.</p>
+</li>
+<li><p>accessToken<br>是啥,干嘛用?<br>形象解释:申请调兵–&gt;皇帝同意–&gt;兵符–&gt;开始调兵<br>拿到用户在第三方平台的唯一的标识;<br>获取用户的nickname,头像,邮箱等其他信息;</p>
+</li>
+</ul>
+<hr>
+<h1 id="即时通讯（IM）"><a href="#即时通讯（IM）" class="headerlink" title="即时通讯（IM）"></a>即时通讯（IM）</h1><hr>
+<p>即时通讯原理：<br>永远是客户端与服务器主动建立一个长连接，客户端和服务器就连在一起了，<br>客户端1发给服务器，然后服务器转给客户端2<br>这样2个通路保持畅通了</p>
+<p>他们都是使用了长连接，心跳包等</p>
+<p>长连接的建立：TCP或UDP</p>
+<p>数据流向：<br>展示在手机上的数据都是在服务器上提供的<br>第一步就是向服务器发请求</p>
+<p>客户端（Client）： 手机端，PC端<br>服务端（Server）： Web端</p>
+<p>家里上网，还有手机的IP是动态分配的（连着wifi，分配一个动态公网的IP）<br>服务器不一样，IP是固定的</p>
+<p>即时通讯相关的优化服务：负载均衡<br>客户端1先去连接务器1，不过服务器1已经饱和了，所有服务器1又把数据转给服务器2，由服务器2发给客户端2<br>不过客户端一开始不知道哪个服务器饱和了<br>所以去连接服务器之前先去访问负载均衡服务器（它负载轮询所有的socket服务器，定时去访问各个服务器看看谁饱和了（谁闲，谁忙），<br>然后这个数据返回给负载均衡服务器，然后它排列个优先级看看谁最高）去问问服务器哪台没有饱和（负载最小）<br>这样的话因为先问过负载均衡服务器已经得到结果，客户端1去访问服务器1，客户端2去访问服务器2</p>
+<h2 id="相关云服务商"><a href="#相关云服务商" class="headerlink" title="相关云服务商"></a>相关云服务商</h2><h3 id="阿里悟空"><a href="#阿里悟空" class="headerlink" title="阿里悟空"></a>阿里悟空</h3><p>已倒闭</p>
+<h3 id="阿里融云"><a href="#阿里融云" class="headerlink" title="阿里融云"></a>阿里融云</h3><p>地址：<a href="http://www.rongcloud.cn/" target="_blank" rel="external">http://www.rongcloud.cn/</a></p>
+<h3 id="环信"><a href="#环信" class="headerlink" title="环信"></a>环信</h3><p>地址：<a href="https://www.easemob.com/" target="_blank" rel="external">https://www.easemob.com/</a></p>
+<h3 id="网易云信"><a href="#网易云信" class="headerlink" title="网易云信"></a>网易云信</h3><p>地址：<a href="http://netease.im/" target="_blank" rel="external">http://netease.im/</a></p>
+<h3 id="极光IM"><a href="#极光IM" class="headerlink" title="极光IM"></a>极光IM</h3><p>地址：<a href="https://www.jiguang.cn/im" target="_blank" rel="external">https://www.jiguang.cn/im</a></p>
+<h3 id="容联云通讯"><a href="#容联云通讯" class="headerlink" title="容联云通讯"></a>容联云通讯</h3><p>地址：<a href="http://www.yuntongxun.com/" target="_blank" rel="external">http://www.yuntongxun.com/</a></p>
+<h1 id="消息推送（Push）"><a href="#消息推送（Push）" class="headerlink" title="消息推送（Push）"></a>消息推送（Push）</h1><h2 id="消息推送机制简介"><a href="#消息推送机制简介" class="headerlink" title="消息推送机制简介"></a>消息推送机制简介</h2><p>外文名push</p>
+<p>所谓信息推送，就是”web广播”，是通过一定的技术标准或协议，在互联网上通过定期传送用户需要的信息来减少信息过载的一项新技术。推送技术通过自动传送信息给用户，来减少用于网络上搜索的时间。它根据用户的兴趣来搜索、过滤信息，并将其定期推给用户，帮助用户高效率地发掘有价值的信息。</p>
+<p>常见的新闻客户端应用用Noticifcations发来的消息，就是服务器把数据推到手机里来了，APP中在网络获取所有的操作都是客户端发数据给服务器，然后服务器返回数据<br>客户端是主动的，想要就发信息要<br>但是，消息推送是相反的，客户端不想要，服务器主动把消息发给你客户端<br>就是说现在服务器是主动方<br>理论上服务器有固定IP，客户端没有固定IP无法访问<br>就是说服务器一旦断了客户端就找不到了，因为手机的IP是动态改变的（一会wifi，一会3G网络）</p>
+<h2 id="消息推送原理"><a href="#消息推送原理" class="headerlink" title="消息推送原理"></a>消息推送原理</h2><p>长连接（即时通讯和消息推送的原理都是这个）<br>手机推送服务的原理很简单，就是通过建立一条手机与服务器的连接链路，当有消息需要发送到手机时，通过此链路发送即可。 </p>
+<p>首先主动方客户端先发请求到极光推送的服务端，和它保持一个长连接（不会断的连接），这时手机的相关信息已经和它绑在一起了<br>服务端想发新闻给客户端，不过它会先发给极光推送服务器，告诉它给某个手机发消息，<br>找到对应绑定的手机通过长连接在把信息推送给客户端<br>发给连接的主动方永远是客户端，发给长连接就是和极光服务器保持了连接，新闻数据就会通过连接的管道传给客户端<br>就是靠第三方做了下周转</p>
+<p>如果没有极光推送的服务器，就是客户端和服务端保持长连接，也能用极光推送，但是不能保持消息实时到达，可能会延迟一段时间</p>
+<h3 id="IOS消息推送过程"><a href="#IOS消息推送过程" class="headerlink" title="IOS消息推送过程"></a>IOS消息推送过程</h3><p>Android推送服务的使用流程虽然略有差别但是大致都和IOS的APNS相似<br>1、首先是应用程序注册消息推送。<br>2、 IOS跟APNS Server要deviceToken。应用程序接受deviceToken。<br>3、应用程序将deviceToken发送给PUSH服务端程序。<br>4、 服务端程序向APNS服务发送消息。<br>5、APNS服务将消息发送给iPhone应用程序Push service方案评价标准</p>
+<p>相关术语：</p>
+<ul>
+<li><p>长连接<br>使用socket请求时, 服务端和客户端都不主动关闭输入输出流, 从而实现长连接</p>
+</li>
+<li><p>心跳包<br>客户端每隔一段时间(比如1分钟)向服务器发送一段极短的数据,称为心跳包. 服务器收到数据, 就证明客户端还活着, 就会保持连接,向客户端推送消息. 否则断开</p>
+</li>
+<li><p>XMPP协议<br>一种基于TCP/IP的应用层协议, 专门用于消息推送, 数据格式为xml（其实xmpp协议就是一个xml格式的数据）。<br>如我之前写的通信的协议是公司按照xmpp开放协议的基础上修改的，</p>
+</li>
+<li><p>GCM<br>google cloud message  负责长连接，Google 的原生推送（C2DM，现在的 GCM），在中国被屏蔽了，由于种种原因不能正常使用，当时的 Android 开发者使用各种办法来解决这个问题，其中就包括 Android 手机厂商开发出自己的推送方案。</p>
+</li>
+</ul>
+<h2 id="相关面试题"><a href="#相关面试题" class="headerlink" title="相关面试题"></a>相关面试题</h2><p>为什么用云平台实现？<br>后台推送的原理都是相同的，就是让客户端和服务器保持一个长连接，当服务器想要推送的时候，就发送一条消息到指定客户端就可以了。<br>虽说原理相同，但Android的推送要更加复杂一些，因为iOS系统中已经内置好了推送功能，只需要使用提供好的API就能简单地完成推送功能。而Android虽说也提供了类似的GCM服务，但由于在国内使用受到很多限制，所以推送还是要自己做的。<br>不过目前国内也有一些第三方的推送平台，使用它们的话也可以很简单地完成推送功能。</p>
+<p>推送心跳包是TCP包还是UDP包或者HTTP包？<br>心跳包的实现是调用了socket.sendUrgentData(0xFF)这句代码实现的，所以，当然是TCP包。<br>相关文章：android 心跳的分析</p>
+<h2 id="相关云平台"><a href="#相关云平台" class="headerlink" title="相关云平台"></a>相关云平台</h2><h3 id="极光推送（JPush）"><a href="#极光推送（JPush）" class="headerlink" title="极光推送（JPush）"></a>极光推送（JPush）</h3><p>地址：<a href="https://www.jpush.cn/" target="_blank" rel="external">https://www.jpush.cn/</a></p>
+<p>极光推送的集成步骤:<br>1.看文档：<a href="https://www.jpush.cn/" target="_blank" rel="external">https://www.jpush.cn/</a></p>
+<p>2.步骤<br>2.1. 注册Jpush账户<br>2.2. 新建应用<br>2.3. sdk的下载<br>2.4. 导入 SDK 开发包到你自己的应用程序项目<br>2.5. 配置 AndroidManifest.xml</p>
+<p>3.功能<br>3.1. 发送通知<br>3.2. 自定义的消息</p>
+<p>看它的开发文档得知是用服务做长连接：<br><img src="/images/it_android_opencloud1.png" alt="UML图"></p>
+<p>官方图示：<br><img src="/images/it_android_opencloud2.png" alt="UML图"></p>
+<h3 id="腾讯信鸽（XG-Push）"><a href="#腾讯信鸽（XG-Push）" class="headerlink" title="腾讯信鸽（XG Push）"></a>腾讯信鸽（XG Push）</h3><p>官方首页<br><a href="http://xg.qq.com/xg" target="_blank" rel="external">http://xg.qq.com/xg</a></p>
+<p>下载SDK<br><a href="http://xg.qq.com/xg/ctr_index/download" target="_blank" rel="external">http://xg.qq.com/xg/ctr_index/download</a></p>
+<p>官方文档：<br><a href="http://developer.qq.com/wiki/xg/Android%E6%8E%A5%E5%85%A5/Android%20SDK%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5/Android%20SDK%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html" target="_blank" rel="external">http://developer.qq.com/wiki/xg/Android%E6%8E%A5%E5%85%A5/Android%20SDK%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5/Android%20SDK%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html</a></p>
+<p>管理推送<br><a href="http://xg.qq.com/xg/apps/ctr_app/index" target="_blank" rel="external">http://xg.qq.com/xg/apps/ctr_app/index</a></p>
+<h3 id="百度推送"><a href="#百度推送" class="headerlink" title="百度推送"></a>百度推送</h3><p>地址：<a href="http://push.baidu.com/" target="_blank" rel="external">http://push.baidu.com/</a></p>
+<h3 id="小米推送"><a href="#小米推送" class="headerlink" title="小米推送"></a>小米推送</h3><p>地址：<a href="https://dev.mi.com/console/" target="_blank" rel="external">https://dev.mi.com/console/</a></p>
+<h3 id="云巴推送"><a href="#云巴推送" class="headerlink" title="云巴推送"></a>云巴推送</h3><p>地址：<a href="https://yunba.io/" target="_blank" rel="external">https://yunba.io/</a></p>
+<p>专注于为需要实时数据交换的产品提供完美解决方案<br>基于发布者/订阅者(publisher/subscriber)模式，集成简单</p>
+<h3 id="个推"><a href="#个推" class="headerlink" title="个推"></a>个推</h3><p>地址：<a href="http://www.getui.com/cn/index.html" target="_blank" rel="external">http://www.getui.com/cn/index.html</a></p>
+<h3 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h3><p>国内产品，这个没实际用过，身边朋友反馈很好。</p>
+<h3 id="Parse"><a href="#Parse" class="headerlink" title="Parse"></a>Parse</h3><p>国外产品，FB也在用，30qps免费限制，一般中小应用够用。</p>
+<hr>
+<h1 id="移动支付（Pay）"><a href="#移动支付（Pay）" class="headerlink" title="移动支付（Pay）"></a>移动支付（Pay）</h1><hr>
+<h2 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h2><p>地址：<a href="https://pay.weixin.qq.com/" target="_blank" rel="external">https://pay.weixin.qq.com/</a></p>
+<h2 id="支付宝支付"><a href="#支付宝支付" class="headerlink" title="支付宝支付"></a>支付宝支付</h2><p>地址：<a href="https://open.alipay.com/platform/home.htm" target="_blank" rel="external">https://open.alipay.com/platform/home.htm</a></p>
+<h2 id="payssion"><a href="#payssion" class="headerlink" title="payssion"></a>payssion</h2><p>国外产品，专业做海外跨境收款的，能省很多事。</p>
+<h2 id="Ping"><a href="#Ping" class="headerlink" title="Ping++"></a>Ping++</h2><p>地址：<a href="https://www.pingxx.com/" target="_blank" rel="external">https://www.pingxx.com/</a></p>
+<h2 id="汇付宝（heepay）"><a href="#汇付宝（heepay）" class="headerlink" title="汇付宝（heepay）"></a>汇付宝（heepay）</h2><p>地址：<a href="https://www.heepay.com/" target="_blank" rel="external">https://www.heepay.com/</a></p>
+<h2 id="威富通（swiftpass）"><a href="#威富通（swiftpass）" class="headerlink" title="威富通（swiftpass）"></a>威富通（swiftpass）</h2><p>地址：<a href="http://www.swiftpass.cn/" target="_blank" rel="external">http://www.swiftpass.cn/</a></p>
+<hr>
+<h1 id="地图定位（Map）"><a href="#地图定位（Map）" class="headerlink" title="地图定位（Map）"></a>地图定位（Map）</h1><hr>
+<h2 id="百度地图"><a href="#百度地图" class="headerlink" title="百度地图"></a>百度地图</h2><p>地址：<a href="http://developer.baidu.com/map/" target="_blank" rel="external">http://developer.baidu.com/map/</a></p>
+<h2 id="高德地图"><a href="#高德地图" class="headerlink" title="高德地图"></a>高德地图</h2><p>地址：<a href="http://lbs.amap.com/" target="_blank" rel="external">http://lbs.amap.com/</a></p>
+<p>GPS+基站+wifi的混合定位方式<br>接入简单</p>
+<hr>
+<h1 id="第三方登录（Auth）"><a href="#第三方登录（Auth）" class="headerlink" title="第三方登录（Auth）"></a>第三方登录（Auth）</h1><hr>
+<h2 id="OAuth授权机制"><a href="#OAuth授权机制" class="headerlink" title="OAuth授权机制"></a>OAuth授权机制</h2><p>英文名：Open Authorization<br>本质：一种开放的协议<br>对象：第三方可以使用OAUTH认证服务<br>语言：PHP、JavaScript，Java<br>特点：安全的、开放而又简易<br>类似协议：Flickr Auth</p>
+<p>如果要完成授权之类的东西就用这个协议</p>
+<p>OAuth是一个关于授权（authorization）的开放网络标准，在全世界得到广泛应用，允许用户让第三方应用访问该用户在某一网站上存储的私密的资源（如照片，视频，联系人列表），而无需将用户名和密码提供给第三方应用。<br>目前最新版本是OAuth2.0</p>
+<p>Oauth的产生背景<br><img src="/images/it_android_opencloud3.png" alt="UML图"></p>
+<p>Oauth2.0授权流程<br>（A）用户打开客户端以后，客户端要求用户给予授权。<br>（B）用户同意给予客户端授权。<br>（C）客户端使用上一步获得的授权，向认证服务器(比如qq登录,那就是腾讯)申请令牌。<br>（D）认证服务器对客户端进行认证以后，确认无误，同意发放令牌。<br>（E）客户端使用令牌，向资源服务器申请获取资源。<br>（F）资源服务器确认令牌无误，同意向客户端开放资源。</p>
+<p>Oauth2.0涉及的角色<br>（1）Third-party application：第三方应用程序，本文中又称”客户端”（client），即上一节例子中的”云冲印”。<br>（2）HTTP service：HTTP服务提供商，本文中简称”服务提供商”，即上一节例子中的Google。<br>（3）Resource Owner：资源所有者，本文中又称”用户”（user）。<br>（4）User Agent：用户代理，本文中就是指浏览器。<br>（5）Authorization server：认证服务器，即服务提供商专门用来处理认证的服务器。<br>（6）Resource server：资源服务器，即服务提供商存放用户生成的资源的服务器。它与认证服务器，可以是同一台服务器，也可以是不同的服务器。</p>
+<p>相关文章：<br><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html" target="_blank" rel="external">理解OAuth 2.0</a></p>
+<h2 id="正常登录"><a href="#正常登录" class="headerlink" title="正常登录"></a>正常登录</h2><p>核心是会话的维持（维持一个登录状态）</p>
+<p>Javaweb中如何去维持登录状态：<br>1.登录后 信息放入 session中<br>2.页面内验证session中是否有登录信息<br>3.如果有,不需要再次登录<br>4.如果没有,跳转登录页面<br>5.如果登录后点击注销,删除session中登录信息,并清除页面缓存(必要的)</p>
+<p>Javaweb中哪些情况我们的session会过期:<br>1.过期–&gt;很长时间没有去访问网站<br>2.主动关闭–&gt;用处注销<br>3.切换浏览器</p>
+<p>手机端如何维持登录状态:<br>登录成功之后,在成功的结果里面会附加一个sessionKey/tokenKey的字段;<br>登录协议都会返回sessionKey，<br>前端如果没有这个，相当于没有走webview<br>没有cookie是怎么维持登录状态的，就是这个sessionKey（或者叫token）<br>客户端登录状态是怎么维持的，就是上面这些，<br>怎么去用是下面4种情况<br>1.登录登录.需要保存sessionKey到sp–&gt;保存sessionkey<br>2.判断sessionKey是否存在sp中,存在,服务器判断是否过期,过期,要求用户重新登录;<br>3.判断sessionKey是否存在sp中,存在,服务器判断是否过期,不过期,继续走流程;<br>4.判断sessionKey是否存在sp中,不存在,要求用户登录,登录完成保存sessionkey;</p>
+<p>验证 码登录/注册 流程：<br>1.用户填写手机号,点击发送验证码,发送请求把手机号传到server<br>2.server调用短信平台的接口知道 发送内容和发送对象,完成短信的发送<br>3.用户收到短信,得到验证码,填写验证码,发送请求把 手机号和验证码 上传到server<br>4.server判断我们的验证码是否正确和验证是否过期,根据不同的判断,返回不同的结果<br><img src="/images/it_android_opencloud4.png" alt="UML图"></p>
+<h2 id="第三方登录简介"><a href="#第三方登录简介" class="headerlink" title="第三方登录简介"></a>第三方登录简介</h2><p>用qq号/微信号/微博号去登录自己的应用<br>核心:就是拿到access token，上传到我们的服务器，只要拿到access token就能访问它的<br>实际开发第三方登录的协议:<br><a href="http://xxx?token=&gt;xxx&amp;type=x,token就是我们授权之后返回的accessToken,type是为了区分不同登录渠道" target="_blank" rel="external">http://xxx?token=&gt;xxx&amp;type=x,token就是我们授权之后返回的accessToken,type是为了区分不同登录渠道</a>;<br><img src="/images/it_android_opencloud5.png" alt="UML图"></p>
+<p>app步骤:<br>app做的事情,实际开发,我们能把我这里的几个步骤,就可以完成开发工作<br>1.发起授权请求,让用户授权 ok<br>2.用户输入账号密码,用户授权成功 ok<br>3.处理授权结果.拿到accessToken ok<br>4.调用第三方登录协议(自己公司定义的).完成第三方登录 自己server定义的协议和腾讯没有关系  </p>
+<h2 id="第三方登录云服务商"><a href="#第三方登录云服务商" class="headerlink" title="第三方登录云服务商"></a>第三方登录云服务商</h2><h3 id="微信登录认证"><a href="#微信登录认证" class="headerlink" title="微信登录认证"></a>微信登录认证</h3><p>地址：<br><a href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419316505&amp;token=&amp;lang=zh_CN" target="_blank" rel="external">https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419316505&amp;token=&amp;lang=zh_CN</a></p>
+<h3 id="QQ登录认证"><a href="#QQ登录认证" class="headerlink" title="QQ登录认证"></a>QQ登录认证</h3><p>地址：<br><a href="http://wiki.open.qq.com/wiki/%E3%80%90QQ%E7%99%BB%E5%BD%95%E3%80%91%E6%8E%A5%E5%85%A5%E8%A7%84%E8%8C%83" target="_blank" rel="external">http://wiki.open.qq.com/wiki/%E3%80%90QQ%E7%99%BB%E5%BD%95%E3%80%91%E6%8E%A5%E5%85%A5%E8%A7%84%E8%8C%83</a></p>
+<p>集成步骤(移动应用接入流程)：<br>1.注册成为开发者,登录;<br>2.点击申请加入,创建应用;–&gt;会分配appId,appKey<br>　APP ID:110407209311<br>　APP KEY:PzMWIM4GYZvxGRjdaa<br>3.完善信息;<br>4.下载demo.运行看效果;<br>5.集成开发;<br>　webview方式(老方式):授权的时候是跳到了一个webview上去授权<br>　sso方式:如果手机里面装了qq.那就是单点登录的形式.如果没有装qq,就是跳到webview这种老方式;<br>　sso:单点登录</p>
+<p>QQ第三方登录流程图：<br><img src="/images/it_android_opencloud6.png" alt="UML图"><br>记住第三方登录的核心就是拿到accessToken</p>
+<p>QQ第三方登录服务的流程图：(锦上添花的了解一下)<br>accessToken传递到后台,后台的处理逻辑图示：<br><img src="/images/it_android_opencloud7.png" alt="UML图"><br>Server步骤：<br>1.使用accessToken拿到用户在第三方平台的唯一ID;<br>　1.1.判断<code>第三方平台的唯一ID</code>是否存在我们的用户信息表中;<br>　　1.1.1.存在:(之前使用qq号登陆过自己的系统)返回当前用户的用户信息<br>　　1.1.2.不存在:(用户还没有使用过此qq登陆过我们的系统)<br>2.调用相关的接口,拿到nickname,邮箱,头像(需要什么拿取什么);</p>
+<h3 id="微博登录认证"><a href="#微博登录认证" class="headerlink" title="微博登录认证"></a>微博登录认证</h3><p>地址：<a href="http://open.weibo.com/development/mobile" target="_blank" rel="external">http://open.weibo.com/development/mobile</a></p>
+<p>微博第三方登录步骤：<br>1.注册成为开发者<br>2.创建应用:微博创建应用流程稍微麻烦一点.需要重点讲一下<br>　需要上传我们keystore的签名信息,使用签名工具获取,和微信支付类似;<br>　授权回调页:随便写一个就可以<br>3.运行demo,查看一下.<br>4.集成微博第三方登录.<br>　4.1.拷贝jar包,或者关联lib工程<br>　4.2.查看androidMinfest.xml<br>　4.3.寻找关键代码</p>
+<hr>
+<h1 id="第三方分享（Share）"><a href="#第三方分享（Share）" class="headerlink" title="第三方分享（Share）"></a>第三方分享（Share）</h1><hr>
+<h2 id="微信分享"><a href="#微信分享" class="headerlink" title="微信分享"></a>微信分享</h2><h3 id="填坑经验"><a href="#填坑经验" class="headerlink" title="填坑经验"></a>填坑经验</h3><p>填坑1：<br>调取微信加载页面后马上又退出APP，呼起微信失败<br>需要正式签名（记住，凡是微信系列几乎都需要正式签名，包括微信登录，微信支付，微信分享等待）<br>相关文章：<a href="http://bbs.csdn.net/topics/390790614" target="_blank" rel="external">http://bbs.csdn.net/topics/390790614</a></p>
+<p>填坑2：<br>微信分享后没有回调<br>注意：回调类名是WXEntryActivity,千万别和微信支付的WXPayEntryActivity的类名弄混淆了，不是一个类<br>记得配清单文件<br>微信分享配置回调Activity中android:exported=”true”的一个坑<br>Android利用微信SDK分享到微信教程，回调分享结果错误解决和注意点，androidsdk<br>社会化登录分享：微信SDK接入</p>
+<h2 id="QQ分享"><a href="#QQ分享" class="headerlink" title="QQ分享"></a>QQ分享</h2><h3 id="踩坑经验"><a href="#踩坑经验" class="headerlink" title="踩坑经验"></a>踩坑经验</h3><p>踩坑1.分享必须要有头图banner，否则调不起来QQ，参数不能为null或””<br><img src="/images/it_android_opencloud8.png" alt="UML图"></p>
+<p>踩坑2.分享后没有回调<br>特别注意<br>应用调用Andriod_SDK接口时，如果要成功接收到回调，需要在调用接口的Activity的onActivityResult方法中增加如下代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</div><div class="line">    Tencent.onActivityResultData(requestCode,resultCode,data,listener);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中onActivityResultData接口中的listener为当前调用的Activity所实现的相应回调UIListener。<br>相关文章：<br><a href="http://wiki.open.qq.com/wiki/%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%9B%9E%E8%B0%83" target="_blank" rel="external">http://wiki.open.qq.com/wiki/%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B%E5%B9%B6%E5%AE%9E%E7%8E%B0%E5%9B%9E%E8%B0%83</a></p>
+<h2 id="ShareSDK"><a href="#ShareSDK" class="headerlink" title="ShareSDK"></a>ShareSDK</h2><p>地址：<a href="http://mob.com/" target="_blank" rel="external">http://mob.com/</a></p>
+<p>特点：专业做社交分享的平台</p>
+<p>步骤：<br>1.注册账号 (mob.com)<br>2.创建应用<br>3.下载sdk<br>4.SDK 导入配置<br>5.代码配置</p>
+<h2 id="DeepShare"><a href="#DeepShare" class="headerlink" title="DeepShare"></a>DeepShare</h2><p>地址：<a href="http://deepshare.io/" target="_blank" rel="external">http://deepshare.io/</a></p>
+<p>特点：<br>DeepShare:一键跳转内容, 打破App壁垒<br>通过 Deeplink 技术帮助开发者实现从外部网页到 App 内页的直接跳转, 有效提升流量转化效率和用户下单率.</p>
+<hr>
+<h1 id="云服务器（Server）"><a href="#云服务器（Server）" class="headerlink" title="云服务器（Server）"></a>云服务器（Server）</h1><hr>
+<p>用途：移动后端云服务，负载均衡,CDN加速等等</p>
+<p>基于BaaS（后端即服务：Backend as a Service）模式</p>
+<h2 id="阿里云"><a href="#阿里云" class="headerlink" title="阿里云"></a>阿里云</h2><p>地址：<a href="https://www.aliyun.com/" target="_blank" rel="external">https://www.aliyun.com/</a></p>
+<p>常见服务：</p>
+<ul>
+<li><p>ECS<br>云服务器，可以简单理解为咱普通用的服务器</p>
+</li>
+<li><p>SLB<br>（Server Load Balancer）是负载均衡，购买两台阿里云服务器就可以免费开启，是用来应对大流量。</p>
+</li>
+<li><p>OSS<br>静态存储（开放存储服务）， 专门用来存放静态文件。</p>
+</li>
+<li><p>OCS<br>开放式缓存（开放缓存服务），是大数据请求下，将重复计算的的数据放在缓存中。</p>
+</li>
+<li><p>CDN</p>
+</li>
+<li><p>云盾</p>
+</li>
+<li><p>云监控</p>
+</li>
+</ul>
+<h2 id="腾讯云"><a href="#腾讯云" class="headerlink" title="腾讯云"></a>腾讯云</h2><p>地址：<a href="https://www.qcloud.com/" target="_blank" rel="external">https://www.qcloud.com/</a></p>
+<ul>
+<li>负载均衡<br><a href="https://www.qcloud.com/product/clb" target="_blank" rel="external">https://www.qcloud.com/product/clb</a></li>
+</ul>
+<h2 id="百度云（bae）"><a href="#百度云（bae）" class="headerlink" title="百度云（bae）"></a>百度云（bae）</h2><h2 id="新浪云（sae）"><a href="#新浪云（sae）" class="headerlink" title="新浪云（sae）"></a>新浪云（sae）</h2><h2 id="金山云"><a href="#金山云" class="headerlink" title="金山云"></a>金山云</h2><h2 id="七牛云"><a href="#七牛云" class="headerlink" title="七牛云"></a>七牛云</h2><h2 id="亚马逊云服务-AWS"><a href="#亚马逊云服务-AWS" class="headerlink" title="亚马逊云服务(AWS)"></a>亚马逊云服务(AWS)</h2><h2 id="原子云"><a href="#原子云" class="headerlink" title="原子云"></a>原子云</h2><h2 id="Bmob后端云"><a href="#Bmob后端云" class="headerlink" title="Bmob后端云"></a>Bmob后端云</h2><h2 id="AVOS-Cloud-（万象云）"><a href="#AVOS-Cloud-（万象云）" class="headerlink" title="AVOS Cloud （万象云）"></a>AVOS Cloud （万象云）</h2><h2 id="Kinvey"><a href="#Kinvey" class="headerlink" title="Kinvey"></a>Kinvey</h2><p>StackMob </p>
+<hr>
+<h1 id="网络优化（Network）"><a href="#网络优化（Network）" class="headerlink" title="网络优化（Network）"></a>网络优化（Network）</h1><hr>
+<p>用途：弱网环境优化</p>
+<p>相关：<br><a href="https://www.zhihu.com/question/29466887/answer/74161769" target="_blank" rel="external">Android开发如何进行网络优化？</a></p>
+<h2 id="腾讯-维纳斯"><a href="#腾讯-维纳斯" class="headerlink" title="腾讯-维纳斯"></a>腾讯-维纳斯</h2><p>弱网络环境下提升连通率，在2G网络、电梯、地下停车场等网络较差的地方，连通成功率99.9%，达到与QQ、微信同等的连通率</p>
+<h2 id="TwinPrime"><a href="#TwinPrime" class="headerlink" title="TwinPrime"></a>TwinPrime</h2><p>国外：TwinPrime, 颇具特色的网络优化服务，<br>国内：除了腾讯-维纳斯，暂时还没发现同类产品，不过TwinPrime理论上是支持全球的。</p>
+<hr>
+<h1 id="图片存储服务（Image）"><a href="#图片存储服务（Image）" class="headerlink" title="图片存储服务（Image）"></a>图片存储服务（Image）</h1><hr>
+<p>用途：图床/图片上传/图片下载/图片压缩</p>
+<h2 id="七牛云存储"><a href="#七牛云存储" class="headerlink" title="七牛云存储"></a>七牛云存储</h2><p>官网：<a href="https://www.qiniu.com/" target="_blank" rel="external">https://www.qiniu.com/</a></p>
+<p>相关：<br><a href="http://www.jianshu.com/p/6dce6094bf61" target="_blank" rel="external">如何使用七牛云做为图床？</a></p>
+<h2 id="腾讯云-万象优图"><a href="#腾讯云-万象优图" class="headerlink" title="腾讯云-万象优图"></a>腾讯云-万象优图</h2><p>地址：<a href="https://cloud.tencent.com/product/ci" target="_blank" rel="external">https://cloud.tencent.com/product/ci</a></p>
+<h2 id="阿里云OSS-Android客户端SDK"><a href="#阿里云OSS-Android客户端SDK" class="headerlink" title="阿里云OSS-Android客户端SDK"></a>阿里云OSS-Android客户端SDK</h2><p>地址：<a href="https://help.aliyun.com/document_detail/32172.html" target="_blank" rel="external">https://help.aliyun.com/document_detail/32172.html</a></p>
+<p>提供文件（图片、视频等等）上传<br>大文件分块上传<br>删除操作（不推荐在客户端使用）</p>
+<h2 id="LeanCloud-1"><a href="#LeanCloud-1" class="headerlink" title="LeanCloud"></a>LeanCloud</h2><p>图片上传( LeanCloud 文件存储实际用的也是七牛的云存储)</p>
+<h2 id="TinyPng"><a href="#TinyPng" class="headerlink" title="TinyPng"></a>TinyPng</h2><p>地址：<a href="https://tinypng.com/" target="_blank" rel="external">https://tinypng.com/</a></p>
+<p>是一个非常不错的图片压缩工具，在保持alpha通道的情况下对PNG的压缩可以达到1/3之内，而且用肉眼基本上分辨不出压缩的损失。<br>本文直接调用的是 TinyPNG 站点的 API，该站提供的压缩服务还是不错的，图片压缩率高，且压缩前后显示效果差别很小。对于开发者而言，该网站上相关文档也是相当齐全的。</p>
+<p>相关：<br><a href="http://app.hustonline.net/article/detail/51" target="_blank" rel="external">TinyPNG—一个压缩PNG的神站</a></p>
+<hr>
+<h1 id="云通讯验证码（SMS）"><a href="#云通讯验证码（SMS）" class="headerlink" title="云通讯验证码（SMS）"></a>云通讯验证码（SMS）</h1><hr>
+<p>用途：短信验证码服务</p>
+<h2 id="云片"><a href="#云片" class="headerlink" title="云片"></a>云片</h2><p>地址：<a href="https://www.yunpian.com/" target="_blank" rel="external">https://www.yunpian.com/</a></p>
+<h2 id="云通讯"><a href="#云通讯" class="headerlink" title="云通讯"></a>云通讯</h2><p>地址：<a href="https://www.253.com/" target="_blank" rel="external">https://www.253.com/</a><br>解决方案成熟，众多公司使用</p>
+<h2 id="Fabric-Digits"><a href="#Fabric-Digits" class="headerlink" title="Fabric Digits"></a>Fabric Digits</h2><p>国外：twitter出品，居然不要钱。</p>
+<hr>
+<h1 id="移动安全（Safe）"><a href="#移动安全（Safe）" class="headerlink" title="移动安全（Safe）"></a>移动安全（Safe）</h1><hr>
+<p>用途：混淆/程序加固/防止被反编译</p>
+<h2 id="360加固保"><a href="#360加固保" class="headerlink" title="360加固保"></a>360加固保</h2><p>地址：<a href="http://jiagu.360.cn/" target="_blank" rel="external">http://jiagu.360.cn/</a></p>
+<h2 id="阿里云-聚安全"><a href="#阿里云-聚安全" class="headerlink" title="阿里云-聚安全"></a>阿里云-聚安全</h2><p>地址：<a href="https://www.aliyun.com/product/mobsec?utm_content=se_854054" target="_blank" rel="external">https://www.aliyun.com/product/mobsec?utm_content=se_854054</a></p>
+<h2 id="腾讯-应用加固"><a href="#腾讯-应用加固" class="headerlink" title="腾讯-应用加固"></a>腾讯-应用加固</h2><p>地址：<a href="http://wiki.open.qq.com/wiki/%E5%BA%94%E7%94%A8%E5%8A%A0%E5%9B%BA" target="_blank" rel="external">http://wiki.open.qq.com/wiki/%E5%BA%94%E7%94%A8%E5%8A%A0%E5%9B%BA</a></p>
+<h2 id="腾讯云-乐固"><a href="#腾讯云-乐固" class="headerlink" title="腾讯云-乐固"></a>腾讯云-乐固</h2><p>地址：<a href="https://cloud.tencent.com/product/ms" target="_blank" rel="external">https://cloud.tencent.com/product/ms</a></p>
+<h2 id="网易云-易盾"><a href="#网易云-易盾" class="headerlink" title="网易云-易盾"></a>网易云-易盾</h2><p>地址：<a href="http://dun.163.com/" target="_blank" rel="external">http://dun.163.com/</a></p>
+<h2 id="梆梆加固"><a href="#梆梆加固" class="headerlink" title="梆梆加固"></a>梆梆加固</h2><p>地址：<a href="https://www.bangcle.com/" target="_blank" rel="external">https://www.bangcle.com/</a></p>
+<h2 id="爱加密"><a href="#爱加密" class="headerlink" title="爱加密"></a>爱加密</h2><p>地址：<a href="http://www.ijiami.cn/" target="_blank" rel="external">http://www.ijiami.cn/</a></p>
+<h2 id="Dexguard"><a href="#Dexguard" class="headerlink" title="Dexguard"></a>Dexguard</h2><p>国外的</p>
+<h1 id="性能监控（Crash）"><a href="#性能监控（Crash）" class="headerlink" title="性能监控（Crash）"></a>性能监控（Crash）</h1><p>用于：Crash监控分析/崩溃统计/异常上报</p>
+<h2 id="腾讯Bugly"><a href="#腾讯Bugly" class="headerlink" title="腾讯Bugly"></a>腾讯Bugly</h2><p>地址：<a href="https://bugly.qq.com/" target="_blank" rel="external">https://bugly.qq.com/</a></p>
+<p>Android Crash(崩溃)监控<br>腾讯Bugly, 号称全球唯一自带ANR收集，其实原理很简单。</p>
+<h2 id="Testin"><a href="#Testin" class="headerlink" title="Testin"></a>Testin</h2><p>地址：<a href="https://www.testin.cn/" target="_blank" rel="external">https://www.testin.cn/</a></p>
+<h2 id="听云-Apm"><a href="#听云-Apm" class="headerlink" title="听云-Apm"></a>听云-Apm</h2><p>地址：<a href="http://www.tingyun.com/lp.html" target="_blank" rel="external">http://www.tingyun.com/lp.html</a></p>
+<h2 id="Crashlytics"><a href="#Crashlytics" class="headerlink" title="Crashlytics"></a>Crashlytics</h2><p>国外的，已经收归Twitter Fabric开发者工具集，免费好用。</p>
+<h2 id="BugHD"><a href="#BugHD" class="headerlink" title="BugHD"></a>BugHD</h2><p>地址：<a href="http://bughd.com/" target="_blank" rel="external">http://bughd.com/</a></p>
+<p>实时监控APP的崩溃分析工具</p>
+<hr>
+<h1 id="数据统计（Statistics）"><a href="#数据统计（Statistics）" class="headerlink" title="数据统计（Statistics）"></a>数据统计（Statistics）</h1><hr>
+<p>用途：用户统数据统计分析</p>
+<p>有的公司要求收集各个应用市场的用户使用量，是我们写在代码里上传到服务器统计的<br>把软件提交到应用市场是自动统计显示下载量的<br>当然自己也能统计，代码中调用统计的接口，一调那么服务器的计数就加1<br>当然，第一次就调一次，以后就不用调了</p>
+<h2 id="腾讯云分析Mta"><a href="#腾讯云分析Mta" class="headerlink" title="腾讯云分析Mta"></a>腾讯云分析Mta</h2><p>地址：<a href="http://mta.qq.com/mta/" target="_blank" rel="external">http://mta.qq.com/mta/</a></p>
+<p>腾讯云分析,数据统计上报, 类似友盟统计</p>
+<h2 id="友盟统计（umeng）"><a href="#友盟统计（umeng）" class="headerlink" title="友盟统计（umeng）"></a>友盟统计（umeng）</h2><p>地址：<a href="https://www.umeng.com/" target="_blank" rel="external">https://www.umeng.com/</a></p>
+<p>•国内专业的移动应用统计分析平台<br>•统计和分析流量来源、内容使用、用户属性和行为数据<br>•Crash log跟踪</p>
+<h2 id="Fir-im"><a href="#Fir-im" class="headerlink" title="Fir.im"></a>Fir.im</h2><p>地址：<a href="https://fir.im/" target="_blank" rel="external">https://fir.im/</a></p>
+<h2 id="Talking-Data"><a href="#Talking-Data" class="headerlink" title="Talking Data"></a>Talking Data</h2><p>地址：<a href="http://www.talkingdata.com/" target="_blank" rel="external">http://www.talkingdata.com/</a></p>
+<h2 id="Flurry"><a href="#Flurry" class="headerlink" title="Flurry"></a>Flurry</h2><p>国外统计分析系统的标杆，免费的</p>
+<hr>
+<h1 id="数据可视化分析-Analyze"><a href="#数据可视化分析-Analyze" class="headerlink" title="数据可视化分析(Analyze)"></a>数据可视化分析(Analyze)</h1><hr>
+<h2 id="Growingio"><a href="#Growingio" class="headerlink" title="Growingio"></a>Growingio</h2><p>地址：<a href="https://www.growingio.com/" target="_blank" rel="external">https://www.growingio.com/</a></p>
+<p>国内公司，linkedin数据分析大牛回国创业，据说黑科技，可以直接在app上实时查看各种转化率数据。</p>
+<h2 id="Appsee"><a href="#Appsee" class="headerlink" title="Appsee"></a>Appsee</h2><p>国公司，绝对黑科技，PM最爱，转化率什么的再也不怕上不去了，用过后我们团队成员一致好评，在我的微信公众号里有专门文章介绍使用体验。</p>
+<p>相关文章：<br><a href="http://www.jianshu.com/p/68b629f3e34c" target="_blank" rel="external">AppSee: 为什么叫它神器？</a></p>
+<hr>
+<h1 id="云测适配（Test）"><a href="#云测适配（Test）" class="headerlink" title="云测适配（Test）"></a>云测适配（Test）</h1><hr>
+<p>用途：云手机</p>
+<h2 id="腾讯-优测"><a href="#腾讯-优测" class="headerlink" title="腾讯-优测"></a>腾讯-优测</h2><p>地址：<a href="http://utest.qq.com/" target="_blank" rel="external">http://utest.qq.com/</a></p>
+<h2 id="特性-WeTest"><a href="#特性-WeTest" class="headerlink" title="特性-WeTest"></a>特性-WeTest</h2><p>腾讯质量开放平台</p>
+<p>地址：<a href="http://wetest.qq.com/product/expert-compatibility-testing?from=content_lab" target="_blank" rel="external">http://wetest.qq.com/product/expert-compatibility-testing?from=content_lab</a></p>
+<h2 id="test-in"><a href="#test-in" class="headerlink" title="test in"></a>test in</h2><p>国外的其实百度的也跑，国内的Android设备都卖到国外去了。</p>
+<hr>
+<h1 id="灰度测试（Gray）"><a href="#灰度测试（Gray）" class="headerlink" title="灰度测试（Gray）"></a>灰度测试（Gray）</h1><hr>
+<h2 id="AppAdhoc"><a href="#AppAdhoc" class="headerlink" title="AppAdhoc"></a>AppAdhoc</h2><p>国内：AppAdhoc，移动AB测试国内最专业的一家。</p>
+<h2 id="optimizely"><a href="#optimizely" class="headerlink" title="optimizely"></a>optimizely</h2><p>国外：optimizely, 支持Android, iOS, 直接在线改UI做AB测试, 三观都要颠覆了。</p>
+<hr>
+<h1 id="广告变现（Advert）"><a href="#广告变现（Advert）" class="headerlink" title="广告变现（Advert）"></a>广告变现（Advert）</h1><hr>
+<h2 id="万普世纪"><a href="#万普世纪" class="headerlink" title="万普世纪"></a>万普世纪</h2><h2 id="有米广告"><a href="#有米广告" class="headerlink" title="有米广告"></a>有米广告</h2><h2 id="多盟"><a href="#多盟" class="headerlink" title="多盟"></a>多盟</h2><h2 id="百度"><a href="#百度" class="headerlink" title="百度"></a>百度</h2><h2 id="广点通"><a href="#广点通" class="headerlink" title="广点通"></a>广点通</h2><p>百度 or 广点通，两个效果差不多。</p>
+<h2 id="FB"><a href="#FB" class="headerlink" title="FB"></a>FB</h2><h2 id="Google"><a href="#Google" class="headerlink" title="Google"></a>Google</h2><p>国外：FB or Google，做native广告，效果最佳。</p>
+<h2 id="AdMob"><a href="#AdMob" class="headerlink" title="AdMob"></a>AdMob</h2><p>嵌入广告进行盈利<br>谷歌充分考虑到了可以在Android应用程序中嵌入广告来让开发者获得收入，因此早早地就收购了AdMob公司。AdMob创立于2006年，是全球最早致力于在移动设备上提供广告服务的公司之一，如今成为了谷歌的子公司，AdMob的广告更加适合在Android系统以及Google Play上面进行投放。<br>不过对于国内开发者来说，AdMob可能并不是那么的适合。因为AdMob平台上的广告大多都是英文的，中文广告数有限，并且将AdMob账户中的钱提取到银行账户中也比较麻烦，因此这里我们就不准备使用AdMob了，而是将眼光放在一些国内的移动广告平台上面。在国内的这一领域，做得比较好的移动广告平台也不少，如万普、有米、多盟等，其中我个人认为有米平台特别的专业，因此我们就选择它来为酷欧天气提供广告服务吧。</p>
+<hr>
+<h1 id="社会化评论（Comment）"><a href="#社会化评论（Comment）" class="headerlink" title="社会化评论（Comment）"></a>社会化评论（Comment）</h1><hr>
+<h2 id="Disqus"><a href="#Disqus" class="headerlink" title="Disqus"></a>Disqus</h2><p>国外, 基本不用考虑其他家的，虽然确实有竞品。</p>
+<h2 id="畅言"><a href="#畅言" class="headerlink" title="畅言"></a>畅言</h2><p>国内，搜狐，基本抄的Disqus, 免费，算是良心产品了。<br><a href="https://changyan.kuaizhan.com/" target="_blank" rel="external">https://changyan.kuaizhan.com/</a></p>
+<h2 id="多说"><a href="#多说" class="headerlink" title="多说"></a>多说</h2><p>已关闭</p>
+<h2 id="网易云跟帖"><a href="#网易云跟帖" class="headerlink" title="网易云跟帖"></a>网易云跟帖</h2><hr>
+<h1 id="客服（Customer）"><a href="#客服（Customer）" class="headerlink" title="客服（Customer）"></a>客服（Customer）</h1><hr>
+<h2 id="微客服"><a href="#微客服" class="headerlink" title="微客服"></a>微客服</h2><p>国内：微客服, 有免费额度，中小应用够用。</p>
+<h2 id="helpshift"><a href="#helpshift" class="headerlink" title="helpshift"></a>helpshift</h2><p>国外：helpshift，国外最专业的客服平台。</p>
+<hr>
+<h1 id="语音识别（Voice）"><a href="#语音识别（Voice）" class="headerlink" title="语音识别（Voice）"></a>语音识别（Voice）</h1><hr>
+<h2 id="科大讯飞语音云"><a href="#科大讯飞语音云" class="headerlink" title="科大讯飞语音云"></a>科大讯飞语音云</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/it_android_opencloud_logo1.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="IT - Android" scheme="https://hengxing0080.github.io/categories/IT-Android/"/>
+    
+    
+      <category term="Android" scheme="https://hengxing0080.github.io/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android —— 开源框架：工具库篇</title>
+    <link href="https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/"/>
+    <id>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</id>
     <published>2017-10-02T15:56:13.000Z</published>
-    <updated>2017-10-26T11:42:09.970Z</updated>
+    <updated>2017-10-27T13:02:56.550Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_openutils_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>主要包括那些不错的开发库，包括依赖注入框架、图片缓存、网络请求、数据库 ORM 建模、Android 公共库、Android 高版本向低版本兼容、多媒体相关及其他。</p>
@@ -142,7 +396,8 @@
 <h2 id="音视频处理"><a href="#音视频处理" class="headerlink" title="音视频处理"></a>音视频处理</h2><h3 id="Vitamio"><a href="#Vitamio" class="headerlink" title="Vitamio"></a>Vitamio</h3><p>项目地址：<a href="https://github.com/yixia/VitamioBundle" target="_blank" rel="external">https://github.com/yixia/VitamioBundle</a></p>
 <p>是一款 Android 与 iOS 平台上的全能多媒体开发框架</p>
 <p>特点：<br>(1) 全面支持硬件解码与 GPU 渲染<br>(2) 能够流畅播放 720P 甚至 1080P 高清 MKV，FLV，MP4，MOV，TS，RMVB 等常见格式的视频<br>(3) 在 Android 与 iOS 上跨平台支持 MMS, RTSP, RTMP, HLS(m3u8)等常见的多种视频流媒体协议，包括点播与直播。</p>
-<h4 id="待整理"><a href="#待整理" class="headerlink" title="待整理"></a>待整理</h4><p>Telecine</p>
+<h3 id="ffmpeg"><a href="#ffmpeg" class="headerlink" title="ffmpeg"></a>ffmpeg</h3><p>开源的音视频解码库<br>QQ影音，快播，暴风影音用的解码库都是它</p>
+<h3 id="待整理"><a href="#待整理" class="headerlink" title="待整理"></a>待整理</h3><p>Telecine</p>
 <p>Jitsi</p>
 <p>Amphitheatre</p>
 <p>MediaChooser</p>
@@ -2337,43 +2592,6 @@ Android源码设计模式解析与实战——371页 第20章 得心应手的粘
     </summary>
     
       <category term="IT - 面向对象和设计模式 - 架构&amp;框架" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/"/>
-    
-    
-      <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式 —— IOC（控制反转）</title>
-    <link href="https://hengxing0080.github.io/2017/08/15/it/2.OOP&amp;DesignPattern/4.1.IOC/"/>
-    <id>https://hengxing0080.github.io/2017/08/15/it/2.OOP&amp;DesignPattern/4.1.IOC/</id>
-    <published>2017-08-15T07:21:32.000Z</published>
-    <updated>2017-09-29T16:19:21.663Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/images/it_pattern_ioc1.jpg" alt="图"><br><a id="more"></a></p>
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>中文名：控制反转<br>英文：IoC（Inversion of Control）<br>目的：描述框架的重要特征<br>起源时间：1988年</p>
-<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>IoC是框架的重要特征，并非面向对象编程的专用术语。<br>它与依赖注入（Dependency Injection，简称DI）和依赖查找（Dependency Lookup）并没有关系。</p>
-<p>IoC是一个重要的面向对象编程的法则来削减计算机程序的耦合问题，也是轻量级的Spring框架的核心。 </p>
-<p>IoC体现了<a href="https://baike.baidu.com/item/%E5%A5%BD%E8%8E%B1%E5%9D%9E%E5%8E%9F%E5%88%99/16019700?fr=aladdin" target="_blank" rel="external">好莱坞原则</a>，即“不要打电话过来，我们会打给你”。</p>
-<p>IoC是Spring的核心，贯穿始终。所谓IOC就是有Spring来控制对象的生命周期和对象间的关系。<br>传统开发模式：对象之间相互依赖<br>IOC开发模式：IOC控制对象之间的依赖</p>
-<p>IoC可以认为是一种全新的设计模式，但是理论和时间成熟相对较晚，并没有包含在GoF中。</p>
-<p>也可以把IoC模式看做是工厂模式的升华，可以把IoC看作是一个大工厂，只不过这个大工厂里要生成的对象都是在XML文件中给出定义的，然后利用Java 的“反射”编程，根据XML中给出的类名生成相应的对象。从实现来看，IoC是把以前在工厂方法里写死的对象生成代码，改变为由XML文件来定义，也就是把工厂和对象生成这两者独立分隔开来，目的就是提高灵活性和可维护性。<br>IoC中最基本的Java技术就是“反射”编程。反射又是一个生涩的名词，通俗的说反射就是根据给出的类名（字符串）来生成对象。这种编程方式可以让对象在生成时才决定要生成哪一种对象。反射的应用是很广泛的，像Hibernate、Spring中都是用“反射”做为最基本的技术手段。<br>在过去，反射编程方式相对于正常的对象生成方式要慢10几倍，这也许也是当时为什么反射技术没有普遍应用开来的原因。但经SUN改良优化后，反射方式生成对象和通常对象生成方式，速度已经相差不大了（但依然有一倍以上的差距）。</p>
-<h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><p>IoC最大的好处是什么？<br>因为把对象生成放在了XML里定义，所以当我们需要换一个实现子类将会变成很简单（一般这样的对象都是实现于某种接口的），只要修改XML就可以了，这样我们甚至可以实现对象的热插拔（有点像USB接口和SCSI硬盘了）。</p>
-<p>IoC最大的缺点是什么？<br>（1）生成一个对象的步骤变复杂了（事实上操作上还是挺简单的），对于不习惯这种方式的人，会觉得有些别扭和不直观。<br>（2）对象生成因为是使用反射编程，在效率上有些损耗。但相对于IoC提高的维护性和灵活性来说，这点损耗是微不足道的，除非某对象的生成对效率要求特别高。<br>（3）缺少IDE重构操作的支持，如果在Eclipse要对类改名，那么你还需要去XML文件里手工去改了，这似乎是所有XML方式的缺陷所在。</p>
-<h1 id="实现策略类型"><a href="#实现策略类型" class="headerlink" title="实现策略类型"></a>实现策略类型</h1><p>IoC是一个很大的概念,可以用不同的方式实现。其主要形式有两种类型：依赖注入和依赖查找。<br>依赖注入应用比较广泛。</p>
-<p>1.依赖注入（Dependency Injection，简称DI）<br>容器提供回调接口和上下文条件给组件。EJB和Apache Avalon 都使用这种方式。这样一来，组件就必须使用容器提供的API来查找资源和协作对象，仅有的控制反转只体现在那些回调方法上（也就是上面所说的 类型1）：容器将调用这些回调方法，从而让应用代码获得相关资源。</p>
-<p>其又有三种方式：<br>接口注入（Interface Injection）<br>设置注入（Setter Injection）<br>构造注入（Constructor Injection）</p>
-<p>2.依赖查找（Dependency Lookup，简称DL）<br>组件不做定位查询，只提供普通的Java方法让容器去决定依赖关系。容器全权负责的组件的装配，它会把符合依赖关系的对象通过JavaBean属性或者构造函数传递给需要的对象。通过JavaBean属性注射依赖关系的做法称为设值方法注入(Setter Injection)；将依赖关系作为构造函数参数传入的做法称为构造器注入（Constructor Injection）</p>
-<h1 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h1><p><a href="http://stamen.iteye.com/blog/1489223/" target="_blank" rel="external">透透彻彻IoC（你没有理由不懂！）</a><br><a href="http://blog.csdn.net/bestcxx/article/details/77931436" target="_blank" rel="external">依赖注入和控制反转的理解，写的太好了</a><br><a href="http://blog.csdn.net/u013320868/article/details/54926578" target="_blank" rel="external">浅析android中的依赖注入</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;/images/it_pattern_ioc1.jpg&quot; alt=&quot;图&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="IT - 面向对象和设计模式 - 设计模式" scheme="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
       <category term="设计模式" scheme="https://hengxing0080.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
