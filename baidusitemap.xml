@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
-    <lastmod>2017-11-07T12:30:38.061Z</lastmod>
+    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
+    <lastmod>2017-11-07T16:39:49.262Z</lastmod>
     <data>
         <display>
-        <title>Android —— Touch事件分发传递机制的总结</title>
-        <pubTime>2017-10-05T08:48:13.000Z</pubTime>
+        <title>Android —— 性能优化系列</title>
+        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -25,7 +25,7 @@
     
   <url>
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-11-07T10:15:44.901Z</lastmod>
+    <lastmod>2017-11-07T16:25:18.097Z</lastmod>
     <data>
         <display>
         <title>集合框架和其他容器类的总结</title>
@@ -44,12 +44,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-11-06T15:30:40.508Z</lastmod>
+    <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
+    <lastmod>2017-11-07T12:30:38.061Z</lastmod>
     <data>
         <display>
-        <title>Android —— 性能优化系列</title>
-        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
+        <title>Android —— Touch事件分发传递机制的总结</title>
+        <pubTime>2017-10-05T08:48:13.000Z</pubTime>
         
         <tag>Android</tag>
          
