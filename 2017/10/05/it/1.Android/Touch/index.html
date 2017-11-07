@@ -1,0 +1,1289 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— Touch事件分发传递机制的总结">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_touch_logo.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_touch1.png">
+<meta property="og:updated_time" content="2017-11-07T12:30:38.061Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— Touch事件分发传递机制的总结">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_touch_logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/"/>
+
+
+
+
+
+  <title>Android —— Touch事件分发传递机制的总结 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— Touch事件分发传递机制的总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T16:48:13+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_touch_logo.png" alt="UML图"><br><a id="more"></a></p>
+<hr>
+<h1 id="事件分发机制流程"><a href="#事件分发机制流程" class="headerlink" title="事件分发机制流程"></a>事件分发机制流程</h1><hr>
+<h2 id="Touch的Down的传递的3个方法"><a href="#Touch的Down的传递的3个方法" class="headerlink" title="Touch的Down的传递的3个方法"></a>Touch的Down的传递的3个方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dispatchTouchEvent       分发触摸事件（是否分发） （第一个调用）</div><div class="line">onInterceptTouchEvent    拦截触摸事件（是否拦截（打断）） （注意View没有此方法，ViewGroup有）</div><div class="line">onTouchEvent             响应触摸事件（是否消费）</div></pre></td></tr></table></figure>
+<p>注意：<br>ViewGroup有3种方法<br>View只有2种方法（没有拦截触摸事件）</p>
+<h2 id="默认事件传递"><a href="#默认事件传递" class="headerlink" title="默认事件传递"></a>默认事件传递</h2><p>是当产生了触摸事件之后，先给了最外层的布局，最外层的布局就把事件传给了第一个孩子，第一个孩子又再次传给里面的孩子<br>里面的孩子处理完之后就还给它父亲，父亲在传给父亲<br>就是从外到内，从内到外<br><img src="/images/it_android_touch1.png" alt="UML图"></p>
+<p>注意：<br>触摸事件有2次：ACTION_UP，ACTION_DOWN<br>所以会打印2次</p>
+<p>详细流程图例请查看最上面头图</p>
+<hr>
+<h1 id="点击事件和触摸事件"><a href="#点击事件和触摸事件" class="headerlink" title="点击事件和触摸事件"></a>点击事件和触摸事件</h1><hr>
+<p>现在的图形界面应用程序，都是通过事件来实现人机交互的。<br>事件就是用户对图形界面的操作，在android手机和平板电脑上主要包括键盘事件和触摸事件两大类。<br>键盘事件包括按下，弹起等，触摸事件包括按下，弹起，滑动，双击等。</p>
+<p>对于一个标准的android设备，包含了多个能够触发事件的物理按键：<br>KEYCODE_POWER：电源键–启动或唤醒设备，将界面切换到锁定的屏幕<br>KEYCODE_BACK：后退键–返回到当前一个界面<br>KEYCODE_MENU：菜单键–显示当前应用的可用菜单<br>KEYCODE_HOME：Home键–返回到Home界面<br>KEYCODE_VOLUME_UP：   音量键–控制当前上文的音量<br>KEYCODE_VOLUME_DOWN： 音量键–控制当前下文的音量</p>
+<p>键盘事件：<br>Android中控件在处理物理按键事件时，提供的回调方法有onKeyUp(),onKeyDown()和onKeyLongPress();</p>
+<p>触摸事件：<br>目前，主流的手机都以较大的屏幕取代了外置键盘，平板电脑也没有提供键盘，这些设备都需要通过触摸来操作。<br>对于触摸屏上的按钮，可以使用onClickListener和onLongClickListener监听器分别处理用户短时间单击（按住按钮一段时间）事件。<br>View类是其他android控件的分类。<br>在该类中，定义了setOntouchListener()方法用来为控件设置触摸事件监听。</p>
+<h2 id="点击事件的6种实现方式"><a href="#点击事件的6种实现方式" class="headerlink" title="点击事件的6种实现方式"></a>点击事件的6种实现方式</h2><p>1.设置按钮的单击事件的监听器，创建匿名内部类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">bt_call.setOnClickListener(<span class="keyword">new</span> OnClickListener() &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">		<span class="comment">// 拨打电话号码</span></div><div class="line">		String phone = et_phone.getText().toString().trim();</div><div class="line">		Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">		intent.setAction(Intent.ACTION_CALL);</div><div class="line">		System.out.println(<span class="string">"phone="</span>+phone);</div><div class="line">		intent.setData(Uri.parse(<span class="string">"tel://"</span>+phone));</div><div class="line">		startActivity(intent);</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>2.创建一个内部类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">MyOnClickListener</span> <span class="keyword">implements</span> <span class="title">OnClickListener</span></span>&#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</div><div class="line">		String phone = et_phone.getText().toString().trim();</div><div class="line">		Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">		intent.setAction(Intent.ACTION_CALL);</div><div class="line">		System.out.println(<span class="string">"phone="</span>+phone);</div><div class="line">		intent.setData(Uri.parse(<span class="string">"tel://"</span>+phone));</div><div class="line">		startActivity(intent);			</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 按钮添加一个单击事件的监听器</span></div><div class="line">bt_call.setOnClickListener(<span class="keyword">new</span> MyOnClickListener());</div></pre></td></tr></table></figure></p>
+<p>3.在布局文件中给按钮添加一个单击事件的响应方法，然后在代码中实现这个方法<br>(3.1)在布局文件中给按钮添加一个单击事件的响应方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;Button </div><div class="line">   android:layout_width=<span class="string">"match_parent"</span></div><div class="line">   android:layout_height=<span class="string">"wrap_content"</span></div><div class="line">   android:text=<span class="string">"拨打"</span></div><div class="line">   android:id=<span class="string">"@+id/bt_call"</span></div><div class="line">   android:onClick=<span class="string">"call"</span></div><div class="line">  /&gt;</div></pre></td></tr></table></figure></p>
+<p>(3.2)在代码中实现这个方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(View view)</span></span>&#123;</div><div class="line">	String phone = et_phone.getText().toString().trim();</div><div class="line">	Intent intent = <span class="keyword">new</span> Intent(); </div><div class="line">	intent.setAction(Intent.ACTION_CALL);</div><div class="line">	System.out.println(<span class="string">"phone="</span>+phone);</div><div class="line">	intent.setData(Uri.parse(<span class="string">"tel://"</span>+phone));</div><div class="line">	startActivity(intent);		</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4.实现OnClickListener接口，重写onClick方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> <span class="keyword">implements</span> <span class="title">OnClickListener</span></span>&#123;  </div><div class="line">     <span class="keyword">private</span> Button button;  </div><div class="line">     <span class="meta">@Override</span>  </div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line">          <span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">          setContentView(R.layout.activity_main);  </div><div class="line">          button = (Button)findViewById(R.id.button1);  </div><div class="line">          button.setOnClickListener(<span class="keyword">this</span>);  </div><div class="line">     &#125;  </div><div class="line">  </div><div class="line">     <span class="meta">@Override</span>  </div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;  </div><div class="line">          Toast.makeText(getApplication(), <span class="string">"OnClick"</span>, Toast.LENGTH_LONG).show();  </div><div class="line">     &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>5.写在成员变量上<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;  </div><div class="line">     <span class="keyword">private</span> Button button;  </div><div class="line">     <span class="keyword">private</span> OnClickListener clickListener = <span class="keyword">new</span> OnClickListener() &#123;  </div><div class="line">          <span class="meta">@Override</span>  </div><div class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;  </div><div class="line">  </div><div class="line">          &#125;  </div><div class="line">     &#125;;  </div><div class="line">     <span class="meta">@Override</span>  </div><div class="line">     <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;  </div><div class="line">          <span class="keyword">super</span>.onCreate(savedInstanceState);  </div><div class="line">          button = (Button)findViewById(R.id.button1);  </div><div class="line">          button.setOnClickListener(clickListener);    </div><div class="line">     &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>6.XUtils的注入（事件绑定）</p>
+<p>取消了之前使用方法名绑定事件的方式，使用id绑定不受混淆影响<br>支持绑定多个id @OnClick({R.id.id1, R.id.id2, R.id.id3}) or @OnClick(value={R.id.id1, R.id.id2, R.id.id3}, parentId={R.id.pid1, R.id.pid2, R.id.pid3})</p>
+<p>更多事件支持参见ViewCommonEventListener类和com.lidroid.xutils.view.annotation.event。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@OnClick</span>(R.id.item_category_item_1)</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clickItem1</span><span class="params">(View view)</span></span>&#123;</div><div class="line">    Toast.makeText(UIUtils.getContext(),mData.name1,Toast.LENGTH_SHORT).show();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@OnClick</span>(R.id.item_category_item_2)</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clickItem2</span><span class="params">(View view)</span></span>&#123;</div><div class="line">    Toast.makeText(UIUtils.getContext(),mData.name2,Toast.LENGTH_SHORT).show();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">@OnClick</span>(R.id.item_category_item_3)</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clickItem2</span><span class="params">(View view)</span></span>&#123;</div><div class="line">    Toast.makeText(UIUtils.getContext(),mData.name3,Toast.LENGTH_SHORT).show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h2><h3 id="模板写法"><a href="#模板写法" class="headerlink" title="模板写法"></a>模板写法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">iv.setOnTouchListener(<span class="keyword">new</span> OnTouchListener() &#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 当触摸到这控件时会调用这个方法</div><div class="line">	 */</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouch</span><span class="params">(View v, MotionEvent event)</span> </span>&#123;</div><div class="line"></div><div class="line">		<span class="keyword">int</span> action = event.getAction();</div><div class="line">        <span class="comment">// int action = event.getAction()&amp;MotionEvent.ACTION_MASK;  // 多点触控的情况下这么写</span></div><div class="line">		<span class="keyword">switch</span> (action) &#123;</div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_DOWN: <span class="comment">// 按下的事件类型</span></div><div class="line">                showMsg(<span class="string">"ACTION_DOWN"</span> + action);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_MOVE: <span class="comment">// 移动的事件类型</span></div><div class="line">                <span class="keyword">int</span> newX = (<span class="keyword">int</span>) event.getX();  <span class="comment">// 获取相对与拖动组件的坐标</span></div><div class="line">                <span class="keyword">int</span> newY = (<span class="keyword">int</span>) event.getY();</div><div class="line">        </div><div class="line">                <span class="comment">//event.getRawX(); //获取相对与屏幕的坐标</span></div><div class="line"></div><div class="line">                showMsg(<span class="string">"ACTION_MOVE"</span> + action);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_UP: <span class="comment">// 离开的事件类型</span></div><div class="line">                showMsg(<span class="string">"ACTION_UP"</span> + action);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_POINTER_UP:</div><div class="line">                showMsg(<span class="string">"ACTION_POINTER_UP"</span> + action);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_POINTER_DOWN:</div><div class="line">                showMsg(<span class="string">"ACTION_POINTER_DOWN"</span> + action);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">case</span> MotionEvent.ACTION_CANCEL: <span class="comment">// 手指松开</span></div><div class="line">                showMsg(<span class="string">"ACTION_CANCEL"</span> + action);</div><div class="line">                <span class="keyword">break</span>;</div><div class="line"></div><div class="line">            <span class="keyword">default</span>:</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		<span class="comment">// 如果返回true表示当前事件已经消费掉了</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">true</span>;    </div><div class="line">        <span class="comment">// return super.onTouchEvent(event);  // 默认的情况下返回false</span></div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="多点触控"><a href="#多点触控" class="headerlink" title="多点触控"></a>多点触控</h3><p>ACTION_MASK在Android中是应用于多点触摸操作，字面上的意思大概是动作掩码的意思。</p>
+<p>在onTouchEvent(MotionEvent event)中<br>使用switch (event.getAction())可以处理ACTION_DOWN和ACTION_UP事件；<br>使用switch (event.getAction() &amp; MotionEvent.ACTION_MASK)，就可以处理处理多点触摸的ACTION_POINTER_DOWN和ACTION_POINTER_UP事件。 </p>
+<p>ACTION_DOWN和ACTION_UP就是单点触摸屏幕，按下去和放开的操作；</p>
+<p>ACTION_POINTER_DOWN和ACTION_POINTER_UP就是多点触摸屏幕，当有一只手指按下去的时候，另一只手指按下和放开的动作捕捉；</p>
+<p>原理是用AND位运算</p>
+<p>首先来看看这些常量的值<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">ACTION_MASK     <span class="number">0x000000ff</span></div><div class="line"></div><div class="line">ACTION_DOWN     <span class="number">0x00000000</span>         </div><div class="line">ACTION_UP      <span class="number">0x00000001</span>      </div><div class="line"></div><div class="line">ACTION_MOVE      <span class="number">0x00000002</span></div><div class="line"></div><div class="line">ACTION_POINTER_DOWN       <span class="number">0x00000005</span>            </div><div class="line">ACTION_POINTER_UP        <span class="number">0x00000006</span></div><div class="line"></div><div class="line">ACTION_POINTER_1_DOWN     <span class="number">0x00000005</span>            </div><div class="line">ACTION_POINTER_1_UP      <span class="number">0x00000006</span></div><div class="line"></div><div class="line">ACTION_POINTER_2_DOWN     <span class="number">0x00000105</span>            </div><div class="line">ACTION_POINTER_2_UP      <span class="number">0x00000106</span></div></pre></td></tr></table></figure></p>
+<p>例如：ACTION_MASK &amp; ACTION_POINTER_2_DOWN 即0x000000ff &amp; 0×00000105=0x0000005</p>
+<p>可以看到，and运算的结果总是小于等于0x000000ff，那就是说and之后，无论你多少根手指加进来，都是会ACTION_POINTER_DOWN或者ACTION_POINTER_UP</p>
+<p>相关文章：<br><a href="http://blog.csdn.net/fancylovejava/article/details/38582983" target="_blank" rel="external">android多点触控统一的原理(使用 event.getAction()&amp;MotionEvent.ACTION_MASK的原因)</a><br><a href="http://blog.csdn.net/lsmfeixiang/article/details/42213893" target="_blank" rel="external">多点触控事件处理 ev.getAction() &amp; MotionEvent.ACTION_MASK</a></p>
+<h3 id="OnTouchListener-OnClickListener和OnLongClickListener的关系"><a href="#OnTouchListener-OnClickListener和OnLongClickListener的关系" class="headerlink" title="OnTouchListener,OnClickListener和OnLongClickListener的关系"></a>OnTouchListener,OnClickListener和OnLongClickListener的关系</h3><p>在Android中，一切事件处理的开始都是从Down事件开始的，如何你处理了Down事件，其他的事件就都收不到了</p>
+<p>Touch事件的ACTION_DOWN -&gt; ACTION_UP -&gt; OnClick/OnLongClick。</p>
+<p>相关文章：<br><a href="http://blog.csdn.net/liyuchong2537631/article/details/48463169" target="_blank" rel="external">Android中事件传递机制的总结（onTouch、onClick、onLongClick等）</a><br><a href="Android OnTouchListener，OnClickListener和OnLongClickListener的关系">Android OnTouchListener，OnClickListener和OnLongClickListener的关系</a><br><a href="Android onTouchEvent, onClick及onLongClick的调用机制">Android onTouchEvent, onClick及onLongClick的调用机制</a></p>
+<h3 id="判断该事件是滑动事件还是点击事件"><a href="#判断该事件是滑动事件还是点击事件" class="headerlink" title="判断该事件是滑动事件还是点击事件"></a>判断该事件是滑动事件还是点击事件</h3><p><a href="http://blog.csdn.net/zdb1193452522/article/details/41893041" target="_blank" rel="external">Android中onTouch事件、onClick事件、onLongClick事件区别以及联系</a></p>
+<hr>
+<h1 id="View的滑动原理及效果"><a href="#View的滑动原理及效果" class="headerlink" title="View的滑动原理及效果"></a>View的滑动原理及效果</h1><hr>
+<p><a href="http://www.jianshu.com/p/4c7aa2eff9c6" target="_blank" rel="external">[Android] 滑动操作的原理及处理</a></p>
+<h2 id="View的滑动返回"><a href="#View的滑动返回" class="headerlink" title="View的滑动返回"></a>View的滑动返回</h2><p>方式1：GestureDetector<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1.声明一个手势识别器</span></div><div class="line"><span class="keyword">private</span> GestureDetector mGestureDetector;</div><div class="line"></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">    <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line"> 	initGesture();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">initGesture</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">// 2.初始化手势识别器（在内存中new个对象）</span></div><div class="line">    mGestureDetector = <span class="keyword">new</span> GestureDetector(<span class="keyword">this</span>, <span class="keyword">new</span> GestureDetector.SimpleOnGestureListener()&#123;</div><div class="line">        <span class="comment">/**</span></div><div class="line">         * 滑行 滑翔 (手指在屏幕上滑动) e1 / e2:手指的事件</div><div class="line">         * e1:手指第一次触摸屏幕</div><div class="line">         * e2:手指离开屏幕的一瞬间 velocityX / elocityY:水平和竖直方向速度 单位px/s (每秒多少像素)</div><div class="line">         */</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onFling</span><span class="params">(MotionEvent e1, MotionEvent e2, <span class="keyword">float</span> velocityX, <span class="keyword">float</span> velocityY)</span></span>&#123;</div><div class="line">            <span class="keyword">if</span> (Math.abs(e1.getRawY() - e2.getRawY()) &gt; <span class="number">100</span>)&#123; <span class="comment">//大于100才滑动，竖着滑动无效</span></div><div class="line">                ToastUtil.show(OwnInfoGenderActivity.<span class="keyword">this</span>, <span class="string">"动作不合法"</span>);</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> (e1.getRawX() - e2.getRawX() &gt; <span class="number">150</span>)&#123; <span class="comment">// 从右向左滑动150个像素(这样才认为是个有效的动作),显示下一个界面</span></div><div class="line">                finish();</div><div class="line">                overridePendingTransition(R.anim.trans_pre_in, R.anim.trans_pre_out);</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;*</div><div class="line">            <span class="keyword">if</span> (e2.getRawX() - e1.getRawX() &gt; <span class="number">150</span>) &#123; <span class="comment">// 从左向右滑动150个像素,显示上一个界面</span></div><div class="line">                finish();</div><div class="line">                overridePendingTransition(R.anim.trans_pre_in_back, R.anim.trans_pre_out_back);</div><div class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.onFling(e1, e2, velocityX, velocityY);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 3.使用手势识别器识别用户的动作（只要Activity被触摸，都会调用这个方法）</span></div><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onTouchEvent</span><span class="params">(MotionEvent event)</span></span>&#123;</div><div class="line">    mGestureDetector.onTouchEvent(event); <span class="comment">//关键代码</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.onTouchEvent(event);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>方式2：<br><a href="http://blog.csdn.net/hanhailong726188/article/details/46433229" target="_blank" rel="external">Android-通过SlidingPaneLayout高仿微信6.2最新版手势滑动返回(一)</a><br><a href="http://blog.csdn.net/hanhailong726188/article/details/46453627" target="_blank" rel="external">Android-通过SlidingMenu高仿微信6.2最新版手势滑动返回(二)</a></p>
+<h2 id="View的弹性滑动"><a href="#View的弹性滑动" class="headerlink" title="View的弹性滑动"></a>View的弹性滑动</h2><p>待整理</p>
+<h2 id="View的滑动冲突"><a href="#View的滑动冲突" class="headerlink" title="View的滑动冲突"></a>View的滑动冲突</h2><p>待整理</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/04/it/1.Android/OpenColud/" rel="next" title="Android —— 开放云平台篇">
+                <i class="fa fa-chevron-left"></i> Android —— 开放云平台篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事件分发机制流程"><span class="nav-number">1.</span> <span class="nav-text">事件分发机制流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Touch的Down的传递的3个方法"><span class="nav-number">1.1.</span> <span class="nav-text">Touch的Down的传递的3个方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#默认事件传递"><span class="nav-number">1.2.</span> <span class="nav-text">默认事件传递</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点击事件和触摸事件"><span class="nav-number">2.</span> <span class="nav-text">点击事件和触摸事件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#点击事件的6种实现方式"><span class="nav-number">2.1.</span> <span class="nav-text">点击事件的6种实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸事件"><span class="nav-number">2.2.</span> <span class="nav-text">触摸事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模板写法"><span class="nav-number">2.2.1.</span> <span class="nav-text">模板写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多点触控"><span class="nav-number">2.2.2.</span> <span class="nav-text">多点触控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnTouchListener-OnClickListener和OnLongClickListener的关系"><span class="nav-number">2.2.3.</span> <span class="nav-text">OnTouchListener,OnClickListener和OnLongClickListener的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断该事件是滑动事件还是点击事件"><span class="nav-number">2.2.4.</span> <span class="nav-text">判断该事件是滑动事件还是点击事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#View的滑动原理及效果"><span class="nav-number">3.</span> <span class="nav-text">View的滑动原理及效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#View的滑动返回"><span class="nav-number">3.1.</span> <span class="nav-text">View的滑动返回</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View的弹性滑动"><span class="nav-number">3.2.</span> <span class="nav-text">View的弹性滑动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View的滑动冲突"><span class="nav-number">3.3.</span> <span class="nav-text">View的滑动冲突</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

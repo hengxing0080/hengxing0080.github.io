@@ -94,13 +94,13 @@
 
 <meta name="keywords" content="IQ面试题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IQ面试题 —— Java系列">
+<meta property="og:title" content="面试题 —— Java系列">
 <meta property="og:url" content="https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/index.html">
 <meta property="og:site_name" content="恒星的轨迹">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_iq_java.jpg">
-<meta property="og:updated_time" content="2017-10-12T16:50:06.391Z">
+<meta property="og:updated_time" content="2017-11-03T15:48:42.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IQ面试题 —— Java系列">
+<meta name="twitter:title" content="面试题 —— Java系列">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_iq_java.jpg">
 
 
@@ -135,7 +135,7 @@
 
 
 
-  <title>IQ面试题 —— Java系列 | 恒星的轨迹</title>
+  <title>面试题 —— Java系列 | 恒星的轨迹</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -339,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">IQ面试题 —— Java系列</h1>
+          <h1 class="post-title" itemprop="name headline">面试题 —— Java系列</h1>
         
 
         <div class="post-meta">
@@ -433,6 +433,8 @@
 <h1 id="99乘法表"><a href="#99乘法表" class="headerlink" title="99乘法表"></a>99乘法表</h1><hr>
 <p>相关文章：<br><a href="http://www.jb51.net/article/62994.htm" target="_blank" rel="external">Java中的递归详解（用递归实现99乘法表来讲解）</a><br><a href="http://blog.csdn.net/jiandanfeng2/article/details/6524614" target="_blank" rel="external">采用递归实现九九乘法表</a></p>
 <p>示例代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* </span></div><div class="line"> * 九九乘法表：循环方式</div><div class="line"> */  </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span></span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span>  </span>&#123;  </div><div class="line">        System.out.println(<span class="string">"九九乘法表："</span>);  </div><div class="line">        <span class="keyword">int</span> x,y;  </div><div class="line">        <span class="keyword">for</span>(x = <span class="number">0</span>;x &lt;= <span class="number">9</span>; x++)  &#123;  </div><div class="line">            <span class="keyword">for</span>(y = <span class="number">1</span>;y &lt;= x; y++)  &#123;  </div><div class="line">                System.out.print(y+<span class="string">"*"</span>+x+<span class="string">"="</span>+x*y+<span class="string">"\t"</span>);  </div><div class="line">            &#125;  </div><div class="line">            System.out.println();  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line"><span class="comment">/** </span></div><div class="line"> * 九九乘法表：递归方式(递归的效率是比较低的，建议采用for循环)</div><div class="line"> */  </div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method1</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;  </div><div class="line">    <span class="keyword">if</span> (i == <span class="number">1</span>) &#123;  </div><div class="line">        System.out.print(<span class="string">"1*1=1/t/n"</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;  </div><div class="line">        method1(i - <span class="number">1</span>); </div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++) &#123; </div><div class="line">            System.out.print(j + <span class="string">"*"</span> + i + <span class="string">"="</span> + j * i + <span class="string">"/t"</span>);  </div><div class="line">        &#125;  </div><div class="line">        System.out.println();  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h1 id="下列程序段的输出结果是？"><a href="#下列程序段的输出结果是？" class="headerlink" title="下列程序段的输出结果是？"></a>下列程序段的输出结果是？</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">comlicatedExpressin</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> x = <span class="number">20</span>,y = <span class="number">30</span>;</div><div class="line">    <span class="keyword">boolean</span> b;</div><div class="line">    b = x&gt;<span class="number">50</span>&amp;&amp;y&gt;<span class="number">60</span> || x&gt;<span class="number">50</span>&amp;&amp;y&lt;-<span class="number">60</span> || x&lt;-<span class="number">50</span>&amp;&amp;y&gt;<span class="number">60</span> &amp;&amp; x&lt;<span class="number">50</span>&amp;&amp;y&lt;-<span class="number">60</span>;</div><div class="line">    System.out.println(b);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>答案：false</p>
 
       
     </div>
@@ -506,8 +508,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/01/it/3.IQ/1.interview/" rel="prev" title="IQ面试题 —— 逻辑思维系列">
-                IQ面试题 —— 逻辑思维系列 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/01/it/3.IQ/1Android/" rel="prev" title="面试题 —— Android系列">
+                面试题 —— Android系列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -618,7 +620,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">80</span>
+                <span class="site-state-item-count">82</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -734,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c等于多少"><span class="nav-number">1.</span> <span class="nav-text">c等于多少</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-str-equals-“xx”-与if-“xx”-equals-str-的区别"><span class="nav-number">2.</span> <span class="nav-text">if(str.equals(“xx”))与if(“xx”.equals(str))的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-name-null-与if-null-name-有什么区别？"><span class="nav-number">3.</span> <span class="nav-text">if(name !=null)与if(null != name)  有什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#short-s1-1-s1-s1-1有什么错？"><span class="nav-number">4.</span> <span class="nav-text">short s1=1;   s1=s1+1有什么错？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#99乘法表"><span class="nav-number">5.</span> <span class="nav-text">99乘法表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c等于多少"><span class="nav-number">1.</span> <span class="nav-text">c等于多少</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-str-equals-“xx”-与if-“xx”-equals-str-的区别"><span class="nav-number">2.</span> <span class="nav-text">if(str.equals(“xx”))与if(“xx”.equals(str))的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#if-name-null-与if-null-name-有什么区别？"><span class="nav-number">3.</span> <span class="nav-text">if(name !=null)与if(null != name)  有什么区别？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#short-s1-1-s1-s1-1有什么错？"><span class="nav-number">4.</span> <span class="nav-text">short s1=1;   s1=s1+1有什么错？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#99乘法表"><span class="nav-number">5.</span> <span class="nav-text">99乘法表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下列程序段的输出结果是？"><span class="nav-number">6.</span> <span class="nav-text">下列程序段的输出结果是？</span></a></li></ol></div>
             
 
           </div>
