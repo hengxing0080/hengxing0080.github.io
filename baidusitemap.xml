@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2016/10/06/it/1.Android/Handler/</loc>
+    <lastmod>2017-11-08T11:29:21.281Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 异步任务 & 消息通知机制</title>
+        <pubTime>2016-10-06T10:08:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/</loc>
+    <lastmod>2017-11-08T11:28:24.144Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 进程和线程</title>
+        <pubTime>2017-10-09T15:12:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-11-07T16:39:49.262Z</lastmod>
+    <lastmod>2017-11-08T11:24:31.741Z</lastmod>
     <data>
         <display>
         <title>Android —— 性能优化系列</title>
@@ -24,8 +64,128 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    <lastmod>2017-11-08T10:52:31.631Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
+    <lastmod>2017-11-08T10:30:12.098Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 架构 & 框架设计</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/View/</loc>
+    <lastmod>2017-11-08T10:27:32.622Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 自定义View的总结</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Animation/</loc>
+    <lastmod>2017-11-08T10:27:03.023Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 动画的总结</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Safety/</loc>
+    <lastmod>2017-11-08T10:25:34.667Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 安全攻防系列</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
+    <lastmod>2017-11-08T09:36:54.892Z</lastmod>
+    <data>
+        <display>
+        <title>多线程并发异步的总结</title>
+        <pubTime>2017-09-06T07:54:12.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-11-07T16:25:18.097Z</lastmod>
+    <lastmod>2017-11-08T09:36:47.232Z</lastmod>
     <data>
         <display>
         <title>集合框架和其他容器类的总结</title>
@@ -45,7 +205,7 @@
     
   <url>
     <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
-    <lastmod>2017-11-07T12:30:38.061Z</lastmod>
+    <lastmod>2017-11-08T04:43:02.820Z</lastmod>
     <data>
         <display>
         <title>Android —— Touch事件分发传递机制的总结</title>
@@ -165,26 +325,6 @@
     
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    <lastmod>2017-10-27T13:26:05.125Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Bitmap图片的总结</title>
-        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
     <lastmod>2017-10-27T13:24:46.714Z</lastmod>
     <data>
@@ -258,26 +398,6 @@
            
              
               <breadCrumb title="IT - 网络 - 协议" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E5%8D%8F%E8%AE%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
-    <lastmod>2017-10-19T09:14:43.978Z</lastmod>
-    <data>
-        <display>
-        <title>多线程并发异步的总结</title>
-        <pubTime>2017-09-06T07:54:12.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
           
         </display>
     </data>
@@ -1523,12 +1643,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>北大励志十句话</title>
-        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1563,32 +1683,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
-        
-        <tag>励志</tag>
-         
-         
-           
-             
-              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
-    <lastmod>2017-07-16T04:44:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于21世纪最重要的是什么</title>
-        <pubTime>2017-02-25T04:50:26.000Z</pubTime>
+        <title>北大励志十句话</title>
+        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1609,6 +1709,26 @@
         <display>
         <title>蛰伏——人生不可缺的阶段</title>
         <pubTime>2017-02-22T14:11:01.000Z</pubTime>
+        
+        <tag>励志</tag>
+         
+         
+           
+             
+              <breadCrumb title="生活 - 个人感悟" url="https://hengxing0080.github.io/categories/%E7%94%9F%E6%B4%BB-%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <lastmod>2017-07-16T04:44:56.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于21世纪最重要的是什么</title>
+        <pubTime>2017-02-25T04:50:26.000Z</pubTime>
         
         <tag>励志</tag>
          

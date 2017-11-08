@@ -1,0 +1,1310 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 进程和线程">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_process_logo.jpg">
+<meta property="og:updated_time" content="2017-11-08T11:28:24.144Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 进程和线程">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_process_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/"/>
+
+
+
+
+
+  <title>Android —— 进程和线程 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 进程和线程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T23:12:13+08:00">
+                2017-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_process_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>操作系统分配内存空间的单位<br>进程与进程之间内存空间彼此独立<br>线程是程序运行的最小的内存单元<br>一个进程可以包含多个线程<br>android下的四大组件都是运行在主线程里面的</p>
+<p>一般来讲一个应用程序就会对应一个进程<br>二般情况下一个应用程序可以有多个进程</p>
+<hr>
+<h1 id="进程-多进程"><a href="#进程-多进程" class="headerlink" title="进程/多进程"></a>进程/多进程</h1><hr>
+<p>注意：<br>谨慎使用Android的多进程，多进程虽然能够降低主进程的内存压力，但会遇到如下问题：<br>（1）不能实现完全退出所有Activity的功能（如果有同行在应用内采用多进程成功实现过完全退出程序欢迎沟通交流）；<br>（2）首次进入新启动进程的页面时会有延时的现象（有可能黑屏、白屏几秒，是白屏还是黑屏和新Activity的主题有关）；<br>（3）应用内多进程时，新启动一个进程都会重新跑一次Application的onCreate方法，不上重新创建一个Application，但会重新跑Application的onCreate，这样就不能在Application中缓存数据作为内存共享的途径了；<br>（4）多进程间通过SharedPreferences共享数据时不稳定，具体可以查阅《Android开发艺术探索》。</p>
+<h2 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h2><p>杀死别人：ActivityManager / killBackgroudProcess();</p>
+<p>自杀：android.os.Process.kill(pid);</p>
+<h2 id="关于几种退出整个应用程序的区别"><a href="#关于几种退出整个应用程序的区别" class="headerlink" title="关于几种退出整个应用程序的区别"></a>关于几种退出整个应用程序的区别</h2><p>Android手机的用户，根据习惯不同，可能会有两种方式退出整个应用程序：<br>1：按Home键直接退到桌面<br>2：从应用程序的退出按钮或者按Back键退出程序。</p>
+<p>那么从系统的角度来说，这两种方式有什么区别呢？<br>按Home键，应用程序并没有被关闭，而是成为了后台应用程序。<br>按Back键，一般来说，应用程序关闭了，但是进程并没有被杀死，而是成为了空进程（程序本身对退出做了特殊处理的不考虑在内）。</p>
+<p>Android系统已经做了大量进程管理的工作，这些已经可以满足用户的需求。<br>个人建议，应用程序在退出应用的时候不需要手动杀死自己所在的进程。<br>对于应用程序本身的进程管理，交给Android系统来处理就可以了。<br>应用程序需要做的，是尽量做好程序本身的内存管理工作。</p>
+<p>代码实现按Home键时隐藏程序的效果:<br>1:Android 2.0之前需要监听按键事件,进行判断是不是按下了back键<br>2:Android 2.0之后系统提供了一个onBackPressed()方法,这个方法就是专门用来监听back键事件的,所以只需重写onBackPressed()方法即可<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123; </div><div class="line">    <span class="comment">//实现Home键效果 </span></div><div class="line">    <span class="comment">//super.onBackPressed();这句话一定要注掉,不然又去调用默认的back处理方式了 </span></div><div class="line">    Intent i= <span class="keyword">new</span> Intent(Intent.ACTION_MAIN); </div><div class="line">    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); </div><div class="line">    i.addCategory(Intent.CATEGORY_HOME); </div><div class="line">    startActivity(i);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>代码实现退出应用程序的实现:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exitProgrames</span><span class="params">()</span></span>&#123; </div><div class="line">    Intent startMain = <span class="keyword">new</span> Intent(Intent.ACTION_MAIN); </div><div class="line">    startMain.addCategory(Intent.CATEGORY_HOME); </div><div class="line">    startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); </div><div class="line">    startActivity(startMain); </div><div class="line">    android.os.Process.killProcess(android.os.Process.myPid()); </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>相关文章：<br><a href="http://www.cnblogs.com/linjiqin/archive/2011/12/14/2287968.html" target="_blank" rel="external">Android home键和back键区别</a></p>
+<h2 id="多进程优化"><a href="#多进程优化" class="headerlink" title="多进程优化"></a>多进程优化</h2><p>这个技巧其实并不是非常建议使用，但它确实是一种可以帮助我们节省和管理内存的高级技巧。如果你要使用它的话一定要谨慎使用，因为绝大多数的应用程序都不应该在多个进程当中运行的，一旦使用不当，它甚至会增加额外的内存而不是帮我们节省内存。这个技巧比较适用于那些需要在后台去完成一项独立的任务，和前台的功能是可以完全区分开的场景。</p>
+<h3 id="多进程分担APP任务"><a href="#多进程分担APP任务" class="headerlink" title="多进程分担APP任务"></a>多进程分担APP任务</h3><p>这里举一个比较适合去使用多进程技巧的场景，比如说我们正在做一个音乐播放器软件，其中播放音乐的功能应该是一个独立的功能，它不需要和UI方面有任何关系，即使软件已经关闭了也应该可以正常播放音乐。如果此时我们只使用一个进程，那么即使用户关闭了软件，已经完全由Service来控制音乐播放了，系统仍然会将许多UI方面的内存进行保留。在这种场景下就非常适合使用两个进程，一个用于UI展示，另一个则用于在后台持续地播放音乐。</p>
+<p>想要实现多进程的功能也非常简单，只需要在AndroidManifest文件的应用程序组件中声明一个android:process属性就可以了，比如说我们希望播放音乐的Service可以运行在一个单独的进程当中，就可以这样写：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;service android:name=<span class="string">".PlaybackService"</span>  </div><div class="line">         android:process=<span class="string">":background"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>这里指定的进程名是background，你也可以将它改成任意你喜欢的名字。需要注意的是，进程名的前面都应该加上一个冒号，表示该进程是一个当前应用程序的私有进程。</p>
+<p>相关文章：<br><a href="http://droidyue.com/blog/2017/01/15/android-multiple-processes-summary/" target="_blank" rel="external">技术小黑屋——关于 Android 应用多进程的整理</a></p>
+<h3 id="多进程下谨慎初始化Application"><a href="#多进程下谨慎初始化Application" class="headerlink" title="多进程下谨慎初始化Application"></a>多进程下谨慎初始化Application</h3><p>Android应用可以支持开启多个进程。 通常的做法是这样<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;service android:name=<span class="string">".NetworkService"</span></div><div class="line">    android:process=<span class="string">":network"</span>/&gt;</div></pre></td></tr></table></figure></p>
+<p>通常我们在Application的onCreate方法中会做很多初始化操作,但是每个进程启动都需要执行到这个onCreate方法,为了避免不必要的初始化,建议按照进程(通过判断当前进程名)对应初始化.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String LOGTAG = <span class="string">"MyApplication"</span>;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">        String currentProcessName = getCurrentProcessName();</div><div class="line">        Log.i(LOGTAG, <span class="string">"onCreate currentProcessName="</span> + currentProcessName);</div><div class="line">        <span class="keyword">super</span>.onCreate();</div><div class="line">        <span class="keyword">if</span> (getPackageName().equals(currentProcessName)) &#123;</div><div class="line">            <span class="comment">//init for default process</span></div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (currentProcessName.endsWith(<span class="string">":network"</span>)) &#123;</div><div class="line">            <span class="comment">//init for netowrk process</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">getCurrentProcessName</span><span class="params">()</span> </span>&#123;</div><div class="line">        String currentProcessName = <span class="string">""</span>;</div><div class="line">        <span class="keyword">int</span> pid = android.os.Process.myPid();</div><div class="line">        ActivityManager manager = (ActivityManager) <span class="keyword">this</span>.getSystemService(Context.ACTIVITY_SERVICE);</div><div class="line">        <span class="keyword">for</span> (ActivityManager.RunningAppProcessInfo processInfo : manager.getRunningAppProcesses()) &#123;</div><div class="line">            <span class="keyword">if</span> (processInfo.pid == pid) &#123;</div><div class="line">                currentProcessName = processInfo.processName;</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> currentProcessName;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Zygote进程"><a href="#Zygote进程" class="headerlink" title="Zygote进程"></a>Zygote进程</h2><p>Zygote是一个Dalvik虚拟机进程，同时也是一个Dalvik虚拟机实例的孵化器，每当系统要求执行一个Android应用程序时，Zygote就会FORK出一个子进程来执行该应用程序。这样做的好处显而易见，Zygote进程是在系统启动时产生的，它会完成虚拟机的初始化，库的加载，预置类库的加载等操作，而在系统需要一个新的虚拟机实例时，Zygote通过复制自身，以最快的速度提供一个虚拟机实例。另外，对于一些只读的系统库，所有虚拟机实例都和Zygote共享一块内存区域，大大节省了内存开销。</p>
+<p>相关文章：<br><a href="http://blog.csdn.net/luoshengyang/article/details/6768304" target="_blank" rel="external">Android系统进程Zygote启动过程的源代码分析</a></p>
+<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p>文章：<br><a href="http://droidyue.com/blog/2017/01/15/android-multiple-processes-summary/" target="_blank" rel="external">关于 Android 应用多进程的整理</a></p>
+<p>书籍：<br>Android开发艺术探索——第2章 IPC机制</p>
+<hr>
+<h1 id="线程-多线程"><a href="#线程-多线程" class="headerlink" title="线程/多线程"></a>线程/多线程</h1><hr>
+<h2 id="线程用法技巧"><a href="#线程用法技巧" class="headerlink" title="线程用法技巧"></a>线程用法技巧</h2><h3 id="判断是否为是否为主线程"><a href="#判断是否为是否为主线程" class="headerlink" title="判断是否为是否为主线程"></a>判断是否为是否为主线程</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isInMainThread</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> Looper.myLooper() == Looper.getMainLooper();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>相关文章：<br><a href="http://droidyue.com/blog/2014/07/12/check-main-thread-in-android-chinese-edition/" target="_blank" rel="external">Android中检测当前是否为主线程</a></p>
+<h3 id="获取线程名字"><a href="#获取线程名字" class="headerlink" title="获取线程名字"></a>获取线程名字</h3><p>Thread.currentThread();</p>
+<h3 id="获取进程ID"><a href="#获取进程ID" class="headerlink" title="获取进程ID"></a>获取进程ID</h3><p>android.os.Process.myPid());    </p>
+<h3 id="获取线程ID"><a href="#获取线程ID" class="headerlink" title="获取线程ID"></a>获取线程ID</h3><p>android.os.Process.myTid()); // 方式1<br>mMainThread.getId(); // 方式2</p>
+<h3 id="获取线程ID-1"><a href="#获取线程ID-1" class="headerlink" title="获取线程ID"></a>获取线程ID</h3><p>Thread.currentThread().getId());</p>
+<h3 id="获取用户ID"><a href="#获取用户ID" class="headerlink" title="获取用户ID"></a>获取用户ID</h3><p>android.os.Process.myUid()); </p>
+<h2 id="开启子线程的2种方式"><a href="#开启子线程的2种方式" class="headerlink" title="开启子线程的2种方式"></a>开启子线程的2种方式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>.</div><div class="line"><span class="keyword">new</span> Thread()&#123;  <span class="comment">// 开启普通的线程</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</div><div class="line"></div><div class="line">    &#125;;</div><div class="line">&#125;.start();</div><div class="line"></div><div class="line"><span class="number">2</span>.</div><div class="line">ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(<span class="number">1</span>)<span class="comment">// 这种方式是开启线程池，参数给1就是开一个线程</span></div><div class="line">newFixedThreadPool.execute(<span class="keyword">new</span> TaskRunnable);</div></pre></td></tr></table></figure>
+<h2 id="多线程优化"><a href="#多线程优化" class="headerlink" title="多线程优化"></a>多线程优化</h2><h3 id="避免ANR异常"><a href="#避免ANR异常" class="headerlink" title="避免ANR异常"></a>避免ANR异常</h3><p>英文全称：Application Not Responding<br>释义：应用程序无响应</p>
+<p>解释：<br>在Android系统中, 应用程序一段时间响应不够灵敏, 系统就认为这个应用无响应, 产生ANR的异常，<br>然后系统会向用户弹出一个对话框,这个对话框叫应用程序无响应对话框.<br>用户可以选择让程序继续运行, 也可以强制终止.<br>但是一般用户在使用我们程序时, 并不希望每次都要处理这个对话框.<br>因此, 在编写程序时对响应性能的设计很重要,<br>处理好ANR, 也是提升产品体验的一个重要因素.</p>
+<p>注意ANR发生的原则：<br>四大组件都运行在主线程<br>Activity   超过5秒<br>Broadcast和Service     超过10秒</p>
+<p>如何避免:<br>基本的思路就是将IO操作在工作线程来处理，减少其他耗时操作和错误操作<br>不要把耗时的操作放在主线程里面执行</p>
+<p>耗时的操作都应该子线程里面<br>如：<br>网络请求<br>拷贝数据库<br>大文件的读取<br>各种耗时的计算</p>
+<p>其他的一些细节解决方法：<br>1.使用AsyncTask处理耗时IO操作</p>
+<p>2.使用Thread或者HandlerThread时，<br>调用Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND)设置优先级，否则仍然会降低程序响应，因为默认Thread的优先级和主线程相同。</p>
+<p>3.使用Handler处理工作线程结果，而不是使用Thread.wait()或者Thread.sleep()来阻塞主线程。</p>
+<p>4.Activity的onCreate和onResume回调中尽量避免耗时的代码</p>
+<p>5.BroadcastReceiver中onReceive代码也要尽量减少耗时，建议使用IntentService处理。</p>
+<p>6.同步改异步：耗时操作放在线程中执行防止占用主线程，一定程度上解决anr。（但需要注意线程和service结合（防止activity被回收后线程也被回收）以及线程的数量）</p>
+<p>相关文章：<br><a href="http://jingyan.baidu.com/article/546ae1850504a31148f28c78.html" target="_blank" rel="external">Android开发中的ANR问题如何避免？</a><br><a href="http://droidyue.com/blog/2015/07/18/anr-in-android/" target="_blank" rel="external">说说Android中的ANR</a></p>
+<h3 id="能创建基类解决问题就不用具体子类"><a href="#能创建基类解决问题就不用具体子类" class="headerlink" title="能创建基类解决问题就不用具体子类"></a>能创建基类解决问题就不用具体子类</h3><p>除需要设置优先级的线程使用new Thread创建外，其余线程创建使用new Runnable。因为子类会有自己的属性创建需要更多开销。</p>
+<h3 id="Thread内存泄露"><a href="#Thread内存泄露" class="headerlink" title="Thread内存泄露"></a>Thread内存泄露</h3><p>线程也是造成内存泄露的一个重要的源头。<br>线程产生内存泄露的主要原因在于线程生命周期的不可控。</p>
+<p>看一下下面是否存在问题,是否您以前也是这样用的呢<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThreadActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        <span class="keyword">new</span> MyThread().start();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.run();</div><div class="line">            dosomthing();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dosomthing</span><span class="params">()</span></span>&#123;</div><div class="line">                                                                    </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>相关文章：<br><a href="http://localhost:4000/2017/09/28/it/1.Android/Performance/" target="_blank" rel="external">在Activity中使用Thread导致的内存泄漏</a></p>
+<h3 id="Threadlocal内存泄漏"><a href="#Threadlocal内存泄漏" class="headerlink" title="Threadlocal内存泄漏"></a>Threadlocal内存泄漏</h3><p>threadlocal使用不当<br>如果我们粗暴的把ThreadLocal设置null，而不调用renmove方法或者set（null）。<br>那么就可能造成Threadlocal绑定的对象长期也不能够回收，因而产生泄露</p>
+<h3 id="ThreadPool替代Thread"><a href="#ThreadPool替代Thread" class="headerlink" title="ThreadPool替代Thread"></a>ThreadPool替代Thread</h3><p>在android中，我们应该尽量避免在主线程中执行耗时的操作，因而需要使用其他线程。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">testThread</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">new</span> Thread() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">super</span>.run();</div><div class="line">            <span class="comment">//do some io work</span></div><div class="line">        &#125;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>虽然这些能工作，但是创建线程的代价远比普通对象要高的多，建议使用HandlerThread或者ThreadPool做替换。</p>
+<p>如控制最大并发数量：<br>使用Java的Executors类，通过Executors.newFixedThreadPool(nThreads)控制线程池最大线程并发</p>
+<p>详情查看自我统计的文章的线程池章节：<br><a href="http://www.hengxing.me/2017/09/06/it/1.Java/Multithreading/" target="_blank" rel="external">Java多线程并发异步的总结</a><br>或者其他牛人文章：<br><a href="http://droidyue.com/blog/2015/11/08/make-use-of-handlerthread/index.html" target="_blank" rel="external">详解 Android 中的 HandlerThread</a><br><a href="http://droidyue.com/blog/2015/12/20/worker-thread-in-android/" target="_blank" rel="external">关于Android中工作者线程的思考</a></p>
+<h3 id="HandlerThread替代Thread"><a href="#HandlerThread替代Thread" class="headerlink" title="HandlerThread替代Thread"></a>HandlerThread替代Thread</h3><p>消息处理器线程类</p>
+<p>单一线程 + 任务队列 处理轻量的异步任务 </p>
+<p>Android提供了一个封装好的带有looper的线程类，即为HandlerThread</p>
+<p>代替不停new Thread开子线程的重复体力写法</p>
+<p>从Android中Thread描述可以看出，Android的Thread没有对Java的Thread做任何封装，但是Android提供了一个继承自Thread的类HandlerThread，这个类对Java的Thread做了很多便利Android系统的封装。</p>
+<p>确实比较适合单线程+异步队列的场景，比如应用刚进入时的数据初始化操作，如果开启多个线程同时执行，有可能争夺UI线程的CPU执行时间，造成卡顿，这个使用使用单线程+一异步队列模型，设置优先级之后，就可以将同步工作顺序执行，而又不影响UI的初始化</p>
+<p>Handler会关联一个单独的线程和消息队列。Handler默认关联主线程，虽然要提供Runnable参数 ，但默认是直接调用Runnable中的run()方法。也就是默认下会在主线程执行，如果在这里面的操作会有阻塞，界面也会卡住。如果要在其他线程执行，可以使用HandlerThread。<br>HandlerThread对象start后可以获得其Looper对象，并且使用这个Looper对象实例Handler。</p>
+<h4 id="HandlerThread和Thread的区别"><a href="#HandlerThread和Thread的区别" class="headerlink" title="HandlerThread和Thread的区别"></a>HandlerThread和Thread的区别</h4><p>HandlerThread继承于Thread，所以它本质就是个Thread。与普通Thread的差别就在于，主要的作用是建立了一个线程，并且创立了消息队列，有来自己的looper,可以让我们在自己的线程中分发和处理消息。</p>
+<h4 id="HandlerThread的优化点"><a href="#HandlerThread的优化点" class="headerlink" title="HandlerThread的优化点"></a>HandlerThread的优化点</h4><p>注意HandlerThread没有quit</p>
+<h4 id="HandlerThread相关文章"><a href="#HandlerThread相关文章" class="headerlink" title="HandlerThread相关文章"></a>HandlerThread相关文章</h4><p><a href="http://droidyue.com/blog/2015/11/08/make-use-of-handlerthread/" target="_blank" rel="external">详解 Android 中的 HandlerThread</a><br><a href="http://droidyue.com/blog/2015/12/20/worker-thread-in-android/" target="_blank" rel="external">关于Android中工作者线程的思考</a><br><a href="http://www.3lian.com/edu/2012/11-19/44762.html" target="_blank" rel="external">Android的Handler几种常见的传值方式</a><br><a href="http://blog.sina.com.cn/s/blog_5da93c8f0101kio1.html" target="_blank" rel="external">HandlerThread，Handler，Thread使用方法 </a></p>
+<h4 id="建议使用方式"><a href="#建议使用方式" class="headerlink" title="建议使用方式"></a>建议使用方式</h4><p>在 Activity 中尽可能少的创建 Handler 对象，创建一个主线程 Handler，一个后台 HandlerThread 就可以了。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/05/it/1.Android/Touch/" rel="next" title="Android —— Touch事件分发传递机制的总结">
+                <i class="fa fa-chevron-left"></i> Android —— Touch事件分发传递机制的总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程-多进程"><span class="nav-number">1.</span> <span class="nav-text">进程/多进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#杀死进程"><span class="nav-number">1.1.</span> <span class="nav-text">杀死进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于几种退出整个应用程序的区别"><span class="nav-number">1.2.</span> <span class="nav-text">关于几种退出整个应用程序的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多进程优化"><span class="nav-number">1.3.</span> <span class="nav-text">多进程优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程分担APP任务"><span class="nav-number">1.3.1.</span> <span class="nav-text">多进程分担APP任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程下谨慎初始化Application"><span class="nav-number">1.3.2.</span> <span class="nav-text">多进程下谨慎初始化Application</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zygote进程"><span class="nav-number">1.4.</span> <span class="nav-text">Zygote进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资料"><span class="nav-number">1.5.</span> <span class="nav-text">相关资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程-多线程"><span class="nav-number">2.</span> <span class="nav-text">线程/多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程用法技巧"><span class="nav-number">2.1.</span> <span class="nav-text">线程用法技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是否为是否为主线程"><span class="nav-number">2.1.1.</span> <span class="nav-text">判断是否为是否为主线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程名字"><span class="nav-number">2.1.2.</span> <span class="nav-text">获取线程名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取进程ID"><span class="nav-number">2.1.3.</span> <span class="nav-text">获取进程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程ID"><span class="nav-number">2.1.4.</span> <span class="nav-text">获取线程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程ID-1"><span class="nav-number">2.1.5.</span> <span class="nav-text">获取线程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户ID"><span class="nav-number">2.1.6.</span> <span class="nav-text">获取用户ID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启子线程的2种方式"><span class="nav-number">2.2.</span> <span class="nav-text">开启子线程的2种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程优化"><span class="nav-number">2.3.</span> <span class="nav-text">多线程优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免ANR异常"><span class="nav-number">2.3.1.</span> <span class="nav-text">避免ANR异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能创建基类解决问题就不用具体子类"><span class="nav-number">2.3.2.</span> <span class="nav-text">能创建基类解决问题就不用具体子类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread内存泄露"><span class="nav-number">2.3.3.</span> <span class="nav-text">Thread内存泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Threadlocal内存泄漏"><span class="nav-number">2.3.4.</span> <span class="nav-text">Threadlocal内存泄漏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPool替代Thread"><span class="nav-number">2.3.5.</span> <span class="nav-text">ThreadPool替代Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HandlerThread替代Thread"><span class="nav-number">2.3.6.</span> <span class="nav-text">HandlerThread替代Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread和Thread的区别"><span class="nav-number">2.3.6.1.</span> <span class="nav-text">HandlerThread和Thread的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread的优化点"><span class="nav-number">2.3.6.2.</span> <span class="nav-text">HandlerThread的优化点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread相关文章"><span class="nav-number">2.3.6.3.</span> <span class="nav-text">HandlerThread相关文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建议使用方式"><span class="nav-number">2.3.6.4.</span> <span class="nav-text">建议使用方式</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

@@ -99,7 +99,7 @@
 <meta property="og:site_name" content="恒星的轨迹">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_touch_logo.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_touch1.png">
-<meta property="og:updated_time" content="2017-11-07T12:30:38.061Z">
+<meta property="og:updated_time" content="2017-11-08T04:43:02.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— Touch事件分发传递机制的总结">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_touch_logo.png">
@@ -422,6 +422,7 @@
 <h2 id="默认事件传递"><a href="#默认事件传递" class="headerlink" title="默认事件传递"></a>默认事件传递</h2><p>是当产生了触摸事件之后，先给了最外层的布局，最外层的布局就把事件传给了第一个孩子，第一个孩子又再次传给里面的孩子<br>里面的孩子处理完之后就还给它父亲，父亲在传给父亲<br>就是从外到内，从内到外<br><img src="/images/it_android_touch1.png" alt="UML图"></p>
 <p>注意：<br>触摸事件有2次：ACTION_UP，ACTION_DOWN<br>所以会打印2次</p>
 <p>详细流程图例请查看最上面头图</p>
+<p>相关文章：<br><a href="http://www.trinea.cn/android/touch-event-delivery-mechanism/" target="_blank" rel="external">Android Touch事件传递机制</a></p>
 <hr>
 <h1 id="点击事件和触摸事件"><a href="#点击事件和触摸事件" class="headerlink" title="点击事件和触摸事件"></a>点击事件和触摸事件</h1><hr>
 <p>现在的图形界面应用程序，都是通过事件来实现人机交互的。<br>事件就是用户对图形界面的操作，在android手机和平板电脑上主要包括键盘事件和触摸事件两大类。<br>键盘事件包括按下，弹起等，触摸事件包括按下，弹起，滑动，双击等。</p>
@@ -532,6 +533,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/10/09/it/1.Android/Process/" rel="prev" title="Android —— 进程和线程">
+                Android —— 进程和线程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -640,7 +645,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">88</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

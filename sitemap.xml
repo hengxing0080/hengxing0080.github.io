@@ -2,23 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hengxing0080.github.io/2016/10/06/it/1.Android/Handler/</loc>
+    
+    <lastmod>2017-11-08T11:29:21.281Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/</loc>
+    
+    <lastmod>2017-11-08T11:28:24.144Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
     
-    <lastmod>2017-11-07T16:39:49.262Z</lastmod>
+    <lastmod>2017-11-08T11:24:31.741Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    
+    <lastmod>2017-11-08T10:52:31.631Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
+    
+    <lastmod>2017-11-08T10:30:12.098Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/View/</loc>
+    
+    <lastmod>2017-11-08T10:27:32.622Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Animation/</loc>
+    
+    <lastmod>2017-11-08T10:27:03.023Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Safety/</loc>
+    
+    <lastmod>2017-11-08T10:25:34.667Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
+    
+    <lastmod>2017-11-08T09:36:54.892Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
     
-    <lastmod>2017-11-07T16:25:18.097Z</lastmod>
+    <lastmod>2017-11-08T09:36:47.232Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
     
-    <lastmod>2017-11-07T12:30:38.061Z</lastmod>
+    <lastmod>2017-11-08T04:43:02.820Z</lastmod>
     
   </url>
   
@@ -65,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    
-    <lastmod>2017-10-27T13:26:05.125Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
     
     <lastmod>2017-10-27T13:24:46.714Z</lastmod>
@@ -96,13 +145,6 @@
     <loc>https://hengxing0080.github.io/2017/07/28/it/2.NetworkProtocol/HTTP/</loc>
     
     <lastmod>2017-10-19T11:34:13.938Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
-    
-    <lastmod>2017-10-19T09:14:43.978Z</lastmod>
     
   </url>
   
@@ -541,7 +583,7 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
@@ -555,21 +597,21 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
