@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_opencloud6.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_opencloud7.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_opencloud8.png">
-<meta property="og:updated_time" content="2017-10-27T13:24:46.714Z">
+<meta property="og:updated_time" content="2017-11-08T13:55:03.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— 开放云平台篇">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_opencloud_logo1.jpg">
@@ -458,6 +458,7 @@
 <h1 id="消息推送（Push）"><a href="#消息推送（Push）" class="headerlink" title="消息推送（Push）"></a>消息推送（Push）</h1><h2 id="消息推送机制简介"><a href="#消息推送机制简介" class="headerlink" title="消息推送机制简介"></a>消息推送机制简介</h2><p>外文名push</p>
 <p>所谓信息推送，就是”web广播”，是通过一定的技术标准或协议，在互联网上通过定期传送用户需要的信息来减少信息过载的一项新技术。推送技术通过自动传送信息给用户，来减少用于网络上搜索的时间。它根据用户的兴趣来搜索、过滤信息，并将其定期推给用户，帮助用户高效率地发掘有价值的信息。</p>
 <p>常见的新闻客户端应用用Noticifcations发来的消息，就是服务器把数据推到手机里来了，APP中在网络获取所有的操作都是客户端发数据给服务器，然后服务器返回数据<br>客户端是主动的，想要就发信息要<br>但是，消息推送是相反的，客户端不想要，服务器主动把消息发给你客户端<br>就是说现在服务器是主动方<br>理论上服务器有固定IP，客户端没有固定IP无法访问<br>就是说服务器一旦断了客户端就找不到了，因为手机的IP是动态改变的（一会wifi，一会3G网络）</p>
+<p>相关文章：<br><a href="http://www.jianshu.com/p/584707554ed7" target="_blank" rel="external">Android推送技术研究</a></p>
 <h2 id="消息推送原理"><a href="#消息推送原理" class="headerlink" title="消息推送原理"></a>消息推送原理</h2><p>长连接（即时通讯和消息推送的原理都是这个）<br>手机推送服务的原理很简单，就是通过建立一条手机与服务器的连接链路，当有消息需要发送到手机时，通过此链路发送即可。 </p>
 <p>首先主动方客户端先发请求到极光推送的服务端，和它保持一个长连接（不会断的连接），这时手机的相关信息已经和它绑在一起了<br>服务端想发新闻给客户端，不过它会先发给极光推送服务器，告诉它给某个手机发消息，<br>找到对应绑定的手机通过长连接在把信息推送给客户端<br>发给连接的主动方永远是客户端，发给长连接就是和极光服务器保持了连接，新闻数据就会通过连接的管道传给客户端<br>就是靠第三方做了下周转</p>
 <p>如果没有极光推送的服务器，就是客户端和服务端保持长连接，也能用极光推送，但是不能保持消息实时到达，可能会延迟一段时间</p>
@@ -839,7 +840,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

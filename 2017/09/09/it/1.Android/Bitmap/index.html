@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap1.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap2.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap3.png">
-<meta property="og:updated_time" content="2017-11-08T10:52:31.631Z">
+<meta property="og:updated_time" content="2017-11-08T13:56:23.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— Bitmap图片的总结">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_bitmap_logo.jpg">
@@ -428,6 +428,7 @@
 <p>如有的应用虽然占了10几M，但是也没内存溢出，<br>就是因为这个不需要连续的内存空间，只需要零散的空间，有空间就能钻进去</p>
 <p>存储图片为什么为出现OOM异常？<br>由于图片在内存中是以shot数组的形式存储，并且需要连续的内存空间，<br>当内存中没有连续的内存大小，即使内存充足也会出现OOM异常.<br>Android最消耗内存的就是连续占用空间的，耗内存大户就是bitmap.<br>数组也是，但是没见过见过数组长度为100一点事都没有，<br>得1000到10000才能有连续空间的感觉，也没有人就故意去建这么长的数据</p>
 <p>所以加载大图片，为了节省内存，对它进行缩放（缩小），缩放到适合这个屏幕刚刚好能显示的范围就可！</p>
+<p>相关文章：<br><a href="http://dev.qq.com/topic/591d61f56793d26660901b4e" target="_blank" rel="external">安卓开踩过的坑：你的 Bitmap 究竟占多大内存？</a></p>
 <hr>
 <h1 id="大图片加载的OOM异常和优化解决方案"><a href="#大图片加载的OOM异常和优化解决方案" class="headerlink" title="大图片加载的OOM异常和优化解决方案"></a>大图片加载的OOM异常和优化解决方案</h1><hr>
 <p>java.lang.OutOfMemoryError：内存溢出、内存泄露。<br>堆内存空间主要是给类实例、数组分配空间。<br>当图片占用的空间大于堆内存空间时就会抛出内存溢出的异常。</p>
@@ -605,8 +606,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/27/manager/1.Rule/" rel="prev" title="高效学习工作管理的实用法则">
-                高效学习工作管理的实用法则 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/24/it/1.Android/Webpage/" rel="prev" title="Android —— 相关学习网站总结">
+                Android —— 相关学习网站总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +718,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">88</span>
+                <span class="site-state-item-count">91</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
