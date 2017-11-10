@@ -4,8 +4,108 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/19/it/1.Android/Process/</loc>
+    <lastmod>2017-11-10T11:22:32.825Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 进程和线程</title>
+        <pubTime>2017-09-19T15:12:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/20/it/1.Android/Context/</loc>
+    <lastmod>2017-11-10T11:22:22.578Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Context的几种环境和区别</title>
+        <pubTime>2017-09-20T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
+    <lastmod>2017-11-10T11:19:43.378Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 性能优化系列</title>
+        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    <lastmod>2017-11-10T11:18:03.289Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
+    <lastmod>2017-11-10T10:06:54.143Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 异步任务机制 & 消息通知机制</title>
+        <pubTime>2017-10-09T10:08:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/24/it/4.Statistics/Webpage/</loc>
-    <lastmod>2017-11-10T05:32:38.497Z</lastmod>
+    <lastmod>2017-11-10T10:00:48.494Z</lastmod>
     <data>
         <display>
         <title>IT类学习网站总结</title>
@@ -17,6 +117,846 @@
            
              
               <breadCrumb title="IT - 统计分析" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
+    <lastmod>2017-11-10T09:52:35.021Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Touch事件分发传递机制的总结</title>
+        <pubTime>2017-10-05T08:48:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/15/it/2.OOP&DesignPattern/4.1.IOC/</loc>
+    <lastmod>2017-11-10T07:10:04.346Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式 —— IOC（控制反转）</title>
+        <pubTime>2017-08-15T07:21:32.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
+    <lastmod>2017-11-10T07:10:01.103Z</lastmod>
+    <data>
+        <display>
+        <title>MVC & MVP & MVVM & MVPVM</title>
+        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 架构&amp;框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/23/it/2.OOP&DesignPattern/2.12.Flyweight/</loc>
+    <lastmod>2017-11-10T07:09:51.774Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之12 —— 享元模式（结构型模式）</title>
+        <pubTime>2017-08-23T13:10:30.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/22/it/2.OOP&DesignPattern/2.11.Bridge/</loc>
+    <lastmod>2017-11-10T07:09:47.215Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之11 —— 桥接模式（结构型模式）</title>
+        <pubTime>2017-08-22T12:05:31.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/21/it/2.OOP&DesignPattern/2.10.Composite/</loc>
+    <lastmod>2017-11-10T07:09:43.495Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之10 —— 组合模式（结构型模式）</title>
+        <pubTime>2017-08-21T13:21:51.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/20/it/2.OOP&DesignPattern/2.9.State/</loc>
+    <lastmod>2017-11-10T07:09:41.306Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之9 —— 外观模式（结构型模式）</title>
+        <pubTime>2017-08-20T12:00:02.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/19/it/2.OOP&DesignPattern/2.8.adapter/</loc>
+    <lastmod>2017-11-10T07:09:38.770Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之8 —— 适配器模式（结构型模式）</title>
+        <pubTime>2017-08-19T14:12:59.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/12/it/2.OOP&DesignPattern/2.7.Proxy/</loc>
+    <lastmod>2017-11-10T07:09:35.804Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之7 —— 代理模式（结构型模式）</title>
+        <pubTime>2017-08-12T03:22:47.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/10/it/2.OOP&DesignPattern/2.6.Decorator/</loc>
+    <lastmod>2017-11-10T07:09:32.897Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之6 —— 装饰模式（结构型模式）</title>
+        <pubTime>2017-08-10T00:11:22.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/15/it/2.OOP&DesignPattern/2.5.Prototype/</loc>
+    <lastmod>2017-11-10T07:09:28.828Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之5 —— 原型模式（创建型模式）</title>
+        <pubTime>2017-06-15T05:21:32.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
+    <lastmod>2017-11-10T07:09:24.487Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之4 —— 建造者模式（创建型模式）</title>
+        <pubTime>2017-06-08T07:21:33.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
+    <lastmod>2017-11-10T07:09:20.283Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之3 —— 抽象工厂模式（创建型模式）</title>
+        <pubTime>2017-06-04T11:01:45.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
+    <lastmod>2017-11-10T07:09:14.912Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之2 —— 工厂模式（创建型模式）</title>
+        <pubTime>2017-06-02T03:31:55.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
+    <lastmod>2017-11-10T07:09:10.692Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之1 —— 单例模式（创建型模式）</title>
+        <pubTime>2017-06-01T01:41:25.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/05/01/it/2.OOP&DesignPattern/2.0.Info/</loc>
+    <lastmod>2017-11-10T07:09:04.588Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式汇总</title>
+        <pubTime>2017-05-01T02:21:20.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/04/20/it/2.OOP&DesignPattern/1.7.CARP/</loc>
+    <lastmod>2017-11-10T07:09:00.053Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程其他原则：合成/聚合复用原则</title>
+        <pubTime>2017-04-20T03:27:15.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/04/02/it/2.OOP&DesignPattern/1.6.LOD/</loc>
+    <lastmod>2017-11-10T07:08:52.144Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之6：迪米特法则</title>
+        <pubTime>2017-04-02T03:27:15.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/04/01/it/2.OOP&DesignPattern/1.5.ISP/</loc>
+    <lastmod>2017-11-10T07:08:48.407Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之5：接口隔离原则</title>
+        <pubTime>2017-04-01T13:32:12.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/26/it/2.OOP&DesignPattern/1.4.DIP/</loc>
+    <lastmod>2017-11-10T07:08:45.178Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之4：依赖倒置原则</title>
+        <pubTime>2017-03-26T02:30:38.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/25/it/2.OOP&DesignPattern/1.3.LSP/</loc>
+    <lastmod>2017-11-10T07:08:42.341Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之3：里氏替换原则</title>
+        <pubTime>2017-03-25T14:30:45.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/14/it/2.OOP&DesignPattern/1.2.OCP/</loc>
+    <lastmod>2017-11-10T07:08:36.897Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之2：开放闭合原则</title>
+        <pubTime>2017-03-14T02:00:51.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/05/it/2.OOP&DesignPattern/1.1.SRP/</loc>
+    <lastmod>2017-11-10T07:08:29.176Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则之1：单一职责原则</title>
+        <pubTime>2017-03-05T08:52:51.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/01/it/2.OOP&DesignPattern/1.0.OOP/</loc>
+    <lastmod>2017-11-10T07:08:25.964Z</lastmod>
+    <data>
+        <display>
+        <title>面向对象编程6大原则汇总</title>
+        <pubTime>2017-03-01T14:02:52.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&Algorithm/LinearList/</loc>
+    <lastmod>2017-11-10T07:07:05.029Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 线性表：顺序表和链表</title>
+        <pubTime>2017-08-01T01:50:23.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/28/it/2.DataStructure&Algorithm/SortAlgorithm/</loc>
+    <lastmod>2017-11-10T07:07:02.390Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序算法总结</title>
+        <pubTime>2017-07-28T15:01:02.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/23/it/2.DataStructure&Algorithm/SortBogo/</loc>
+    <lastmod>2017-11-10T07:07:01.464Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：猴子排序</title>
+        <pubTime>2017-07-23T03:21:02.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/08/it/2.DataStructure&Algorithm/SortBubble/</loc>
+    <lastmod>2017-11-10T07:07:00.445Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：冒泡排序</title>
+        <pubTime>2017-07-08T11:12:32.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/30/it/2.DataStructure&Algorithm/SortBucket/</loc>
+    <lastmod>2017-11-10T07:06:59.463Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：桶排序</title>
+        <pubTime>2017-07-30T11:01:33.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/31/it/2.DataStructure&Algorithm/SortCounting/</loc>
+    <lastmod>2017-11-10T07:06:58.518Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：计数排序</title>
+        <pubTime>2017-07-31T14:02:57.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/26/it/2.DataStructure&Algorithm/SortHeap/</loc>
+    <lastmod>2017-11-10T07:06:57.575Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：堆排序</title>
+        <pubTime>2017-07-26T11:52:08.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/21/it/2.DataStructure&Algorithm/SortInsert/</loc>
+    <lastmod>2017-11-10T07:06:56.540Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：插入排序</title>
+        <pubTime>2017-07-21T09:47:22.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/27/it/2.DataStructure&Algorithm/SortMerging/</loc>
+    <lastmod>2017-11-10T07:06:55.554Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：归并排序</title>
+        <pubTime>2017-07-27T12:47:32.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/28/it/2.DataStructure&Algorithm/SortQuick/</loc>
+    <lastmod>2017-11-10T07:06:54.571Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：快速排序</title>
+        <pubTime>2017-07-28T13:35:12.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/29/it/2.DataStructure&Algorithm/SortRadix/</loc>
+    <lastmod>2017-11-10T07:06:53.590Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：基数排序</title>
+        <pubTime>2017-07-29T03:52:09.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/09/it/2.DataStructure&Algorithm/SortSelection/</loc>
+    <lastmod>2017-11-10T07:06:52.034Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：选择排序</title>
+        <pubTime>2017-07-09T08:26:32.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/22/it/2.DataStructure&Algorithm/SortShaker/</loc>
+    <lastmod>2017-11-10T07:06:50.996Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：鸡尾酒排序</title>
+        <pubTime>2017-07-22T04:21:30.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/22/it/2.DataStructure&Algorithm/SortShell/</loc>
+    <lastmod>2017-11-10T07:06:49.915Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：希尔排序</title>
+        <pubTime>2017-07-22T09:47:22.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/23/it/2.DataStructure&Algorithm/SortStooge/</loc>
+    <lastmod>2017-11-10T07:06:48.502Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 排序系列：臭皮匠排序</title>
+        <pubTime>2017-07-23T12:47:32.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/</loc>
+    <lastmod>2017-11-10T07:06:45.639Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 线性表：栈和队列</title>
+        <pubTime>2017-07-20T09:28:23.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/18/it/2.DataStructure&Algorithm/String/</loc>
+    <lastmod>2017-11-10T07:06:28.112Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 线性表：串</title>
+        <pubTime>2017-07-18T11:31:51.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/07/19/it/2.DataStructure&Algorithm/Recursion/</loc>
+    <lastmod>2017-11-10T07:05:43.283Z</lastmod>
+    <data>
+        <display>
+        <title>数据结构与算法 —— 算法：递归</title>
+        <pubTime>2017-07-19T03:26:49.000Z</pubTime>
+        
+        <tag>数据结构与算法</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 数据结构与算法 - 算法 - 相关" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E7%9B%B8%E5%85%B3/"/>
           
         </display>
     </data>
@@ -124,26 +1064,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
-    <lastmod>2017-11-10T04:52:16.389Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 异步任务机制 & 消息通知机制</title>
-        <pubTime>2017-10-09T10:08:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
     <lastmod>2017-11-10T04:51:05.132Z</lastmod>
     <data>
@@ -157,86 +1077,6 @@
            
              
               <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/</loc>
-    <lastmod>2017-11-10T04:35:35.965Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 进程和线程</title>
-        <pubTime>2017-10-09T15:12:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-11-09T11:37:58.121Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 性能优化系列</title>
-        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/10/it/1.Android/Context/</loc>
-    <lastmod>2017-11-09T09:04:20.004Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Context的几种环境和区别</title>
-        <pubTime>2017-10-10T15:57:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    <lastmod>2017-11-08T13:56:23.416Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Bitmap图片的总结</title>
-        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
           
         </display>
     </data>
@@ -364,26 +1204,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
-    <lastmod>2017-11-08T04:43:02.820Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Touch事件分发传递机制的总结</title>
-        <pubTime>2017-10-05T08:48:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1Android/</loc>
     <lastmod>2017-11-03T15:48:44.184Z</lastmod>
     <data>
@@ -465,26 +1285,6 @@
     
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
-    <lastmod>2017-10-26T11:26:42.027Z</lastmod>
-    <data>
-        <display>
-        <title>MVC & MVP & MVVM & MVPVM</title>
-        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 架构&amp;框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/08/27/manager/1.Psychology/</loc>
     <lastmod>2017-10-24T16:09:34.663Z</lastmod>
     <data>
@@ -525,66 +1325,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/07/20/it/2.DataStructure&Algorithm/StackOrQueue/</loc>
-    <lastmod>2017-10-14T12:16:23.396Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 线性表：栈和队列</title>
-        <pubTime>2017-07-20T09:28:23.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/18/it/2.DataStructure&Algorithm/String/</loc>
-    <lastmod>2017-10-14T11:39:57.181Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 线性表：串</title>
-        <pubTime>2017-07-18T11:31:51.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/2.DataStructure&Algorithm/LinearList/</loc>
-    <lastmod>2017-10-14T11:39:24.258Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 线性表：顺序表和链表</title>
-        <pubTime>2017-08-01T01:50:23.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 数据结构 - 线性表" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/07/it/3.UML/UMLClass/</loc>
     <lastmod>2017-10-14T07:40:40.199Z</lastmod>
     <data>
@@ -618,46 +1358,6 @@
            
              
               <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
-    <lastmod>2017-10-09T06:41:38.359Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之1 —— 单例模式（创建型模式）</title>
-        <pubTime>2017-06-01T01:41:25.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/05/01/it/2.OOP&DesignPattern/2.0.Info/</loc>
-    <lastmod>2017-10-07T05:11:55.164Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式汇总</title>
-        <pubTime>2017-05-01T02:21:20.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>
@@ -725,46 +1425,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
-    <lastmod>2017-10-06T05:53:02.863Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之3 —— 抽象工厂模式（创建型模式）</title>
-        <pubTime>2017-06-04T11:01:45.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
-    <lastmod>2017-10-06T04:45:28.271Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之2 —— 工厂模式（创建型模式）</title>
-        <pubTime>2017-06-02T03:31:55.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/07/16/it/1.Java/OperationModulo/</loc>
     <lastmod>2017-10-05T16:06:29.100Z</lastmod>
     <data>
@@ -825,206 +1485,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
-    <lastmod>2017-10-05T12:10:23.380Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之4 —— 建造者模式（创建型模式）</title>
-        <pubTime>2017-06-08T07:21:33.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/01/it/2.OOP&DesignPattern/1.0.OOP/</loc>
-    <lastmod>2017-10-05T10:42:53.581Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则汇总</title>
-        <pubTime>2017-03-01T14:02:52.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/05/it/2.OOP&DesignPattern/1.1.SRP/</loc>
-    <lastmod>2017-10-05T10:38:01.309Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之1：单一职责原则</title>
-        <pubTime>2017-03-05T08:52:51.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/14/it/2.OOP&DesignPattern/1.2.OCP/</loc>
-    <lastmod>2017-10-05T10:31:16.052Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之2：开放闭合原则</title>
-        <pubTime>2017-03-14T02:00:51.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/25/it/2.OOP&DesignPattern/1.3.LSP/</loc>
-    <lastmod>2017-10-05T10:04:14.414Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之3：里氏替换原则</title>
-        <pubTime>2017-03-25T14:30:45.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/04/20/it/2.OOP&DesignPattern/1.7.CARP/</loc>
-    <lastmod>2017-09-30T13:05:44.461Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程其他原则：合成/聚合复用原则</title>
-        <pubTime>2017-04-20T03:27:15.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/26/it/2.OOP&DesignPattern/1.4.DIP/</loc>
-    <lastmod>2017-09-30T13:01:52.757Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之4：依赖倒置原则</title>
-        <pubTime>2017-03-26T02:30:38.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/04/01/it/2.OOP&DesignPattern/1.5.ISP/</loc>
-    <lastmod>2017-09-30T13:01:46.354Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之5：接口隔离原则</title>
-        <pubTime>2017-04-01T13:32:12.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/04/02/it/2.OOP&DesignPattern/1.6.LOD/</loc>
-    <lastmod>2017-09-30T13:01:02.957Z</lastmod>
-    <data>
-        <display>
-        <title>面向对象编程6大原则之6：迪米特法则</title>
-        <pubTime>2017-04-02T03:27:15.000Z</pubTime>
-        
-        <tag>面向对象</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 面向对象编程原则" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%8E%9F%E5%88%99/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/15/it/2.OOP&DesignPattern/2.5.Prototype/</loc>
-    <lastmod>2017-09-30T08:42:16.150Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之5 —— 原型模式（创建型模式）</title>
-        <pubTime>2017-06-15T05:21:32.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/18/discovery/Underwater1%20/</loc>
     <lastmod>2017-09-29T16:40:20.136Z</lastmod>
     <data>
@@ -1078,466 +1538,6 @@
            
              
               <breadCrumb title="IT - 网络 - 相关" url="https://hengxing0080.github.io/categories/IT-%E7%BD%91%E7%BB%9C-%E7%9B%B8%E5%85%B3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/19/it/2.DataStructure&Algorithm/Recursion/</loc>
-    <lastmod>2017-09-29T16:28:59.745Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 算法：递归</title>
-        <pubTime>2017-07-19T03:26:49.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 相关" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E7%9B%B8%E5%85%B3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/23/it/2.DataStructure&Algorithm/SortStooge/</loc>
-    <lastmod>2017-09-29T16:21:43.882Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：臭皮匠排序</title>
-        <pubTime>2017-07-23T12:47:32.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/22/it/2.DataStructure&Algorithm/SortShell/</loc>
-    <lastmod>2017-09-29T16:21:40.508Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：希尔排序</title>
-        <pubTime>2017-07-22T09:47:22.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/22/it/2.DataStructure&Algorithm/SortShaker/</loc>
-    <lastmod>2017-09-29T16:21:37.325Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：鸡尾酒排序</title>
-        <pubTime>2017-07-22T04:21:30.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/09/it/2.DataStructure&Algorithm/SortSelection/</loc>
-    <lastmod>2017-09-29T16:21:26.026Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：选择排序</title>
-        <pubTime>2017-07-09T08:26:32.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/29/it/2.DataStructure&Algorithm/SortRadix/</loc>
-    <lastmod>2017-09-29T16:21:23.311Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：基数排序</title>
-        <pubTime>2017-07-29T03:52:09.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/28/it/2.DataStructure&Algorithm/SortQuick/</loc>
-    <lastmod>2017-09-29T16:21:20.278Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：快速排序</title>
-        <pubTime>2017-07-28T13:35:12.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/27/it/2.DataStructure&Algorithm/SortMerging/</loc>
-    <lastmod>2017-09-29T16:21:17.501Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：归并排序</title>
-        <pubTime>2017-07-27T12:47:32.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/21/it/2.DataStructure&Algorithm/SortInsert/</loc>
-    <lastmod>2017-09-29T16:21:14.008Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：插入排序</title>
-        <pubTime>2017-07-21T09:47:22.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/26/it/2.DataStructure&Algorithm/SortHeap/</loc>
-    <lastmod>2017-09-29T16:21:10.647Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：堆排序</title>
-        <pubTime>2017-07-26T11:52:08.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/31/it/2.DataStructure&Algorithm/SortCounting/</loc>
-    <lastmod>2017-09-29T16:21:06.840Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：计数排序</title>
-        <pubTime>2017-07-31T14:02:57.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/30/it/2.DataStructure&Algorithm/SortBucket/</loc>
-    <lastmod>2017-09-29T16:21:02.991Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：桶排序</title>
-        <pubTime>2017-07-30T11:01:33.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/08/it/2.DataStructure&Algorithm/SortBubble/</loc>
-    <lastmod>2017-09-29T16:20:59.704Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：冒泡排序</title>
-        <pubTime>2017-07-08T11:12:32.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/23/it/2.DataStructure&Algorithm/SortBogo/</loc>
-    <lastmod>2017-09-29T16:20:56.415Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序系列：猴子排序</title>
-        <pubTime>2017-07-23T03:21:02.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/07/28/it/2.DataStructure&Algorithm/SortAlgorithm/</loc>
-    <lastmod>2017-09-29T16:20:52.987Z</lastmod>
-    <data>
-        <display>
-        <title>数据结构与算法 —— 排序算法总结</title>
-        <pubTime>2017-07-28T15:01:02.000Z</pubTime>
-        
-        <tag>算法</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 数据结构与算法 - 算法 - 排序" url="https://hengxing0080.github.io/categories/IT-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95-%E6%8E%92%E5%BA%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/15/it/2.OOP&DesignPattern/4.1.IOC/</loc>
-    <lastmod>2017-09-29T16:19:21.663Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式 —— IOC（控制反转）</title>
-        <pubTime>2017-08-15T07:21:32.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/23/it/2.OOP&DesignPattern/2.12.Flyweight/</loc>
-    <lastmod>2017-09-29T16:19:11.051Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之12 —— 享元模式（结构型模式）</title>
-        <pubTime>2017-08-23T13:10:30.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/22/it/2.OOP&DesignPattern/2.11.Bridge/</loc>
-    <lastmod>2017-09-29T16:19:06.695Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之11 —— 桥接模式（结构型模式）</title>
-        <pubTime>2017-08-22T12:05:31.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/21/it/2.OOP&DesignPattern/2.10.Composite/</loc>
-    <lastmod>2017-09-29T16:19:03.489Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之10 —— 组合模式（结构型模式）</title>
-        <pubTime>2017-08-21T13:21:51.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/20/it/2.OOP&DesignPattern/2.9.State/</loc>
-    <lastmod>2017-09-29T16:18:59.223Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之9 —— 外观模式（结构型模式）</title>
-        <pubTime>2017-08-20T12:00:02.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/19/it/2.OOP&DesignPattern/2.8.adapter/</loc>
-    <lastmod>2017-09-29T16:18:54.610Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之8 —— 适配器模式（结构型模式）</title>
-        <pubTime>2017-08-19T14:12:59.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/12/it/2.OOP&DesignPattern/2.7.Proxy/</loc>
-    <lastmod>2017-09-29T16:18:49.895Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之7 —— 代理模式（结构型模式）</title>
-        <pubTime>2017-08-12T03:22:47.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/10/it/2.OOP&DesignPattern/2.6.Decorator/</loc>
-    <lastmod>2017-09-29T16:18:44.424Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之6 —— 装饰模式（结构型模式）</title>
-        <pubTime>2017-08-10T00:11:22.000Z</pubTime>
-        
-        <tag>设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
           
         </display>
     </data>
@@ -1723,12 +1723,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        <title>北大励志十句话</title>
+        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1743,12 +1743,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>北大励志十句话</title>
-        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          

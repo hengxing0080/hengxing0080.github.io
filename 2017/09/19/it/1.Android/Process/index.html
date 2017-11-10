@@ -95,10 +95,10 @@
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android —— 进程和线程">
-<meta property="og:url" content="https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/index.html">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/19/it/1.Android/Process/index.html">
 <meta property="og:site_name" content="恒星的轨迹">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_process_logo.jpg">
-<meta property="og:updated_time" content="2017-11-10T04:35:35.965Z">
+<meta property="og:updated_time" content="2017-11-10T11:22:32.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— 进程和线程">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_process_logo.jpg">
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/"/>
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/19/it/1.Android/Process/"/>
 
 
 
@@ -322,7 +322,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/19/it/1.Android/Process/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="恒星">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T23:12:13+08:00">
-                2017-10-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T23:12:13+08:00">
+                2017-09-19
               </time>
             
 
@@ -480,6 +480,7 @@
 <h4 id="HandlerThread的优化点"><a href="#HandlerThread的优化点" class="headerlink" title="HandlerThread的优化点"></a>HandlerThread的优化点</h4><p>注意HandlerThread没有quit</p>
 <h4 id="HandlerThread相关文章"><a href="#HandlerThread相关文章" class="headerlink" title="HandlerThread相关文章"></a>HandlerThread相关文章</h4><p><a href="http://droidyue.com/blog/2015/11/08/make-use-of-handlerthread/" target="_blank" rel="external">详解 Android 中的 HandlerThread</a><br><a href="http://droidyue.com/blog/2015/12/20/worker-thread-in-android/" target="_blank" rel="external">关于Android中工作者线程的思考</a><br><a href="http://www.3lian.com/edu/2012/11-19/44762.html" target="_blank" rel="external">Android的Handler几种常见的传值方式</a><br><a href="http://blog.sina.com.cn/s/blog_5da93c8f0101kio1.html" target="_blank" rel="external">HandlerThread，Handler，Thread使用方法 </a></p>
 <h4 id="建议使用方式"><a href="#建议使用方式" class="headerlink" title="建议使用方式"></a>建议使用方式</h4><p>在 Activity 中尽可能少的创建 Handler 对象，创建一个主线程 Handler，一个后台 HandlerThread 就可以了。</p>
+<h3 id="其他细节"><a href="#其他细节" class="headerlink" title="其他细节"></a>其他细节</h3><p>如果对于线程安全没有要求，尽量使用线程不安全的集合对象。</p>
 
       
     </div>
@@ -543,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/09/it/1.Android/Handler/" rel="next" title="Android —— 异步任务机制 & 消息通知机制">
-                <i class="fa fa-chevron-left"></i> Android —— 异步任务机制 & 消息通知机制
+              <a href="/2017/09/09/it/1.Android/Bitmap/" rel="next" title="Android —— Bitmap图片的总结">
+                <i class="fa fa-chevron-left"></i> Android —— Bitmap图片的总结
               </a>
             
           </div>
@@ -553,7 +554,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/10/it/1.Android/Context/" rel="prev" title="Android —— Context的几种环境和区别">
+              <a href="/2017/09/20/it/1.Android/Context/" rel="prev" title="Android —— Context的几种环境和区别">
                 Android —— Context的几种环境和区别 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -687,7 +688,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -781,7 +782,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程-多进程"><span class="nav-number">1.</span> <span class="nav-text">进程/多进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#杀死进程"><span class="nav-number">1.1.</span> <span class="nav-text">杀死进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于几种退出整个应用程序的区别"><span class="nav-number">1.2.</span> <span class="nav-text">关于几种退出整个应用程序的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多进程优化"><span class="nav-number">1.3.</span> <span class="nav-text">多进程优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程分担APP任务"><span class="nav-number">1.3.1.</span> <span class="nav-text">多进程分担APP任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程下谨慎初始化Application"><span class="nav-number">1.3.2.</span> <span class="nav-text">多进程下谨慎初始化Application</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zygote进程"><span class="nav-number">1.4.</span> <span class="nav-text">Zygote进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资料"><span class="nav-number">1.5.</span> <span class="nav-text">相关资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程-多线程"><span class="nav-number">2.</span> <span class="nav-text">线程/多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程用法技巧"><span class="nav-number">2.1.</span> <span class="nav-text">线程用法技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是否为是否为主线程"><span class="nav-number">2.1.1.</span> <span class="nav-text">判断是否为是否为主线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程名字"><span class="nav-number">2.1.2.</span> <span class="nav-text">获取线程名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取进程ID"><span class="nav-number">2.1.3.</span> <span class="nav-text">获取进程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程ID"><span class="nav-number">2.1.4.</span> <span class="nav-text">获取线程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程ID-1"><span class="nav-number">2.1.5.</span> <span class="nav-text">获取线程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户ID"><span class="nav-number">2.1.6.</span> <span class="nav-text">获取用户ID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启子线程的2种方式"><span class="nav-number">2.2.</span> <span class="nav-text">开启子线程的2种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程优化"><span class="nav-number">2.3.</span> <span class="nav-text">多线程优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免ANR异常"><span class="nav-number">2.3.1.</span> <span class="nav-text">避免ANR异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能创建基类解决问题就不用具体子类"><span class="nav-number">2.3.2.</span> <span class="nav-text">能创建基类解决问题就不用具体子类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread内存泄露"><span class="nav-number">2.3.3.</span> <span class="nav-text">Thread内存泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Threadlocal内存泄漏"><span class="nav-number">2.3.4.</span> <span class="nav-text">Threadlocal内存泄漏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPool替代Thread"><span class="nav-number">2.3.5.</span> <span class="nav-text">ThreadPool替代Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HandlerThread替代Thread"><span class="nav-number">2.3.6.</span> <span class="nav-text">HandlerThread替代Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread和Thread的区别"><span class="nav-number">2.3.6.1.</span> <span class="nav-text">HandlerThread和Thread的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread的优化点"><span class="nav-number">2.3.6.2.</span> <span class="nav-text">HandlerThread的优化点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread相关文章"><span class="nav-number">2.3.6.3.</span> <span class="nav-text">HandlerThread相关文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建议使用方式"><span class="nav-number">2.3.6.4.</span> <span class="nav-text">建议使用方式</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程-多进程"><span class="nav-number">1.</span> <span class="nav-text">进程/多进程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#杀死进程"><span class="nav-number">1.1.</span> <span class="nav-text">杀死进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于几种退出整个应用程序的区别"><span class="nav-number">1.2.</span> <span class="nav-text">关于几种退出整个应用程序的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多进程优化"><span class="nav-number">1.3.</span> <span class="nav-text">多进程优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程分担APP任务"><span class="nav-number">1.3.1.</span> <span class="nav-text">多进程分担APP任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程下谨慎初始化Application"><span class="nav-number">1.3.2.</span> <span class="nav-text">多进程下谨慎初始化Application</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zygote进程"><span class="nav-number">1.4.</span> <span class="nav-text">Zygote进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关资料"><span class="nav-number">1.5.</span> <span class="nav-text">相关资料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线程-多线程"><span class="nav-number">2.</span> <span class="nav-text">线程/多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#线程用法技巧"><span class="nav-number">2.1.</span> <span class="nav-text">线程用法技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是否为是否为主线程"><span class="nav-number">2.1.1.</span> <span class="nav-text">判断是否为是否为主线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程名字"><span class="nav-number">2.1.2.</span> <span class="nav-text">获取线程名字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取进程ID"><span class="nav-number">2.1.3.</span> <span class="nav-text">获取进程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程ID"><span class="nav-number">2.1.4.</span> <span class="nav-text">获取线程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取线程ID-1"><span class="nav-number">2.1.5.</span> <span class="nav-text">获取线程ID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户ID"><span class="nav-number">2.1.6.</span> <span class="nav-text">获取用户ID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启子线程的2种方式"><span class="nav-number">2.2.</span> <span class="nav-text">开启子线程的2种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程优化"><span class="nav-number">2.3.</span> <span class="nav-text">多线程优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#避免ANR异常"><span class="nav-number">2.3.1.</span> <span class="nav-text">避免ANR异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#能创建基类解决问题就不用具体子类"><span class="nav-number">2.3.2.</span> <span class="nav-text">能创建基类解决问题就不用具体子类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thread内存泄露"><span class="nav-number">2.3.3.</span> <span class="nav-text">Thread内存泄露</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Threadlocal内存泄漏"><span class="nav-number">2.3.4.</span> <span class="nav-text">Threadlocal内存泄漏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadPool替代Thread"><span class="nav-number">2.3.5.</span> <span class="nav-text">ThreadPool替代Thread</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HandlerThread替代Thread"><span class="nav-number">2.3.6.</span> <span class="nav-text">HandlerThread替代Thread</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread和Thread的区别"><span class="nav-number">2.3.6.1.</span> <span class="nav-text">HandlerThread和Thread的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread的优化点"><span class="nav-number">2.3.6.2.</span> <span class="nav-text">HandlerThread的优化点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HandlerThread相关文章"><span class="nav-number">2.3.6.3.</span> <span class="nav-text">HandlerThread相关文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#建议使用方式"><span class="nav-number">2.3.6.4.</span> <span class="nav-text">建议使用方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他细节"><span class="nav-number">2.3.7.</span> <span class="nav-text">其他细节</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
