@@ -2,23 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/24/it/4.Statistics/Webpage/</loc>
+    
+    <lastmod>2017-11-10T05:32:38.497Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
+    
+    <lastmod>2017-11-10T05:30:43.842Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/22/it/4.Statistics/Specialist/</loc>
+    
+    <lastmod>2017-11-10T04:57:48.132Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/25/it/4.Statistics/Book/</loc>
+    
+    <lastmod>2017-11-10T04:56:35.634Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/22/it/4.Statistics/RankingsDeveloper/</loc>
+    
+    <lastmod>2017-11-10T04:56:13.980Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/05/31/it/4.Statistics/RankingsProgrammingLanguage/</loc>
+    
+    <lastmod>2017-11-10T04:56:10.729Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
     
-    <lastmod>2017-11-09T12:37:22.350Z</lastmod>
+    <lastmod>2017-11-10T04:52:16.389Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/24/it/1.Android/Webpage/</loc>
+    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
     
-    <lastmod>2017-11-09T12:22:46.869Z</lastmod>
+    <lastmod>2017-11-10T04:51:05.132Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/25/it/1.Android/Book/</loc>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/</loc>
     
-    <lastmod>2017-11-09T12:22:28.320Z</lastmod>
+    <lastmod>2017-11-10T04:35:35.965Z</lastmod>
     
   </url>
   
@@ -33,13 +75,6 @@
     <loc>https://hengxing0080.github.io/2017/10/10/it/1.Android/Context/</loc>
     
     <lastmod>2017-11-09T09:04:20.004Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/06/it/1.Java/Multithreading/</loc>
-    
-    <lastmod>2017-11-08T13:58:24.650Z</lastmod>
     
   </url>
   
@@ -68,20 +103,6 @@
     <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
     
     <lastmod>2017-11-08T13:48:29.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Process/</loc>
-    
-    <lastmod>2017-11-08T11:28:24.144Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
-    
-    <lastmod>2017-11-08T10:30:12.098Z</lastmod>
     
   </url>
   
@@ -201,13 +222,6 @@
     <loc>https://hengxing0080.github.io/2017/04/25/it/1.Java/PrimaryDataType/</loc>
     
     <lastmod>2017-10-13T13:19:24.217Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/03/22/it/4.Statistics/Specialist/</loc>
-    
-    <lastmod>2017-10-09T08:05:41.365Z</lastmod>
     
   </url>
   
@@ -555,20 +569,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/22/it/4.Statistics/RankingsDeveloper/</loc>
-    
-    <lastmod>2017-09-29T06:23:06.567Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/05/31/it/4.Statistics/RankingsProgrammingLanguage/</loc>
-    
-    <lastmod>2017-09-29T06:22:28.111Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/28/me/page11/</loc>
     
     <lastmod>2017-07-16T05:34:12.000Z</lastmod>
@@ -611,13 +611,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
-    
-    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
@@ -625,14 +618,21 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    
+    <lastmod>2017-07-16T04:44:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
     
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     
