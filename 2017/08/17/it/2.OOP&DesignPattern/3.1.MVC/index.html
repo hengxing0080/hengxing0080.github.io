@@ -102,7 +102,7 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_mvc3.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_mvc4.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_mvc5.png">
-<meta property="og:updated_time" content="2017-11-10T07:10:01.103Z">
+<meta property="og:updated_time" content="2017-11-10T15:33:32.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MVC &amp; MVP &amp; MVVM &amp; MVPVM">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_pattern_mvc1.png">
@@ -446,6 +446,7 @@
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在Android的UI系统中，控制器Activity主要起到的作用就是解耦，将试图View和模型Model进行分离，两者在Activity中进行绑定或完成其他逻辑。<br>MVC更适合于大规模项目，比如Android的UI系统框架，但是android的健康非我们自己完成的，而是由framework给我们搭建好并提供给我们的，在平时的开发中，特别是用Android开发，我们并不常用到MVC模式去脱离Android UI系统构建自己的框架结构。</p>
 <hr>
 <h1 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h1><hr>
+<p>相关文章：<br><a href="http://www.cnblogs.com/lao-liang/p/5125343.html" target="_blank" rel="external">从.NET的宠物商店到Android MVC MVP</a></p>
 <h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p>Model-View-Presenter<br>模型-视图-主导器</p>
 <h2 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h2><p>是传统MVC(Model-View-Controller)在Android开发上的一种变种演化版本、进化模式。<br>主要用来隔离UI、UI逻辑和业务逻辑、数据,创建松散耦合并可重用的对象。<br>我们知道View层是容易变化且多种多样的,业务逻辑也是多种多样的,与传统的MVC相比,P充当了C的作用.<br>Model存储数据，View表示Model的表现，Presenter协调两者之间的通信.</p>
 <p>能有效地降低View复杂性，避免业务逻辑被塞进View中。<br>解除View与Model的耦合，同时也带来了良好的可扩展性，可测试性，保证了系统的整洁性，灵活性。<br>对于简单的应用来说MVP稍显麻烦，各种各样的接口与概念，使得整个应用充斥着零散的接口，但是对于比较复杂的应用来说，MVP模式是一种良好的架构模式，它能够非常好地组织应用结构，使得应用变得灵活，拥抱变化。</p>

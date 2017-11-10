@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hengxing0080.github.io/"/>
-  <updated>2017-11-10T10:06:54.143Z</updated>
+  <updated>2017-11-10T15:35:56.577Z</updated>
   <id>https://hengxing0080.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/"/>
     <id>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</id>
     <published>2017-10-09T10:08:33.000Z</published>
-    <updated>2017-11-10T10:06:54.143Z</updated>
+    <updated>2017-11-10T15:35:56.577Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_handler_logo.gif" alt="UML图"><br><a id="more"></a></p>
 <p>在Android中实现异步任务机制有两种方式：Handler和AsyncTask</p>
@@ -90,6 +90,7 @@
 <p>在子线程中创建handler时会报以下错误<br>Can’t create handler inside thread that has not called Looper.prepare()</p>
 <p>总结一下就是在主线程中可以直接创建Handler对象<br>而在子线程中需要先调用Looper.prepare()才能创建Handler对象。</p>
 <p>相关文章：<br><a href="http://blog.csdn.net/jay1on/article/details/52988689" target="_blank" rel="external">Android 直接在子线程中创建Handler为什么会报错</a></p>
+<p>6.Android子线程真的不能更新UI么<br><a href="http://www.cnblogs.com/lao-liang/p/5108745.html" target="_blank" rel="external">http://www.cnblogs.com/lao-liang/p/5108745.html</a></p>
 <h2 id="Handler其他使用场景"><a href="#Handler其他使用场景" class="headerlink" title="Handler其他使用场景"></a>Handler其他使用场景</h2><p>handler能与Looper配合实现经典的Pipeline Thread(流水线线程)模式。<br><a href="http://blog.csdn.net/runninglion/article/details/40627381" target="_blank" rel="external">Android Guts: Intro to Loopers and Handlers</a></p>
 <h2 id="Handler内存泄露"><a href="#Handler内存泄露" class="headerlink" title="Handler内存泄露"></a>Handler内存泄露</h2><p>注意：<br>避免使用非静态内部类</p>
 <p>解决方案：<br>1.使用显形的引用<br>1.1.静态内部类<br>1.2.放在外部类(单独的类文件)</p>
@@ -305,7 +306,7 @@
     <link href="https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/"/>
     <id>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</id>
     <published>2017-10-04T07:11:16.000Z</published>
-    <updated>2017-11-08T13:55:03.858Z</updated>
+    <updated>2017-11-10T15:29:49.555Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_opencloud_logo1.jpg" alt="UML图"><br><a id="more"></a></p>
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>开放平台（Open Platform）<br>在软件业和网络中，开放平台是指软件系统通过公开其应用程序编程接口（API）或函数（function)来使外部的程序可以增加该软件系统的功能或使用该软件系统的资源，而不需要更改该软件系统的源代码。</p>
@@ -374,7 +375,7 @@
 <h3 id="百度推送"><a href="#百度推送" class="headerlink" title="百度推送"></a>百度推送</h3><p>地址：<a href="http://push.baidu.com/" target="_blank" rel="external">http://push.baidu.com/</a></p>
 <h3 id="小米推送"><a href="#小米推送" class="headerlink" title="小米推送"></a>小米推送</h3><p>地址：<a href="https://dev.mi.com/console/" target="_blank" rel="external">https://dev.mi.com/console/</a></p>
 <h3 id="云巴推送"><a href="#云巴推送" class="headerlink" title="云巴推送"></a>云巴推送</h3><p>地址：<a href="https://yunba.io/" target="_blank" rel="external">https://yunba.io/</a></p>
-<p>专注于为需要实时数据交换的产品提供完美解决方案<br>基于发布者/订阅者(publisher/subscriber)模式，集成简单</p>
+<p>专注于为需要实时数据交换的产品提供完美解决方案<br>基于发布者/订阅者(publisher/subscriber)模式，集成简单<br>对比了百度云推送、腾讯信鸽推送，云巴效果更好<br>原极光推送CTO创办的</p>
 <h3 id="个推"><a href="#个推" class="headerlink" title="个推"></a>个推</h3><p>地址：<a href="http://www.getui.com/cn/index.html" target="_blank" rel="external">http://www.getui.com/cn/index.html</a></p>
 <h3 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h3><p>国内产品，这个没实际用过，身边朋友反馈很好。</p>
 <h3 id="Parse"><a href="#Parse" class="headerlink" title="Parse"></a>Parse</h3><p>国外产品，FB也在用，30qps免费限制，一般中小应用够用。</p>
@@ -441,9 +442,11 @@
 </li>
 <li><p>OCS<br>开放式缓存（开放缓存服务），是大数据请求下，将重复计算的的数据放在缓存中。</p>
 </li>
+<li><p>关系（云）数据库RDS</p>
+</li>
 <li><p>CDN</p>
 </li>
-<li><p>云盾</p>
+<li><p>云盾（安全防护）</p>
 </li>
 <li><p>云监控</p>
 </li>
@@ -473,7 +476,7 @@
 <p>相关：<br><a href="http://app.hustonline.net/article/detail/51" target="_blank" rel="external">TinyPNG—一个压缩PNG的神站</a></p>
 <hr>
 <h1 id="云通讯验证码（SMS）"><a href="#云通讯验证码（SMS）" class="headerlink" title="云通讯验证码（SMS）"></a>云通讯验证码（SMS）</h1><hr>
-<p>用途：短信验证码服务</p>
+<p>用途：短信验证码服务<br>解决方案成熟，众多公司使用</p>
 <h2 id="云片"><a href="#云片" class="headerlink" title="云片"></a>云片</h2><p>地址：<a href="https://www.yunpian.com/" target="_blank" rel="external">https://www.yunpian.com/</a></p>
 <h2 id="云通讯"><a href="#云通讯" class="headerlink" title="云通讯"></a>云通讯</h2><p>地址：<a href="https://www.253.com/" target="_blank" rel="external">https://www.253.com/</a><br>解决方案成熟，众多公司使用</p>
 <h2 id="Fabric-Digits"><a href="#Fabric-Digits" class="headerlink" title="Fabric Digits"></a>Fabric Digits</h2><p>国外：twitter出品，居然不要钱。</p>
@@ -842,7 +845,7 @@
     <link href="https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/"/>
     <id>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</id>
     <published>2017-09-28T15:56:13.000Z</published>
-    <updated>2017-11-10T11:19:43.378Z</updated>
+    <updated>2017-11-10T15:31:06.270Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/it_android_performance_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>(上图临时占位，等后续总结成思维导图待替换…)</p>
@@ -908,6 +911,7 @@
 <h4 id="异步加载图片和图片缓存和Lru回收"><a href="#异步加载图片和图片缓存和Lru回收" class="headerlink" title="异步加载图片和图片缓存和Lru回收"></a>异步加载图片和图片缓存和Lru回收</h4><p>item中如果包含有webimage，那么最好异步加载</p>
 <p>list中异步加载的图片，当不在可视范围内，按照一定的算法及时回收（如在当前可视范围的上下10条item以外的图片进行回收，或者将图片进行缓存，设置一个大小，按照最近最少使用原则超过部分进行回收）</p>
 <h4 id="BaseAdapter避免内存溢出"><a href="#BaseAdapter避免内存溢出" class="headerlink" title="BaseAdapter避免内存溢出"></a>BaseAdapter避免内存溢出</h4><p>如果BaseAdapter的实体类有属性非常消耗内存，可以将保存到文件；为提高性能，可以进行缓存，并限制缓存大小。</p>
+<h4 id="Adapter封装"><a href="#Adapter封装" class="headerlink" title="Adapter封装"></a>Adapter封装</h4><p><a href="http://blog.csdn.net/lmj623565791/article/details/38902805/" target="_blank" rel="external">Android 快速开发系列 打造万能的ListView GridView 适配器</a><br><a href="http://www.cnblogs.com/lao-liang/p/5122425.html" target="_blank" rel="external">从零开始搭建架构实施Android项目</a></p>
 <h3 id="GridView优化"><a href="#GridView优化" class="headerlink" title="GridView优化"></a>GridView优化</h3><h4 id="Gridview的滥用"><a href="#Gridview的滥用" class="headerlink" title="Gridview的滥用"></a>Gridview的滥用</h4><p>Gridview和Listview的实现方式一样，GridVIew的view不是及时创建，而全部保存在内存中，比如Gridview有100项，虽然我们只能看10项，但是其实整个100项都是在内存中</p>
 <h3 id="Webview优化"><a href="#Webview优化" class="headerlink" title="Webview优化"></a>Webview优化</h3><p>Webview也能泄漏，如webview对象没有销毁，所以要注意了</p>
 <h3 id="TextView优化"><a href="#TextView优化" class="headerlink" title="TextView优化"></a>TextView优化</h3><p>TextView的android:ellipsize=”marquee”跑马灯效果极耗性能，具体原因还在深入源码中</p>

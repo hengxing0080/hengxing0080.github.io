@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_handler_logo.gif">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_handler.jpg">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_handler_loop1.png">
-<meta property="og:updated_time" content="2017-11-10T10:06:54.143Z">
+<meta property="og:updated_time" content="2017-11-10T15:35:56.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— 异步任务机制 &amp; 消息通知机制">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_handler_logo.gif">
@@ -483,6 +483,7 @@
 <p>在子线程中创建handler时会报以下错误<br>Can’t create handler inside thread that has not called Looper.prepare()</p>
 <p>总结一下就是在主线程中可以直接创建Handler对象<br>而在子线程中需要先调用Looper.prepare()才能创建Handler对象。</p>
 <p>相关文章：<br><a href="http://blog.csdn.net/jay1on/article/details/52988689" target="_blank" rel="external">Android 直接在子线程中创建Handler为什么会报错</a></p>
+<p>6.Android子线程真的不能更新UI么<br><a href="http://www.cnblogs.com/lao-liang/p/5108745.html" target="_blank" rel="external">http://www.cnblogs.com/lao-liang/p/5108745.html</a></p>
 <h2 id="Handler其他使用场景"><a href="#Handler其他使用场景" class="headerlink" title="Handler其他使用场景"></a>Handler其他使用场景</h2><p>handler能与Looper配合实现经典的Pipeline Thread(流水线线程)模式。<br><a href="http://blog.csdn.net/runninglion/article/details/40627381" target="_blank" rel="external">Android Guts: Intro to Loopers and Handlers</a></p>
 <h2 id="Handler内存泄露"><a href="#Handler内存泄露" class="headerlink" title="Handler内存泄露"></a>Handler内存泄露</h2><p>注意：<br>避免使用非静态内部类</p>
 <p>解决方案：<br>1.使用显形的引用<br>1.1.静态内部类<br>1.2.放在外部类(单独的类文件)</p>
