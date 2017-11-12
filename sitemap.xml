@@ -2,37 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
+    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
     
-    <lastmod>2017-11-10T15:35:56.577Z</lastmod>
+    <lastmod>2017-11-12T15:44:15.714Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
     
-    <lastmod>2017-11-10T15:33:32.637Z</lastmod>
+    <lastmod>2017-11-12T15:10:32.158Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/14/it/1.Android/Network/</loc>
+    
+    <lastmod>2017-11-12T13:35:44.289Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
     
-    <lastmod>2017-11-10T15:31:06.270Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
-    
-    <lastmod>2017-11-10T15:29:49.555Z</lastmod>
+    <lastmod>2017-11-12T13:26:23.665Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
     
-    <lastmod>2017-11-10T15:21:00.755Z</lastmod>
+    <lastmod>2017-11-12T03:48:37.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
+    
+    <lastmod>2017-11-12T03:47:04.017Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
+    
+    <lastmod>2017-11-11T16:01:19.563Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/24/it/4.Statistics/Webpage/</loc>
+    
+    <lastmod>2017-11-11T15:39:48.372Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
+    
+    <lastmod>2017-11-11T15:36:20.071Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
+    
+    <lastmod>2017-11-11T15:28:23.944Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
+    
+    <lastmod>2017-11-11T15:28:23.164Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
+    
+    <lastmod>2017-11-10T16:00:11.304Z</lastmod>
     
   </url>
   
@@ -47,20 +96,6 @@
     <loc>https://hengxing0080.github.io/2017/09/20/it/1.Android/Context/</loc>
     
     <lastmod>2017-11-10T11:22:22.578Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    
-    <lastmod>2017-11-10T11:18:03.289Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/24/it/4.Statistics/Webpage/</loc>
-    
-    <lastmod>2017-11-10T10:00:48.494Z</lastmod>
     
   </url>
   
@@ -135,30 +170,9 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
-    
-    <lastmod>2017-11-10T07:09:24.487Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
-    
-    <lastmod>2017-11-10T07:09:20.283Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
     
     <lastmod>2017-11-10T07:09:14.912Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
-    
-    <lastmod>2017-11-10T07:09:10.692Z</lastmod>
     
   </url>
   
@@ -394,13 +408,6 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
-    
-    <lastmod>2017-11-08T13:48:29.446Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/View/</loc>
     
     <lastmod>2017-11-08T10:27:32.622Z</lastmod>
@@ -604,7 +611,7 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     
@@ -618,7 +625,7 @@
   </url>
   
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     

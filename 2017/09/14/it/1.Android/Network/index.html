@@ -1,0 +1,1313 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 网络编程总结">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/14/it/1.Android/Network/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_network_logo.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_network_mult1.png">
+<meta property="og:updated_time" content="2017-11-12T13:35:44.289Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 网络编程总结">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_network_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/14/it/1.Android/Network/"/>
+
+
+
+
+
+  <title>Android —— 网络编程总结 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/14/it/1.Android/Network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 网络编程总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T21:57:14+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_network_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>在学习各种开源网络框架如okhttp还是retrofit，进阶之前还是先回顾总结一下Android原生提供的网络请求。<br>温故而知新，基础要打好，也要总结好！</p>
+<hr>
+<h1 id="访问网络"><a href="#访问网络" class="headerlink" title="访问网络"></a>访问网络</h1><hr>
+<h2 id="网络请求的几种方式"><a href="#网络请求的几种方式" class="headerlink" title="网络请求的几种方式"></a>网络请求的几种方式</h2><h3 id="HttpURLConnection"><a href="#HttpURLConnection" class="headerlink" title="HttpURLConnection"></a>HttpURLConnection</h3><p>来源：是java语言自带的API</p>
+<p>特色：<br>1.手工的面向过程的HTTP协议编程<br>2.采用Url和HttpURLConnection提交数据到服务器</p>
+<p>缺点：<br>1.需要注意HTTP访问的底层细节问题，比较麻烦<br>2.需要考虑子线程访问和主线程更新的问题<br>主线程中不能进行耗时的操作–访问网络ANR，像这种耗时的操作必须放置到子线程内部执行，因为子线程不能更新UI,只有主线程能够更新UI</p>
+<p>历史：<br>在Android API Level 9（Android 2.2）之前之能使用DefaultHttpClient类发送http请求。<br>DefaultHttpClient是Apache用于发送http请求的客户端，其提供了强大的API支持，而且基本没有什么bug，但是由于其太过复杂，Android团队在保持向后兼容的情况下，很难对DefaultHttpClient进行增强。<br>为此，Android团队从Android API Level 9开始自己实现了一个发送http请求的客户端类——–HttpURLConnection。</p>
+<p>相比于DefaultHttpClient，HttpURLConnection比较轻量级，虽然功能没有DefaultHttpClient那么强大，但是能够满足大部分的需求，所以Android推荐使用HttpURLConnection代替DefaultHttpClient，并不强制使用HttpURLConnection。</p>
+<p>但从Android API Level 23（Android 6.0）开始，不能再在Android中使用DefaultHttpClient，强制使用HttpURLConnection。</p>
+<p>代码模板：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">String path = <span class="string">"http://www.baidu.com"</span>;</div><div class="line">URL url = <span class="keyword">new</span> URL(path); <span class="comment">// 得到一个URL对象.</span></div><div class="line">HttpURLConnection  conn = (HttpURLConnection) url.openConnection(); <span class="comment">//  通过URL对象获取一个网络连接，还有容易弄混淆弄错的地方 : 还有个包HttpsURLConnection (注意,有个s) , 不要导错包了</span></div><div class="line">conn.setRequestMethod(<span class="string">"GET"</span>);  <span class="comment">// 设置请求方法: GET/POST(必须大写)， 不写也没事, 默认就是get</span></div><div class="line">conn.setConnectTimeout(<span class="number">5</span> * <span class="number">1000</span>);  <span class="comment">// 设置连接主机超时时间</span></div><div class="line">conn.setReadTimeout(<span class="number">5</span> * <span class="number">1000</span>);     <span class="comment">// 设置从主机读取数据超时</span></div><div class="line">conn.setUseCaches(<span class="keyword">true</span>);           <span class="comment">// 设置是否使用缓存  默认是true</span></div><div class="line">conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>); <span class="comment">// 设置请求中的媒体类型信息。</span></div><div class="line">conn.addRequestProperty(<span class="string">"Connection"</span>, <span class="string">"Keep-Alive"</span>); <span class="comment">// 设置客户端与服务连接类型</span></div><div class="line">conn.setInstanceFollowRedirects(<span class="keyword">true</span>); <span class="comment">// 设置本次连接是否自动处理重定向</span></div><div class="line">conn.connect();</div><div class="line">conn.setRequestProperty(<span class="string">"Host"</span>, <span class="string">"www.itheima.com"</span>);</div><div class="line"><span class="keyword">int</span> responseCode = conn.getResponseCode(); <span class="comment">// 获取服务器返回的状态码</span></div><div class="line"><span class="keyword">if</span>(responseCode == <span class="number">200</span>) &#123; <span class="comment">//  200请求成功 </span></div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        OutputStream out = <span class="keyword">new</span> BufferedOutputStream(urlConnection.getOutputStream());</div><div class="line">        writeStream(out);</div><div class="line">        InputStream in = <span class="keyword">new</span> BufferedInputStream(conn.getInputStream()); <span class="comment">// 获取服务器返回的流</span></div><div class="line">        readStream(in); <span class="comment">// 处理服务端传递过来的内容</span></div><div class="line">    &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125; <span class="keyword">finally</span> &#123;</div><div class="line">        <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</div><div class="line">            conn.disconnect(); <span class="comment">// 最后将conn断开连接</span></div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    Toast.makeText(<span class="keyword">this</span>, <span class="string">"图片无法访问!请检查输入的地址!"</span>, <span class="number">0</span>).show();</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>请求网络记得添加权限:android.permission.INTERNET</p>
+<h4 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h4><h5 id="GET提交数据到服务器"><a href="#GET提交数据到服务器" class="headerlink" title="GET提交数据到服务器"></a>GET提交数据到服务器</h5><p>原理：组拼url的路径在路径后面拼装 name=?&amp;password=? </p>
+<p>缺点：1. 不安全   2.数据大小长度有限制不能超过4K<br>优点：代码写起来很简单 </p>
+<h5 id="POST提交数据到服务器"><a href="#POST提交数据到服务器" class="headerlink" title="POST提交数据到服务器"></a>POST提交数据到服务器</h5><p>原理：数据是以流的方式写给服务器</p>
+<p>优点：1.安全（用工具其实也能拦截）  2. 数据大小长度没有限制<br>缺点：代码编写麻烦</p>
+<p>代码的不同之处<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">conn.setRequestMethod(<span class="string">"POST"</span>); <span class="comment">// 设置请求方式post</span></div><div class="line">conn.setRequestProperty(<span class="string">"Content-Type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>); <span class="comment">// 设置数据的类型</span></div><div class="line">String data = <span class="string">"qq="</span>+qq+<span class="string">"&amp;password="</span>+pwd; <span class="comment">// 设置数据的长度</span></div><div class="line">conn.setRequestProperty(<span class="string">"Content-Length"</span>, String.valueOf(data.length()));　<span class="comment">// 给服务器写数据</span></div></pre></td></tr></table></figure></p>
+<h4 id="提交数据到服务器和获取服务器中返回数据的中文乱码的解决"><a href="#提交数据到服务器和获取服务器中返回数据的中文乱码的解决" class="headerlink" title="提交数据到服务器和获取服务器中返回数据的中文乱码的解决"></a>提交数据到服务器和获取服务器中返回数据的中文乱码的解决</h4><p>网络请求发送的参数必须进行URL编码<br>乱码问题,保证编解码一致就不会乱码</p>
+<p>web容器默认采用的编码是iso-8859-1<br>还有不默认的情况, 如果当前的内容在iso里找不到,就会当前运行的本地码表去找这些内容</p>
+<p>android系统默认的码表utf-8<br>公司开发也都是utf-8编码，因为要用很多第三方的（也是U8编码），所以方便<br>为了保证应用程序不显示乱码, 保证android端和服务器端采用相同的文件编码集.</p>
+<p>关于参数中有中文<br>URL编码（解决乱码）：不管包不包含中文，请求参数都要进行URL编码的操作，因为请求只能传输ISO8859-1，中文必须URL编码</p>
+<p>代码示例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 客户端  </span></div><div class="line">String data = <span class="string">"username="</span>+URLEncoder.encode(qq, <span class="string">"utf-8"</span>)+<span class="string">"&amp;password="</span>+URLEncoder.encode(password);</div><div class="line"><span class="comment">// 服务器端</span></div><div class="line">System.out.println(<span class="string">"username:"</span>+<span class="keyword">new</span> String(username.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>));</div><div class="line">System.out.println(<span class="string">"password:"</span>+<span class="keyword">new</span> String(password.getBytes(<span class="string">"iso-8859-1"</span>),<span class="string">"utf-8"</span>));</div></pre></td></tr></table></figure></p>
+<p>服务器向android客户端发送数据,解析,注意乱码的问题<br>编码和解码只要码表一致,通常是不会有乱码.</p>
+<p>常见乱码( 输入中文数据的情况 )：<br>　１.如果是gbk的编码以utf-8的方式显示了<br>　　��½�ɹ�� ������<br>　２.如果是utf-8的编码以gbk的方式显示了<br>　　鐧婚檰鎴愬姛鍟� 鍝堝搱鍝�<br>　３.一个悲剧的情况, 没救了<br>　　烤斤烤斤烤斤 </p>
+<h3 id="HttpClient"><a href="#HttpClient" class="headerlink" title="HttpClient"></a>HttpClient</h3><p>作者：Apache的一个开源项目（Apache 开源项目组织）</p>
+<p>简介：<br>相当于一个轻量级的纯java代码浏览器<br>面向对象思想的封装来调用方法, 逻辑已经搞定了, 比之前简单多了<br>之前的写法(post)写的很复杂. 必须对浏览器非常熟悉,知道如何组拼字符串,太麻烦了<br>所以采用httpclient编写的post代码很方便, 面向对象封装非常好, 不需要知道HTTP细节<br>安卓, Java Web , JavaSE 开发都可以使用httpclient  </p>
+<p>优点：<br>HttpClient 改变了URLConnetion编程面向过程的方式变为了面向对象的方式访问网络,隐藏了底层HTTP协议实现的细节,方便代码的开发</p>
+<p>现状：<br>API 23（6.0）废弃<br>但仍然还是有方法使用<br><a href="http://blog.csdn.net/hbwindy/article/details/51326019" target="_blank" rel="external">Android API 23中废弃了HttpClient的解决办法</a></p>
+<p>步骤：<br>1.打开浏览器<br>HttpClient client = new DefaultHttpClient();    //别直接newHttpClient，要复写一堆方法太复杂，所以new实现类<br>2.输入数据<br>HttpGet 只需要设置请求的路径就ok<br>HttpPost 不仅需要设置请求的路径,还需要设置数据的内容<br>httpPost.setEntity(new UrlEncodedFormEntity(parameters,”utf-8”));<br>3.敲回车<br>client.execute(get/post)<br>4.得到请求的相应<br>response.getStatusLine().getStatusCode();  得到状态码<br>response.getEntity().getContent();  得到数据实体</p>
+<p>代码模板：<br>GET方式实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">HttpClient client = <span class="keyword">new</span> DefaultHttpClient();</div><div class="line">HttpGet hg = <span class="keyword">new</span> HttpGet(path);</div><div class="line">HttpResponse resp = client.execute(hg);</div></pre></td></tr></table></figure></p>
+<p>POST方式的实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">HttpClient client = <span class="keyword">new</span> DefaultHttpClient();</div><div class="line">HttpPost hp = <span class="keyword">new</span> HttpPost();</div><div class="line">List&lt;NameValuePair&gt; parameters = <span class="keyword">new</span> ArrayList&lt;NameValuePair&gt;();</div><div class="line">NameValuePair username_nv = <span class="keyword">new</span> BasicNameValuePair(<span class="string">"username"</span>, username);</div><div class="line">parameters.add(username_nv);</div><div class="line">NameValuePair password_nv = <span class="keyword">new</span> BasicNameValuePair(<span class="string">"password"</span>, password);</div><div class="line">parameters.add(password_nv);</div><div class="line">HttpEntity entity = <span class="keyword">new</span> UrlEncodedFormEntity(parameters);</div><div class="line">hp.setEntity(entity);</div><div class="line">HttpResponse resp = client.execute(hp);</div></pre></td></tr></table></figure></p>
+<h3 id="AsyncHttpClient"><a href="#AsyncHttpClient" class="headerlink" title="AsyncHttpClient"></a>AsyncHttpClient</h3><p>来源：android的开源项目(在github下载)</p>
+<p>优点：<br>1.隐藏了子线程访问主线程更新的问题<br>2.使用简单，我们只需要告诉他,访问什么地址，带着哪些参数，访问完成后回调什么方法</p>
+<p>简介：<br>对appache的HttpClient进行了进一步封装<br>面向对象的方式去访问网络,并且隐藏了细节,<br>不需要自己开辟子线程,不需要考虑消息机制,<br>只要告诉程序 要访问的地址,想要带过去的参数,成功和失败时的操作,剩下的事情由程序的底层去实现</p>
+<p>异步帮我们做好了，get方法底层开辟了子线程去访问path地址，<br>访问完用消息机制把消息传给handler，由handler调用写好的onSucess和onFailure方法<br>就是底层把子线程给隐藏掉了<br>它巧妙了回避掉了子线程的问题，不用考虑它，直接写代码就行了</p>
+<p>这个开源项目使用非常广泛, 基本安卓公司做互联网应用采用的HTTP请求框架都是基于这个框架或者做的改造<br>所以写法版本一定要掌握<br>写网络请求通常要用到异步（新开个线程去操作），因为访问网络是个耗时的操作<br>最简单的方式，推荐使用</p>
+<p>逻辑代码模板：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// POST方式</span></div><div class="line"><span class="comment">// 1.打开浏览器. 支持异步的浏览器 自动在后台开启线程 发送网络请求</span></div><div class="line">AsyncHttpClient client = <span class="keyword">new</span> AsyncHttpClient();</div><div class="line">String url = <span class="string">"http://192.168.1.109:8080/web/LoginServlet"</span>;</div><div class="line"><span class="comment">// 2.设置请求参数</span></div><div class="line">RequestParams params = <span class="keyword">new</span> RequestParams();</div><div class="line">params.put(<span class="string">"username"</span>, qq);</div><div class="line">params.put(<span class="string">"password"</span>, password);</div><div class="line"><span class="comment">// 3.发送请求</span></div><div class="line">client.post(url, params, <span class="keyword">new</span> AsyncHttpResponseHandler() &#123;</div><div class="line">    <span class="meta">@Override</span> <span class="comment">// 成功</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(<span class="keyword">int</span> statusCode, Header[] headers, <span class="keyword">byte</span>[] responseBody)</span> </span>&#123;</div><div class="line">        <span class="comment">// headers:请求头     </span></div><div class="line">        <span class="comment">// responseBody服务器端返回的状态码</span></div><div class="line">	    Toast.makeText(getApplicationContext(), <span class="keyword">new</span> String(responseBody), <span class="number">0</span>).show();</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span> <span class="comment">// 失败</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(<span class="keyword">int</span> statusCode, Header[] headers,<span class="keyword">byte</span>[] responseBody, Throwable error)</span> </span>&#123;</div><div class="line">        Toast.makeText(getApplicationContext(), <span class="string">"请求失败"</span>, <span class="number">0</span>).show();</div><div class="line">    &#125;	</div><div class="line">&#125;);     </div><div class="line"></div><div class="line"><span class="comment">// GET方式</span></div><div class="line">String path = <span class="string">"http://192.168.1.100/Login/servlet/LoginServlet?username="</span>+URLEncoder.encode(username, <span class="string">"utf-8"</span>)+<span class="string">"&amp;password="</span>+password;</div><div class="line">AsyncHttpClient client = <span class="keyword">new</span> AsyncHttpClient();</div><div class="line">client.get(path,<span class="keyword">new</span> AsyncHttpResponseHandler()&#123;  </div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(String content)</span> </span>&#123;</div><div class="line">        Toast.makeText(MainActivity.<span class="keyword">this</span>, content, <span class="number">0</span>).show();</div><div class="line">    &#125;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Throwable error, String content)</span> </span>&#123;</div><div class="line">        Toast.makeText(MainActivity.<span class="keyword">this</span>, content, <span class="number">0</span>).show();</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="HttpUtils"><a href="#HttpUtils" class="headerlink" title="HttpUtils"></a>HttpUtils</h3><p>属于开源框架XUtils<br>OnSucess和onFailure方法都是在主线程里运行<br>底层已经封装好了，主线程直接回调2个方法，不用写子线程</p>
+<h2 id="网络异常"><a href="#网络异常" class="headerlink" title="网络异常"></a>网络异常</h2><p>异常名称：android.os.NetWorkOnMainThreadException</p>
+<p>网络在主线程异常<br>安卓在设计时就定义了不允许在主线程里面进行网络请求<br>这是新版本的异常<br>安卓版本 2.3.7 运行没有这个异常<br>不过在安卓版本4.1的模拟器就出现了这个异常<br>访问网络是一个可能比较耗时的操作.<br>在低版本的android系统谷歌没有考虑到用户体验的问题.<br>在android4.0版本开始,谷歌android系统开始检查,如果在主线程里面访问网络,强制的抛出异常.</p>
+<p>在android应用程序里面所有的用户交互的操作都是在主线程里面执行<br>按钮点击事件,界面的渲染和显示,触摸事件<br>就是点击事件属于主线程</p>
+<p>主线程做的事：<br>响应事件<br>UI显示和更新</p>
+<hr>
+<h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><hr>
+<p>相关文章：<br><a href="http://blog.csdn.net/anan890624/article/details/52510299" target="_blank" rel="external">Android文件三种上传方式总结</a></p>
+<h2 id="HttpUrlConnetion实现文件上传"><a href="#HttpUrlConnetion实现文件上传" class="headerlink" title="HttpUrlConnetion实现文件上传"></a>HttpUrlConnetion实现文件上传</h2><p>自己拼接请求头和实体,按照文件上传的格式传输数据<br>很麻烦</p>
+<p>浏览器用 选择文件上传<br>服务器 commont fileupload 将文件保存到服务器端</p>
+<h2 id="HttpClient4上传"><a href="#HttpClient4上传" class="headerlink" title="HttpClient4上传"></a>HttpClient4上传</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">upLoadByHttpClient4</span><span class="params">()</span> <span class="keyword">throws</span> ClientProtocolException,IOException </span>&#123;  </div><div class="line">    HttpClient httpclient = <span class="keyword">new</span> DefaultHttpClient();  </div><div class="line">    httpclient.getParams().setParameter(CoreProtocolPNames.PROTOCOL_VERSION, HttpVersion.HTTP_1_1);  </div><div class="line">    HttpPost httppost = <span class="keyword">new</span> HttpPost(uploadUrl);  </div><div class="line">    File file = <span class="keyword">new</span> File(path);  </div><div class="line">    MultipartEntity entity = <span class="keyword">new</span> MultipartEntity();  </div><div class="line">    FileBody fileBody = <span class="keyword">new</span> FileBody(file);  </div><div class="line">    entity.addPart(<span class="string">"uploadfile"</span>, fileBody);  </div><div class="line">    httppost.setEntity(entity);  </div><div class="line">    HttpResponse response = httpclient.execute(httppost);  </div><div class="line">    HttpEntity resEntity = response.getEntity();  </div><div class="line">    <span class="keyword">if</span> (resEntity != <span class="keyword">null</span>) &#123;  </div><div class="line">        Log.i(TAG, EntityUtils.toString(resEntity));  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">if</span> (resEntity != <span class="keyword">null</span>) &#123;  </div><div class="line">        resEntity.consumeContent();  </div><div class="line">    &#125;  </div><div class="line">    httpclient.getConnectionManager().shutdown();  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="AsyncHttpClient提供了文件上传的方法"><a href="#AsyncHttpClient提供了文件上传的方法" class="headerlink" title="AsyncHttpClient提供了文件上传的方法"></a>AsyncHttpClient提供了文件上传的方法</h2><p>其实就是将文件对象作为一个参数进行了上传, 底层的细节开源框架已经帮我们隐藏了.</p>
+<p>如果想自己写HttpUrlConnetion实现文件上传是非常复杂的,很麻烦<br>AsyncHttpClient封装了文件上传的功能,只要将文件当作上传的参数传入,就可以直接实现文件上传的功能了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">String url = <span class="string">"http://192.168.1.100/Upload/servlet/UploadServlet"</span>;</div><div class="line">AsyncHttpClient client = <span class="keyword">new</span> AsyncHttpClient();</div><div class="line">RequestParams params = <span class="keyword">new</span> RequestParams();</div><div class="line">params.put(<span class="string">"desc"</span>, <span class="string">"上传了~~~"</span>);</div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	params.put(<span class="string">"fx"</span>, <span class="keyword">new</span> File(et_file.getText().toString().trim()));</div><div class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</div><div class="line">	e.printStackTrace();</div><div class="line">&#125;</div><div class="line">client.post(url, params, <span class="keyword">new</span> AsyncHttpResponseHandler()&#123;	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(<span class="keyword">int</span> statusCode, String content)</span> </span>&#123;</div><div class="line">		Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"上传成功!"</span>, <span class="number">0</span>).show();</div><div class="line">	&#125;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(Throwable error, String content)</span> </span>&#123;</div><div class="line">		Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"上传失败!"</span>+error.getMessage(), <span class="number">0</span>).show();</div><div class="line">	&#125;	</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h1><hr>
+<h2 id="多线程并发下载的原理"><a href="#多线程并发下载的原理" class="headerlink" title="多线程并发下载的原理"></a>多线程并发下载的原理</h2><p><img src="/images/it_android_network_mult1.png" alt="UML图"></p>
+<p>为什么多线程并发下载可以提高速度？<br>服务器的资源有限, 客户端线程越多单位时间内, 抢到的服务器的资源就越多, 下载的速度就越快</p>
+<p>下载的速度是由本地带宽决定：1Mbps  128KB/s<br>下载的带宽还由服务器的带宽决定：迅雷, p2p</p>
+<p>并不是开的线程越多下载速度越快，安卓下3~5线程(开销最小,效率越高)</p>
+<p>推荐使用exe文件作为下载测试的文件</p>
+<h2 id="多线程文件下载"><a href="#多线程文件下载" class="headerlink" title="多线程文件下载"></a>多线程文件下载</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>获取要下载的文件的大小<br>在本地创建和要下载的文件大小相同的文件<br>将要下载的文件分割成多个部分,开启多个线程分别进行下载,将下载的数据都放置到之前创建的空文件中<br>最终所有的线程都下载完成时,整个文件也就下载完成了</p>
+<h3 id="关键的API"><a href="#关键的API" class="headerlink" title="关键的API"></a>关键的API</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile随机访问文件　</div><div class="line">setLength <span class="comment">// 设置长度</span></div><div class="line">close     <span class="comment">// 关闭随机访问文件流</span></div><div class="line">seek      <span class="comment">// 把光标指针移动到某个位置去写数据, 就是指定文件写的开始位置( 非常重要)</span></div><div class="line"></div><div class="line">conn.setRequestProperty(“Range”,”bytes=<span class="number">0</span>-<span class="number">1</span>”); <span class="comment">// 指定从服务器下载的范围,  HTTP请求的头</span></div></pre></td></tr></table></figure>
+<h3 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Range头通知服务器发送哪段字节数据</span></div><div class="line">conn.setRequestProperty(<span class="string">"Range"</span>, <span class="string">"bytes="</span>+(beginx+<span class="number">1</span>)+<span class="string">"-"</span>+end); </div><div class="line"><span class="comment">// 可以写入/读取文件中某部分数据</span></div><div class="line">RandomAccessFile raf = <span class="keyword">new</span> RandomAccessFile(<span class="keyword">new</span> File(<span class="string">"1.zip"</span>), <span class="string">"rw"</span>);</div><div class="line"><span class="comment">// 将RandomAccessFile对象中的指针执行指定字节位置,这样接下来对他的读写操作就是从这个字节开始了</span></div><div class="line">raf.seek(beginx);</div></pre></td></tr></table></figure>
+<h2 id="多线程断点下载"><a href="#多线程断点下载" class="headerlink" title="多线程断点下载"></a>多线程断点下载</h2><h3 id="多线程断点下载的原理"><a href="#多线程断点下载的原理" class="headerlink" title="多线程断点下载的原理"></a>多线程断点下载的原理</h3><p>记录上一次你下载了多少的数据,再去开启从上一次的位置接着下载</p>
+<p>为每一个多线程下载文件的线程都创建一个文件,实时保存下载到的位置<br>如果程序突然停止了,下次再启动时,去读取文件,获知当前线程应该从哪里接着下载,就可以实现断点下载功能了</p>
+<h3 id="关键代码-1"><a href="#关键代码-1" class="headerlink" title="关键代码"></a>关键代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 当线程启动开始要下载时,检查当前线程有没有之前的进度文件,如果有应该从这个进度文件中指定的位置接着下载!</span></div><div class="line">File t_file = <span class="keyword">new</span> File(t_id+<span class="string">".txt"</span>);</div><div class="line"><span class="keyword">if</span>(t_file.exists() &amp;&amp;  t_file.length()&gt;<span class="number">0</span>)&#123;</div><div class="line">    BufferedReader reader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(t_file));</div><div class="line">    beginx = Integer.parseInt(reader.readLine());</div><div class="line">    reader.close();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 没当线程下载了部分数据时,我们向文件中写入当前的进度</span></div><div class="line">RandomAccessFile tempRaf = <span class="keyword">new</span> RandomAccessFile(<span class="keyword">new</span> File(t_id+<span class="string">".txt"</span>), <span class="string">"rwd"</span>);</div><div class="line">temp = temp + i;</div><div class="line">tempRaf.write((temp+<span class="string">""</span>).getBytes());</div><div class="line">tempRaf.close();</div></pre></td></tr></table></figure>
+<h3 id="XUtils实现多线程下载"><a href="#XUtils实现多线程下载" class="headerlink" title="XUtils实现多线程下载"></a>XUtils实现多线程下载</h3><p>xUtils（开源框架, 以前叫afinal）<br>简化文件的多线程下载和断点下载进度监视    </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">String path = et_path.getText().toString().trim(); </div><div class="line"><span class="keyword">if</span> (TextUtils.isEmpty(path)) &#123;</div><div class="line">    Toast.makeText(<span class="keyword">this</span>, <span class="string">"路径不能为空"</span>, <span class="number">0</span>).show();</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// 多线程断点下载</span></div><div class="line">    HttpUtils http = <span class="keyword">new</span> HttpUtils();</div><div class="line">    <span class="comment">// 下列参数：下载的路径，保存的路径，是否开启断点下载，回调函数（处理下载成功,下载失败,下载进行的过程）</span></div><div class="line">    http.download(path, <span class="string">"/mnt/sdcard/xxx.exe"</span>, <span class="keyword">true</span>, <span class="keyword">new</span> RequestCallBack&lt;File&gt;() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(ResponseInfo&lt;File&gt; info)</span> </span>&#123;</div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"文件保存成功：路径"</span>+info.result.getAbsolutePath(), <span class="number">1</span>).show();</div><div class="line">            tv_info.setText(<span class="string">"文件保存成功：路径"</span>+info.result.getAbsolutePath());</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onFailure</span><span class="params">(HttpException arg0, String msg)</span> </span>&#123;</div><div class="line">            Toast.makeText(MainActivity.<span class="keyword">this</span>, <span class="string">"下载失败："</span>+msg, <span class="number">1</span>).show();</div><div class="line">            tv_info.setText(<span class="string">"下载失败："</span>+msg);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onLoading</span><span class="params">(<span class="keyword">long</span> total, <span class="keyword">long</span> current, <span class="keyword">boolean</span> isUploading)</span> </span>&#123;</div><div class="line">            pb.setMax((<span class="keyword">int</span>) total);</div><div class="line">            pb.setProgress((<span class="keyword">int</span>) current);</div><div class="line">            tv_info.setText(<span class="string">"下载进度："</span> +current+<span class="string">"/"</span>+total);</div><div class="line">            <span class="keyword">super</span>.onLoading(total, current, isUploading);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/09/it/1.Android/Bitmap/" rel="next" title="Android —— Bitmap图片的总结">
+                <i class="fa fa-chevron-left"></i> Android —— Bitmap图片的总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/19/it/1.Android/Process/" rel="prev" title="Android —— 进程和线程">
+                Android —— 进程和线程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">92</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#访问网络"><span class="nav-number">1.</span> <span class="nav-text">访问网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络请求的几种方式"><span class="nav-number">1.1.</span> <span class="nav-text">网络请求的几种方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpURLConnection"><span class="nav-number">1.1.1.</span> <span class="nav-text">HttpURLConnection</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GET和POST的区别"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">GET和POST的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GET提交数据到服务器"><span class="nav-number">1.1.1.1.1.</span> <span class="nav-text">GET提交数据到服务器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#POST提交数据到服务器"><span class="nav-number">1.1.1.1.2.</span> <span class="nav-text">POST提交数据到服务器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提交数据到服务器和获取服务器中返回数据的中文乱码的解决"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">提交数据到服务器和获取服务器中返回数据的中文乱码的解决</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpClient"><span class="nav-number">1.1.2.</span> <span class="nav-text">HttpClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AsyncHttpClient"><span class="nav-number">1.1.3.</span> <span class="nav-text">AsyncHttpClient</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpUtils"><span class="nav-number">1.1.4.</span> <span class="nav-text">HttpUtils</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络异常"><span class="nav-number">1.2.</span> <span class="nav-text">网络异常</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件上传"><span class="nav-number">2.</span> <span class="nav-text">文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HttpUrlConnetion实现文件上传"><span class="nav-number">2.1.</span> <span class="nav-text">HttpUrlConnetion实现文件上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HttpClient4上传"><span class="nav-number">2.2.</span> <span class="nav-text">HttpClient4上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AsyncHttpClient提供了文件上传的方法"><span class="nav-number">2.3.</span> <span class="nav-text">AsyncHttpClient提供了文件上传的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件下载"><span class="nav-number">3.</span> <span class="nav-text">文件下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程并发下载的原理"><span class="nav-number">3.1.</span> <span class="nav-text">多线程并发下载的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程文件下载"><span class="nav-number">3.2.</span> <span class="nav-text">多线程文件下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">3.2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键的API"><span class="nav-number">3.2.2.</span> <span class="nav-text">关键的API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键代码"><span class="nav-number">3.2.3.</span> <span class="nav-text">关键代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程断点下载"><span class="nav-number">3.3.</span> <span class="nav-text">多线程断点下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程断点下载的原理"><span class="nav-number">3.3.1.</span> <span class="nav-text">多线程断点下载的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键代码-1"><span class="nav-number">3.3.2.</span> <span class="nav-text">关键代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XUtils实现多线程下载"><span class="nav-number">3.3.3.</span> <span class="nav-text">XUtils实现多线程下载</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

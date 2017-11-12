@@ -100,7 +100,7 @@
 <meta property="og:site_name" content="恒星的轨迹">
 <meta property="og:description" content="简介中文吗：建造者模式别称：生成器模式英文名：Builder所属类型：创建型模式设计原则：遵循单一职责、开闭原则使用概率：10%复杂度：中 UML图例">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_pattern_builder1.jpg">
-<meta property="og:updated_time" content="2017-11-10T07:09:24.487Z">
+<meta property="og:updated_time" content="2017-11-11T15:36:20.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式GOF之4 —— 建造者模式（创建型模式）">
 <meta name="twitter:description" content="简介中文吗：建造者模式别称：生成器模式英文名：Builder所属类型：创建型模式设计原则：遵循单一职责、开闭原则使用概率：10%复杂度：中 UML图例">
@@ -424,6 +424,7 @@
 <h1 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h1><p>优点：<br>良好的封装性，使用建造者模式可以使客户端不必知道产品内部组成的细节。<br>建造者独立，容易扩展。</p>
 <p>缺点：<br>会产生多余的Builder对象以及Director对象，消耗内存。</p>
 <h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>它主要是用于创建一些复杂的对象，这些对象内部构建间的建造顺序通常是稳定的，但对象内部的构建通常面临着复杂的变化。<br>相同的方法，不同的执行顺序，产生不同的事件结果时。<br>多个部件或零件，都可以装配到一个对象中，但是产生的运行结果又不相同时。<br>产品类非常复杂，或者产品类中的调用顺序不同产生了不同的作用，这个时候使用建造者模式非常合适。<br>当初始化一个对象特别复杂，如参数多，且很多参数都具有默认值时。</p>
+<h1 id="使用情景"><a href="#使用情景" class="headerlink" title="使用情景"></a>使用情景</h1><p>1.音视频处理<br>AudioVideoProcessorBuilder audioVideoProcessorBuilder = new AudioVideoProcessorBuilder//建造者模型精细的把握各项参数<br>.setResize(ResizeStyleOptions.W_H_16_9)//长宽比<br>.setMaxBitrate(BitRateOptions.64_K)//码流率<br>.setP2PMode(P2PModeOptions.NAT);//p2p穿透方式<br>AudioVideoProcessor videoProcessor = audioVideoProcessorBuilder.getVideoProcessor();<br>是不是人民群众喜闻乐见的库的调用方式！</p>
 <h1 id="2种使用方式"><a href="#2种使用方式" class="headerlink" title="2种使用方式"></a>2种使用方式</h1><p>1.Director<br>通过具有的Builder来构建产品对象，而Director封装了构建复杂产品对象的过程，对外隐藏构建细节。Builder与Director一起将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的对象。</p>
 <p>2.链式调用<br>值得注意点是，在现实开发过程中，Director角色经常会被忽略，而直接使用一个Builder来进行对象的组装，这个Builder通常为链式调用，<br>它的关键点是每个setter方法都返回自身，也就是return this，这样使得setter方法可以链式调用，代码大致如下：<br>New TestBuilder.setA(“A”).setB(“B”).create();<br>这样使得代码更简洁，易懂，例如下文示例代码中说到的ImageLoader就是通过ImageLoaderConfig进行配置，这就避免了目标类中被过多的接口污染。</p>
 <h1 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h1><h2 id="1-组装电脑（Director方式）"><a href="#1-组装电脑（Director方式）" class="headerlink" title="1. 组装电脑（Director方式）"></a>1. 组装电脑（Director方式）</h2><p>计算机的组装过程较为复杂，并且组装顺序是不固定的，为了易于理解，我们把计算机组装的过程简化为构建主机、设置操作系统、设置显示器3个部分，然后通过Director和具体的Builder够构建计算机对象。</p>
@@ -623,7 +624,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -739,7 +740,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML图例"><span class="nav-number">2.</span> <span class="nav-text">UML图例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">3.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">4.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">5.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">6.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2种使用方式"><span class="nav-number">7.</span> <span class="nav-text">2种使用方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码"><span class="nav-number">8.</span> <span class="nav-text">示例代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-组装电脑（Director方式）"><span class="nav-number">8.1.</span> <span class="nav-text">1. 组装电脑（Director方式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置ImageLoader（链式调用方式）"><span class="nav-number">8.2.</span> <span class="nav-text">2.配置ImageLoader（链式调用方式）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android涉及到的抽象工厂设计模式"><span class="nav-number">9.</span> <span class="nav-text">Android涉及到的抽象工厂设计模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UML图例"><span class="nav-number">2.</span> <span class="nav-text">UML图例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定义"><span class="nav-number">3.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解释"><span class="nav-number">4.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优缺点"><span class="nav-number">5.</span> <span class="nav-text">优缺点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景"><span class="nav-number">6.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用情景"><span class="nav-number">7.</span> <span class="nav-text">使用情景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2种使用方式"><span class="nav-number">8.</span> <span class="nav-text">2种使用方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#示例代码"><span class="nav-number">9.</span> <span class="nav-text">示例代码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-组装电脑（Director方式）"><span class="nav-number">9.1.</span> <span class="nav-text">1. 组装电脑（Director方式）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-配置ImageLoader（链式调用方式）"><span class="nav-number">9.2.</span> <span class="nav-text">2.配置ImageLoader（链式调用方式）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Android涉及到的抽象工厂设计模式"><span class="nav-number">10.</span> <span class="nav-text">Android涉及到的抽象工厂设计模式</span></a></li></ol></div>
             
 
           </div>

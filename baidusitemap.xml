@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
-    <lastmod>2017-11-10T15:35:56.577Z</lastmod>
+    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
+    <lastmod>2017-11-12T15:44:15.714Z</lastmod>
     <data>
         <display>
-        <title>Android —— 异步任务机制 & 消息通知机制</title>
-        <pubTime>2017-10-09T10:08:33.000Z</pubTime>
+        <title>Android —— 开源框架：工具库篇</title>
+        <pubTime>2017-10-02T15:56:13.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -24,19 +24,39 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
-    <lastmod>2017-11-10T15:33:32.637Z</lastmod>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    <lastmod>2017-11-12T15:10:32.158Z</lastmod>
     <data>
         <display>
-        <title>MVC & MVP & MVVM & MVPVM</title>
-        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
         
-        <tag>面向对象原则和设计模式</tag>
+        <tag>Android</tag>
          
          
            
              
-              <breadCrumb title="IT - 面向对象和设计模式 - 架构&amp;框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/"/>
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/14/it/1.Android/Network/</loc>
+    <lastmod>2017-11-12T13:35:44.289Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 网络编程总结</title>
+        <pubTime>2017-09-14T13:57:14.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
           
         </display>
     </data>
@@ -45,7 +65,7 @@
     
   <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-11-10T15:31:06.270Z</lastmod>
+    <lastmod>2017-11-12T13:26:23.665Z</lastmod>
     <data>
         <display>
         <title>Android —— 性能优化系列</title>
@@ -64,8 +84,28 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
+    <lastmod>2017-11-12T03:48:37.003Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 架构设计 & 框架搭建</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
-    <lastmod>2017-11-10T15:29:49.555Z</lastmod>
+    <lastmod>2017-11-12T03:47:04.017Z</lastmod>
     <data>
         <display>
         <title>Android —— 开放云平台篇</title>
@@ -84,12 +124,112 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
-    <lastmod>2017-11-10T15:21:00.755Z</lastmod>
+    <loc>https://hengxing0080.github.io/2017/08/17/it/2.OOP&DesignPattern/3.1.MVC/</loc>
+    <lastmod>2017-11-11T16:01:19.563Z</lastmod>
     <data>
         <display>
-        <title>Android —— 架构设计 & 框架搭建</title>
-        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        <title>MVC & MVP & MVVM & MVPVM</title>
+        <pubTime>2017-08-17T13:11:01.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 架构&amp;框架" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%9E%B6%E6%9E%84-%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/24/it/4.Statistics/Webpage/</loc>
+    <lastmod>2017-11-11T15:39:48.372Z</lastmod>
+    <data>
+        <display>
+        <title>IT类学习网站总结</title>
+        <pubTime>2017-09-24T11:06:13.000Z</pubTime>
+        
+        <tag>统计分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 统计分析" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
+    <lastmod>2017-11-11T15:36:20.071Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之4 —— 建造者模式（创建型模式）</title>
+        <pubTime>2017-06-08T07:21:33.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
+    <lastmod>2017-11-11T15:28:23.944Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之1 —— 单例模式（创建型模式）</title>
+        <pubTime>2017-06-01T01:41:25.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
+    <lastmod>2017-11-11T15:28:23.164Z</lastmod>
+    <data>
+        <display>
+        <title>设计模式GOF之3 —— 抽象工厂模式（创建型模式）</title>
+        <pubTime>2017-06-04T11:01:45.000Z</pubTime>
+        
+        <tag>面向对象原则和设计模式</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
+    <lastmod>2017-11-10T16:00:11.304Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 异步任务机制 & 消息通知机制</title>
+        <pubTime>2017-10-09T10:08:33.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -137,46 +277,6 @@
            
              
               <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    <lastmod>2017-11-10T11:18:03.289Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Bitmap图片的总结</title>
-        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/24/it/4.Statistics/Webpage/</loc>
-    <lastmod>2017-11-10T10:00:48.494Z</lastmod>
-    <data>
-        <display>
-        <title>IT类学习网站总结</title>
-        <pubTime>2017-09-24T11:06:13.000Z</pubTime>
-        
-        <tag>统计分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 统计分析" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"/>
           
         </display>
     </data>
@@ -384,72 +484,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/06/08/it/2.OOP&DesignPattern/2.4.Builder/</loc>
-    <lastmod>2017-11-10T07:09:24.487Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之4 —— 建造者模式（创建型模式）</title>
-        <pubTime>2017-06-08T07:21:33.000Z</pubTime>
-        
-        <tag>面向对象原则和设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/04/it/2.OOP&DesignPattern/2.3.Abstract/</loc>
-    <lastmod>2017-11-10T07:09:20.283Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之3 —— 抽象工厂模式（创建型模式）</title>
-        <pubTime>2017-06-04T11:01:45.000Z</pubTime>
-        
-        <tag>面向对象原则和设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/06/02/it/2.OOP&DesignPattern/2.2.Factory/</loc>
     <lastmod>2017-11-10T07:09:14.912Z</lastmod>
     <data>
         <display>
         <title>设计模式GOF之2 —— 工厂模式（创建型模式）</title>
         <pubTime>2017-06-02T03:31:55.000Z</pubTime>
-        
-        <tag>面向对象原则和设计模式</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/06/01/it/2.OOP&DesignPattern/2.1.Singleton/</loc>
-    <lastmod>2017-11-10T07:09:10.692Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式GOF之1 —— 单例模式（创建型模式）</title>
-        <pubTime>2017-06-01T01:41:25.000Z</pubTime>
         
         <tag>面向对象原则和设计模式</tag>
          
@@ -1124,26 +1164,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
-    <lastmod>2017-11-08T13:48:29.446Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 开源框架：工具库篇</title>
-        <pubTime>2017-10-02T15:56:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/View/</loc>
     <lastmod>2017-11-08T10:27:32.622Z</lastmod>
     <data>
@@ -1703,12 +1723,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>励志数学公式（数据告诉你不要迷茫）</title>
-        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
+        <title>北大励志十句话</title>
+        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1743,12 +1763,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/19/me/page2/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>北大励志十句话</title>
-        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
+        <title>励志数学公式（数据告诉你不要迷茫）</title>
+        <pubTime>2017-02-19T09:50:03.000Z</pubTime>
         
         <tag>励志</tag>
          

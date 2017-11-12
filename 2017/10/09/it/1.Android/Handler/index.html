@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_handler_logo.gif">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_handler.jpg">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_handler_loop1.png">
-<meta property="og:updated_time" content="2017-11-10T15:35:56.577Z">
+<meta property="og:updated_time" content="2017-11-10T16:00:11.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— 异步任务机制 &amp; 消息通知机制">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_handler_logo.gif">
@@ -567,9 +567,9 @@
 <p>相关文章：<br><a href="http://blog.csdn.net/yanbober/article/details/48861457" target="_blank" rel="external">Android应用Loaders全面详解及源码浅析</a></p>
 <hr>
 <h1 id="IntentService-异步意图服务"><a href="#IntentService-异步意图服务" class="headerlink" title="IntentService 异步意图服务"></a>IntentService 异步意图服务</h1><hr>
-<h2 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h2><p>所属包：android.add<br>在线API：<a href="http://www.android-doc.com/reference/android/app/IntentService.html" target="_blank" rel="external">http://www.android-doc.com/reference/android/app/IntentService.html</a></p>
+<h2 id="简介-3"><a href="#简介-3" class="headerlink" title="简介"></a>简介</h2><p>所属包：android.app<br>在线API：<a href="http://www.android-doc.com/reference/android/app/IntentService.html" target="_blank" rel="external">http://www.android-doc.com/reference/android/app/IntentService.html</a></p>
 <p>一句话描述：<br>一个可以干完活后自己去死且不需要我们去管理子线程的Service。</p>
-<p>Public Methods：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function">IBinder	<span class="title">onBind</span><span class="params">(Intent intent)</span></span></div><div class="line"><span class="keyword">void</span>	<span class="title">onCreate</span><span class="params">()</span></div><div class="line"><span class="keyword">void</span>	<span class="title">onDestroy</span><span class="params">()</span></div><div class="line"><span class="keyword">void</span>	<span class="title">onStart</span><span class="params">(Intent intent, <span class="keyword">int</span> startId)</span></div><div class="line"><span class="keyword">int</span>	    <span class="title">onStartCommand</span><span class="params">(Intent intent, <span class="keyword">int</span> flags, <span class="keyword">int</span> startId)</span></div><div class="line"><span class="keyword">void</span>	<span class="title">setIntentRedelivery</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></div></pre></td></tr></table></figure></p>
+<p>Public Methods：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function">IBinder <span class="title">onBind</span><span class="params">(Intent intent)</span></span></div><div class="line"><span class="keyword">void</span>    <span class="title">onCreate</span><span class="params">()</span></div><div class="line"><span class="keyword">void</span>    <span class="title">onDestroy</span><span class="params">()</span></div><div class="line"><span class="keyword">void</span>    <span class="title">onStart</span><span class="params">(Intent intent, <span class="keyword">int</span> startId)</span></div><div class="line"><span class="keyword">int</span>     <span class="title">onStartCommand</span><span class="params">(Intent intent, <span class="keyword">int</span> flags, <span class="keyword">int</span> startId)</span></div><div class="line"><span class="keyword">void</span>    <span class="title">setIntentRedelivery</span><span class="params">(<span class="keyword">boolean</span> enabled)</span></div></pre></td></tr></table></figure></p>
 <p>Protected Methods：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span>	<span class="title">onHandleIntent</span><span class="params">(Intent intent)</span></span></div></pre></td></tr></table></figure></p>
 <h2 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h2><p>框架包装好的服务<br>一个方便我们处理业务流程的类，它是一个Service，但是比Service更智能。</p>
 <p>普通的service, 默认运行在主线程<br>Sdk给我们提供的方便的,带有异步处理的Service类,<br>OnHandleIntent() 处理耗时的操作，内部开了子线程</p>
@@ -791,7 +791,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">91</span>
+                <span class="site-state-item-count">92</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
