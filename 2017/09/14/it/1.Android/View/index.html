@@ -1,0 +1,1300 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 自定义View的总结">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/14/it/1.Android/View/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_view_logo.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_view1.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_view2.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_view_viewgroup.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_view3.png">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_view_decorview.png">
+<meta property="og:updated_time" content="2017-11-13T14:49:14.278Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 自定义View的总结">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_view_logo.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/14/it/1.Android/View/"/>
+
+
+
+
+
+  <title>Android —— 自定义View的总结 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/14/it/1.Android/View/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 自定义View的总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T13:57:16+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_view_logo.png" alt="UML图"><br><a id="more"></a></p>
+<hr>
+<h1 id="View"><a href="#View" class="headerlink" title="View"></a>View</h1><hr>
+<p>在 Android 所有的控件和 Layout 都有着一个父类 View 。<br>Anroid 通过继承的方式，对父类控件进行继承，由此来在父类基础上创造新的控件。</p>
+<h2 id="View和ViewGroup"><a href="#View和ViewGroup" class="headerlink" title="View和ViewGroup"></a>View和ViewGroup</h2><p>View：<br>所有控件的父类，做显示用的，子类如Imageview Button TextView等等<br>控件都继承View<br>API地址：<a href="http://www.android-doc.com/reference/android/view/View.html" target="_blank" rel="external">http://www.android-doc.com/reference/android/view/View.html</a></p>
+<p>ViewGroup：<br>继承自View，能管理View<br>控件的容器（一个容器可以存放多个view对象，并且按照定义的规则去排列这些孩子），管理孩子的布局<br>子类如：RelativeLayout LinearLayout<br>5大布局都继承ViewGroup<br>API地址：<a href="http://www.android-doc.com/reference/android/view/ViewGroup.html" target="_blank" rel="external">http://www.android-doc.com/reference/android/view/ViewGroup.html</a></p>
+<p>继承关系详见最上面头图</p>
+<p>相关文章：<br><a href="http://www.jianshu.com/p/db7ecca08eaf" target="_blank" rel="external">[Android] View 的继承关系</a></p>
+<h2 id="View绘制流程"><a href="#View绘制流程" class="headerlink" title="View绘制流程"></a>View绘制流程</h2><p>有三个重要方法</p>
+<p>1.onMeasure  确定控件的大小<br>测量一个viewgroup里面孩子view的宽度和高度<br>测量每个控件的宽高</p>
+<p>2.onLayout  确定控件的位置<br>控制布局<br>确定位置，控制ViewGroup里面的孩子显示的位置<br>放置控件到界面上</p>
+<p>3.onDraw  确定控件的样子<br>画View，刷新</p>
+<p>view的显示流程图：<br><img src="/images/it_android_view1.png" alt="UML图"><br>另一版本的流程图：<br><img src="/images/it_android_view2.png" alt="UML图"></p>
+<h2 id="View自定义"><a href="#View自定义" class="headerlink" title="View自定义"></a>View自定义</h2><p>根据业务需求来自定义实现效果显示的控件</p>
+<h3 id="自定义View的步骤"><a href="#自定义View的步骤" class="headerlink" title="自定义View的步骤"></a>自定义View的步骤</h3><p>1，定义一个布局（显示的内容）<br>item_setting_view.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">RelativeLayout</span> <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"75dip"</span> </div><div class="line">    <span class="attr">android:clickable</span>=<span class="string">"true"</span></div><div class="line">    <span class="attr">android:background</span>=<span class="string">"@drawable/list_selector"</span>&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_setting_item_title"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_alignParentLeft</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">android:layout_alignParentTop</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">android:layout_marginLeft</span>=<span class="string">"15dp"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"5dp"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"24sp"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"自动更新设置"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">TextView</span></span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/tv_setting_item_centent"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:textColor</span>=<span class="string">"#ff0000"</span></div><div class="line">        <span class="attr">android:layout_below</span>=<span class="string">"@+id/tv_setting_item_title"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"5dp"</span></div><div class="line">        <span class="attr">android:textSize</span>=<span class="string">"20sp"</span></div><div class="line">        <span class="attr">android:layout_marginLeft</span>=<span class="string">"15dp"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">"自动更新已经关闭"</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">CheckBox</span></span></div><div class="line">        <span class="attr">android:clickable</span>=<span class="string">"false"</span></div><div class="line">        <span class="attr">android:id</span>=<span class="string">"@+id/cb_settting_item_check"</span></div><div class="line">        <span class="attr">android:layout_width</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span></div><div class="line">        <span class="attr">android:layout_alignParentRight</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">android:layout_centerVertical</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">android:layout_below</span>=<span class="string">"@+id/textView1"</span></div><div class="line">        <span class="attr">android:text</span>=<span class="string">""</span> /&gt;</div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">View</span> <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></span></div><div class="line">        <span class="attr">android:layout_height</span>=<span class="string">"2dip"</span></div><div class="line">        <span class="attr">android:layout_alignParentBottom</span>=<span class="string">"true"</span></div><div class="line">        <span class="attr">android:layout_marginTop</span>=<span class="string">"5dp"</span></div><div class="line">        <span class="attr">android:background</span>=<span class="string">"@drawable/list_devider"</span>/&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">RelativeLayout</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>2,定义容器类（LinearLayout,RelativeLayout,FramLayout）的子类<br>在构造函数中获取到上面定义的View<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">View  rl_root = View.inflate(context,R.layout.item_setting_view,<span class="keyword">null</span>);</div><div class="line">addView(rl_root); <span class="comment">// 把自定义view放到容器中</span></div></pre></td></tr></table></figure></p>
+<p>3，设置属性值<br>自定义属性：<br>3.1.在使用自定义View的布局文件中，根节点加自定义的命名空间<br>xmlns:自定义名=”<a href="http://schemas.android.com/apk/res/包名" target="_blank" rel="external">http://schemas.android.com/apk/res/包名</a>“<br>3.2.自定义属性文件（放到values目录叫attrs.xml）<br>SettingView 标识<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">declare-styleable</span> <span class="attr">name</span>=<span class="string">"SettingView"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">format</span>=<span class="string">"string"</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">attr</span> <span class="attr">name</span>=<span class="string">"content"</span> <span class="attr">format</span>=<span class="string">"string"</span> /&gt;</span> </div><div class="line">    <span class="tag">&lt;/<span class="name">declare-styleable</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>3.3，在配置文件中使用自定义属性，如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">com.xxk.view.SettingView</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/sv_setting_update"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"fill_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"75dip"</span></div><div class="line">    <span class="attr">itheima:content</span>=<span class="string">"自动更新已经关闭,自动更新已经打开"</span></div><div class="line">    <span class="attr">itheima:title</span>=<span class="string">"自动更新设置"</span> &gt;</div><div class="line"><span class="tag">&lt;/<span class="name">com.xxk.view.SettingView</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>4.在自定义View中获取配置文件中属性的值，如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">title = attrs.getAttributeValue(<span class="string">"http://schemas.android.com/apk/res/com.phoneguard."</span>, <span class="string">"title"</span>);</div><div class="line">content = attrs.getAttributeValue(<span class="string">"http://schemas.android.com/apk/res/com.xxk"</span>, <span class="string">"content"</span>);</div></pre></td></tr></table></figure></p>
+<p>5,封装接口调用<br>功能（显示子组件内容）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setChecked</span><span class="params">(<span class="keyword">boolean</span> checked)</span></span>&#123;</div><div class="line">    <span class="keyword">if</span> (checked)&#123;</div><div class="line">        tv_content.setTextColor(Color.GREEN);</div><div class="line">        tv_content.setText(desc[<span class="number">1</span>]);</div><div class="line">        </div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        tv_content.setTextColor(Color.RED);</div><div class="line">        tv_content.setText(desc[<span class="number">0</span>]);</div><div class="line">    &#125;</div><div class="line">    cb_check.setChecked(checked);</div><div class="line">&#125;</div><div class="line">事件的传递（事件传递给子组件）</div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setClickListener</span><span class="params">(OnClickListener listener)</span></span>&#123;</div><div class="line">    rl_root.setOnClickListener(listener);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="使用自定义控件的2种方式"><a href="#使用自定义控件的2种方式" class="headerlink" title="使用自定义控件的2种方式"></a>使用自定义控件的2种方式</h3><p>1.XML中使用<br>在布局也有2中使用方式，注意第一种是小写的view，不然就报找不到<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">view</span></span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/layout_content"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></div><div class="line">    <span class="attr">android:layout_weight</span>=<span class="string">"1.0"</span></div><div class="line">    <span class="attr">class</span>=<span class="string">"com.example.view.MyViewPage"</span>/&gt;</div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">android.support.v4.view.ViewPager</span>  // 控件完整路径名,这个动作相当于导包</span></div><div class="line">    <span class="attr">android:id</span>=<span class="string">"@+id/layout_content"</span></div><div class="line">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></div><div class="line">    <span class="attr">android:layout_height</span>=<span class="string">"0dp"</span></div><div class="line">    <span class="attr">android:layout_weight</span>=<span class="string">"1.0"</span>/&gt;</div></pre></td></tr></table></figure></p>
+<p>2.代码中去new</p>
+<h3 id="Viewgroup孩子坐标系"><a href="#Viewgroup孩子坐标系" class="headerlink" title="Viewgroup孩子坐标系"></a>Viewgroup孩子坐标系</h3><p>L：Left<br>R：Right<br>T：Top<br>B：button</p>
+<p><img src="/images/it_android_view_viewgroup.jpg" alt="UML图"></p>
+<h3 id="获取View宽高"><a href="#获取View宽高" class="headerlink" title="获取View宽高"></a>获取View宽高</h3><p>根据绘制流程<br>onMeasure()—&gt; onLayout()–&gt;onDraw();<br>所以view对象是在onstart方法之后onResume之前的某一个时刻显示出来。</p>
+<p>一个控件在没有显示到界面之前，宽高是获取不到的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> height = mView.getHeight();</div></pre></td></tr></table></figure></p>
+<p>所以需要用一个小技巧:<br>如何在View显示之前就把宽高给获取出来<br>用于测量一个布局文件的宽高<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 利用两个假的0欺骗系统去先测量一遍</span></div><div class="line">mView.measure(<span class="number">0</span>,<span class="number">0</span>); </div><div class="line"><span class="comment">// 获取到测量后的高度</span></div><div class="line">mView.getMeasuredHeight();</div></pre></td></tr></table></figure></p>
+<h3 id="自定义控件的注意事项"><a href="#自定义控件的注意事项" class="headerlink" title="自定义控件的注意事项"></a>自定义控件的注意事项</h3><p>自定义控件需要复写2个构造方法,一个是给代码用的,一个是给布局文件用的<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MenuView</span> <span class="keyword">extends</span> <span class="title">RelativeLayout</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MenuView</span><span class="params">(Context context,AttributeSet attrs)</span></span>&#123;</div><div class="line">        <span class="keyword">super</span>(context,attrs);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MenuView</span><span class="params">(Context context)</span></span>&#123;</div><div class="line">        <span class="keyword">super</span>(context);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>自定义控件所在的一般是ui包：<br>如com.xxk.ui　<br>　　SmartImageView.java</p>
+<p>自定义View的好处:<br>如果自定义View有新的功能需求, 只要找到布局文件include就行了<br><img src="/images/it_android_view3.png" alt="UML图"></p>
+<h2 id="View面试题"><a href="#View面试题" class="headerlink" title="View面试题"></a>View面试题</h2><p>1.Activity是如何生成一个view的？机制是什么？<br>Activity创建一个view是通过 ondraw 画出来的,<br>画这个view之前呢,还会调用onMeasure方法来计算显示的大小和onLayout确定位置</p>
+<p>2.View的绘制完成在activity的哪个生命周期阶段实现<br>onStart之后，onResume执行之前的某一个时间它的位置才确定下来<br>关于测绘自定义控件的宽高说过<br>测试宽高会在自定义控件定义一个监听器，一旦控件渲染完毕显示在界面上监听器会提供一个回调函数<br>在回调函数里就能拿到控件的宽高，在onDraw方法执行后才显示出来<br>onmeasure() // 计算 控件在屏幕上的位子<br>某个view 要显示在界面  ondraw 被显示到界面上的 .</p>
+<p>3.Android UI中的View如何刷新？<br>有2种方式<br>view.invalidate();     // 主线程（让view失效，然后让view重新渲染一下）<br>view.postInvalidate(); // 子线程（让view失效，然后让view重新渲染一下）</p>
+<h2 id="View与DecorView、PhoneWindowW、Avtivity之间的关系"><a href="#View与DecorView、PhoneWindowW、Avtivity之间的关系" class="headerlink" title="View与DecorView、PhoneWindowW、Avtivity之间的关系"></a>View与DecorView、PhoneWindowW、Avtivity之间的关系</h2><p>先看下AndroidUI界面架构层级图：<br><img src="/images/it_android_view_decorview.png" alt="UML图"></p>
+<p>简介：<br>一个Activity构造的时候一定会构造一个Window（准确的说是一个PhoneWindow） 此Window有且只有一个。<br>这个Window有一个ViewRoot，它是一个逻辑性的根视图，实际上就是一个View类或者是一个ViewGroup类<br>那么，在这个ViewRoot的根视图上面就会添加一个一个的View，也就是执行addView()方法，来达到我们最终显示的效果。 </p>
+<p>总的来说，Activity实际上就是一个控制单元，它就像一个工匠一样，在它实例化的时候会创造一个Window（Only One）。<br>而对于Window，它是我们视图的承载模型。<br>Window本身并不是显式的视图，就如同我们的窗户上的玻璃，它只是我们贴窗花的地方，不是真正的视图。<br>我们接着比喻。我们要有一个漂亮的窗户就要贴窗花，而我们的每一个窗花都是一个View。<br>下面的问题是，我们怎么去修剪这个窗花使它变得漂亮呢？<br>这里就 用到了我们的Layout，也就是布局。<br>要把窗花贴到窗户上，就要通过LayoutInflater和addView()来执行这个贴的过程。<br>对于View，它才是我们真正的显式视图。</p>
+<p>关键的名词的形象解释：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">Activity：</div><div class="line">像一个工匠（控制单元），最外层的载体控制内面的孵化过程.</div><div class="line">它是Android应用程序的载体，允许用户在其上创建一个用户界面，并提供用户处理事件的API，如 onKeyEvent, onTouchEvent等。 并维护应用程序的生命周期。</div><div class="line">当我们调用Acitivity的 setContentView方法的时候实际上是调用的Window对象的setContentView方法，所以我们可以看出Activity中关于界 面的绘制实际上全是交给Window对象来做的。绘制类图的话，可以看出Activity聚合了一个Window对象。</div><div class="line"></div><div class="line">Window：</div><div class="line">窗体父类（抽象类），像窗户（承载模型）</div><div class="line">android中的窗口，表示顶级窗口的意思，也就是主窗口</div><div class="line">它有两个实现类，PhoneWindow和MidWindow,我们一般的 activity对应的主要是PhoneWindow，在activity中经常使用的setContentView等方法也是在这个里面实现的。</div><div class="line"></div><div class="line">PhoneWindow：Vindow的子类（实现类）</div><div class="line"></div><div class="line">WindowManager：</div><div class="line">继承自ViewManager这个接口，这个接口主要有以下的实现子接口：</div><div class="line">addView();  </div><div class="line">updateViewLayout(); </div><div class="line">removeView();</div><div class="line">在WindowManager中，addView方法表示的是将主窗口中的顶级view（也就是DecorView）添加到WindowManager中，并建立会话。</div><div class="line">WindowManager主要用来管理窗口的一些状态、属性、view增加、删除、更新、窗口顺序、消息收集和处理等。</div><div class="line"></div><div class="line">WindowManagerService：接收消息的服务，并且回调Activity函数，比如典型的onKeyDown()  </div><div class="line"></div><div class="line">DecorView：</div><div class="line">整个Window界面的最顶层View</div><div class="line">DecorView代表整个Window界面，包含通知栏，标题栏，内容显示栏三块区域。</div><div class="line">DecorView只有一个子元素为LinearLayout(LinearLayout里有两个FrameLayout子元素)</div><div class="line">我们在Activity中调用的setConctentView就是放到DecorView中了。</div><div class="line">在View中有两个成员变量叫做 mParent、mChildren，它是用来管理view的上下级关系的。</div><div class="line">而ViewGroup是对一组View的管理。</div><div class="line">因此，在ViewGroup中 建立了所有view的关系网。</div><div class="line">而最终ViewGroup附属在主窗口上。</div><div class="line">这样就很容易在窗口中通过findViewById找到具体的View了。 </div><div class="line">view中的事件处理也是根据这个路径来处理的。</div><div class="line"></div><div class="line">View：像窗花（显示视图） </div><div class="line"></div><div class="line">LayoutInflater：像剪刀</div><div class="line"></div><div class="line">Xml：配置文件啊，像窗花图纸</div></pre></td></tr></table></figure></p>
+<p>创建过程：<br>在Activity中调用attach，创建了一个Window<br>创建的window是其子类PhoneWindow，实际上就是在attach中创建PhoneWindow</p>
+<p>在Activity中调用setContentView(R.layout.xxx)<br>其中实际上是调用的getWindow().setContentView()，实际上是在调用PhoneWindow中的setContentView方法</p>
+<p>创建ParentView：作为ViewGroup的子类，实际是创建的DecorView(作为FramLayout的子类）<br>将指定的R.layout.xxx进行填充通过布局填充器进行填充(其中的parent指的就是DecorView)<br>调用到ViewGroup<br>调用ViewGroup的removeAllView()，先将所有的view移除掉<br>然后添加新的view：addView()</p>
+<p>相关文章：<br><a href="http://www.nowamagic.net/academy/detail/50160216" target="_blank" rel="external">补充说明Window、PhoneWindow与DecorView</a><br><a href="http://blog.csdn.net/sunny2come/article/details/8899130" target="_blank" rel="external">Android 中Activity,Window和View之间的关系</a><br><a href="http://www.cnblogs.com/meizixiong/p/3546397.html" target="_blank" rel="external">android中Activity中的WindowManager与Window</a><br><a href="http://blog.csdn.net/sunny2come/article/details/8899138" target="_blank" rel="external">Android DecorView浅析</a></p>
+<hr>
+<h1 id="Drawable"><a href="#Drawable" class="headerlink" title="Drawable"></a>Drawable</h1><hr>
+<p>什么是Drawable呢？<br>能够在canvas上绘制的一个玩意，而且相比于View，并不需要去考虑measure、layout，仅仅只要去考虑如何draw（canavs）。</p>
+<p>Drawable的用法：<br>1、自定义Drawable，相比View来说，Drawable属于轻量级的、使用也很简单。以后自定义实现一个效果的时候，可以改变View first的思想，尝试下Drawable first。<br>2、自定义状态，相信大家对于State Drawable都不陌生，但是有没有尝试过去自定义一个状态呢？<br>3、利用Drawable提升我们的UI Perfermance ， 如何利用Drawable去提升我们的UI的性能。</p>
+<p>所以<br>在自定义控件的时候,能用drawable来绘制圆，或者其他样式的时候,尽量用drawable,因为drawable的效果要远胜于canvas.drawXXX().</p>
+<p>相关文章：<br><a href="http://blog.csdn.net/lmj623565791/article/details/43752383" target="_blank" rel="external">Android Drawable 那些不为人知的高效用法</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/09/it/1.Android/Bitmap/" rel="next" title="Android —— Bitmap图片的总结">
+                <i class="fa fa-chevron-left"></i> Android —— Bitmap图片的总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/14/it/1.Android/Network/" rel="prev" title="Android —— 网络编程总结">
+                Android —— 网络编程总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">92</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#View"><span class="nav-number">1.</span> <span class="nav-text">View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#View和ViewGroup"><span class="nav-number">1.1.</span> <span class="nav-text">View和ViewGroup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View绘制流程"><span class="nav-number">1.2.</span> <span class="nav-text">View绘制流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View自定义"><span class="nav-number">1.3.</span> <span class="nav-text">View自定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义View的步骤"><span class="nav-number">1.3.1.</span> <span class="nav-text">自定义View的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用自定义控件的2种方式"><span class="nav-number">1.3.2.</span> <span class="nav-text">使用自定义控件的2种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Viewgroup孩子坐标系"><span class="nav-number">1.3.3.</span> <span class="nav-text">Viewgroup孩子坐标系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取View宽高"><span class="nav-number">1.3.4.</span> <span class="nav-text">获取View宽高</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义控件的注意事项"><span class="nav-number">1.3.5.</span> <span class="nav-text">自定义控件的注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View面试题"><span class="nav-number">1.4.</span> <span class="nav-text">View面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View与DecorView、PhoneWindowW、Avtivity之间的关系"><span class="nav-number">1.5.</span> <span class="nav-text">View与DecorView、PhoneWindowW、Avtivity之间的关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Drawable"><span class="nav-number">2.</span> <span class="nav-text">Drawable</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
+    <lastmod>2017-11-13T15:37:17.424Z</lastmod>
+    <data>
+        <display>
+        <title>集合框架和其他容器类的总结</title>
+        <pubTime>2017-09-07T10:33:02.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
+    <lastmod>2017-11-13T15:33:40.523Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 架构设计 & 框架搭建</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
-    <lastmod>2017-11-12T15:44:15.714Z</lastmod>
+    <lastmod>2017-11-13T14:52:17.076Z</lastmod>
     <data>
         <display>
         <title>Android —— 开源框架：工具库篇</title>
@@ -17,6 +57,86 @@
            
              
               <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/14/it/1.Android/View/</loc>
+    <lastmod>2017-11-13T14:49:14.278Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 自定义View的总结</title>
+        <pubTime>2017-09-14T05:57:16.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
+    <lastmod>2017-11-13T13:48:17.320Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 开放云平台篇</title>
+        <pubTime>2017-10-04T07:11:16.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
+    <lastmod>2017-11-13T13:48:14.110Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Touch事件分发传递机制的总结</title>
+        <pubTime>2017-10-05T08:48:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/27/manager/1.Psychology/</loc>
+    <lastmod>2017-11-13T05:01:19.626Z</lastmod>
+    <data>
+        <display>
+        <title>心理学效应和思维方式的总结</title>
+        <pubTime>2017-08-27T08:51:55.000Z</pubTime>
+        
+        <tag>管理学与心理学</tag>
+         
+         
+           
+             
+              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
           
         </display>
     </data>
@@ -70,46 +190,6 @@
         <display>
         <title>Android —— 性能优化系列</title>
         <pubTime>2017-09-28T15:56:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Architecture/</loc>
-    <lastmod>2017-11-12T03:48:37.003Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 架构设计 & 框架搭建</title>
-        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
-    <lastmod>2017-11-12T03:47:04.017Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 开放云平台篇</title>
-        <pubTime>2017-10-04T07:11:16.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -270,26 +350,6 @@
         <display>
         <title>Android —— Context的几种环境和区别</title>
         <pubTime>2017-09-20T15:57:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/05/it/1.Android/Touch/</loc>
-    <lastmod>2017-11-10T09:52:35.021Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Touch事件分发传递机制的总结</title>
-        <pubTime>2017-10-05T08:48:13.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -1144,46 +1204,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-11-08T13:54:25.859Z</lastmod>
-    <data>
-        <display>
-        <title>集合框架和其他容器类的总结</title>
-        <pubTime>2017-09-07T10:33:02.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/View/</loc>
-    <lastmod>2017-11-08T10:27:32.622Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 自定义View的总结</title>
-        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Animation/</loc>
     <lastmod>2017-11-08T10:27:03.023Z</lastmod>
     <data>
@@ -1303,26 +1323,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/27/manager/1.Psychology/</loc>
-    <lastmod>2017-10-24T16:09:34.663Z</lastmod>
-    <data>
-        <display>
-        <title>心理学效应和思维方式的总结</title>
-        <pubTime>2017-08-27T08:51:55.000Z</pubTime>
-        
-        <tag>管理学与心理学</tag>
-         
-         
-           
-             
-              <breadCrumb title="管理学与心理学" url="https://hengxing0080.github.io/categories/%E7%AE%A1%E7%90%86%E5%AD%A6%E4%B8%8E%E5%BF%83%E7%90%86%E5%AD%A6/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://hengxing0080.github.io/2017/07/28/it/2.NetworkProtocol/HTTP/</loc>
@@ -1783,12 +1783,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     <data>
         <display>
-        <title>蛰伏——人生不可缺的阶段</title>
-        <pubTime>2017-02-22T14:11:01.000Z</pubTime>
+        <title>关于21世纪最重要的是什么</title>
+        <pubTime>2017-02-25T04:50:26.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1803,12 +1803,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/25/me/page8/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/22/me/page5/</loc>
     <lastmod>2017-07-16T04:44:56.000Z</lastmod>
     <data>
         <display>
-        <title>关于21世纪最重要的是什么</title>
-        <pubTime>2017-02-25T04:50:26.000Z</pubTime>
+        <title>蛰伏——人生不可缺的阶段</title>
+        <pubTime>2017-02-22T14:11:01.000Z</pubTime>
         
         <tag>励志</tag>
          
