@@ -1,0 +1,1355 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 数据存储机制总结">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/16/it/1.Android/Storage/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_storage_logo.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_storage1.png">
+<meta property="og:updated_time" content="2017-11-14T15:13:01.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 数据存储机制总结">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_storage_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/16/it/1.Android/Storage/"/>
+
+
+
+
+
+  <title>Android —— 数据存储机制总结 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/16/it/1.Android/Storage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 数据存储机制总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-16T20:17:13+08:00">
+                2017-09-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_storage_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>很多时候我们的软件需要对处理后的数据进行存储或再次访问，Android为数据存储提供了如下几种数据持久化方式：</p>
+<p>1.存文件</p>
+<p>2.SharedPerference(参数)</p>
+<p>3.SQLite数据库<br>保存结构化数据<br>特殊的文件,带索引</p>
+<p>4.用第三方的面向对象数据库直接保存Java对象<br>当我们有大量的相似结构的数据存放,实现增删改查非常方便,推荐使用数据库.</p>
+<p>5.Content Provider内容提供者</p>
+<p>6.网络（通过网络把数据保存到服务器上）<br>安卓是基于网络，对各种协议封装都是完善的，可以利用HTTP协议把数据提交到服务器<br>底层的socket也是支持的，也可以利用tcp和udp把数据提交到服务器上<br>如：socket的tcp udp , http的httpurlconnection  </p>
+<p>7.XML<br>半结构化存储</p>
+<p>8.JSON<br>保存数组和对象</p>
+<p>这篇文章主要讲前3种</p>
+<hr>
+<h1 id="文件存储"><a href="#文件存储" class="headerlink" title="文件存储"></a>文件存储</h1><hr>
+<p>使用openFileOutput和openFileInput方法，或FileInputStream和FileOutputStream)</p>
+<p>手机存储目录的划分：手机内部存储(手机内部), 手机外部存储(SD卡)</p>
+<p>适用场景：用于存一般的数据</p>
+<p>关于Android文件的存储目录的注意事项 :<br>android下应用程序的路径和javase不同, 应用程序的数据要保存自己的文件夹里面<br>文件只能存储在自己应用程序私有的文件夹下,别的应用程序无法访问</p>
+<h2 id="手机存储目录的划分"><a href="#手机存储目录的划分" class="headerlink" title="手机存储目录的划分"></a>手机存储目录的划分</h2><h3 id="手机内部存储"><a href="#手机内部存储" class="headerlink" title="手机内部存储"></a>手机内部存储</h3><p>API：Environment.getDataDirectory()</p>
+<p>存储目录：file目录 和 cache目录    </p>
+<p>优点：容量有限,较小,价格比较贵,存储访问速度快，类似电脑的固态硬盘</p>
+<p>为什么内部存储空间不需要声明权限?<br>创建的文件在手机内部存储空间,默认的权限全部都是私有的.<br>只有自己的应用程序可以访问,<br>别的应用程序不可以访问.<br>如果这个文件不想让别人看到,就存到内部存储空间里</p>
+<p>书写方式：<br>1.可以直接写死路径操作文件,但是给写死了,以后换包名时,所有这样写的路径都要跟着改!<br>如：/data/data/com.star.login/uinfo.txt</p>
+<p>2.为了解决这个为难题提供了如下方法:<br>context.getFilesDir() –&gt; /data/data/[包名]/files –&gt;这里面存储的内容不会被系统回收<br>context.getCacheDir() –&gt; /data/data/[包名]/cache –&gt;这里面存储的内容,在某些情况下系统可能会自动回收,虽然会自动回收,但是android推荐,用完最好自己尽快删除</p>
+<h3 id="手机外部存储"><a href="#手机外部存储" class="headerlink" title="手机外部存储"></a>手机外部存储</h3><p>API：Environment.getExternalStorageDirectory()</p>
+<p>存储目录：存到手机的SD上的data/data目录的包名里面</p>
+<p>优点：容量大,可以更换,价格便宜,32G 不到200块</p>
+<p>使用注意：记得添加权限（读写2个权限）<br>写入的权限：android.permission.WRITE_EXTERNAL_STORAGE<br>读取的权限：android.permission.READ_EXTERNAL_STORAGE</p>
+<p>写法：<br>1./mnt/sdcard/…<br>这种写法不行,因为很多山寨手机sd卡目录可能不叫sdcard<br>此时可以通过Enviroment工具类获取sd卡的目录位置<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">File file = Environment.getExternalStorageDirectory();</div></pre></td></tr></table></figure></p>
+<p>这个API指向当前系统sd卡根目录</p>
+<p>注意：<br>1.写sd是需要权限的<br>读取sd卡默认不需要权限~!<br>有些如果手机开启了sd卡的读权限控制,则需要配置读取的权限才能使用<br>要加就一起加上吧，防止某些手机开启了读权限而不能使用的问题!</p>
+<p>2.有的手机可能没有装sd卡,此时需要判断是否挂载SD卡<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) &#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>Environment.MEDIA_MOUNTED   // 挂载状态<br>Environment.MEDIA_UNMOUNTED // 卸载状态</p>
+<h2 id="文件存储写法"><a href="#文件存储写法" class="headerlink" title="文件存储写法"></a>文件存储写法</h2><h3 id="Java中IO流API"><a href="#Java中IO流API" class="headerlink" title="Java中IO流API"></a>Java中IO流API</h3><p>存储数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">String path = <span class="string">"/data/data/com.star/star.txt"</span>;</div><div class="line">FileOutputStream os = <span class="keyword">new</span> FileOutputStream(path);</div><div class="line">os.write(<span class="string">"程序员"</span>.getBytes());</div><div class="line">os.close();</div></pre></td></tr></table></figure></p>
+<p>读取数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">String path = <span class="string">"/data/data/com.star/star.txt"</span>;</div><div class="line">FileInputStream fis = <span class="keyword">new</span> FileInputStream(path);</div><div class="line">InputStreamReader is = <span class="keyword">new</span> InputStreamReader(fis);</div><div class="line">BufferedReader reader = <span class="keyword">new</span> BufferedReader(is);</div><div class="line">String text = reader.readLine();</div><div class="line">reader.close();</div></pre></td></tr></table></figure></p>
+<h3 id="Android中Context中的API"><a href="#Android中Context中的API" class="headerlink" title="Android中Context中的API"></a>Android中Context中的API</h3><p>对于文件的操作最好使用Android里面Context封装的API，而不要直接使用File对象：</p>
+<p>1.openFileOutput(name, mode);<br>打开文件输出流（参数分别是文件名和访问权限）<br>写法：openFileInput(“star.txt”);<br>地址：/data/data/包名/files/star.txt</p>
+<p>2.openFileInput()<br>打开文件输入流<br>写法：openFileOutput(“star.txt”, Context.MODE_PRIVATE);<br>地址：/data/data/包名/files/star.txt</p>
+<p>3.getFilesDir()<br>拿到当前用户的文件目录(绝对路径)获取应用程序files目录<br>地址：/data/data/包名/files</p>
+<p>4.getCacheDir()<br>获取缓存目录<br>地址：/data/data/包名/cache<br>获取缓存数据文件夹的路径,很简单但是知道的人不多,这个路径通常在SD卡上(这里的SD卡指的是广义上的SD卡,包括外部存储和内部存储)Adnroid/data/您的应用程序包名/cache/ 下面.测试的时候,可以去这里面看是否缓存成功.缓存在这里的好处是:不用自己再去手动创建文件夹,不用担心用户把自己创建的文件夹删掉,在应用程序卸载的时候,这里会被清空,使用第三方的清理工具的时候,这里也会被清空.</p>
+<p>关于files和cache：<br>这是谷歌给我们提供了两种应用程序的目录:<br>files目录存放重要的应用程序数据.手机不会自动清理files目录的文件 (用于放配置信息)<br>cache目录是存放临时的不重要的数据.这个目录有特定,当手机内存空间不足的时候会自动清理cache目录的文件 (用于放临时文件)<br><img src="/images/it_android_storage1.png" alt="UML图"><br>如图所示<br>清除数据是files(注意,有提醒 是否清除账户和数据库等等, 很重要 所以要谨慎清除)<br>清除缓存是cache(没有提醒, 直接清除,cache文件夹消失)</p>
+<p>关于文件访问权限：</p>
+<p>默认情况下所有的文件创建出来都是私有的。<br>只有自己的应用程序可以访问里面的数据，别的应用程序是不可以访问数据的。</p>
+<p>特殊情况利用api可以修改文件的权限：<br>openFileOutput(“文件名”, “文件的访问模式”); // 私有 只读 只写 可读可写<br>权限的访问模式 : ↓<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">MODE_WORLD_READABLE  全局可读(别的应用程序可以读这个文件) -rw-rw--r-</div><div class="line">MODE_WORLD_WRITEABLE 全局可写(别的应用程序可以写这个文件) -rw-rw--w-</div><div class="line">MODE_WORLD_READABLE+MODE_WORLD_WRITEABLE 全局可读可写(别的应用程序可以自由的访问这个文件) </div><div class="line">MODE_PRIVETE 私有模式 -rw-rw----</div></pre></td></tr></table></figure></p>
+<p>Linux下权限说明：共10位，drwxrwxrwx （）<br>第0位d:表示文件类型，d代表文件夹，l代表快捷方式<br>第1-3位rwx:表示使用者的权限，r可读，w可写，x可执行.<br>第4-6位rwx:表示组内的权限，r可读，w可写,x可执行.<br>第7-9位rwx:表示其他人的权限，r可读,w可写,x可执行.</p>
+<p>文件的权限10数位可通俗的理解就4种：文件类型 自己 组内其他 路人</p>
+<p>CMD下操作权限 (底层是通过Linux操作系统的文件模式来实现的)<br>chmod : change mode 修改模式  (只能执行在模拟器上,真机上无法执行(因为没刷root权限))<br>chmod 777</p>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"> * 写SD卡一定记得添加权限</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 模拟向SD卡写一个视频文件</div><div class="line">     * <span class="doctag">@param</span> view</div><div class="line">     */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">click</span><span class="params">(View view)</span></span>&#123;</div><div class="line">		</div><div class="line">		<span class="comment">// 检查SD卡的状态</span></div><div class="line">		<span class="keyword">if</span>(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))&#123;</div><div class="line">			File sdFile = Environment.getExternalStorageDirectory(); </div><div class="line">			<span class="keyword">long</span> sdSize = sdFile.getFreeSpace(); <span class="comment">// 获取可用空间</span></div><div class="line">			<span class="keyword">if</span>(sdSize &gt; <span class="number">5</span> * <span class="number">1024</span> * <span class="number">1024</span>)&#123;  <span class="comment">// 5M</span></div><div class="line">				File file = <span class="keyword">new</span> File(Environment.getExternalStorageDirectory(),System.currentTimeMillis()+<span class="string">"hlw.3gp"</span>);</div><div class="line">				<span class="keyword">try</span>&#123;</div><div class="line">					FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">					<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>]; <span class="comment">// 往SD卡写入一个大小为1M的文件</span></div><div class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1024</span>; i++) &#123;			</div><div class="line">						fos.write(buffer);</div><div class="line">					&#125;</div><div class="line">					fos.close();</div><div class="line">				&#125;<span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">			&#125;<span class="keyword">else</span>&#123;</div><div class="line">				Toast.makeText(<span class="keyword">this</span>, <span class="string">"SD空间不足"</span>, <span class="number">0</span>).show();</div><div class="line">			&#125;</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			Toast.makeText(<span class="keyword">this</span>, <span class="string">"SD卡被拔出或者是不可用"</span>, <span class="number">0</span>).show();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="SharedPreferences"><a href="#SharedPreferences" class="headerlink" title="SharedPreferences"></a>SharedPreferences</h1><hr>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>所属包：android.content<br>含义：共享参数<br>存放位置：/data/data/<package name="">/shared_prefs/目录下的</package></p>
+<p>概述：<br>轻量级的存储类，特别适合用于保存软件配置参数。<br>存配置文件,是手机内部存储的XML文件<br>底层就是XML, 可以快速存储键值对</p>
+<p>用途：<br>非常广泛，只要想保持数据的配置信息，害怕有乱码，非法字符，可以用这个接口把它们都存起来共享参数<br>还有用在存设置信息, 配置信息, 密码<br>如果有布尔类型的值，int类型的小数据就存到这里<br>而且不会有异常产生</p>
+<p>缺点：<br>如果数据特多就不适合用它, 适合用数据库</p>
+<p>注意：<br>1.putXXX（把数据存起来，写入键值信息,但是并没有真的写入）,<br>2.commit（提交时才真的写入提交数据，才被保存( 类似关闭流,事务 )，一定不要忘记）<br>3.在多进程之间不要用SharedPreferences共享数据，虽然可以（MODE_MULTI_PROCESS），但极不稳定</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>1.声明sp<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">private</span> SharedPreferences sp;</div></pre></td></tr></table></figure></p>
+<p>2.初始化sp<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sp = <span class="keyword">this</span>.getSharedPreferences(<span class="string">"config"</span>, MODE_PRIVATE);</div></pre></td></tr></table></figure></p>
+<p>config : 文件名, 不用加后缀(.xml) 系统自动给加上<br>MODE_PRIVATE : 0也可以表示,  私有模式</p>
+<p>3.使用sp<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Editor editor = sp.edit();  <span class="comment">// edit方法获取编辑器</span></div><div class="line">editor.putString(<span class="string">"qq"</span>, qq); <span class="comment">// 把qq存起来</span></div><div class="line">editor.putString(<span class="string">"password"</span>, password);</div><div class="line">editor.commit();　　<span class="comment">//　一定不要忘记 提交数据才被保存(类似关闭流,事务)</span></div></pre></td></tr></table></figure></p>
+<p>技巧:方法调用链<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sp.edit().putString(Constants.PASSWORD, passone).commit();</div></pre></td></tr></table></figure></p>
+<p>4.读取sp<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sp.getString(<span class="string">"qq"</span>, <span class="string">""</span>);</div></pre></td></tr></table></figure></p>
+<p>参数2是默认值, 没有, 用空串表示</p>
+<h2 id="获取SharePreferences新实例对象的几种方式"><a href="#获取SharePreferences新实例对象的几种方式" class="headerlink" title="获取SharePreferences新实例对象的几种方式"></a>获取SharePreferences新实例对象的几种方式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">SharedPreferences sp = BaseApplication.getContext().getSharedPreferences(SP_NAME, Context.MODE_PRIVATE);	</div><div class="line"></div><div class="line">SharedPreferences sp = getSharedPreferences(Constants.SPNAME,MODE_PRIVATE);</div><div class="line"></div><div class="line">SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(<span class="keyword">this</span>);</div><div class="line"></div><div class="line">SharedPreferences.Editor editor=getPreferences(<span class="number">0</span>).edit();</div></pre></td></tr></table></figure>
+<h2 id="关于Editor"><a href="#关于Editor" class="headerlink" title="关于Editor"></a>关于Editor</h2><p>Editor  编辑器接口 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取新实例对象</span></div><div class="line">Editor edit = sp.edit(); <span class="comment">// sp是代表SharedPreferences的引用</span></div><div class="line"></div><div class="line"><span class="comment">// 常用方法</span></div><div class="line">edit		  <span class="comment">// edit :获取Editor   </span></div><div class="line"></div><div class="line">pubString     <span class="comment">// 存字符串数据到SharedPreferences   </span></div><div class="line">putStringSet  <span class="comment">// 存字符串Set数组到SharedPreferences  </span></div><div class="line">putBoolean    <span class="comment">// 存布尔类型数据到SharedPreferences</span></div><div class="line">pubInt        <span class="comment">// 存整型数据到SharedPreferences</span></div><div class="line">putLong       <span class="comment">// 存整型数据到Long </span></div><div class="line">putFloat      <span class="comment">// 存Float</span></div><div class="line"></div><div class="line">getString     <span class="comment">// 获取存到SharedPreferences的字符串数据</span></div><div class="line">getStringSet</div><div class="line">getBoolean    <span class="comment">// 获取存到SharedPreferences的布尔数据</span></div><div class="line"><span class="function">getFloat</span></div><div class="line">getInt</div><div class="line">getLong</div><div class="line">getAll</div><div class="line"></div><div class="line">remove</div><div class="line">clear</div><div class="line"></div><div class="line"><span class="title">commit</span><span class="params">()</span>;     <span class="comment">// （同步）提交到SharedPreferences, 类似关闭流, 事务 </span></div><div class="line">apply();      <span class="comment">// （异步）提交到SharedPreferences</span></div><div class="line"></div><div class="line">onSharedPreferenceChangeListener  <span class="comment">// 用途：用于监视Shared Preference的变化，实现的方法：onSharedPreferenceChanged</span></div><div class="line">registerOnSharedPreferenceChangeListener   <span class="comment">// 注册Shared Preference监听器</span></div><div class="line">unregisterOnSharedPreferenceChangeListener <span class="comment">// 卸载Shared Preference监听器</span></div></pre></td></tr></table></figure>
+<p>关于commit方法：<br>注意SharedPreferences.Editor.commit这个方法是同步的，一直到把数据同步到Flash上面之后才会返回，由IO操作的不可控，尽量使用apply方法代替。<br>apply只在API Level&gt;=9才会支持，需要做兼容。<br>不过，最新的 support v4 包已经为我们做好了处理，使用 SharedPreferencesCompat.EditorCompat.getInstance().apply(editor) 即可。</p>
+<p>关于apply方法：<br>所有的commit操作使用了SharedPreferencesCompat.apply进行了替代，目的是尽可能的使用apply代替commit<br>先说下为什么，因为commit方法是同步的，并且我们很多时候的commit操作都是UI线程中，毕竟是IO操作，尽可能异步；<br>所以我们使用apply进行替代，apply异步的进行写入；<br>但是apply相当于commit来说是new API呢，apply的效率高一些，如果没有必要确认是否提交成功建议使用apply。<br>为了更好的兼容，所以做了适配<br>apply注意事项：<br>1.apply没有返回值,而commit返回boolean表明修改是否提交成功<br>2.apply是将修改数据原子提交到内存, 而后异步真正提交到硬件磁盘, 而commit是同步的提交到硬件磁盘<br>3.apply方法不会提示任何失败的提示apply的效率高一些，如果没有必要确认是否提交成功建议使用apply。</p>
+<h2 id="SharedPreferences加密"><a href="#SharedPreferences加密" class="headerlink" title="SharedPreferences加密"></a>SharedPreferences加密</h2><p><a href="http://blog.csdn.net/sbvfhp/article/details/37659847" target="_blank" rel="external">使用AES加密进行Android的SharedPreferences存储</a></p>
+<hr>
+<h1 id="SQLite数据库"><a href="#SQLite数据库" class="headerlink" title="SQLite数据库"></a>SQLite数据库</h1><hr>
+<h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p>概述：<br>SQLite，是一款轻量型的数据库，是遵守ACID(原子性、一致性、隔离性、持久性)的关联式数据库管理系统，多用于嵌入式开发中。</p>
+<p>Android系统自带的轻量级、运算速度极快的嵌入式关系型数据库。<br>它不仅支持标准的SQL语法，还可以通过Android封装好的API进行操作，让存储和读取数据变得非常方便。</p>
+<p>与Web常用的数据库Mysql、Oracle db、sql server不同，Sqlite是一个内嵌式的数据库，数据库服务器就在你的程序中，无需网络配置和管理，数据库服务器端和客户端运行在同一进程内，减少了网络访问的消耗，简化了数据库管理。</p>
+<p>SQLite的数据类型：Typelessness(弱类型), 可以保存任何类型的数据到你所想要保存的任何表的任何列中.<br>但它又支持常见的类型比如: NULL, VARCHAR, TEXT, INTEGER, BLOB, CLOB…等.<br>唯一的例外：integer primary key 此字段只能存储64位整数</p>
+<p>在Android系统，还提供了一个SQLiteOpenHelper抽象类，该类用于对数据库版本进行管理.该类常用的两个方法:<br>onCreate 数据库创建<br>onUpgrade 数据库更新</p>
+<p>特点：<br>安卓内部的数据库，移动平台轻量级嵌入式的数据库<br>lite: 轻量级<br>嵌入式 : 不是台式机,就是小一点的平台<br>完全开源<br>支持中文, 因为安卓是UTF-8<br>存储大量的结构相同的数据,工作效率很高</p>
+<p>缺点：<br>Sqlite在并发、数据库大小、网络方面存在局限性，并且为表级锁，所以也没必要多线程操作。</p>
+<p>数据库文件路径：<br>/data/data/<package name="">/databases/目录下</package></p>
+<p>涉及到的API：<br>SQLiteOpenHelper<br>SQLiteDatabase<br>Cursor<br>ContentValues类</p>
+<h2 id="创建数据库和升级数据库的步骤"><a href="#创建数据库和升级数据库的步骤" class="headerlink" title="创建数据库和升级数据库的步骤"></a>创建数据库和升级数据库的步骤</h2><p>1.写一个类继承SQLiteOpenHelper，并定义数据库的表结构 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 数据库创建的帮助类SQLiteOpenHelper里面,有两个重要的方法</span></div><div class="line"><span class="number">1</span>.onCreate()      </div><div class="line"><span class="comment">// 数据库第一次被创建的时候调用的方法(如果数据库已经创造就不会执行这个方法)</span></div><div class="line"><span class="comment">// 适合做数据库表结构的初始化</span></div><div class="line"><span class="number">2</span>.onUpgrade()    </div><div class="line"><span class="comment">// 数据库的版本号增加的时候调用的方法 (只能升级不到降级)</span></div><div class="line"><span class="comment">// 如果旧的数据库表结构定义的不是特别合理, 适合修改数据库的表结构，就是更新数据库的操作</span></div><div class="line"></div><div class="line"><span class="comment">// 在onCreate()和onUpgrade()方法里面都有一个参数 db ,代表的是当前的数据库, </span></div><div class="line"><span class="comment">// 得到数据库, 执行sql语句.</span></div><div class="line">db.execSQL(<span class="string">"create table contactinfo (_id integer primary key autoincrement, name varchar(20), phone varchar(20))"</span>);</div><div class="line"><span class="comment">// sqlite在存储数据时,无论是什么数据类型,都是字符串来存储的,</span></div><div class="line"><span class="comment">// 所以数据类型（varchar, double）其实无所谓,但是还是要尽量严格的写好类型,方便阅读代码</span></div><div class="line"><span class="comment">// _是规范写法, 系统自己创建数据库就是这么写的，可加可不加,建议写上,便于以后内容提供者</span></div></pre></td></tr></table></figure>
+<p>2.创建数据库<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 此行代码只是在内存中创建一个数据库帮助者出来,并不会真的创建出数据库</span></div><div class="line">MySQLiteOpenHelper helper = <span class="keyword">new</span> MySQLiteOpenHelper(<span class="keyword">this</span>, <span class="string">"db1.db"</span>,<span class="keyword">null</span> , <span class="number">2</span>);</div><div class="line"><span class="comment">// 只要调用帮助者的获取数据库的方法,如果已经有数据库则拿过来返回,如果没有就创建出来返回</span></div><div class="line">SQLiteDatabase db = helper.getReadableDatabase();;<span class="comment">// 可以用来执行读的操作,底层不加锁</span></div><div class="line">SQLiteDatabase db = helper.getWritableDatabase(); <span class="comment">// 可以用来执行写的操作,底层会加锁</span></div></pre></td></tr></table></figure></p>
+<p>3.写增删改查的sql语句<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">增	<span class="function">insert into <span class="title">contactinfo</span> <span class="params">(name,phone)</span> <span class="title">values</span> <span class="params">(<span class="string">'zhangsan'</span>,<span class="string">'110'</span>)</span></span></div><div class="line">删	delete from contactinfo where id=<span class="string">'1'</span></div><div class="line">改	update contactinfo set phone =<span class="string">'119'</span> where name=<span class="string">'zhangsan'</span></div><div class="line">查	select phone from contactinfo where name=<span class="string">'zhangsan'</span></div></pre></td></tr></table></figure></p>
+<h2 id="常用sql语句"><a href="#常用sql语句" class="headerlink" title="常用sql语句"></a>常用sql语句</h2><p>SQLite可以解析大部分标准SQL语句，只需掌握简单的SQL语句即可</p>
+<p>创建表：<br>create table person(<br>    _id integer primary key autoincrement,<br>    name varchar(20),<br>    age integer);<br>// person是表名</p>
+<p>修改表结构：<br>alter table person add balance integer;</p>
+<p>增加一条记录：<br>规则：insert into 表名(字段列表) values(值列表)<br>insert into person(name) values(‘tom‘, 25);</p>
+<p>删除一条记录：<br>规则：delete from 表名 where 条件子句<br>delete from person where name = ‘tom’;</p>
+<p>修改（更新）一条记录：<br>规则：update 表名 set 字段名=值 where 条件子句<br>update person set name = ‘lisi’ where name = ‘tom’;</p>
+<p>查询数据：<br>语法：select <em> from 表名 where 条件子句 group by 分组字句 having … order by 排序子句<br>select </em> from person;<br>select <em> from person order by id desc<br>select name from person group by name having count(</em>)&gt;1</p>
+<p>分页SQL与mysql类似，下面SQL语句获取5条记录，跳过前面3条记录：<br>select <em> from Account limit 5 offset 3 或者 select </em> from  Account limit 3,5</p>
+<p>获取添加记录后自增长的ID值：<br>SELECT last_insert_rowid()</p>
+<p>获取表中的总记录数：<br>select count(1) from talbename<br>查询速度快高效</p>
+<h2 id="数据库的增删改查的2种方式"><a href="#数据库的增删改查的2种方式" class="headerlink" title="数据库的增删改查的2种方式"></a>数据库的增删改查的2种方式</h2><p>1.自己写sql实现增删改查的操作<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.execSQL() <span class="comment">// 增加 删除 修改</span></div><div class="line">db.rawQuery  <span class="comment">// 查询</span></div></pre></td></tr></table></figure></p>
+<p>优点：sql可以非常的灵活,可以执行任意形式的语句<br>缺点：需要自己写sql稍微麻烦些,容易出错. 而且没有返回新增行号和影响到的行数</p>
+<p>2.利用谷歌api实现增删改查（android提供的进行增删改查的方法）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">db.insert   <span class="comment">// 增   </span></div><div class="line">db.delete   <span class="comment">// 删   </span></div><div class="line">db.update   <span class="comment">// 改   </span></div><div class="line">db.query    <span class="comment">// 查</span></div></pre></td></tr></table></figure></p>
+<p>内部工作的原理：组拼sql语句<br>优点：省去拼接sql的操作,减少错误  2.可以返回新增的行号 或 影响到的行数<br>缺点：不能执行过于复杂的sql,比如多表查询..子查询…</p>
+<p>总结：<br>推荐大家使用谷歌的api实现增删改查,有返回值处理方便,避免了手写sql语句出错的问题 (如语句单词写错, 多写个空格等等)</p>
+<h2 id="查看数据库中的数据"><a href="#查看数据库中的数据" class="headerlink" title="查看数据库中的数据"></a>查看数据库中的数据</h2><p>1.导出databases下的数据库文件,用工具查看</p>
+<p>2.sqlite3 方式查看数据库中的数据</p>
+<p>CMD下以下命令：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">cd....</div><div class="line">sqlite3 name.db1</div></pre></td></tr></table></figure></p>
+<p>然后进行下一步操作</p>
+<p>如果有乱码<br>在cmd命令下使用 chcp 65001 //change code page<br>改变字体为：Lucida Console乱码解决</p>
+<h2 id="数据库的事务管理"><a href="#数据库的事务管理" class="headerlink" title="数据库的事务管理"></a>数据库的事务管理</h2><p>事务概念：<br>逻辑上的一组操作要么同时完成,要么同时不完成<br>就是保证一组sql语言, 要么同时执行成功, 要么同时执行失败<br>一般用于银行业务，平时事务用的不多</p>
+<p>相关API：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">beginTransaction()            开启事务</div><div class="line">setTransactionSuccessful()    设置事务执行成功(必须要执行这一行代码数据才被提交)</div><div class="line">endTransaction()              确定SqlLiteDatabase设置的事务标记来确定事务时候被提交</div></pre></td></tr></table></figure></p>
+<p>模板逻辑示例代码步骤 (3步骤, 非常简单)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 删除数据库全部的记录</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deteleAll</span><span class="params">()</span> </span>&#123;  </div><div class="line">    SQLiteDatabase db = helper.getWritableDatabase();</div><div class="line">    db.beginTransaction(); <span class="comment">// 1. 开启事务</span></div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        Cursor cursor = db.query(<span class="string">"info"</span>, <span class="keyword">new</span> String[] &#123; <span class="string">"studentid"</span> &#125;,<span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</div><div class="line">        <span class="keyword">while</span> (cursor.moveToNext()) &#123;</div><div class="line">            String studentid = cursor.getString(<span class="number">0</span>);</div><div class="line">            db.delete(<span class="string">"info"</span>, <span class="string">"studentid=?"</span>, <span class="keyword">new</span> String[] &#123; studentid &#125;);</div><div class="line">        &#125;</div><div class="line">        cursor.close();</div><div class="line">        db.setTransactionSuccessful(); <span class="comment">// 2.设置事务执行成功.必须要这一行代码执行,数据才会被提交</span></div><div class="line">    &#125; <span class="keyword">finally</span> &#123;</div><div class="line">        db.endTransaction(); <span class="comment">// 3.根据db设置的事务标记 来去确定事务是否被提交</span></div><div class="line">        db.close();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="数据库优化"><a href="#数据库优化" class="headerlink" title="数据库优化"></a>数据库优化</h2><p>已整合至其他文章，请跳转↓<br><a href="http://www.hengxing.me/2017/09/28/it/1.Android/Performance/" target="_blank" rel="external">Android —— 性能优化系列总结</a></p>
+<h2 id="相关面试题"><a href="#相关面试题" class="headerlink" title="相关面试题"></a>相关面试题</h2><p>1.如何导入外部数据库？<br><a href="https://www.cnblogs.com/xiaowenji/archive/2011/01/03/1925014.html" target="_blank" rel="external">Android如何导入已有的外部数据库</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/14/it/1.Android/Network/" rel="next" title="Android —— 网络编程总结">
+                <i class="fa fa-chevron-left"></i> Android —— 网络编程总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/19/it/1.Android/Process/" rel="prev" title="Android —— 进程和线程的总结">
+                Android —— 进程和线程的总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件存储"><span class="nav-number">1.</span> <span class="nav-text">文件存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#手机存储目录的划分"><span class="nav-number">1.1.</span> <span class="nav-text">手机存储目录的划分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手机内部存储"><span class="nav-number">1.1.1.</span> <span class="nav-text">手机内部存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机外部存储"><span class="nav-number">1.1.2.</span> <span class="nav-text">手机外部存储</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件存储写法"><span class="nav-number">1.2.</span> <span class="nav-text">文件存储写法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java中IO流API"><span class="nav-number">1.2.1.</span> <span class="nav-text">Java中IO流API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Android中Context中的API"><span class="nav-number">1.2.2.</span> <span class="nav-text">Android中Context中的API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例代码"><span class="nav-number">1.2.3.</span> <span class="nav-text">示例代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SharedPreferences"><span class="nav-number">2.</span> <span class="nav-text">SharedPreferences</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取SharePreferences新实例对象的几种方式"><span class="nav-number">2.3.</span> <span class="nav-text">获取SharePreferences新实例对象的几种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于Editor"><span class="nav-number">2.4.</span> <span class="nav-text">关于Editor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SharedPreferences加密"><span class="nav-number">2.5.</span> <span class="nav-text">SharedPreferences加密</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQLite数据库"><span class="nav-number">3.</span> <span class="nav-text">SQLite数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介-1"><span class="nav-number">3.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库和升级数据库的步骤"><span class="nav-number">3.2.</span> <span class="nav-text">创建数据库和升级数据库的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用sql语句"><span class="nav-number">3.3.</span> <span class="nav-text">常用sql语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的增删改查的2种方式"><span class="nav-number">3.4.</span> <span class="nav-text">数据库的增删改查的2种方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看数据库中的数据"><span class="nav-number">3.5.</span> <span class="nav-text">查看数据库中的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库的事务管理"><span class="nav-number">3.6.</span> <span class="nav-text">数据库的事务管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库优化"><span class="nav-number">3.7.</span> <span class="nav-text">数据库优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关面试题"><span class="nav-number">3.8.</span> <span class="nav-text">相关面试题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

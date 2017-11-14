@@ -4,8 +4,168 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
+    <lastmod>2017-11-14T15:41:03.450Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 性能优化系列总结</title>
+        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
+    <lastmod>2017-11-14T15:32:54.568Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 异步任务机制 & 消息通知机制</title>
+        <pubTime>2017-10-09T10:08:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/16/it/1.Android/Storage/</loc>
+    <lastmod>2017-11-14T15:13:01.892Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 数据存储机制总结</title>
+        <pubTime>2017-09-16T12:17:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
+    <lastmod>2017-11-14T15:01:08.157Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 开放云平台篇总结</title>
+        <pubTime>2017-10-04T07:11:16.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Animation/</loc>
+    <lastmod>2017-11-14T15:00:57.255Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 动画的总结</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Safety/</loc>
+    <lastmod>2017-11-14T15:00:27.694Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 安全攻防系列的总结</title>
+        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/19/it/1.Android/Process/</loc>
+    <lastmod>2017-11-14T15:00:22.791Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 进程和线程的总结</title>
+        <pubTime>2017-09-19T15:12:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
+    <lastmod>2017-11-14T15:00:10.625Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 开源框架：工具库篇总结</title>
+        <pubTime>2017-10-02T15:56:13.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/07/it/1.Java/CollectionsFramework/</loc>
-    <lastmod>2017-11-13T15:37:17.424Z</lastmod>
+    <lastmod>2017-11-14T08:27:23.565Z</lastmod>
     <data>
         <display>
         <title>集合框架和其他容器类的总结</title>
@@ -17,6 +177,66 @@
            
              
               <breadCrumb title="IT - Java" url="https://hengxing0080.github.io/categories/IT-Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/03/22/it/4.Statistics/Specialist/</loc>
+    <lastmod>2017-11-14T05:56:07.385Z</lastmod>
+    <data>
+        <display>
+        <title>持续关注的技术博客和微信公众号</title>
+        <pubTime>2017-03-22T02:35:15.000Z</pubTime>
+        
+        <tag>统计分析</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - 统计分析" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    <lastmod>2017-11-14T05:53:25.373Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/</loc>
+    <lastmod>2017-11-14T05:03:24.432Z</lastmod>
+    <data>
+        <display>
+        <title>面试题 —— Java系列</title>
+        <pubTime>2017-08-01T15:58:10.000Z</pubTime>
+        
+        <tag>IQ面试题</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
           
         </display>
     </data>
@@ -44,52 +264,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/10/02/it/1.Android/OpenProject/</loc>
-    <lastmod>2017-11-13T14:52:17.076Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 开源框架：工具库篇</title>
-        <pubTime>2017-10-02T15:56:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/09/14/it/1.Android/View/</loc>
     <lastmod>2017-11-13T14:49:14.278Z</lastmod>
     <data>
         <display>
         <title>Android —— 自定义View的总结</title>
         <pubTime>2017-09-14T05:57:16.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/04/it/1.Android/OpenColud/</loc>
-    <lastmod>2017-11-13T13:48:17.320Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 开放云平台篇</title>
-        <pubTime>2017-10-04T07:11:16.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -144,52 +324,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    <lastmod>2017-11-12T15:10:32.158Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Bitmap图片的总结</title>
-        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/09/14/it/1.Android/Network/</loc>
     <lastmod>2017-11-12T13:35:44.289Z</lastmod>
     <data>
         <display>
         <title>Android —— 网络编程总结</title>
         <pubTime>2017-09-14T13:57:14.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-11-12T13:26:23.665Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 性能优化系列</title>
-        <pubTime>2017-09-28T15:56:13.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -297,46 +437,6 @@
            
              
               <breadCrumb title="IT - 面向对象和设计模式 - 设计模式" url="https://hengxing0080.github.io/categories/IT-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%92%8C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/10/09/it/1.Android/Handler/</loc>
-    <lastmod>2017-11-10T16:00:11.304Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 异步任务机制 & 消息通知机制</title>
-        <pubTime>2017-10-09T10:08:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/19/it/1.Android/Process/</loc>
-    <lastmod>2017-11-10T11:22:32.825Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 进程和线程</title>
-        <pubTime>2017-09-19T15:12:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
           
         </display>
     </data>
@@ -1104,26 +1204,6 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/03/22/it/4.Statistics/Specialist/</loc>
-    <lastmod>2017-11-10T04:57:48.132Z</lastmod>
-    <data>
-        <display>
-        <title>持续关注的技术博客</title>
-        <pubTime>2017-03-22T02:35:15.000Z</pubTime>
-        
-        <tag>统计分析</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - 统计分析" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/09/25/it/4.Statistics/Book/</loc>
     <lastmod>2017-11-10T04:56:35.634Z</lastmod>
     <data>
@@ -1204,71 +1284,11 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Animation/</loc>
-    <lastmod>2017-11-08T10:27:03.023Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 动画的总结</title>
-        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2016/09/08/it/1.Android/Safety/</loc>
-    <lastmod>2017-11-08T10:25:34.667Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— 安全攻防系列</title>
-        <pubTime>2016-09-08T15:57:13.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1Android/</loc>
     <lastmod>2017-11-03T15:48:44.184Z</lastmod>
     <data>
         <display>
         <title>面试题 —— Android系列</title>
-        <pubTime>2017-08-01T15:58:10.000Z</pubTime>
-        
-        <tag>IQ面试题</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - IQ面试题" url="https://hengxing0080.github.io/categories/IT-IQ%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/08/01/it/3.IQ/1.java/</loc>
-    <lastmod>2017-11-03T15:48:42.570Z</lastmod>
-    <data>
-        <display>
-        <title>面试题 —— Java系列</title>
         <pubTime>2017-08-01T15:58:10.000Z</pubTime>
         
         <tag>IQ面试题</tag>
