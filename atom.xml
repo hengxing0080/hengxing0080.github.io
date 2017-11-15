@@ -2037,9 +2037,9 @@
     <link href="https://hengxing0080.github.io/2017/09/18/it/1.Android/Module/"/>
     <id>https://hengxing0080.github.io/2017/09/18/it/1.Android/Module/</id>
     <published>2017-09-18T05:27:53.000Z</published>
-    <updated>2017-11-15T10:27:08.738Z</updated>
+    <updated>2017-11-15T17:19:45.324Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/it_android_safety_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p><img src="/images/it_android_activity_logo.jpg" alt="UML图"><br><a id="more"></a></p>
 <p>一个apk就是一个应用程序<br>清单文件里面包含的所有的组件(Activity,service,content provider, broadcast receiver)<br>一个应用程序是由一堆组件组合在一起的,这些组件需要在清单文件下配置</p>
 <p>这四大组件分别是：<br>1.Activity 活动界面(与用户交互的UI界面 ,在里面显示一些控件和响应一些点击事件)<br>2.Service  服务(后台长期运行的组件, 理解成没有界面的Activity)<br>3.BroadcastReceiver 广播接受者(用来接收或者处理操作系统发来的广播消息,或者是自己的应用程序发来的自定义广播 )<br>4.ContentProvider 内容提供者(把自己应用程序私有的数据库, 暴露给别的应用程序让别的应用程序可以对自己私有的数据库实现增删改查)</p>
 <p>它们的共性：<br>四大组件都需要上下文（四大组件new对象没有意义，因为没有上下文）<br>四大组件都需要在清单文件下配置<br>四大组件都在主线程运行</p>
@@ -2160,7 +2160,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;/images/it_android_safety_logo.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
+      &lt;p&gt;&lt;img src=&quot;/images/it_android_activity_logo.jpg&quot; alt=&quot;UML图&quot;&gt;&lt;br&gt;
     
     </summary>
     
