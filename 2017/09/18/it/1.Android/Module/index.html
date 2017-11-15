@@ -1,0 +1,1365 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Android," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="恒星的轨迹" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android —— 关于四大组件的总结">
+<meta property="og:url" content="https://hengxing0080.github.io/2017/09/18/it/1.Android/Module/index.html">
+<meta property="og:site_name" content="恒星的轨迹">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_safety_logo.jpg">
+<meta property="og:image" content="https://hengxing0080.github.io/images/it_android_activity1.jpg">
+<meta property="og:updated_time" content="2017-11-15T10:27:08.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android —— 关于四大组件的总结">
+<meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_safety_logo.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":120,"offset_float":0,"b2t":true,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://hengxing0080.github.io/2017/09/18/it/1.Android/Module/"/>
+
+
+
+
+
+  <title>Android —— 关于四大组件的总结 | 恒星的轨迹</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+<script>
+  	var _mtac = {};
+  	(function() {
+  		var mta = document.createElement("script");
+  		mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.4";
+  		mta.setAttribute("name", "MTAH5");
+  		mta.setAttribute("sid", "500489903");
+
+  		var s = document.getElementsByTagName("script")[0];
+  		s.parentNode.insertBefore(mta, s);
+  	})();
+</script>
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">恒星的轨迹</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">时间在流逝...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://hengxing0080.github.io/2017/09/18/it/1.Android/Module/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="恒星">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="恒星的轨迹">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android —— 关于四大组件的总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T13:27:53+08:00">
+                2017-09-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT-Android/" itemprop="url" rel="index">
+                    <span itemprop="name">IT - Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/it_android_safety_logo.jpg" alt="UML图"><br><a id="more"></a></p>
+<p>一个apk就是一个应用程序<br>清单文件里面包含的所有的组件(Activity,service,content provider, broadcast receiver)<br>一个应用程序是由一堆组件组合在一起的,这些组件需要在清单文件下配置</p>
+<p>这四大组件分别是：<br>1.Activity 活动界面(与用户交互的UI界面 ,在里面显示一些控件和响应一些点击事件)<br>2.Service  服务(后台长期运行的组件, 理解成没有界面的Activity)<br>3.BroadcastReceiver 广播接受者(用来接收或者处理操作系统发来的广播消息,或者是自己的应用程序发来的自定义广播 )<br>4.ContentProvider 内容提供者(把自己应用程序私有的数据库, 暴露给别的应用程序让别的应用程序可以对自己私有的数据库实现增删改查)</p>
+<p>它们的共性：<br>四大组件都需要上下文（四大组件new对象没有意义，因为没有上下文）<br>四大组件都需要在清单文件下配置<br>四大组件都在主线程运行</p>
+<p>注意：<br>不要用四大组件去实现接口 一是组件的对象都比较大，实现接口比较浪费，而且让代码更不易读和理解；<br>另外更重要的是导致多方引用，可能会引发内存泄露。</p>
+<hr>
+<h1 id="Activity"><a href="#Activity" class="headerlink" title="Activity"></a>Activity</h1><hr>
+<p>名称：活动 </p>
+<p>一般的,一个用户交互界面对应一个activity</p>
+<p>activity 是Context的子类</p>
+<p>实现了layoutInflater.Factory2<br>LayoutInflater是个打气筒，把xml转变成view对象挂载在我们的窗体上</p>
+<p>同时实现了window.callback和keyevent.callback这2个接口(窗体的回调，可以处理与窗体用户交互的事件.）<br>像Service和广播接受者这些组件都没有实现这些接口，所以不能和用户交互</p>
+<p>如项目开发常用的Activity的有：<br>1.BaseActivity（如果界面有共同的特点或者功能的时候,就定义一个它，如界面的初始化操作，设置进度条的显示与销毁，触摸事件）<br>2.FragmentActivity<br>3.ListActivity（获取ListView）<br>4.TabActivity（获取TabHost）<br>5.PreferenceActivity（设置相关的Activity)             </p>
+<h2 id="意图（页面跳转和数据传递）"><a href="#意图（页面跳转和数据传递）" class="headerlink" title="意图（页面跳转和数据传递）"></a>意图（页面跳转和数据传递）</h2><p>API：Intent</p>
+<p>功能：<br>想让安卓系统做什么事情,就定义出意图<br>意图就是2个界面的桥梁 </p>
+<p>设计原则：<br>Android中鼓励在程序设计中尽量减少组件的耦合，因此Android中提供了一系列减少耦合的做法，表层我们熟悉的比如xml的布局文件和Activity分离，除此之外，还有一个重要的内容就是intent。<br>它就好比是各个组件中互相通讯的纽带，在四大组件中除了内容提供之外，其他的三大组件都可以通过intent来通讯。<br>除此之外，intent还有启动其他组件的作用。<br>比如启动Activity，服务，绑定服务，通过intent还可以在广播之间传递数据。</p>
+<h3 id="意图的2种跳转方式"><a href="#意图的2种跳转方式" class="headerlink" title="意图的2种跳转方式"></a>意图的2种跳转方式</h3><p>Intent可以划分为：<br>显式意图和隐式意图<br>显式意图通常主要是启动本应用中的Activity之间的数据<br>而隐式意图则常见于启动系统中的某些特定的动作，比如打电话，或者是跨应用的Activity启动。</p>
+<h4 id="显示意图"><a href="#显示意图" class="headerlink" title="显示意图"></a>显示意图</h4><p>简介：<br>调用Intent.setComponent()或Intent.setClass()方法明确指定了组件名的Intent为显式意图，<br>显式意图明确指定了Intent应该传递给哪个组件。<br>显式的指定要开启的界面的包名和类名 ( 这种方式免去声明清单文件的苦恼 )<br>就说直接创建意图, 指定访问哪个应用哪个页面,发送意图<br>不指定动作，不指定数据，直接指定要激活的组件</p>
+<p>优点：<br>需要明确的指定要打开哪个页面<br>代码编写很简单，无需额外的配置。只需要指定要激活组件的字节码就可以了。<br>不需要在清单文件中配置 意图过滤器 <intent-filter><br>安全性很高,性能要高</intent-filter></p>
+<p>缺点：<br>代码的耦合性比较强，最好是 高内敛 低耦合<br>不可以跨着应用调用页面（如果不希望其他应用能够访问又需要在当前应用中访问,就不配置意图过滤器,用显示意图的方式调用即可）</p>
+<p>应用场景：<br>如果你要激活自己应用程序的里面的界面（自己应用程序开启自己的界面 ）<br>推荐使用显式意图,因为效率高, 直接找到字节码就创建出来了，效率很高</p>
+<p>作用域：src</p>
+<p>写法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 方式1：class跳转</span></div><div class="line"><span class="comment">// 使用场景：应用内部跳转，频率较高</span></div><div class="line"><span class="comment">// 正常写法</span></div><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setClass(<span class="keyword">this</span>, AsecondActivity.class);</div><div class="line">startActivity(intent);</div><div class="line"><span class="comment">// 更方便的写法</span></div><div class="line">Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, SecondActivity.class);</div><div class="line">intent .putExtra(<span class="string">"key"</span>,<span class="string">"value"</span>);   <span class="comment">// 传一些参数</span></div><div class="line">startActivity(intent);</div><div class="line"></div><div class="line"><span class="comment">// 方式2：包名、类名跳转（普通写法, 麻烦,容易写错）</span></div><div class="line"><span class="comment">// 使用场景：内部跳转+外部跳转</span></div><div class="line">Intent intent = <span class="keyword">new</span> Intent();  <span class="comment">// ↓ 在代码里面用intent设置要开启Activity的字节码</span></div><div class="line">intent.setClassName(<span class="string">"com.star.morepage"</span>,<span class="string">"com.star.morepage.SecondActivity"</span>);   <span class="comment">// 类名必须是全路径</span></div><div class="line">intent.putExtra(<span class="string">"key"</span>,<span class="string">"value"</span>);  </div><div class="line">startActivity(intent);</div><div class="line"></div><div class="line"><span class="comment">// 方式3：ComponentName跳转 </span></div><div class="line"><span class="comment">// 使用场景：内部跳转+外部跳转</span></div><div class="line">Intent it= <span class="keyword">new</span> Intent();</div><div class="line">it.setComponent(<span class="keyword">new</span> ComponentName(<span class="string">"cn.thear"</span>,<span class="string">"cn.thear.MainActivity"</span>)); <span class="comment">// 包名和类名</span></div><div class="line">it.putExtra(<span class="string">"key"</span>,<span class="string">"value"</span>); </div><div class="line">startActivity(it); </div><div class="line"><span class="comment">// 注：在外部跳转时，当要跳转第三应用时，只知道包名和类名，就推荐用B或C跳转了。但这个不是特别灵活，比如在要跳转的activity前有个过渡初始化页面时，那直接跳过去肯定会出问题的。</span></div></pre></td></tr></table></figure></p>
+<h4 id="隐式意图"><a href="#隐式意图" class="headerlink" title="隐式意图"></a>隐式意图</h4><p>简介：<br>没有明确指定组件名的Intent为隐式意图</p>
+<p>不需要明确的指定打开哪个页面,只要被意图过滤器拦截到就可以响应这次意图.<br>通过指定应用程序的动作行为,数据和类别来去开启界面</p>
+<p>Android系统会根据隐式意图中设置的动作(action)、类别(category)、数据（URI和数据类型）找到最合适的组件来处理这个意图。</p>
+<p>原理：<br>在代码里面设置intent的action和data和Cateory，框架通过解析清单文件找到Activity然后开启</p>
+<p>优点：<br>可以跨着应用调用页面.非常的方便</p>
+<p>缺点：<br>安全性不高,只有希望被其他应用可以调用的页面才会配置意图过滤器.<br>在访问时需要找清单文件进行比对,性能比稍低</p>
+<p>使用注意：<br>1.清单文件里面这个界面必须配置有意图过滤器(intent-filter)<br>根据intent-filter开启界面<br>开启更加灵活,精准,并且可以携带匹配的数据<br>2.如果一个意图被多个意图过滤器所拦截到，会让你选择一个应用    </p>
+<p>应用场景：<br>开启别人应用程序的界面<br>自己的某个界面，想让别的应用程序开启</p>
+<p>应用步骤：<br>a页面 调用 b页面,<br>在b页面的配置中配置意图过滤器<br>a程序中发送匹配的意图<br>b页面拦截到意图后启动</p>
+<p>作用域：<br>在清单文件注册</p>
+<p>写法：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">"com.star.rpcalc.CalcActivity"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">intent-filter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"com.star.morepage.second"</span>/&gt;</span>//拦截哪个名称的意图   </div><div class="line">        <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"http"</span>  //意图携带的数据格式 </span></div><div class="line">            <span class="attr">android:host</span>=<span class="string">"www.star.com"</span></div><div class="line">            <span class="attr">android:port</span>=<span class="string">"8080"</span></div><div class="line">            <span class="attr">android:mimeType</span>=<span class="string">"text/plain"</span></div><div class="line">            <span class="attr">android:path</span>=<span class="string">"/java"</span> &gt; //小细节：注意别少些/</div><div class="line">        <span class="tag">&lt;/<span class="name">data</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span>/&gt;</span> //拦截哪个类型的意图</div><div class="line">    <span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">activity</span> <span class="attr">android:name</span>=<span class="string">"com.star.rpcalc.CalcActivity"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent();</div><div class="line">intent.setAction(<span class="string">"com.star.morepage.second"</span>);</div><div class="line">intent.setData(Uri.parse(<span class="string">"star:aaabbbccc"</span>));  <span class="comment">//指定数据的头必须以什么开始</span></div><div class="line">intent.setType(<span class="string">"text/plain"</span>);</div><div class="line">intent.addCategory(<span class="string">"android.intent.category.DEFAULT"</span>);</div><div class="line">startActivity(intent);</div></pre></td></tr></table></figure>
+<p>跳转时遇到的权限问题：<br>在外部跳转（尤其是第三方应用跳转系统应用）时，相信大家肯定遇到了个权限问题<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> <span class="number">10</span>-<span class="number">21</span> <span class="number">12</span>:<span class="number">08</span>:<span class="number">13.183</span>: E/AndroidRuntime(<span class="number">25061</span>): java.lang.SecurityException: Permission Denial: starting Intent &#123; cmp=cn.thear/cn.thear.MainActivity&#125; from ProcessRecord&#123;<span class="number">42212920</span> <span class="number">25061</span>:com.example.outappopenactivity/u0a10026&#125; (pid=<span class="number">25061</span>, uid=<span class="number">10026</span>) not exported from uid <span class="number">1000</span></div></pre></td></tr></table></figure></p>
+<p>这个是因为2个应用不在同一个用户组里，是跨进程跳转。<br>需要在AndroidManifest.xml中要跳转的activity中加入一个属性android:exported=”true”，允许外部跳转，此时能够跳转成功。<br>但是，这个属性的介绍是这样的： </p>
+<p><a href="http://developer.android.com/guide/topics/manifest/activity-element.html#exported" target="_blank" rel="external">http://developer.android.com/guide/topics/manifest/activity-element.html#exported</a> </p>
+<p>当这个值为“false”时，只能在同一个应用或者有相同的user id（比如跳转系统应用，则要添加system uid,并签名）的应用里被启动。<br>当为“true”，不管什么组件，都能启动这个activity。 </p>
+<p>这个属性的默认值依赖于这个activity是否声明了intent-filter,如果没有，则为false；否则为默认为true. </p>
+<h3 id="意图传递数据"><a href="#意图传递数据" class="headerlink" title="意图传递数据"></a>意图传递数据</h3><h4 id="在页面跳转时传输数据"><a href="#在页面跳转时传输数据" class="headerlink" title="在页面跳转时传输数据"></a>在页面跳转时传输数据</h4><p>意图传递数据<br>从一个界面调用到另外一个界面就用意图<br>多个页面跳转就用意图来实现 (应用内A页面打开B页面)</p>
+<p>写法：<br>方式1:利用意图自带的data方式传输数据,此种方式适合传输简单的字符串<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">intent.setData(Uri.parse(<span class="string">"aaabbccc"</span>));</div><div class="line">Uri uri = intent.getData();</div></pre></td></tr></table></figure></p>
+<p>方式2:可以通过Intent的putXXX方法传递数据到各大组件中，在通过getXXX取出<br>支持的数据类型：<br>八种基本数据类型<br>字符串和一维数据<br>所有实现过Serializable接口的类的对象 （序列化到硬盘文件,android自己实现的序列化的类）<br>所有实现过Parcelable接口的类的对象（序列化到操作系统的公共内存里）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>,SecondActivity.class);</div><div class="line"><span class="comment">// 直接用intent封装数据</span></div><div class="line">intent.putExtra(<span class="string">"name"</span>, <span class="string">"itheima"</span>);</div><div class="line">intent.putExtra(<span class="string">"age"</span>, <span class="number">6</span>);</div><div class="line"><span class="comment">// 或者用Bundler统一打包传递多个数据，Bundle就是map集合,绑定多个一起传过去 </span></div><div class="line">Bundle b = <span class="keyword">new</span> Bundle();</div><div class="line">b.putString(<span class="string">"name"</span>, <span class="string">"itheima"</span>);</div><div class="line">b.putInt(<span class="string">"age"</span>, <span class="number">6</span>);</div></pre></td></tr></table></figure>
+<p>关于Serializable和Parcelable：<br>常见用来传递list或者对象<br>Serializable的方式较为简单，但由于会把整个对象进行序列化，因此效率方面会比Parcelable方式低一些，用于数据持久化</p>
+<p>Parcelable在内存中进行，通过JNI<br>整个读写全是在内存中进行，主要是通过malloc()、realloc()、memcpy()等内存操作进行，所以效率比JAVA序列化中使用外部存储器会高很多</p>
+<p>所以在通常情况下还是更加推荐使用Parcelable的方式来实现Intent传递对象的功能。</p>
+<h4 id="开启新的界面获取新的界面的返回值"><a href="#开启新的界面获取新的界面的返回值" class="headerlink" title="开启新的界面获取新的界面的返回值"></a>开启新的界面获取新的界面的返回值</h4><p>步骤：<br>1.开启方式发生变化,调用开启界面获取返回值的api<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">startActivityForResult(intent, <span class="number">0</span>);</div></pre></td></tr></table></figure></p>
+<p>2.在被开启的Activity里面设置结果数据<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Intent data = <span class="keyword">new</span> Intent();</div><div class="line">data.putExtra(<span class="string">"text"</span>, text); <span class="comment">// 把数据设置到意图对象里面</span></div><div class="line">setResult(<span class="number">0</span>, data); <span class="comment">// 0:是resultCode(结果返回码)</span></div></pre></td></tr></table></figure></p>
+<p>3.记得关闭新开启的界面<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">finish();  <span class="comment">// 关闭当前的界面（一定记得关闭界面,数据才会被返回）</span></div></pre></td></tr></table></figure></p>
+<p>4.在开启的Activity里面重写获取返回值的方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;<span class="comment">//data就是回访的intent,里面包含有数据</span></div><div class="line">    <span class="comment">// 在第二个界面关闭的时候调用,返回数据放在data里面</span></div><div class="line">    <span class="comment">// 有两个参数 请求码 requestCode resultCode  区别请求或者是结果是来源于哪个业务逻辑</span></div><div class="line">    String text = data.getStringExtra(<span class="string">"text"</span>);</div><div class="line">    tv_content.setText(text);</div><div class="line">    <span class="keyword">super</span>.onActivityResult(requestCode, resultCode, data);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>关于请求码和结果码：<br>请求码 :  requestCode<br>结果码 :  resultCode<br>它们是int类型参数，很方便，能让我们区别出来数据来源于谁，或者是从谁那里返回来的<br>应用程序里面需要开启2个界面, 要获取它的返回值, 这时就需要获取请求码了</p>
+<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>生命周期方法:<br>一个事务什么时候生,什么时候死,以及在存活期间必然发生的事情加在一起成为该事物的生命周期<br>一个对象从被new出来到JVM把他（GC垃圾回收这一个阶段必须会执行的方法</p>
+<p>图示：<br><img src="/images/it_android_activity1.jpg" alt="UML图"></p>
+<p>Activity生命周期重要的函数 ( 前6个重要 )<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line">onCreate()     </div><div class="line">Activity对象被创建的时候调用的方法</div><div class="line">在创建Activity时被回调</div><div class="line">切记将 <span class="keyword">super</span>.onCreate(savedInstanceState);放在一切业务的前面。</div><div class="line"></div><div class="line">onDestroy()    </div><div class="line">Activity对象被销毁的时候调用的方法</div><div class="line">用于用户退出,保存数据</div><div class="line">销毁Activity时回调</div><div class="line"></div><div class="line">onStart()      </div><div class="line">Activity界面被用户可见调用的方法 </div><div class="line">用于视频音乐播放器-播放(根据保存的状态恢复现场（音量，播放位置）mediaplayer.start(); )</div><div class="line">启动Activity时被回调，也就是Activity可见时回调</div><div class="line">还适应做刷新列表的操作，这样保证每次用户看到的数据都是最新的.</div><div class="line"></div><div class="line"></div><div class="line">onStop()       </div><div class="line">Activity界面用户不可见调用的方法</div><div class="line">用于视频音乐播放器戏-暂停(视频声音设置为<span class="number">0</span>,记录视频播放的位置 mediaplayer.pause();)</div><div class="line">Activity不可见（停止状态）时回调</div><div class="line"></div><div class="line">onResume()    </div><div class="line">Activity获取焦点时回调/继续开始(获取焦点, 按钮得到了点击事件)(用于游戏应用的继续开始)</div><div class="line">当Activity由暂停状态恢复为激活状态时调</div><div class="line">该方法被调用后，该Activity位于Activity栈（任务栈）的栈顶</div><div class="line"></div><div class="line">onPause()      </div><div class="line">Activity失去焦点时回调/暂停(按钮都失去了点击事件, 还能看到界面)(用于游戏应用的暂停)</div><div class="line"></div><div class="line">onRestart()    </div><div class="line">界面被最小化并且没有被关闭,重新打开会执行onRestart(); </div><div class="line">很少用, 它能干的操作都被onStart给做了</div><div class="line">这个方法在什么时候调用呢?</div><div class="line">重新启动Activity时回调，该方法总在onStart()方法之前回调</div><div class="line">比如在Activity被onStop后，但是没有被onDestroy，在再次启动此Activity时就调用onRestart（而不再调用onCreate）方法；</div><div class="line">如果被onDestroy了，则是调用onCreate方法。</div><div class="line"></div><div class="line">以上七个方法定义了Activity的完整生命周期</div><div class="line">实现这些方法可以帮助我们监视其中的三个嵌套生命周期循环</div><div class="line"></div><div class="line">在读文档看源码的时候 还发现 activity还有两个方法 </div><div class="line">OnPostCreate()</div><div class="line">onPostResume() </div><div class="line">这两个生命周期的方法,不过开发的时候没有用到过.</div><div class="line">这<span class="number">2</span>个方法是给框架用的</div><div class="line">面试可能会问到</div></pre></td></tr></table></figure></p>
+<p>注意：<br>对话框的弹出会调用哪个生命周期方法?<br>哪个也不会调用<br>对话框是Activity的一部分，上下文传的也是Activity<br>对话框弹出实际上对话框获取到了焦点(意味着不会调用任何生命周期)</p>
+<p>两个Activity之间跳转时必然会执行的是哪几个方法?<br>一般情况比如说有两个activity,分别叫A,B<br>当在A里面激活B组件的时候,A 会调用 onPause()方法,<br>然后B 调用onCreate() ,onStart(), OnResume() ,<br>这个时候B覆盖了窗体, A会调用onStop()方法.<br>如果B是个透明的,或者是对话框的样式, A就不会调用onStop()方法<br>如果忘了就告诉面试官看生命周期的哪个方法先执行的解决方案：在各个方法打个log</p>
+<p>场景分类：<br>1.完整生命周期 (entrie lifetime)<br>oncreate  –&gt;  onstart  –&gt;  onresume  –&gt;  onpause  –&gt;  onstop  –&gt;  ondestroy</p>
+<p>2.可视生命周期 (visible lifetime)  (可以看到和不可以看到的过程)<br>onstart  –&gt;  onresume  –&gt;  onpause  –&gt;  onstop</p>
+<p>3.前台生命周期 (foreground lifetime)<br>onresume  –&gt;  onpause    // 界面用户仍然可见，但是失去焦点</p>
+<p>4.横竖屏切换的生命周期<br>用途:游戏开发中屏幕的朝向都是写死的，如97拳皇<br>默认横竖屏切换Activity被销毁又重新创建<br>这是因为,很多应用在横竖屏的情况下,布局是完全不同的,所以在切换时需要重新绘制Activity<br>可以把屏幕的朝向写死,这样Activity就不会重新销毁在创建<br>Manifest清单文件 / activity节点下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">android:screenOrientation=<span class="string">"landscape"</span>  横屏</div><div class="line">android:screenOrientation=<span class="string">"portrait"</span>   竖屏</div></pre></td></tr></table></figure></p>
+<p>或者让操作系统忽略掉屏幕切换的变化<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:configChanges=<span class="string">"orientation|keyboardHidden|screenSize"</span>  忽略 ( 方向 | 键盘 | 屏幕宽高大小 )</div></pre></td></tr></table></figure></p>
+<p>注意：<br>要考虑到Activity和进程被杀掉的情况 如了通常情况退出Activity外，还有Activity因其他原因被杀的情况，比如系统内存过低，系统配置变更，有异常等等，要考虑和测试这种情况，特别是Activity处理重要的数据时，做好的数据的保存。</p>
+<p>Activity的四种状态：<br>1.激活状态<br>一个新的Activity启动入栈后，它在屏幕最前端，处于栈的最顶端，可以和用户交互。</p>
+<p>2.暂停状态<br>当Activity被另外一个透明或者Dialog样式的Activity覆盖时的状态。<br>此时它依然与窗口管理保持连接。系统继续维护其内部状态，所以它仍然可见，但它已经失去了焦点故不可与用户交互。</p>
+<p>3.停止状态<br>当Activity被另外一个Activity覆盖、失去焦点并不可见</p>
+<p>4.销毁状态<br>Activity被系统杀死回收或者没有被启动</p>
+<h2 id="任务栈"><a href="#任务栈" class="headerlink" title="任务栈"></a>任务栈</h2><p>相关文章：<br><a href="http://droidyue.com/blog/2015/08/16/dive-into-android-activity-launchmode/" target="_blank" rel="external">深入讲解Android中Activity launchMode</a><br><a href="http://blog.csdn.net/liuhe688/article/details/6754323/" target="_blank" rel="external">基础总结篇之二：Activity的四种launchMode</a></p>
+<p>又名：后退栈 / Activity栈<br>英文名：Task stack / Back stack</p>
+<p>简介：<br>记录用户操作的行为，将打开的Activity按照一定的方式保存到栈中,让用户可以一层层的退出Activity,提高了用户的体验<br>按Activity打开的顺序就存进了栈里, 退出时一层一层往外退出</p>
+<p>在Adroid应用中，可以有多个Activity，这些Activity组成了Activity栈，当前活动的Activity位于栈顶，之前的Activity被压入下面，成为非活动Activity，等待是否可能被恢复为活动状态。</p>
+<p>为了记录用户开启了那些activity，记录了这些activity开启的先后顺序，google引入任务栈概念，帮助维护好的用户体验。</p>
+<p>目的 : 使用户具有更好的用户体验</p>
+<p>特点：<br>1.一个应用程序一般都是由多个activity组成的。<br>2.任务栈记录存放用户开启该的activity的。打开Activity就进栈，退出Activity就出栈<br>3.一个应用程序一被开启系统就给他分配一个任务栈，当所有的activity都退出的时候，任务栈就清空了。<br>4.每个任务栈都有一个编号，任务栈的id是一个integer的数据类型自增长的。<br>5.在android操作系统里面会存在多个任务栈，一个应用程序一个任务栈，,这个应用中的所有Activity默认公用这个任务栈<br>6.桌面应用和一般的应用程序是一样的，任务栈的行为也是一样。<br>7.默认情况下，关闭掉一个应用程序，清空了这个应用程序的任务栈。应用程序的进程还会保留。</p>
+<p>任务: 用户操作的界面.<br>任务栈:记录用户操作的先后顺序,记录用户操作软件的行为,如果任务栈清空,应用程序就被关闭了.</p>
+<p>Activity的任务栈有4种启动模式 :<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">standard        标准启动模式（默认）</div><div class="line">singletop       单一顶部</div><div class="line">singletask      单一任务栈</div><div class="line">singleinstance  单一实例</div></pre></td></tr></table></figure></p>
+<h3 id="standard-标准模式"><a href="#standard-标准模式" class="headerlink" title="standard 标准模式"></a>standard 标准模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:launchMode=<span class="string">" 默认是standard "</span></div></pre></td></tr></table></figure>
+<p>默认的启动模式</p>
+<p>开启这个Activity,系统就会new一个新的Activity,<br>这个Activity的引用就会出现在任务栈的顶部<br>绝大多数的Activity都是采用的standard的启动模式，<br>开启新的Activity，这个Activity就会被加载到任务栈的栈顶。<br>返回退出Activity，就从任务栈里面移除。如果任务栈清空，应用程序退出。</p>
+<p>应用场景：绝大多数默认的情况</p>
+<h3 id="singletop-单一顶部模式"><a href="#singletop-单一顶部模式" class="headerlink" title="singletop 单一顶部模式"></a>singletop 单一顶部模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:launchMode=<span class="string">"singleTop"</span></div></pre></td></tr></table></figure>
+<p>顶部只有一个实例存在，如果这个Activity的实例已经被加入到任务栈的栈顶，这个Activity就不会被重新创建,而是复用已经存在这个Activity</p>
+<p>应用场景：一个界面避免重复的开启很多次</p>
+<p>案例:<br>浏览器的保存书签功能<br>登录界面</p>
+<h3 id="singleTask-单一任务栈模式"><a href="#singleTask-单一任务栈模式" class="headerlink" title="singleTask 单一任务栈模式"></a>singleTask 单一任务栈模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:launchMode=<span class="string">"singleTask"</span></div></pre></td></tr></table></figure>
+<p>如果任务栈里面已经存在要激活的Activity,就不会重新创建.<br>直接复用这个已经存在的Activity,并且把这个Activity上面其他的所有的Activity清空掉.</p>
+<p>应用场景：<br>如果一个Activity的内存开销或者是cpu开销非常大。<br>一般我们设置这个Activity为singletask的启动模式。保证任务栈里面只有一个实例存在。</p>
+<p>使用案例:<br>1.适合做应用程序的主界面(MainActivity)，app内部直接startActivity跳转方便<br>2.浏览器的页面(BrowserActivity),内存开销非常大，因为webkit 浏览器的内核(管理浏览器核心操作) 用于:解析html标签，解析css标签，JavaScript解析引擎</p>
+<h3 id="singleInstance-单一实例-模式"><a href="#singleInstance-单一实例-模式" class="headerlink" title="singleInstance 单一实例 模式"></a>singleInstance 单一实例 模式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:launchMode=”singleInstance”</div></pre></td></tr></table></figure>
+<p>在整个手机操作系统里面就只有一个实例存在,<br>并且这个实例是在他自己单独的任务栈里面,不会用默认的任务栈.</p>
+<p>被设置为singleInstance模式的Activity会自己开辟一个任务栈,独立使用<br>保证页面在系统只有1个<br>如果希望整个android系统中某个Activity永远是唯一的,可以设置singleInstance模式</p>
+<p>目的：避免内存浪费</p>
+<p>应用场景：<br>1.有道词典的快速取词<br>2.电话拨号器（呼叫InCallScreen）（通话界面）</p>
+<h2 id="Activity的使用"><a href="#Activity的使用" class="headerlink" title="Activity的使用"></a>Activity的使用</h2><h3 id="创建Activity"><a href="#创建Activity" class="headerlink" title="创建Activity"></a>创建Activity</h3><p>1.创建一个类继承Activity类<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span></span>&#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function">Protected <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundler savedInstanceState)</span></span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedOmstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2.在清单文件中注册<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;activity android:name=<span class="string">"com.star.activity.MainActivity"</span>/&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="不在Activity中启动新的Activity时"><a href="#不在Activity中启动新的Activity时" class="headerlink" title="不在Activity中启动新的Activity时"></a>不在Activity中启动新的Activity时</h3><p>如在服务里开启Acitivity<br>需设置标记</p>
+<p>注意：服务里面没有任务栈信息,如果在服务开启Activity需要需要添加任务栈flag<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Intent i = <span class="keyword">new</span> Intent(context,MainActivity.class);		</div><div class="line"><span class="comment">// 告诉activity使用自己的任务栈来维护界面，如果任务栈中没有当前任务就创建 </span></div><div class="line">i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);		</div><div class="line">context.startActivity(i);</div></pre></td></tr></table></figure></p>
+<h3 id="配置当前Activity为主页并创建桌面图标"><a href="#配置当前Activity为主页并创建桌面图标" class="headerlink" title="配置当前Activity为主页并创建桌面图标"></a>配置当前Activity为主页并创建桌面图标</h3><p>application中的label标签和activity中的label标签不是一个概念：<br>application中的label表示应用程序的名称，label标签的值就是它的桌面快捷图标的名称，应用程序的名称可以在应用程序的管理列表中看到。<br>activity中的label标签表示的是它的界面的名称，label标签的值就是它的界面的标题</p>
+<p>通过以下配置可以创建一个桌面图标：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;activity</div><div class="line">    android:name="com.zzh.activity.MainActivity"</div><div class="line">    android:label="@string/app_name"        //activity的名字可以和应用的名字不相同</div><div class="line">    android:icon="@drawable/ic_launcher" &gt;  //activity的图标可以和应用的图标不相同</div><div class="line">        // 如果想让当前应用不创建图标，且没有界面可以不配置以下过滤器</div><div class="line">        &lt;intent-filter&gt;</div><div class="line">            &lt;action android:name="android.intent.action.MAIN" /&gt; //应用程序的入口</div><div class="line">            &lt;category android:name="android.intent.category.LAUNCHER"/&gt; //启动器</div><div class="line">        &lt;/intent-filter&gt;</div><div class="line">&lt;/activity&gt;</div></pre></td></tr></table></figure></p>
+<p>PS：一个应用可以有（创建）多个桌面图标</p>
+<h3 id="透明Activity"><a href="#透明Activity" class="headerlink" title="透明Activity"></a>透明Activity</h3><p>让某个Activity透明<br>OnCreate中不设Layout<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.setTheme(R.style.Theme_Transparent);</div></pre></td></tr></table></figure></p>
+<p>以上是Theme_Transparent的定义（注意transparent_bg是一副透明的图片）</p>
+<h3 id="将Activity设置成窗口的样式"><a href="#将Activity设置成窗口的样式" class="headerlink" title="将Activity设置成窗口的样式"></a>将Activity设置成窗口的样式</h3><p>样式作用于控件上<br>主题作用于控件上和Activity上<br>可以自定义一个activity的样式 , 不仅能指定窗体样式, 还能重写窗体样式, 指定一个透明的背景颜色<br>android:theme=”@android:style/Theme.Dialog”  </p>
+<h3 id="获取当前Activity"><a href="#获取当前Activity" class="headerlink" title="获取当前Activity"></a>获取当前Activity</h3><p>相关文章：<br><a href="http://droidyue.com/blog/2016/02/21/thinking-of-getting-the-current-activity-in-android/" target="_blank" rel="external">关于获取当前Activity的一些思考</a></p>
+<h3 id="退出Activity"><a href="#退出Activity" class="headerlink" title="退出Activity"></a>退出Activity</h3><h4 id="正常退出Activity"><a href="#正常退出Activity" class="headerlink" title="正常退出Activity"></a>正常退出Activity</h4><p>调用 finish () 方法 </p>
+<p>用户点击back键 就是退出一个activity<br>退出activity 会执行 onDestroy()方法 </p>
+<h4 id="点击两次退出应用的实现"><a href="#点击两次退出应用的实现" class="headerlink" title="点击两次退出应用的实现"></a>点击两次退出应用的实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> Toast toast;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_main);</div><div class="line">        toast = Toast.makeText(getApplicationContext(), <span class="string">"确定退出？"</span>, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onBackPressed</span><span class="params">()</span> </span>&#123;</div><div class="line">        quitToast();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">/*</span></div><div class="line">    public boolean onKeyDown(int keyCode, KeyEvent event) &#123;</div><div class="line">        System.out.println(keyCode + "...." + event.getKeyCode());</div><div class="line">        if(keyCode == KeyEvent.KEYCODE_BACK)&#123;</div><div class="line">            quitToast();</div><div class="line">        &#125;</div><div class="line">        return super.onKeyDown(keyCode, event);</div><div class="line">    &#125;</div><div class="line">    */</div><div class="line">    <span class="comment">// 上面的麻烦，直接用toast的getView().getParent() 判断是不是空就ok了。API 16 测试通过</span></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">quitToast</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == toast.getView().getParent())&#123;</div><div class="line">            toast.show();</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            System.exit(<span class="number">0</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="退出App内所有Activity"><a href="#退出App内所有Activity" class="headerlink" title="退出App内所有Activity"></a>退出App内所有Activity</h4><h5 id="利用任务栈特性"><a href="#利用任务栈特性" class="headerlink" title="利用任务栈特性"></a>利用任务栈特性</h5><p>主界面设置为singleTask</p>
+<p>比较在APP里连续进了5个Activity，然后跳转到主页，因主界面是singleTaska所以这5个Acitivity都被干掉了</p>
+<h5 id="在Application下自定义一个Activity集合类的方式"><a href="#在Application下自定义一个Activity集合类的方式" class="headerlink" title="在Application下自定义一个Activity集合类的方式"></a>在Application下自定义一个Activity集合类的方式</h5><p>每打开一个Activity，就记录下来放到列表里。在需要退出时，关闭每一个Activity即可。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyApplication</span> <span class="keyword">extends</span> <span class="title">Application</span> </span>&#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 所有的activity的集合</div><div class="line">	 */</div><div class="line">	<span class="keyword">public</span> List&lt;Activity&gt; allActivies; <span class="comment">//这个Activity集合用于保存所有当前的打开的Activity</span></div><div class="line">	<span class="keyword">public</span> PackageInfo haha;</div><div class="line">	</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">()</span> </span>&#123;</div><div class="line">		allActivies = <span class="keyword">new</span> ArrayList&lt;Activity&gt;();</div><div class="line">		<span class="keyword">super</span>.onCreate();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainActivity</span> <span class="keyword">extends</span> <span class="title">Activity</span> </span>&#123;</div><div class="line">	MyApplication myapp;  </div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle savedInstanceState)</span> </span>&#123;</div><div class="line">		<span class="keyword">super</span>.onCreate(savedInstanceState);</div><div class="line">		setContentView(R.layout.activity_main);</div><div class="line">		myapp = (MyApplication) getApplication();   </div><div class="line">		myapp.allActivies.add(<span class="keyword">this</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onDestroy</span><span class="params">()</span> </span>&#123;</div><div class="line">		myapp.allActivies.remove(<span class="keyword">this</span>);  </div><div class="line">		<span class="keyword">super</span>.onDestroy();</div><div class="line">	&#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exit</span><span class="params">(View view)</span></span>&#123;    </div><div class="line">		<span class="keyword">for</span>(Activity act : myapp.allActivies)&#123;</div><div class="line">			act.finish();</div><div class="line">		&#125;</div><div class="line">        <span class="comment">//上面只是变成空进程，下面这段是释放自己进程的内存空间</span></div><div class="line">		android.os.Process.killProcess(android.os.Process.myPid());</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open01</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">		Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>,MainActivity.class);</div><div class="line">		startActivity(intent);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">open02</span><span class="params">(View view)</span> </span>&#123;</div><div class="line">		Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>,SecondActivity.class);</div><div class="line">		startActivity(intent);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="BaseActivity"><a href="#BaseActivity" class="headerlink" title="BaseActivity"></a>BaseActivity</h5><p><a href="http://www.cnblogs.com/caobotao/p/5127645.html" target="_blank" rel="external">Android退出所有Activity最优雅的方式</a></p>
+<h5 id="使用ActivityManager的方式"><a href="#使用ActivityManager的方式" class="headerlink" title="使用ActivityManager的方式"></a>使用ActivityManager的方式</h5><h5 id="ActivityLifecycleCallbacks接"><a href="#ActivityLifecycleCallbacks接" class="headerlink" title="ActivityLifecycleCallbacks接"></a>ActivityLifecycleCallbacks接</h5><p>用于在Application类中监听各Activity的状态变化<br><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODkzNzM3NQ==&amp;mid=401277907&amp;idx=1&amp;sn=0b2246f5178292596fc3a8295283359c" target="_blank" rel="external">Activitylifecyclecallbacks使用</a></p>
+<h5 id="通过发送广播的方式"><a href="#通过发送广播的方式" class="headerlink" title="通过发送广播的方式"></a>通过发送广播的方式</h5><p><a href="http://ldl8818.iteye.com/blog/1531021" target="_blank" rel="external">Android中使用广播机制退出多个Activity</a></p>
+<p>在需要结束应用时，发送一个特定的广播，每个Activity收到广播后，关闭即可。<br>记得用用本地广播接收者（LocalBroadcastManager）会更安全一些<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">private void init() &#123;</div><div class="line">    localBroadcastManager = LocalBroadcastManager.getInstance(this); // 获取实例</div><div class="line">&#125;</div><div class="line"></div><div class="line">private void initEvent() &#123;</div><div class="line">    filter = new IntentFilter();</div><div class="line">    filter.addAction("finish");</div><div class="line">    localBroadcastManager.registerReceiver(receiver, filter);// 注册本地广播监听器</div><div class="line">&#125;</div><div class="line"></div><div class="line">private BroadcastReceiver receiver = new BroadcastReceiver() &#123;</div><div class="line">    @Override</div><div class="line">    public void onReceive(Context context, Intent intent) &#123;</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">@Override</div><div class="line">protected void onDestroy() &#123;</div><div class="line">    if (receiver != null) &#123;</div><div class="line">        localBroadcastManager.unregisterReceiver(receiver);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">``` </div><div class="line"></div><div class="line">##### 其它方式</div><div class="line"></div><div class="line">1.递归退出 </div><div class="line">在打开新的Activity时使用startActivityForResult，然后自己加标志，在onActivityResult中处理，递归关闭。</div><div class="line">不推荐使用, 让业务逻辑看起了很畸形，逻辑很难理解</div><div class="line"></div><div class="line">2.抛异常强制退出</div><div class="line">该方法通过抛异常，使程序Force Close。 </div><div class="line">验证可以，但是，需要解决的问题是，如何使程序结束掉，而不弹出Force Close的窗口。</div><div class="line">1.重写默认异常处理的类，太暴力了不合适，不推荐</div><div class="line">2.重写class的handler, 捕获异常, 当前进程给杀死就行了</div><div class="line">// 安全结束进程 	android.os.Process.killProcess(android.os.Process.myPid());</div><div class="line"></div><div class="line">3.System.exit(0);   </div><div class="line">这个方法直接给Java虚拟机给干掉了，它退出了，进程就不在了，也不推荐</div><div class="line"></div><div class="line">### 两个Activity之间传递数据的方式</div><div class="line"></div><div class="line">1.基本数据类型可以通过 Intent 传递数据  </div><div class="line"></div><div class="line">```Java</div><div class="line">// 通过intent putExtra 方法 基本数据类型 都传递 </div><div class="line">intent.getStringExtra("key","value");</div><div class="line">intent.getBooleanExtra("key","value")</div><div class="line">Bundle bundle = new  Bundle();</div><div class="line">bumdle.putShort(key, value);</div><div class="line">intent.putExtras(bumdle);</div></pre></td></tr></table></figure></p>
+<p>2.Application 全局里面存放对象<br>自己去实现自己的application的这个类,基础系统的application , 每个activity都可以取到<br>Application类似web容器的上下文,东西放进去，以后所有的servlet都可以拿到数据</p>
+<p>3.通过Activity发广播，另外一个activity接收广播去接收数据</p>
+<p>4.对象数据存储<br>让对象实现 implements  Serializable 接口把对象存放到文件上.<br>让类实现Serializable 接口,然后可以通过 ObjectOutputStream（对象输出流）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">File file = <span class="keyword">new</span> File(<span class="string">"c:\1.obj"</span>);</div><div class="line">FileOutputStream fos  = <span class="keyword">new</span> FileOutputStream(file);</div><div class="line">ObjectOutputStream oos = <span class="keyword">new</span> ObjectOutputStream(fos);</div><div class="line"></div><div class="line"><span class="comment">// 把对象存到文件里</span></div><div class="line">Student stu = <span class="keyword">new</span> Student();</div><div class="line">oos.writeObject(stu);</div><div class="line"></div><div class="line"><span class="comment">//从文件中把对象读出来  </span></div><div class="line">ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(arg0);</div><div class="line">tudent stu1 = (Student) ois.readObject();</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持收集实用资料和原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/upload/wechatpay20170716225849.jpg" alt="恒星 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/upload/alipay_20170716225901.jpg" alt="恒星 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/16/it/1.Android/Storage/" rel="next" title="Android —— 数据存储机制总结">
+                <i class="fa fa-chevron-left"></i> Android —— 数据存储机制总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/19/it/1.Android/Process/" rel="prev" title="Android —— 进程和线程的总结">
+                Android —— 进程和线程的总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="恒星" />
+          <p class="site-author-name" itemprop="name">恒星</p>
+           
+              <p class="site-description motion-element" itemprop="description">披星戴月,日月为鉴! 蛰伏蛰伏,厚积方能薄发!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">94</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hengxing0080" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:skystar0079@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://raw.githubusercontent.com/hengxing0080/hengxing0080.github.io/master/images/WeChat.jpg" target="_blank" title="WeChat">
+                  
+                    <i class="fa fa-fw fa-wechat"></i>
+                  
+                  WeChat
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="tencent://message/?uin=348269714&Site=&Menu=yes" target="_blank" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://heneryyang.github.io/" title="老杨博客" target="_blank">老杨博客</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Activity"><span class="nav-number">1.</span> <span class="nav-text">Activity</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#意图（页面跳转和数据传递）"><span class="nav-number">1.1.</span> <span class="nav-text">意图（页面跳转和数据传递）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#意图的2种跳转方式"><span class="nav-number">1.1.1.</span> <span class="nav-text">意图的2种跳转方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#显示意图"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">显示意图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式意图"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">隐式意图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#意图传递数据"><span class="nav-number">1.1.2.</span> <span class="nav-text">意图传递数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在页面跳转时传输数据"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">在页面跳转时传输数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启新的界面获取新的界面的返回值"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">开启新的界面获取新的界面的返回值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任务栈"><span class="nav-number">1.3.</span> <span class="nav-text">任务栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#standard-标准模式"><span class="nav-number">1.3.1.</span> <span class="nav-text">standard 标准模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#singletop-单一顶部模式"><span class="nav-number">1.3.2.</span> <span class="nav-text">singletop 单一顶部模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#singleTask-单一任务栈模式"><span class="nav-number">1.3.3.</span> <span class="nav-text">singleTask 单一任务栈模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#singleInstance-单一实例-模式"><span class="nav-number">1.3.4.</span> <span class="nav-text">singleInstance 单一实例 模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity的使用"><span class="nav-number">1.4.</span> <span class="nav-text">Activity的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建Activity"><span class="nav-number">1.4.1.</span> <span class="nav-text">创建Activity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不在Activity中启动新的Activity时"><span class="nav-number">1.4.2.</span> <span class="nav-text">不在Activity中启动新的Activity时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置当前Activity为主页并创建桌面图标"><span class="nav-number">1.4.3.</span> <span class="nav-text">配置当前Activity为主页并创建桌面图标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明Activity"><span class="nav-number">1.4.4.</span> <span class="nav-text">透明Activity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将Activity设置成窗口的样式"><span class="nav-number">1.4.5.</span> <span class="nav-text">将Activity设置成窗口的样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取当前Activity"><span class="nav-number">1.4.6.</span> <span class="nav-text">获取当前Activity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#退出Activity"><span class="nav-number">1.4.7.</span> <span class="nav-text">退出Activity</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正常退出Activity"><span class="nav-number">1.4.7.1.</span> <span class="nav-text">正常退出Activity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#点击两次退出应用的实现"><span class="nav-number">1.4.7.2.</span> <span class="nav-text">点击两次退出应用的实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#退出App内所有Activity"><span class="nav-number">1.4.7.3.</span> <span class="nav-text">退出App内所有Activity</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#利用任务栈特性"><span class="nav-number">1.4.7.3.1.</span> <span class="nav-text">利用任务栈特性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在Application下自定义一个Activity集合类的方式"><span class="nav-number">1.4.7.3.2.</span> <span class="nav-text">在Application下自定义一个Activity集合类的方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BaseActivity"><span class="nav-number">1.4.7.3.3.</span> <span class="nav-text">BaseActivity</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用ActivityManager的方式"><span class="nav-number">1.4.7.3.4.</span> <span class="nav-text">使用ActivityManager的方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ActivityLifecycleCallbacks接"><span class="nav-number">1.4.7.3.5.</span> <span class="nav-text">ActivityLifecycleCallbacks接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过发送广播的方式"><span class="nav-number">1.4.7.3.6.</span> <span class="nav-text">通过发送广播的方式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒星</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>

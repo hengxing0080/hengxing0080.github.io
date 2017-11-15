@@ -101,7 +101,7 @@
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap1.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap2.png">
 <meta property="og:image" content="https://hengxing0080.github.io/images/it_android_bitmap3.png">
-<meta property="og:updated_time" content="2017-11-14T05:53:25.373Z">
+<meta property="og:updated_time" content="2017-11-15T10:24:09.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android —— Bitmap图片的总结">
 <meta name="twitter:image" content="https://hengxing0080.github.io/images/it_android_bitmap_logo.jpg">
@@ -518,6 +518,7 @@
 <h2 id="其他优化"><a href="#其他优化" class="headerlink" title="其他优化"></a>其他优化</h2><p>异步加载：<br>如果ImageView的图片是来自网络，进行异步加载</p>
 <p>设置默认图片：<br>任何类型的图片，如果获取不到（例如文件不存在，或者读取文件时跑OutOfMemory异常），应该有对应的默认图片（默认图片放在在apk中，通过resid获取）；</p>
 <p>Drawable：<br>ui组件需要用到的图片是apk包自带的，那么一律用setImageResource或者setBackgroundResource，而不要根据resourceid<br>注意：get(getResources(), R.drawable.btn_achievement_normal)该方法通过resid转换为drawable，需要考虑回收的问题，如果drawable是对象私有对象，在对象销毁前是肯定不会释放内存的。</p>
+<p>图片的传递：<br>大图片的传递用引用的方式去减少对内存的占用<br>如A界面把大图片传递给B界面让它处理，估计很费内存空间<br>intent.setData(Uri)<br>Uri.fromFile(); </p>
 <hr>
 <h1 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h1><hr>
 <h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p><a href="http://blog.csdn.net/ls703/article/details/40617465" target="_blank" rel="external">Android应用开发之图片（Bitmap）压缩（三）———采样率压缩</a><br><a href="http://www.cnblogs.com/yrhua/p/3499910.html" target="_blank" rel="external">Bitmap 实现对图片压缩的2种方法小结</a></p>
@@ -728,7 +729,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">93</span>
+                <span class="site-state-item-count">94</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

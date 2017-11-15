@@ -4,8 +4,48 @@
 
     
   <url>
+    <loc>https://hengxing0080.github.io/2017/09/18/it/1.Android/Module/</loc>
+    <lastmod>2017-11-15T10:27:08.738Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— 关于四大组件的总结</title>
+        <pubTime>2017-09-18T05:27:53.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
+    <lastmod>2017-11-15T10:24:09.062Z</lastmod>
+    <data>
+        <display>
+        <title>Android —— Bitmap图片的总结</title>
+        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+             
+              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://hengxing0080.github.io/2017/09/28/it/1.Android/Performance/</loc>
-    <lastmod>2017-11-14T15:41:03.450Z</lastmod>
+    <lastmod>2017-11-15T06:23:27.249Z</lastmod>
     <data>
         <display>
         <title>Android —— 性能优化系列总结</title>
@@ -197,26 +237,6 @@
            
              
               <breadCrumb title="IT - 统计分析" url="https://hengxing0080.github.io/categories/IT-%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://hengxing0080.github.io/2017/09/09/it/1.Android/Bitmap/</loc>
-    <lastmod>2017-11-14T05:53:25.373Z</lastmod>
-    <data>
-        <display>
-        <title>Android —— Bitmap图片的总结</title>
-        <pubTime>2017-09-09T10:12:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-             
-              <breadCrumb title="IT - Android" url="https://hengxing0080.github.io/categories/IT-Android/"/>
           
         </display>
     </data>
@@ -1743,12 +1763,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>北大励志十句话</title>
-        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
+        <title>哈佛大学经典校训20条</title>
+        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
         
         <tag>励志</tag>
          
@@ -1763,12 +1783,12 @@
 
     
   <url>
-    <loc>https://hengxing0080.github.io/2017/02/20/me/page3/</loc>
+    <loc>https://hengxing0080.github.io/2017/02/21/me/page4/</loc>
     <lastmod>2017-07-16T04:44:58.000Z</lastmod>
     <data>
         <display>
-        <title>哈佛大学经典校训20条</title>
-        <pubTime>2017-02-20T11:21:31.000Z</pubTime>
+        <title>北大励志十句话</title>
+        <pubTime>2017-02-21T12:23:44.000Z</pubTime>
         
         <tag>励志</tag>
          
